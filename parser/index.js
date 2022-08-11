@@ -3,6 +3,16 @@ import QuerySeparationGrammarLexer from "./QuerySeparationGrammarLexer.js";
 import QuerySeparationGrammarParser from "./QuerySeparationGrammarParser.js";
 import CustomListener from "./CustomListener.js";
 
+export function getParser(input) {
+  const chars = new antlr.InputStream(input);
+  const lexer = new QuerySeparationGrammarLexer(chars);
+  lexer.removeErrorListeners();
+  const tokens = new antlr.CommonTokenStream(lexer);
+  const parser = new QuerySeparationGrammarParser(tokens);
+  parser.removeErrorListeners();
+  return parser;
+}
+
 export function SplitQueries(input) {
   const chars = new antlr.InputStream(input);
   const lexer = new QuerySeparationGrammarLexer(chars);
