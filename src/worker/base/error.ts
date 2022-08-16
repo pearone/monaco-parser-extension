@@ -1,95 +1,99 @@
-// import { Token, Recognizer } from "antlr4";
-// import { ErrorListener } from "antlr4/error";
+import { Token, Recognizer } from "antlr4";
+import antlr from "antlr4";
+import { ParserError } from "@/editor/interface";
 
-// export interface ParserError {
-//     startLine: number;
-//     endLine: number;
-//     startCol: number;
-//     endCol: number;
-//     message: string;
-// }
+// @ts-ignore
+export class ParserErrorCollector extends antlr.error.ErrorListener {
+    private _errors: ParserError[];
 
-// export interface SyntaxError {
-//     recognizer: Recognizer;
-//     offendingSymbol: Token;
-//     line: number;
-//     charPositionInLine: number;
-//     msg: string;
-//     e: any;
-// }
+    constructor() {
+        super();
+        this._errors = [];
+    }
+    reportAmbiguity() {}
 
-// export type ErrorHandler = (err: ParserError, errOption: SyntaxError) => void;
+    reportAttemptingFullContext() {}
 
-// export class ParserErrorCollector extends ErrorListener {
-//     private _errors: ParserError[];
+    reportContextSensitivity() {}
 
-//     constructor(error: ParserError[]) {
-//         super();
-//         this._errors = error;
-//     }
+    syntaxError(
+        recognizer: Recognizer,
+        offendingSymbol: Token,
+        line: number,
+        charPositionInLine: number,
+        msg: string,
+        e: any
+    ) {
+        let endCol = charPositionInLine + 1;
+        if (offendingSymbol && offendingSymbol.text !== null) {
+            endCol = charPositionInLine + offendingSymbol.text.length;
+        }
+        this._errors.push({
+            startLine: line,
+            endLine: line,
+            startCol: charPositionInLine,
+            endCol: endCol,
+            message: msg,
+        });
+    }
 
-//     syntaxError(
-//         recognizer: Recognizer,
-//         offendingSymbol: Token,
-//         line: number,
-//         charPositionInLine: number,
-//         msg: string,
-//         e: any
-//     ) {
-//         let endCol = charPositionInLine + 1;
-//         if (offendingSymbol && offendingSymbol.text !== null) {
-//             endCol = charPositionInLine + offendingSymbol.text.length;
-//         }
-//         this._errors.push({
-//             startLine: line,
-//             endLine: line,
-//             startCol: charPositionInLine,
-//             endCol: endCol,
-//             message: msg,
-//         });
-//     }
-// }
+    getErrors(): ParserError[] {
+        return this._errors;
+    }
+}
 
-// export default class ParserErrorListener extends ErrorListener {
-//     private _errorHandler;
+// @ts-ignore
+export default class ParserErrorListener extends antlr.error.ErrorListener {
+    private _errorHandler;
 
-//     constructor(errorListener: ErrorHandler) {
-//         super();
-//         this._errorHandler = errorListener;
-//     }
+    constructor(errorListener: ErrorHandler) {
+        super();
+        this._errorHandler = errorListener;
+    }
 
-//     syntaxError(
-//         recognizer: Recognizer,
-//         offendingSymbol: Token,
-//         line: number,
-//         charPositionInLine: number,
-//         msg: string,
-//         e: any
-//     ) {
-//         let endCol = charPositionInLine + 1;
-//         if (offendingSymbol && offendingSymbol.text !== null) {
-//             endCol = charPositionInLine + offendingSymbol.text.length;
-//         }
-//         if (this._errorHandler) {
-//             this._errorHandler(
-//                 {
-//                     startLine: line,
-//                     endLine: line,
-//                     startCol: charPositionInLine,
-//                     endCol: endCol,
-//                     message: msg,
-//                 },
-//                 {
-//                     e,
-//                     line,
-//                     msg,
-//                     recognizer,
-//                     offendingSymbol,
-//                     charPositionInLine,
-//                 }
-//             );
-//         }
-//     }
-// }
+    reportContextSensitivity() {}
 
-export {};
+    syntaxError(
+        recognizer: Recognizer,
+        offendingSymbol: Token,
+        line: number,
+        charPositionInLine: number,
+        msg: string,
+        e: any
+    ) {
+        let endCol = charPositionInLine + 1;
+        if (offendingSymbol && offendingSymbol.text !== null) {
+            endCol = charPositionInLine + offendingSymbol.text.length;
+        }
+        if (this._errorHandler) {
+            this._errorHandler(
+                {
+                    startLine: line,
+                    endLine: line,
+                    startCol: charPositionInLine,
+                    endCol: endCol,
+                    message: msg,
+                },
+                {
+                    e,
+                    line,
+                    msg,
+                    recognizer,
+                    offendingSymbol,
+                    charPositionInLine,
+                }
+            );
+        }
+    }
+}
+
+export interface SyntaxError {
+    recognizer: Recognizer;
+    offendingSymbol: Token;
+    line: number;
+    charPositionInLine: number;
+    msg: string;
+    e: any;
+}
+
+export type ErrorHandler = (err: ParserError, errOption: SyntaxError) => void;

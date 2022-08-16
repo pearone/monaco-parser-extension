@@ -1,111 +1,68 @@
-// import { Token, Lexer } from "antlr4";
-// import { ParseTreeWalker } from "antlr4/tree";
+import { ParserError } from "@/editor/interface";
+import { Token, Lexer, Parser } from "antlr4";
+import ParserErrorListener, {
+    ErrorHandler,
+    ParserErrorCollector,
+} from "./error";
 
-// import ParserErrorListener, {
-//     ParserError,
-//     ErrorHandler,
-//     ParserErrorCollector,
-// } from "./error";
+export default abstract class BasicParser<C = any> {
+    private _parser: Parser | undefined;
 
-// /**
-//  * Custom Parser class, subclass needs extends it.
-//  */
-// export default abstract class BasicParser<C = any> {
-//     private _parser;
+    public abstract createLexer(input: string): Lexer;
 
-//     public parse(input: string, errorListener?: ErrorHandler) {
-//         const parser = this.createParser(input);
-//         this._parser = parser;
+    public abstract createParserFromLexer(lexer: Lexer): Parser;
 
-//         parser.removeErrorListeners();
-//         parser.addErrorListener(new ParserErrorListener(errorListener));
+    public parse(input: string, errorListener?: ErrorHandler) {
+        const parser = this.createParser(input);
+        this._parser = parser;
 
-//         const parserTree = parser.program();
+        parser.removeErrorListeners();
+        if (errorListener) {
+            parser.addErrorListener(new ParserErrorListener(errorListener));
+        }
 
-//         return parserTree;
-//     }
+        const parserTree = parser.statements();
 
-//     public validate(input: string): ParserError[] {
-//         const lexerError = [];
-//         const syntaxErrors = [];
+        return parserTree;
+    }
 
-//         const parser = this.createParser(input);
-//         this._parser = parser;
+    public validate(input: string): ParserError[] {
+        const lexerError: ParserError[] = [];
+        const syntaxErrors: ParserError[] = [];
 
-//         parser.removeErrorListeners();
-//         parser.addErrorListener(new ParserErrorCollector(syntaxErrors));
+        const lexer = this.createLexer(input);
+        lexer.removeErrorListeners();
+        lexer.addErrorListener(new ParserErrorCollector());
 
-//         parser.program();
+        const parser: any = this.createParserFromLexer(lexer);
+        this._parser = parser;
 
-//         return lexerError.concat(syntaxErrors);
-//     }
+        parser.removeErrorListeners();
+        parser.addErrorListener(new ParserErrorCollector());
 
-//     /**
-//      * Create antrl4 Lexer object
-//      * @param input source string
-//      */
-//     public abstract createLexer(input: string): Lexer;
+        parser.statements();
 
-//     /**
-//      * Create Parser by lexer
-//      * @param lexer Lexer
-//      */
-//     public abstract createParserFromLexer(lexer: Lexer);
+        return lexerError.concat(syntaxErrors);
+    }
 
-//     /**
-//      * Visit parser tree
-//      * @param parserTree
-//      */
-//     // public abstract visit(visitor: any, parserTree: any);
+    public getAllTokens(input: string): Token[] {
+        return this.createLexer(input).getAllTokens();
+    }
 
-//     /**
-//      * The source string
-//      * @param input string
-//      */
-//     public getAllTokens(input: string): Token[] {
-//         return this.createLexer(input).getAllTokens();
-//     }
+    public createParser(input: string) {
+        const lexer = this.createLexer(input);
+        const parser: any = this.createParserFromLexer(lexer);
+        parser.buildParseTrees = true;
+        this._parser = parser;
 
-//     /**
-//      * Get Parser instance by input string
-//      * @param input
-//      */
-//     public createParser(input: string) {
-//         const lexer = this.createLexer(input);
-//         const parser: any = this.createParserFromLexer(lexer);
-//         parser.buildParseTrees = true;
-//         this._parser = parser;
+        return parser;
+    }
 
-//         return parser;
-//     }
+    public parserTreeToString(input: string): string {
+        const parser = this.createParser(input);
+        this._parser = parser;
 
-//     /**
-//      * It convert tree to string, it's convenient to use in unit test.
-//      * @param string input
-//      */
-//     public parserTreeToString(input: string): string {
-//         const parser = this.createParser(input);
-//         this._parser = parser;
-
-//         const tree = parser.program();
-//         return tree.toStringTree(parser.ruleNames);
-//     }
-
-//     /**
-//      * Get List-like style tree string
-//      * @param parserTree
-//      */
-//     public toString(parserTree: any): string {
-//         return parserTree.toStringTree(this._parser.ruleNames);
-//     }
-
-//     /**
-//      * @param listener Listener instance extends ParserListener
-//      * @param parserTree parser Tree
-//      */
-//     public listen(listener: any, parserTree: any) {
-//         ParseTreeWalker.DEFAULT.walk(listener, parserTree);
-//     }
-// }
-
-export {};
+        const tree = parser.statements();
+        return tree.toStringTree(parser.ruleNames);
+    }
+}

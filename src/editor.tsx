@@ -14,9 +14,9 @@ function Editor() {
     useEffect(() => {
         if (editor_ref.current) {
             monaco.editor.create(editor_ref.current, {
-                value: `select * from aaa;`,
+                value: "select `北京`     from aaa;",
                 theme: "vs-dark",
-                language: LanguageName,
+                language: "hivesql",
                 minimap: { enabled: false },
             });
         }
