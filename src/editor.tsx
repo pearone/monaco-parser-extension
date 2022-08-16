@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as monaco from "monaco-editor-core";
 import { injectMonacoEditor } from "./editor/inject";
-import { LanguageName } from "./constants";
 
 /**
  * 编辑器组件

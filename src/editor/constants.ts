@@ -1,7 +1,7 @@
 import {
     language as hiveLanguage,
     conf as hiveConf,
-} from "../src/worker/hivesql/language";
+} from "../worker/hivesql/language";
 
 export const LanguageName = "hivesql";
 

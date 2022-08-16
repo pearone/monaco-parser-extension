@@ -1,5 +1,5 @@
 import * as monaco from "monaco-editor-core";
-import { LanguageMapping, LanguageName } from "../constants";
+import { LanguageMapping, LanguageName } from "./constants";
 import FormattingProvider from "./format";
 import { ParserError } from "./interface";
 import { WorkerManager } from "./worker-manager";

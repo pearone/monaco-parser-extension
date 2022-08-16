@@ -19,15 +19,17 @@ export class ParserErrorCollector extends antlr.error.ErrorListener {
         msg: string,
         e: any
     ) {
-        let endCol = charPositionInLine + 1;
-        if (offendingSymbol && offendingSymbol.text !== null) {
-            endCol = charPositionInLine + offendingSymbol.text.length;
-        }
+        const startColumn = charPositionInLine + 1;
+        const textLength =
+            offendingSymbol && offendingSymbol.text !== null
+                ? offendingSymbol.text.length
+                : 0;
+
         this._errors.push({
-            startLine: line,
-            endLine: line,
-            startCol: charPositionInLine,
-            endCol: endCol,
+            startLineNumber: line,
+            endLineNumber: line,
+            startColumn: startColumn,
+            endColumn: startColumn + textLength,
             message: msg,
         });
     }
@@ -60,17 +62,19 @@ export default class ParserErrorListener extends antlr.error.ErrorListener {
         msg: string,
         e: any
     ) {
-        let endCol = charPositionInLine + 1;
-        if (offendingSymbol && offendingSymbol.text !== null) {
-            endCol = charPositionInLine + offendingSymbol.text.length;
-        }
+        const startColumn = charPositionInLine + 1;
+        const textLength =
+            offendingSymbol && offendingSymbol.text !== null
+                ? offendingSymbol.text.length
+                : 0;
+
         if (this._errorHandler) {
             this._errorHandler(
                 {
-                    startLine: line,
-                    endLine: line,
-                    startCol: charPositionInLine,
-                    endCol: endCol,
+                    startLineNumber: line,
+                    endLineNumber: line,
+                    startColumn: startColumn,
+                    endColumn: startColumn + textLength,
                     message: msg,
                 },
                 {

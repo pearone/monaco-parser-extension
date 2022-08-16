@@ -1,7 +1,7 @@
 export interface ParserError {
-    startLine: number;
-    endLine: number;
-    startCol: number;
-    endCol: number;
+    startLineNumber: number;
+    endLineNumber: number;
+    startColumn: number;
+    endColumn: number;
     message: string;
 }
