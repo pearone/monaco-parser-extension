@@ -15,7 +15,11 @@ export class HiveSQLWorker extends BaseSQLWorker {
         return Promise.resolve(this.parser.format(code));
     }
 
-    // doValidation() {}
+    getKeywords() {
+        return Promise.resolve(this.parser.getVocabulary());
+    }
+
+    completionsFor() {}
 }
 
 export function create(ctx: worker.IWorkerContext): HiveSQLWorker {

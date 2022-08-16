@@ -19,6 +19,13 @@ export default class HiveSQL extends BasicParser {
         return parser;
     }
 
+    // 获取词汇
+    public getVocabulary() {
+        return HiveLexer.literalNames
+            .filter((text) => text !== null)
+            .map((text) => text!.replace(/\'/g, ""));
+    }
+
     // 格式化
     public format(code: string): string {
         if (this.validate(code).length > 0) {

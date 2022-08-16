@@ -26,6 +26,22 @@ export abstract class BaseSQLWorker {
         return Promise.resolve([]);
     }
 
+    async parse(code: string): Promise<any> {
+        if (code) {
+            const result = this.parser.parse(code);
+            return Promise.resolve(result);
+        }
+        return Promise.resolve([]);
+    }
+
+    async getAllTokens(code: string): Promise<any> {
+        if (code) {
+            const result = this.parser.getAllTokens(code);
+            return Promise.resolve(result);
+        }
+        return Promise.resolve([]);
+    }
+
     async parserTreeToString(code: string): Promise<any> {
         if (code) {
             const result = this.parser.parserTreeToString(code);

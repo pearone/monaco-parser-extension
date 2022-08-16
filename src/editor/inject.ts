@@ -2,12 +2,15 @@ import * as monaco from "monaco-editor-core";
 import { LanguageMapping, LanguageName } from "./constants";
 import FormattingProvider from "./format";
 import { ParserError } from "./interface";
+import { provideCompletionItems } from "./template";
 import { WorkerManager } from "./worker-manager";
 
 /**
  * 注册
  */
 export const injectMonacoEditor = () => {
+    let _disposables: monaco.IDisposable[] = [];
+
     (window as any).MonacoEnvironment = {
         getWorkerUrl: function (_: number, label: string) {
             switch (label) {
@@ -22,13 +25,17 @@ export const injectMonacoEditor = () => {
     monaco.languages.register({ id: LanguageName });
     monaco.languages.onLanguage(LanguageName, () => {
         // 语法高亮
-        monaco.languages.setMonarchTokensProvider(
-            LanguageName,
-            LanguageMapping[LanguageName].language
+        _disposables.push(
+            monaco.languages.setMonarchTokensProvider(
+                LanguageName,
+                LanguageMapping[LanguageName].language
+            )
         );
-        monaco.languages.setLanguageConfiguration(
-            LanguageName,
-            LanguageMapping[LanguageName].conf
+        _disposables.push(
+            monaco.languages.setLanguageConfiguration(
+                LanguageName,
+                LanguageMapping[LanguageName].conf
+            )
         );
         const client = new WorkerManager({ language: LanguageName });
 
@@ -65,13 +72,30 @@ export const injectMonacoEditor = () => {
 
             validate(model.uri);
         };
-        monaco.editor.onDidCreateModel(onModelAdd);
+        _disposables.push(monaco.editor.onDidCreateModel(onModelAdd));
         monaco.editor.getModels().forEach(onModelAdd);
 
         // 格式化
-        monaco.languages.registerDocumentFormattingEditProvider(
-            LanguageName,
-            new FormattingProvider(worker)
+        _disposables.push(
+            monaco.languages.registerDocumentFormattingEditProvider(
+                LanguageName,
+                new FormattingProvider(worker)
+            )
+        );
+
+        // 自动补全
+        _disposables.push(
+            monaco.languages.registerCompletionItemProvider(LanguageName, {
+                provideCompletionItems: (model, position) => {
+                    return provideCompletionItems(model, position, worker);
+                },
+            })
         );
     });
+
+    const dispose = () => {
+        _disposables.forEach((d) => d && d.dispose());
+        _disposables = [];
+    };
+    return dispose;
 };
