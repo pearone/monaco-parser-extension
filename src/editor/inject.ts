@@ -36,22 +36,25 @@ export const injectMonacoEditor = () => {
             return client.getLanguageServiceWorker(...uris);
         };
 
+        // 错误提示
         const onModelAdd = (model: monaco.editor.IModel): void => {
             async function validate(resource: monaco.Uri) {
                 const workerProxy = await worker(resource);
                 const errorMarkers = await (workerProxy as any).doValidation();
 
-                const model = monaco.editor.getModel(resource)!;
-                monaco.editor.setModelMarkers(
-                    model,
-                    LanguageName,
-                    errorMarkers.map((error: ParserError) => {
-                        return {
-                            ...error,
-                            severity: monaco.MarkerSeverity.Error,
-                        };
-                    })
-                );
+                const model = monaco.editor.getModel(resource);
+                if (model) {
+                    monaco.editor.setModelMarkers(
+                        model,
+                        LanguageName,
+                        errorMarkers.map((error: ParserError) => {
+                            return {
+                                ...error,
+                                severity: monaco.MarkerSeverity.Error,
+                            };
+                        })
+                    );
+                }
             }
 
             let handle: any;
@@ -64,6 +67,7 @@ export const injectMonacoEditor = () => {
         };
         monaco.editor.onDidCreateModel(onModelAdd);
         monaco.editor.getModels().forEach(onModelAdd);
+
         // 格式化
         monaco.languages.registerDocumentFormattingEditProvider(
             LanguageName,

@@ -2,7 +2,6 @@ import antlr from "antlr4";
 import { format } from "sql-formatter";
 import HiveLexer from "./grammar/HiveLexer.js";
 import HiveParser from "./grammar/HiveParser.js";
-import { ParserErrorCollector } from "../base/error";
 import BasicParser from "../base/parser";
 
 export default class HiveSQL extends BasicParser {
@@ -23,6 +22,7 @@ export default class HiveSQL extends BasicParser {
     // 格式化
     public format(code: string): string {
         if (this.validate(code).length > 0) {
+            console.error("format error", this.validate(code));
             return code;
         }
         return format(code);

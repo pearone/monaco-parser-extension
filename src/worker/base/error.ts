@@ -10,11 +10,6 @@ export class ParserErrorCollector extends antlr.error.ErrorListener {
         super();
         this._errors = [];
     }
-    reportAmbiguity() {}
-
-    reportAttemptingFullContext() {}
-
-    reportContextSensitivity() {}
 
     syntaxError(
         recognizer: Recognizer,
@@ -40,6 +35,12 @@ export class ParserErrorCollector extends antlr.error.ErrorListener {
     getErrors(): ParserError[] {
         return this._errors;
     }
+
+    reportAmbiguity() {}
+
+    reportAttemptingFullContext() {}
+
+    reportContextSensitivity() {}
 }
 
 // @ts-ignore
@@ -50,8 +51,6 @@ export default class ParserErrorListener extends antlr.error.ErrorListener {
         super();
         this._errorHandler = errorListener;
     }
-
-    reportContextSensitivity() {}
 
     syntaxError(
         recognizer: Recognizer,

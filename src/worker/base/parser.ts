@@ -6,15 +6,12 @@ import ParserErrorListener, {
 } from "./error";
 
 export default abstract class BasicParser<C = any> {
-    private _parser: Parser | undefined;
-
     public abstract createLexer(input: string): Lexer;
 
     public abstract createParserFromLexer(lexer: Lexer): Parser;
 
     public parse(input: string, errorListener?: ErrorHandler) {
         const parser = this.createParser(input);
-        this._parser = parser;
 
         parser.removeErrorListeners();
         if (errorListener) {
@@ -27,22 +24,20 @@ export default abstract class BasicParser<C = any> {
     }
 
     public validate(input: string): ParserError[] {
-        const lexerError: ParserError[] = [];
-        const syntaxErrors: ParserError[] = [];
+        const errorHandler = new ParserErrorCollector();
 
         const lexer = this.createLexer(input);
         lexer.removeErrorListeners();
-        lexer.addErrorListener(new ParserErrorCollector());
+        lexer.addErrorListener(errorHandler);
 
         const parser: any = this.createParserFromLexer(lexer);
-        this._parser = parser;
 
         parser.removeErrorListeners();
-        parser.addErrorListener(new ParserErrorCollector());
+        parser.addErrorListener(errorHandler);
 
         parser.statements();
 
-        return lexerError.concat(syntaxErrors);
+        return errorHandler.getErrors();
     }
 
     public getAllTokens(input: string): Token[] {
@@ -53,14 +48,12 @@ export default abstract class BasicParser<C = any> {
         const lexer = this.createLexer(input);
         const parser: any = this.createParserFromLexer(lexer);
         parser.buildParseTrees = true;
-        this._parser = parser;
 
         return parser;
     }
 
     public parserTreeToString(input: string): string {
         const parser = this.createParser(input);
-        this._parser = parser;
 
         const tree = parser.statements();
         return tree.toStringTree(parser.ruleNames);
