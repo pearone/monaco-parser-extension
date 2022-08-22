@@ -1956,21 +1956,23 @@ export default class HiveParser extends antlr4.Parser {
 	statements() {
 	    let localctx = new StatementsContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 0, HiveParser.RULE_statements);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 743;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << HiveParser.KW_DESC) | (1 << HiveParser.KW_FROM) | (1 << HiveParser.KW_SELECT) | (1 << HiveParser.KW_INSERT))) !== 0) || ((((_la - 44)) & ~0x1f) == 0 && ((1 << (_la - 44)) & ((1 << (HiveParser.KW_SHOW - 44)) | (1 << (HiveParser.KW_MSCK - 44)) | (1 << (HiveParser.KW_LOAD - 44)) | (1 << (HiveParser.KW_EXPORT - 44)) | (1 << (HiveParser.KW_IMPORT - 44)) | (1 << (HiveParser.KW_CREATE - 44)) | (1 << (HiveParser.KW_ALTER - 44)) | (1 << (HiveParser.KW_DESCRIBE - 44)) | (1 << (HiveParser.KW_DROP - 44)))) !== 0) || ((((_la - 98)) & ~0x1f) == 0 && ((1 << (_la - 98)) & ((1 << (HiveParser.KW_MAP - 98)) | (1 << (HiveParser.KW_REDUCE - 98)) | (1 << (HiveParser.KW_KILL - 98)))) !== 0) || ((((_la - 143)) & ~0x1f) == 0 && ((1 << (_la - 143)) & ((1 << (HiveParser.KW_EXPLAIN - 143)) | (1 << (HiveParser.KW_WITH - 143)) | (1 << (HiveParser.KW_SET - 143)) | (1 << (HiveParser.KW_DELETE - 143)))) !== 0) || ((((_la - 186)) & ~0x1f) == 0 && ((1 << (_la - 186)) & ((1 << (HiveParser.KW_GRANT - 186)) | (1 << (HiveParser.KW_REVOKE - 186)) | (1 << (HiveParser.KW_LOCK - 186)) | (1 << (HiveParser.KW_UNLOCK - 186)) | (1 << (HiveParser.KW_ANALYZE - 186)))) !== 0) || ((((_la - 220)) & ~0x1f) == 0 && ((1 << (_la - 220)) & ((1 << (HiveParser.KW_USE - 220)) | (1 << (HiveParser.KW_UPDATE - 220)) | (1 << (HiveParser.KW_TRUNCATE - 220)))) !== 0) || ((((_la - 264)) & ~0x1f) == 0 && ((1 << (_la - 264)) & ((1 << (HiveParser.KW_RELOAD - 264)) | (1 << (HiveParser.KW_START - 264)) | (1 << (HiveParser.KW_COMMIT - 264)) | (1 << (HiveParser.KW_ROLLBACK - 264)))) !== 0) || ((((_la - 298)) & ~0x1f) == 0 && ((1 << (_la - 298)) & ((1 << (HiveParser.KW_ABORT - 298)) | (1 << (HiveParser.KW_MERGE - 298)) | (1 << (HiveParser.KW_REPL - 298)))) !== 0) || _la===HiveParser.LPAREN) {
-	            this.state = 738;
-	            this.statement();
-	            this.state = 739;
-	            this.statementSeparator();
+	        var _alt = this._interp.adaptivePredict(this._input,0,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 738;
+	                this.statement();
+	                this.state = 739;
+	                this.statementSeparator(); 
+	            }
 	            this.state = 745;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,0,this._ctx);
 	        }
+
 	        this.state = 746;
 	        this.match(HiveParser.EOF);
 	    } catch (re) {
@@ -1995,54 +1997,19 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 750;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.SEMICOLON:
+	        var la_ = this._interp.adaptivePredict(this._input,1,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 748;
 	            this.match(HiveParser.SEMICOLON);
 	            break;
-	        case HiveParser.EOF:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_FROM:
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_INSERT:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_IMPORT:
-	        case HiveParser.KW_CREATE:
-	        case HiveParser.KW_ALTER:
-	        case HiveParser.KW_DESCRIBE:
-	        case HiveParser.KW_DROP:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_WITH:
-	        case HiveParser.KW_SET:
-	        case HiveParser.KW_DELETE:
-	        case HiveParser.KW_GRANT:
-	        case HiveParser.KW_REVOKE:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_UPDATE:
-	        case HiveParser.KW_TRUNCATE:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_START:
-	        case HiveParser.KW_COMMIT:
-	        case HiveParser.KW_ROLLBACK:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MERGE:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -2066,53 +2033,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 754;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_EXPLAIN:
+	        var la_ = this._interp.adaptivePredict(this._input,2,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 752;
 	            this.explainStatement();
 	            break;
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_FROM:
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_INSERT:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_IMPORT:
-	        case HiveParser.KW_CREATE:
-	        case HiveParser.KW_ALTER:
-	        case HiveParser.KW_DESCRIBE:
-	        case HiveParser.KW_DROP:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_WITH:
-	        case HiveParser.KW_SET:
-	        case HiveParser.KW_DELETE:
-	        case HiveParser.KW_GRANT:
-	        case HiveParser.KW_REVOKE:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_UPDATE:
-	        case HiveParser.KW_TRUNCATE:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_START:
-	        case HiveParser.KW_COMMIT:
-	        case HiveParser.KW_ROLLBACK:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MERGE:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 753;
 	            this.execStatement();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -2139,49 +2073,9 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_EXPLAIN);
 	        this.state = 766;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_FROM:
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_INSERT:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_IMPORT:
-	        case HiveParser.KW_CREATE:
-	        case HiveParser.KW_ALTER:
-	        case HiveParser.KW_DESCRIBE:
-	        case HiveParser.KW_DROP:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_EXTENDED:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_WITH:
-	        case HiveParser.KW_SET:
-	        case HiveParser.KW_DELETE:
-	        case HiveParser.KW_GRANT:
-	        case HiveParser.KW_REVOKE:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_UPDATE:
-	        case HiveParser.KW_TRUNCATE:
-	        case HiveParser.KW_AUTHORIZATION:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_START:
-	        case HiveParser.KW_COMMIT:
-	        case HiveParser.KW_ROLLBACK:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MERGE:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.LPAREN:
+	        var la_ = this._interp.adaptivePredict(this._input,4,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.state = 760;
 	            this._errHandler.sync(this);
 	            var _alt = this._interp.adaptivePredict(this._input,3,this._ctx)
@@ -2198,14 +2092,14 @@ export default class HiveParser extends antlr4.Parser {
 	            this.state = 763;
 	            this.execStatement();
 	            break;
-	        case HiveParser.KW_REWRITE:
+
+	        case 2:
 	            this.state = 764;
 	            this.match(HiveParser.KW_REWRITE);
 	            this.state = 765;
 	            this.queryStatementExpression();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -2226,69 +2120,75 @@ export default class HiveParser extends antlr4.Parser {
 	explainOption() {
 	    let localctx = new ExplainOptionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 8, HiveParser.RULE_explainOption);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 782;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_EXTENDED:
+	        var la_ = this._interp.adaptivePredict(this._input,7,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 768;
 	            this.match(HiveParser.KW_EXTENDED);
 	            break;
-	        case HiveParser.KW_FORMATTED:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 769;
 	            this.match(HiveParser.KW_FORMATTED);
 	            break;
-	        case HiveParser.KW_DEPENDENCY:
+
+	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 770;
 	            this.match(HiveParser.KW_DEPENDENCY);
 	            break;
-	        case HiveParser.KW_LOGICAL:
+
+	        case 4:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 771;
 	            this.match(HiveParser.KW_LOGICAL);
 	            break;
-	        case HiveParser.KW_AUTHORIZATION:
+
+	        case 5:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 772;
 	            this.match(HiveParser.KW_AUTHORIZATION);
 	            break;
-	        case HiveParser.KW_ANALYZE:
+
+	        case 6:
 	            this.enterOuterAlt(localctx, 6);
 	            this.state = 773;
 	            this.match(HiveParser.KW_ANALYZE);
 	            break;
-	        case HiveParser.KW_REOPTIMIZATION:
+
+	        case 7:
 	            this.enterOuterAlt(localctx, 7);
 	            this.state = 774;
 	            this.match(HiveParser.KW_REOPTIMIZATION);
 	            break;
-	        case HiveParser.KW_VECTORIZATION:
+
+	        case 8:
 	            this.enterOuterAlt(localctx, 8);
 	            this.state = 775;
 	            this.match(HiveParser.KW_VECTORIZATION);
 	            this.state = 777;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ONLY) {
+	            var la_ = this._interp.adaptivePredict(this._input,5,this._ctx);
+	            if(la_===1) {
 	                this.state = 776;
 	                this.vectorizationOnly();
-	            }
 
+	            }
 	            this.state = 780;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(((((_la - 307)) & ~0x1f) == 0 && ((1 << (_la - 307)) & ((1 << (HiveParser.KW_SUMMARY - 307)) | (1 << (HiveParser.KW_OPERATOR - 307)) | (1 << (HiveParser.KW_EXPRESSION - 307)) | (1 << (HiveParser.KW_DETAIL - 307)))) !== 0)) {
+	            var la_ = this._interp.adaptivePredict(this._input,6,this._ctx);
+	            if(la_===1) {
 	                this.state = 779;
 	                this.vectorizatonDetail();
-	            }
 
+	            }
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -2460,7 +2360,6 @@ export default class HiveParser extends antlr4.Parser {
 	loadStatement() {
 	    let localctx = new LoadStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 16, HiveParser.RULE_loadStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 802;
@@ -2469,24 +2368,24 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_DATA);
 	        this.state = 805;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_LOCAL) {
+	        var la_ = this._interp.adaptivePredict(this._input,9,this._ctx);
+	        if(la_===1) {
 	            this.state = 804;
 	            this.match(HiveParser.KW_LOCAL);
-	        }
 
+	        }
 	        this.state = 807;
 	        this.match(HiveParser.KW_INPATH);
 	        this.state = 808;
 	        this.match(HiveParser.StringLiteral);
 	        this.state = 810;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_OVERWRITE) {
+	        var la_ = this._interp.adaptivePredict(this._input,10,this._ctx);
+	        if(la_===1) {
 	            this.state = 809;
 	            this.match(HiveParser.KW_OVERWRITE);
-	        }
 
+	        }
 	        this.state = 812;
 	        this.match(HiveParser.KW_INTO);
 	        this.state = 813;
@@ -2495,12 +2394,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tableOrPartition();
 	        this.state = 816;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_INPUTFORMAT) {
+	        var la_ = this._interp.adaptivePredict(this._input,11,this._ctx);
+	        if(la_===1) {
 	            this.state = 815;
 	            this.inputFileFormat();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -2520,19 +2419,18 @@ export default class HiveParser extends antlr4.Parser {
 	replicationClause() {
 	    let localctx = new ReplicationClauseContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 18, HiveParser.RULE_replicationClause);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 818;
 	        this.match(HiveParser.KW_FOR);
 	        this.state = 820;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_METADATA) {
+	        var la_ = this._interp.adaptivePredict(this._input,12,this._ctx);
+	        if(la_===1) {
 	            this.state = 819;
 	            this.match(HiveParser.KW_METADATA);
-	        }
 
+	        }
 	        this.state = 822;
 	        this.match(HiveParser.KW_REPLICATION);
 	        this.state = 823;
@@ -2560,7 +2458,6 @@ export default class HiveParser extends antlr4.Parser {
 	exportStatement() {
 	    let localctx = new ExportStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 20, HiveParser.RULE_exportStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 827;
@@ -2575,12 +2472,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.StringLiteral);
 	        this.state = 833;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_FOR) {
+	        var la_ = this._interp.adaptivePredict(this._input,13,this._ctx);
+	        if(la_===1) {
 	            this.state = 832;
 	            this.replicationClause();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -2600,29 +2497,28 @@ export default class HiveParser extends antlr4.Parser {
 	importStatement() {
 	    let localctx = new ImportStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 22, HiveParser.RULE_importStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 835;
 	        this.match(HiveParser.KW_IMPORT);
 	        this.state = 841;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TABLE || _la===HiveParser.KW_EXTERNAL) {
+	        var la_ = this._interp.adaptivePredict(this._input,15,this._ctx);
+	        if(la_===1) {
 	            this.state = 837;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_EXTERNAL) {
+	            var la_ = this._interp.adaptivePredict(this._input,14,this._ctx);
+	            if(la_===1) {
 	                this.state = 836;
 	                this.match(HiveParser.KW_EXTERNAL);
-	            }
 
+	            }
 	            this.state = 839;
 	            this.match(HiveParser.KW_TABLE);
 	            this.state = 840;
 	            this.tableOrPartition();
-	        }
 
+	        }
 	        this.state = 843;
 	        this.match(HiveParser.KW_FROM);
 
@@ -2630,12 +2526,12 @@ export default class HiveParser extends antlr4.Parser {
 	        localctx.path = this.match(HiveParser.StringLiteral);
 	        this.state = 846;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_LOCATION) {
+	        var la_ = this._interp.adaptivePredict(this._input,16,this._ctx);
+	        if(la_===1) {
 	            this.state = 845;
 	            this.tableLocation();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -2655,7 +2551,6 @@ export default class HiveParser extends antlr4.Parser {
 	replDumpStatement() {
 	    let localctx = new ReplDumpStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 24, HiveParser.RULE_replDumpStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 848;
@@ -2666,14 +2561,14 @@ export default class HiveParser extends antlr4.Parser {
 	        this.identifier();
 	        this.state = 853;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.DOT) {
+	        var la_ = this._interp.adaptivePredict(this._input,17,this._ctx);
+	        if(la_===1) {
 	            this.state = 851;
 	            this.match(HiveParser.DOT);
 	            this.state = 852;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 865;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,20,this._ctx);
@@ -2684,24 +2579,24 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.Number);
 	            this.state = 859;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_TO) {
+	            var la_ = this._interp.adaptivePredict(this._input,18,this._ctx);
+	            if(la_===1) {
 	                this.state = 857;
 	                this.match(HiveParser.KW_TO);
 	                this.state = 858;
 	                this.match(HiveParser.Number);
-	            }
 
+	            }
 	            this.state = 863;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_LIMIT) {
+	            var la_ = this._interp.adaptivePredict(this._input,19,this._ctx);
+	            if(la_===1) {
 	                this.state = 861;
 	                this.match(HiveParser.KW_LIMIT);
 	                this.state = 862;
 	                this.match(HiveParser.Number);
-	            }
 
+	            }
 
 	        }
 	        this.state = 869;
@@ -2733,7 +2628,6 @@ export default class HiveParser extends antlr4.Parser {
 	replLoadStatement() {
 	    let localctx = new ReplLoadStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 26, HiveParser.RULE_replLoadStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 871;
@@ -2742,22 +2636,22 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_LOAD);
 	        this.state = 878;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << HiveParser.KW_ASC) | (1 << HiveParser.KW_DESC) | (1 << HiveParser.KW_NULLS) | (1 << HiveParser.KW_LAST) | (1 << HiveParser.KW_OVERWRITE))) !== 0) || ((((_la - 36)) & ~0x1f) == 0 && ((1 << (_la - 36)) & ((1 << (HiveParser.KW_PARTITIONS - 36)) | (1 << (HiveParser.KW_TABLES - 36)) | (1 << (HiveParser.KW_COLUMNS - 36)) | (1 << (HiveParser.KW_INDEX - 36)) | (1 << (HiveParser.KW_INDEXES - 36)) | (1 << (HiveParser.KW_REBUILD - 36)) | (1 << (HiveParser.KW_FUNCTIONS - 36)) | (1 << (HiveParser.KW_SHOW - 36)) | (1 << (HiveParser.KW_MSCK - 36)) | (1 << (HiveParser.KW_REPAIR - 36)) | (1 << (HiveParser.KW_DIRECTORY - 36)) | (1 << (HiveParser.KW_CLUSTER - 36)) | (1 << (HiveParser.KW_DISTRIBUTE - 36)) | (1 << (HiveParser.KW_SORT - 36)) | (1 << (HiveParser.KW_LOAD - 36)) | (1 << (HiveParser.KW_EXPORT - 36)) | (1 << (HiveParser.KW_REPLICATION - 36)) | (1 << (HiveParser.KW_METADATA - 36)) | (1 << (HiveParser.KW_DATA - 36)) | (1 << (HiveParser.KW_INPATH - 36)))) !== 0) || ((((_la - 68)) & ~0x1f) == 0 && ((1 << (_la - 68)) & ((1 << (HiveParser.KW_CHANGE - 68)) | (1 << (HiveParser.KW_FIRST - 68)) | (1 << (HiveParser.KW_AFTER - 68)) | (1 << (HiveParser.KW_RENAME - 68)) | (1 << (HiveParser.KW_COMMENT - 68)) | (1 << (HiveParser.KW_TINYINT - 68)) | (1 << (HiveParser.KW_DATETIME - 68)) | (1 << (HiveParser.KW_ZONE - 68)) | (1 << (HiveParser.KW_STRING - 68)) | (1 << (HiveParser.KW_STRUCT - 68)) | (1 << (HiveParser.KW_UNIONTYPE - 68)))) !== 0) || ((((_la - 101)) & ~0x1f) == 0 && ((1 << (_la - 101)) & ((1 << (HiveParser.KW_PARTITIONED - 101)) | (1 << (HiveParser.KW_CLUSTERED - 101)) | (1 << (HiveParser.KW_SORTED - 101)) | (1 << (HiveParser.KW_BUCKETS - 101)) | (1 << (HiveParser.KW_FORMAT - 101)) | (1 << (HiveParser.KW_DELIMITED - 101)) | (1 << (HiveParser.KW_FIELDS - 101)) | (1 << (HiveParser.KW_TERMINATED - 101)) | (1 << (HiveParser.KW_ESCAPED - 101)) | (1 << (HiveParser.KW_COLLECTION - 101)) | (1 << (HiveParser.KW_ITEMS - 101)) | (1 << (HiveParser.KW_KEYS - 101)) | (1 << (HiveParser.KW_KEY_TYPE - 101)) | (1 << (HiveParser.KW_KILL - 101)) | (1 << (HiveParser.KW_LINES - 101)) | (1 << (HiveParser.KW_STORED - 101)) | (1 << (HiveParser.KW_FILEFORMAT - 101)) | (1 << (HiveParser.KW_INPUTFORMAT - 101)) | (1 << (HiveParser.KW_OUTPUTFORMAT - 101)) | (1 << (HiveParser.KW_INPUTDRIVER - 101)) | (1 << (HiveParser.KW_OUTPUTDRIVER - 101)) | (1 << (HiveParser.KW_ENABLE - 101)) | (1 << (HiveParser.KW_DISABLE - 101)) | (1 << (HiveParser.KW_LOCATION - 101)) | (1 << (HiveParser.KW_BUCKET - 101)))) !== 0) || ((((_la - 134)) & ~0x1f) == 0 && ((1 << (_la - 134)) & ((1 << (HiveParser.KW_ADD - 134)) | (1 << (HiveParser.KW_REPLACE - 134)) | (1 << (HiveParser.KW_TEMPORARY - 134)) | (1 << (HiveParser.KW_FILE - 134)) | (1 << (HiveParser.KW_JAR - 134)) | (1 << (HiveParser.KW_EXPLAIN - 134)) | (1 << (HiveParser.KW_FORMATTED - 134)) | (1 << (HiveParser.KW_DEPENDENCY - 134)) | (1 << (HiveParser.KW_LOGICAL - 134)) | (1 << (HiveParser.KW_SERDE - 134)) | (1 << (HiveParser.KW_DEFERRED - 134)) | (1 << (HiveParser.KW_SERDEPROPERTIES - 134)) | (1 << (HiveParser.KW_DBPROPERTIES - 134)) | (1 << (HiveParser.KW_LIMIT - 134)) | (1 << (HiveParser.KW_OFFSET - 134)) | (1 << (HiveParser.KW_UNSET - 134)) | (1 << (HiveParser.KW_TBLPROPERTIES - 134)) | (1 << (HiveParser.KW_IDXPROPERTIES - 134)) | (1 << (HiveParser.KW_VALUE_TYPE - 134)) | (1 << (HiveParser.KW_ELEM_TYPE - 134)) | (1 << (HiveParser.KW_DEFINED - 134)))) !== 0) || ((((_la - 167)) & ~0x1f) == 0 && ((1 << (_la - 167)) & ((1 << (HiveParser.KW_MAPJOIN - 167)) | (1 << (HiveParser.KW_STREAMTABLE - 167)) | (1 << (HiveParser.KW_CLUSTERSTATUS - 167)) | (1 << (HiveParser.KW_UTC - 167)) | (1 << (HiveParser.KW_UTCTIMESTAMP - 167)) | (1 << (HiveParser.KW_LONG - 167)) | (1 << (HiveParser.KW_PLUS - 167)) | (1 << (HiveParser.KW_VIEW - 167)) | (1 << (HiveParser.KW_VIEWS - 167)) | (1 << (HiveParser.KW_DATABASES - 167)) | (1 << (HiveParser.KW_MATERIALIZED - 167)) | (1 << (HiveParser.KW_SCHEMA - 167)) | (1 << (HiveParser.KW_SCHEMAS - 167)) | (1 << (HiveParser.KW_SSL - 167)) | (1 << (HiveParser.KW_UNDO - 167)) | (1 << (HiveParser.KW_LOCK - 167)) | (1 << (HiveParser.KW_LOCKS - 167)) | (1 << (HiveParser.KW_UNLOCK - 167)) | (1 << (HiveParser.KW_SHARED - 167)) | (1 << (HiveParser.KW_EXCLUSIVE - 167)) | (1 << (HiveParser.KW_UNSIGNED - 167)) | (1 << (HiveParser.KW_WHILE - 167)) | (1 << (HiveParser.KW_READ - 167)))) !== 0) || ((((_la - 200)) & ~0x1f) == 0 && ((1 << (_la - 200)) & ((1 << (HiveParser.KW_PURGE - 200)) | (1 << (HiveParser.KW_ANALYZE - 200)) | (1 << (HiveParser.KW_BEFORE - 200)) | (1 << (HiveParser.KW_CONTINUE - 200)) | (1 << (HiveParser.KW_RECORDREADER - 200)) | (1 << (HiveParser.KW_RECORDWRITER - 200)) | (1 << (HiveParser.KW_SEMI - 200)) | (1 << (HiveParser.KW_TOUCH - 200)) | (1 << (HiveParser.KW_ARCHIVE - 200)) | (1 << (HiveParser.KW_UNARCHIVE - 200)) | (1 << (HiveParser.KW_COMPUTE - 200)) | (1 << (HiveParser.KW_STATISTICS - 200)) | (1 << (HiveParser.KW_USE - 200)) | (1 << (HiveParser.KW_OPTION - 200)) | (1 << (HiveParser.KW_CONCATENATE - 200)) | (1 << (HiveParser.KW_SHOW_DATABASE - 200)) | (1 << (HiveParser.KW_RESTRICT - 200)) | (1 << (HiveParser.KW_CASCADE - 200)) | (1 << (HiveParser.KW_SKEWED - 200)) | (1 << (HiveParser.KW_DIRECTORIES - 200)))) !== 0) || ((((_la - 243)) & ~0x1f) == 0 && ((1 << (_la - 243)) & ((1 << (HiveParser.KW_SETS - 243)) | (1 << (HiveParser.KW_NOSCAN - 243)) | (1 << (HiveParser.KW_ROLE - 243)) | (1 << (HiveParser.KW_ROLES - 243)) | (1 << (HiveParser.KW_URI - 243)) | (1 << (HiveParser.KW_SERVER - 243)) | (1 << (HiveParser.KW_ADMIN - 243)) | (1 << (HiveParser.KW_OWNER - 243)) | (1 << (HiveParser.KW_PRINCIPALS - 243)) | (1 << (HiveParser.KW_COMPACT - 243)) | (1 << (HiveParser.KW_COMPACTIONS - 243)) | (1 << (HiveParser.KW_TRANSACTIONS - 243)) | (1 << (HiveParser.KW_REWRITE - 243)) | (1 << (HiveParser.KW_REOPTIMIZATION - 243)) | (1 << (HiveParser.KW_RELOAD - 243)) | (1 << (HiveParser.KW_YEAR - 243)) | (1 << (HiveParser.KW_QUERY - 243)) | (1 << (HiveParser.KW_QUARTER - 243)) | (1 << (HiveParser.KW_MONTH - 243)) | (1 << (HiveParser.KW_WEEK - 243)) | (1 << (HiveParser.KW_DAY - 243)) | (1 << (HiveParser.KW_DOW - 243)) | (1 << (HiveParser.KW_HOUR - 243)) | (1 << (HiveParser.KW_MINUTE - 243)) | (1 << (HiveParser.KW_SECOND - 243)))) !== 0) || ((((_la - 276)) & ~0x1f) == 0 && ((1 << (_la - 276)) & ((1 << (HiveParser.KW_TRANSACTION - 276)) | (1 << (HiveParser.KW_WORK - 276)) | (1 << (HiveParser.KW_WRITE - 276)) | (1 << (HiveParser.KW_ISOLATION - 276)) | (1 << (HiveParser.KW_LEVEL - 276)) | (1 << (HiveParser.KW_SNAPSHOT - 276)) | (1 << (HiveParser.KW_AUTOCOMMIT - 276)) | (1 << (HiveParser.KW_CACHE - 276)) | (1 << (HiveParser.KW_ENFORCED - 276)) | (1 << (HiveParser.KW_VALIDATE - 276)) | (1 << (HiveParser.KW_NOVALIDATE - 276)) | (1 << (HiveParser.KW_RELY - 276)) | (1 << (HiveParser.KW_NORELY - 276)) | (1 << (HiveParser.KW_KEY - 276)) | (1 << (HiveParser.KW_ABORT - 276)) | (1 << (HiveParser.KW_MATCHED - 276)) | (1 << (HiveParser.KW_REPL - 276)) | (1 << (HiveParser.KW_DUMP - 276)) | (1 << (HiveParser.KW_STATUS - 276)) | (1 << (HiveParser.KW_VECTORIZATION - 276)) | (1 << (HiveParser.KW_SUMMARY - 276)))) !== 0) || ((((_la - 308)) & ~0x1f) == 0 && ((1 << (_la - 308)) & ((1 << (HiveParser.KW_OPERATOR - 308)) | (1 << (HiveParser.KW_EXPRESSION - 308)) | (1 << (HiveParser.KW_DETAIL - 308)) | (1 << (HiveParser.KW_WAIT - 308)) | (1 << (HiveParser.KW_RESOURCE - 308)) | (1 << (HiveParser.KW_PLAN - 308)) | (1 << (HiveParser.KW_QUERY_PARALLELISM - 308)) | (1 << (HiveParser.KW_PLANS - 308)) | (1 << (HiveParser.KW_ACTIVATE - 308)) | (1 << (HiveParser.KW_DEFAULT - 308)) | (1 << (HiveParser.KW_CHECK - 308)) | (1 << (HiveParser.KW_POOL - 308)) | (1 << (HiveParser.KW_MOVE - 308)) | (1 << (HiveParser.KW_DO - 308)) | (1 << (HiveParser.KW_ALLOC_FRACTION - 308)) | (1 << (HiveParser.KW_SCHEDULING_POLICY - 308)) | (1 << (HiveParser.KW_PATH - 308)) | (1 << (HiveParser.KW_MAPPING - 308)) | (1 << (HiveParser.KW_WORKLOAD - 308)) | (1 << (HiveParser.KW_MANAGEMENT - 308)) | (1 << (HiveParser.KW_ACTIVE - 308)) | (1 << (HiveParser.KW_UNMANAGED - 308)))) !== 0) || _la===HiveParser.Identifier) {
+	        var la_ = this._interp.adaptivePredict(this._input,23,this._ctx);
+	        if(la_===1) {
 	            this.state = 873;
 	            this.identifier();
 	            this.state = 876;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.DOT) {
+	            var la_ = this._interp.adaptivePredict(this._input,22,this._ctx);
+	            if(la_===1) {
 	                this.state = 874;
 	                this.match(HiveParser.DOT);
 	                this.state = 875;
 	                this.identifier();
+
 	            }
 
 	        }
-
 	        this.state = 880;
 	        this.match(HiveParser.KW_FROM);
 	        this.state = 881;
@@ -2818,23 +2712,25 @@ export default class HiveParser extends antlr4.Parser {
 	replConfigsList() {
 	    let localctx = new ReplConfigsListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 30, HiveParser.RULE_replConfigsList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 890;
 	        this.keyValueProperty();
 	        this.state = 895;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 891;
-	            this.match(HiveParser.COMMA);
-	            this.state = 892;
-	            this.keyValueProperty();
+	        var _alt = this._interp.adaptivePredict(this._input,25,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 891;
+	                this.match(HiveParser.COMMA);
+	                this.state = 892;
+	                this.keyValueProperty(); 
+	            }
 	            this.state = 897;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,25,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -2854,7 +2750,6 @@ export default class HiveParser extends antlr4.Parser {
 	replStatusStatement() {
 	    let localctx = new ReplStatusStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 32, HiveParser.RULE_replStatusStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 898;
@@ -2865,14 +2760,14 @@ export default class HiveParser extends antlr4.Parser {
 	        this.identifier();
 	        this.state = 903;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.DOT) {
+	        var la_ = this._interp.adaptivePredict(this._input,26,this._ctx);
+	        if(la_===1) {
 	            this.state = 901;
 	            this.match(HiveParser.DOT);
 	            this.state = 902;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 907;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,27,this._ctx);
@@ -3368,30 +3263,30 @@ export default class HiveParser extends antlr4.Parser {
 	        }
 	        this.state = 976;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,29,this._ctx);
+	        if(la_===1) {
 	            this.state = 975;
 	            this.ifNotExists();
-	        }
 
+	        }
 	        this.state = 978;
 	        this.identifier();
 	        this.state = 980;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,30,this._ctx);
+	        if(la_===1) {
 	            this.state = 979;
 	            this.databaseComment();
-	        }
 
+	        }
 	        this.state = 983;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_LOCATION) {
+	        var la_ = this._interp.adaptivePredict(this._input,31,this._ctx);
+	        if(la_===1) {
 	            this.state = 982;
 	            this.dbLocation();
-	        }
 
+	        }
 	        this.state = 988;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,32,this._ctx);
@@ -3475,23 +3370,25 @@ export default class HiveParser extends antlr4.Parser {
 	dbPropertiesList() {
 	    let localctx = new DbPropertiesListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 56, HiveParser.RULE_dbPropertiesList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 997;
 	        this.keyValueProperty();
 	        this.state = 1002;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 998;
-	            this.match(HiveParser.COMMA);
-	            this.state = 999;
-	            this.keyValueProperty();
+	        var _alt = this._interp.adaptivePredict(this._input,33,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 998;
+	                this.match(HiveParser.COMMA);
+	                this.state = 999;
+	                this.keyValueProperty(); 
+	            }
 	            this.state = 1004;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,33,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -3552,22 +3449,22 @@ export default class HiveParser extends antlr4.Parser {
 	        }
 	        this.state = 1011;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,34,this._ctx);
+	        if(la_===1) {
 	            this.state = 1010;
 	            this.ifExists();
-	        }
 
+	        }
 	        this.state = 1013;
 	        this.identifier();
 	        this.state = 1015;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_RESTRICT || _la===HiveParser.KW_CASCADE) {
+	        var la_ = this._interp.adaptivePredict(this._input,35,this._ctx);
+	        if(la_===1) {
 	            this.state = 1014;
 	            this.restrictOrCascade();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -3612,127 +3509,82 @@ export default class HiveParser extends antlr4.Parser {
 	createTableStatement() {
 	    let localctx = new CreateTableStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 64, HiveParser.RULE_createTableStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1020;
 	        this.match(HiveParser.KW_CREATE);
 	        this.state = 1022;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TEMPORARY) {
+	        var la_ = this._interp.adaptivePredict(this._input,36,this._ctx);
+	        if(la_===1) {
 	            this.state = 1021;
 	            this.match(HiveParser.KW_TEMPORARY);
-	        }
 
+	        }
 	        this.state = 1025;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_EXTERNAL) {
+	        var la_ = this._interp.adaptivePredict(this._input,37,this._ctx);
+	        if(la_===1) {
 	            this.state = 1024;
 	            this.match(HiveParser.KW_EXTERNAL);
-	        }
 
+	        }
 	        this.state = 1027;
 	        this.match(HiveParser.KW_TABLE);
 	        this.state = 1029;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,38,this._ctx);
+	        if(la_===1) {
 	            this.state = 1028;
 	            this.ifNotExists();
-	        }
 
+	        }
 	        this.state = 1031;
 	        this.tableName();
 	        this.state = 1080;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_LIKE:
+	        var la_ = this._interp.adaptivePredict(this._input,53,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.state = 1032;
 	            this.match(HiveParser.KW_LIKE);
 	            this.state = 1033;
 	            this.tableName();
 	            this.state = 1035;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ROW) {
+	            var la_ = this._interp.adaptivePredict(this._input,39,this._ctx);
+	            if(la_===1) {
 	                this.state = 1034;
 	                this.tableRowFormat();
-	            }
 
+	            }
 	            this.state = 1038;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_STORED) {
+	            var la_ = this._interp.adaptivePredict(this._input,40,this._ctx);
+	            if(la_===1) {
 	                this.state = 1037;
 	                this.tableFileFormat();
-	            }
 
+	            }
 	            this.state = 1041;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_LOCATION) {
+	            var la_ = this._interp.adaptivePredict(this._input,41,this._ctx);
+	            if(la_===1) {
 	                this.state = 1040;
 	                this.tableLocation();
-	            }
 
+	            }
 	            this.state = 1044;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_TBLPROPERTIES) {
+	            var la_ = this._interp.adaptivePredict(this._input,42,this._ctx);
+	            if(la_===1) {
 	                this.state = 1043;
 	                this.tablePropertiesPrefixed();
-	            }
 
+	            }
 	            break;
-	        case HiveParser.EOF:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_FROM:
-	        case HiveParser.KW_AS:
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_INSERT:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_IMPORT:
-	        case HiveParser.KW_CREATE:
-	        case HiveParser.KW_ALTER:
-	        case HiveParser.KW_DESCRIBE:
-	        case HiveParser.KW_DROP:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_ROW:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_WITH:
-	        case HiveParser.KW_SET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_DELETE:
-	        case HiveParser.KW_GRANT:
-	        case HiveParser.KW_REVOKE:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_UPDATE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_TRUNCATE:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_START:
-	        case HiveParser.KW_COMMIT:
-	        case HiveParser.KW_ROLLBACK:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MERGE:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.SEMICOLON:
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.state = 1050;
 	            this._errHandler.sync(this);
 	            var la_ = this._interp.adaptivePredict(this._input,43,this._ctx);
@@ -3747,81 +3599,80 @@ export default class HiveParser extends antlr4.Parser {
 	            }
 	            this.state = 1053;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_COMMENT) {
+	            var la_ = this._interp.adaptivePredict(this._input,44,this._ctx);
+	            if(la_===1) {
 	                this.state = 1052;
 	                this.tableComment();
-	            }
 
+	            }
 	            this.state = 1056;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_PARTITIONED) {
+	            var la_ = this._interp.adaptivePredict(this._input,45,this._ctx);
+	            if(la_===1) {
 	                this.state = 1055;
 	                this.tablePartition();
-	            }
 
+	            }
 	            this.state = 1059;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_CLUSTERED) {
+	            var la_ = this._interp.adaptivePredict(this._input,46,this._ctx);
+	            if(la_===1) {
 	                this.state = 1058;
 	                this.tableBuckets();
-	            }
 
+	            }
 	            this.state = 1062;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_SKEWED) {
+	            var la_ = this._interp.adaptivePredict(this._input,47,this._ctx);
+	            if(la_===1) {
 	                this.state = 1061;
 	                this.tableSkewed();
-	            }
 
+	            }
 	            this.state = 1065;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ROW) {
+	            var la_ = this._interp.adaptivePredict(this._input,48,this._ctx);
+	            if(la_===1) {
 	                this.state = 1064;
 	                this.tableRowFormat();
-	            }
 
+	            }
 	            this.state = 1068;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_STORED) {
+	            var la_ = this._interp.adaptivePredict(this._input,49,this._ctx);
+	            if(la_===1) {
 	                this.state = 1067;
 	                this.tableFileFormat();
-	            }
 
+	            }
 	            this.state = 1071;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_LOCATION) {
+	            var la_ = this._interp.adaptivePredict(this._input,50,this._ctx);
+	            if(la_===1) {
 	                this.state = 1070;
 	                this.tableLocation();
-	            }
 
+	            }
 	            this.state = 1074;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_TBLPROPERTIES) {
+	            var la_ = this._interp.adaptivePredict(this._input,51,this._ctx);
+	            if(la_===1) {
 	                this.state = 1073;
 	                this.tablePropertiesPrefixed();
-	            }
 
+	            }
 	            this.state = 1078;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_AS) {
+	            var la_ = this._interp.adaptivePredict(this._input,52,this._ctx);
+	            if(la_===1) {
 	                this.state = 1076;
 	                this.match(HiveParser.KW_AS);
 	                this.state = 1077;
 	                this.selectStatementWithCTE();
-	            }
 
+	            }
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -3842,7 +3693,6 @@ export default class HiveParser extends antlr4.Parser {
 	truncateTableStatement() {
 	    let localctx = new TruncateTableStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 66, HiveParser.RULE_truncateTableStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1082;
@@ -3853,8 +3703,8 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tablePartitionPrefix();
 	        this.state = 1090;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COLUMNS) {
+	        var la_ = this._interp.adaptivePredict(this._input,54,this._ctx);
+	        if(la_===1) {
 	            this.state = 1085;
 	            this.match(HiveParser.KW_COLUMNS);
 	            this.state = 1086;
@@ -3863,8 +3713,8 @@ export default class HiveParser extends antlr4.Parser {
 	            this.columnNameList();
 	            this.state = 1088;
 	            this.match(HiveParser.RPAREN);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -3884,7 +3734,6 @@ export default class HiveParser extends antlr4.Parser {
 	dropTableStatement() {
 	    let localctx = new DropTableStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 68, HiveParser.RULE_dropTableStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1092;
@@ -3893,30 +3742,30 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_TABLE);
 	        this.state = 1095;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,55,this._ctx);
+	        if(la_===1) {
 	            this.state = 1094;
 	            this.ifExists();
-	        }
 
+	        }
 	        this.state = 1097;
 	        this.tableName();
 	        this.state = 1099;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PURGE) {
+	        var la_ = this._interp.adaptivePredict(this._input,56,this._ctx);
+	        if(la_===1) {
 	            this.state = 1098;
 	            this.match(HiveParser.KW_PURGE);
-	        }
 
+	        }
 	        this.state = 1102;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_FOR) {
+	        var la_ = this._interp.adaptivePredict(this._input,57,this._ctx);
+	        if(la_===1) {
 	            this.state = 1101;
 	            this.replicationClause();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -3964,12 +3813,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.tableName();
 	            this.state = 1113;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_AS) {
+	            var la_ = this._interp.adaptivePredict(this._input,58,this._ctx);
+	            if(la_===1) {
 	                this.state = 1112;
 	                this.match(HiveParser.KW_AS);
-	            }
 
+	            }
 	            this.state = 1115;
 	            this.alterViewStatementSuffix();
 	            break;
@@ -4035,7 +3884,6 @@ export default class HiveParser extends antlr4.Parser {
 	alterTableStatementSuffix() {
 	    let localctx = new AlterTableStatementSuffixContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 72, HiveParser.RULE_alterTableStatementSuffix);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 1148;
 	        this._errHandler.sync(this);
@@ -4117,12 +3965,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.enterOuterAlt(localctx, 13);
 	            this.state = 1144;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_PARTITION) {
+	            var la_ = this._interp.adaptivePredict(this._input,60,this._ctx);
+	            if(la_===1) {
 	                this.state = 1143;
 	                this.partitionSpec();
-	            }
 
+	            }
 	            this.state = 1146;
 	            this.alterTblPartitionStatementSuffix();
 	            break;
@@ -4290,39 +4138,38 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 1176;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_SET:
-	        case HiveParser.KW_UNSET:
+	        var la_ = this._interp.adaptivePredict(this._input,63,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1171;
 	            this.alterViewSuffixProperties();
 	            break;
-	        case HiveParser.KW_RENAME:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1172;
 	            this.alterStatementSuffixRename();
 	            break;
-	        case HiveParser.KW_ADD:
+
+	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 1173;
 	            this.alterStatementSuffixAddPartitions();
 	            break;
-	        case HiveParser.KW_DROP:
+
+	        case 4:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 1174;
 	            this.alterStatementSuffixDropPartitions();
 	            break;
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
-	        case HiveParser.KW_WITH:
-	        case HiveParser.LPAREN:
+
+	        case 5:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 1175;
 	            this.selectStatementWithCTE();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -4346,20 +4193,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 1180;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
+	        var la_ = this._interp.adaptivePredict(this._input,64,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1178;
 	            this.alterMaterializedViewSuffixRewrite();
 	            break;
-	        case HiveParser.KW_REBUILD:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1179;
 	            this.alterMaterializedViewSuffixRebuild();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -4559,12 +4406,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.RPAREN);
 	        this.state = 1212;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_RESTRICT || _la===HiveParser.KW_CASCADE) {
+	        var la_ = this._interp.adaptivePredict(this._input,66,this._ctx);
+	        if(la_===1) {
 	            this.state = 1211;
 	            this.restrictOrCascade();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -4649,19 +4496,18 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixRenameCol() {
 	    let localctx = new AlterStatementSuffixRenameColContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 98, HiveParser.RULE_alterStatementSuffixRenameCol);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1223;
 	        this.match(HiveParser.KW_CHANGE);
 	        this.state = 1225;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COLUMN) {
+	        var la_ = this._interp.adaptivePredict(this._input,68,this._ctx);
+	        if(la_===1) {
 	            this.state = 1224;
 	            this.match(HiveParser.KW_COLUMN);
-	        }
 
+	        }
 	        this.state = 1227;
 	        this.identifier();
 	        this.state = 1228;
@@ -4670,38 +4516,38 @@ export default class HiveParser extends antlr4.Parser {
 	        this.colType();
 	        this.state = 1231;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(((((_la - 287)) & ~0x1f) == 0 && ((1 << (_la - 287)) & ((1 << (HiveParser.KW_PRIMARY - 287)) | (1 << (HiveParser.KW_REFERENCES - 287)) | (1 << (HiveParser.KW_CONSTRAINT - 287)))) !== 0)) {
+	        var la_ = this._interp.adaptivePredict(this._input,69,this._ctx);
+	        if(la_===1) {
 	            this.state = 1230;
 	            this.alterColumnConstraint();
-	        }
 
+	        }
 	        this.state = 1235;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,70,this._ctx);
+	        if(la_===1) {
 	            this.state = 1233;
 	            this.match(HiveParser.KW_COMMENT);
 	            this.state = 1234;
 	            this.match(HiveParser.StringLiteral);
-	        }
 
+	        }
 	        this.state = 1238;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_FIRST || _la===HiveParser.KW_AFTER) {
+	        var la_ = this._interp.adaptivePredict(this._input,71,this._ctx);
+	        if(la_===1) {
 	            this.state = 1237;
 	            this.alterStatementChangeColPosition();
-	        }
 
+	        }
 	        this.state = 1241;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_RESTRICT || _la===HiveParser.KW_CASCADE) {
+	        var la_ = this._interp.adaptivePredict(this._input,72,this._ctx);
+	        if(la_===1) {
 	            this.state = 1240;
 	            this.restrictOrCascade();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -4721,7 +4567,6 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixUpdateStatsCol() {
 	    let localctx = new AlterStatementSuffixUpdateStatsColContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 100, HiveParser.RULE_alterStatementSuffixUpdateStatsCol);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1243;
@@ -4732,12 +4577,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_FOR);
 	        this.state = 1247;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COLUMN) {
+	        var la_ = this._interp.adaptivePredict(this._input,73,this._ctx);
+	        if(la_===1) {
 	            this.state = 1246;
 	            this.match(HiveParser.KW_COLUMN);
-	        }
 
+	        }
 	        this.state = 1249;
 	        this.identifier();
 	        this.state = 1250;
@@ -4746,14 +4591,14 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tableProperties();
 	        this.state = 1254;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,74,this._ctx);
+	        if(la_===1) {
 	            this.state = 1252;
 	            this.match(HiveParser.KW_COMMENT);
 	            this.state = 1253;
 	            this.match(HiveParser.StringLiteral);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -4805,21 +4650,22 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 1264;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_FIRST:
+	        var la_ = this._interp.adaptivePredict(this._input,75,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1261;
 	            localctx.first = this.match(HiveParser.KW_FIRST);
 	            break;
-	        case HiveParser.KW_AFTER:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1262;
 	            this.match(HiveParser.KW_AFTER);
 	            this.state = 1263;
 	            this.identifier();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -4840,29 +4686,34 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixAddPartitions() {
 	    let localctx = new AlterStatementSuffixAddPartitionsContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 106, HiveParser.RULE_alterStatementSuffixAddPartitions);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1266;
 	        this.match(HiveParser.KW_ADD);
 	        this.state = 1268;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,76,this._ctx);
+	        if(la_===1) {
 	            this.state = 1267;
 	            this.ifNotExists();
-	        }
 
+	        }
 	        this.state = 1271; 
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
+	        var _alt = 1;
 	        do {
-	            this.state = 1270;
-	            this.alterStatementSuffixAddPartitionsElement();
-	            this.state = 1273; 
-	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	        } while(_la===HiveParser.KW_PARTITION);
+	        	switch (_alt) {
+	        	case 1:
+	        		this.state = 1270;
+	        		this.alterStatementSuffixAddPartitionsElement();
+	        		break;
+	        	default:
+	        		throw new antlr4.error.NoViableAltException(this);
+	        	}
+	        	this.state = 1273; 
+	        	this._errHandler.sync(this);
+	        	_alt = this._interp.adaptivePredict(this._input,77, this._ctx);
+	        } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -4882,19 +4733,18 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixAddPartitionsElement() {
 	    let localctx = new AlterStatementSuffixAddPartitionsElementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 108, HiveParser.RULE_alterStatementSuffixAddPartitionsElement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1275;
 	        this.partitionSpec();
 	        this.state = 1277;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_LOCATION) {
+	        var la_ = this._interp.adaptivePredict(this._input,78,this._ctx);
+	        if(la_===1) {
 	            this.state = 1276;
 	            this.partitionLocation();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -4914,21 +4764,23 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixTouch() {
 	    let localctx = new AlterStatementSuffixTouchContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 110, HiveParser.RULE_alterStatementSuffixTouch);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1279;
 	        this.match(HiveParser.KW_TOUCH);
 	        this.state = 1283;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.KW_PARTITION) {
-	            this.state = 1280;
-	            this.partitionSpec();
+	        var _alt = this._interp.adaptivePredict(this._input,79,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1280;
+	                this.partitionSpec(); 
+	            }
 	            this.state = 1285;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,79,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -4948,21 +4800,23 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixArchive() {
 	    let localctx = new AlterStatementSuffixArchiveContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 112, HiveParser.RULE_alterStatementSuffixArchive);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1286;
 	        this.match(HiveParser.KW_ARCHIVE);
 	        this.state = 1290;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.KW_PARTITION) {
-	            this.state = 1287;
-	            this.partitionSpec();
+	        var _alt = this._interp.adaptivePredict(this._input,80,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1287;
+	                this.partitionSpec(); 
+	            }
 	            this.state = 1292;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,80,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -4982,21 +4836,23 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixUnArchive() {
 	    let localctx = new AlterStatementSuffixUnArchiveContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 114, HiveParser.RULE_alterStatementSuffixUnArchive);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1293;
 	        this.match(HiveParser.KW_UNARCHIVE);
 	        this.state = 1297;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.KW_PARTITION) {
-	            this.state = 1294;
-	            this.partitionSpec();
+	        var _alt = this._interp.adaptivePredict(this._input,81,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1294;
+	                this.partitionSpec(); 
+	            }
 	            this.state = 1299;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,81,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -5041,49 +4897,51 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixDropPartitions() {
 	    let localctx = new AlterStatementSuffixDropPartitionsContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 118, HiveParser.RULE_alterStatementSuffixDropPartitions);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1303;
 	        this.match(HiveParser.KW_DROP);
 	        this.state = 1305;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,82,this._ctx);
+	        if(la_===1) {
 	            this.state = 1304;
 	            this.ifExists();
-	        }
 
+	        }
 	        this.state = 1307;
 	        this.dropPartitionSpec();
 	        this.state = 1312;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 1308;
-	            this.match(HiveParser.COMMA);
-	            this.state = 1309;
-	            this.dropPartitionSpec();
+	        var _alt = this._interp.adaptivePredict(this._input,83,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1308;
+	                this.match(HiveParser.COMMA);
+	                this.state = 1309;
+	                this.dropPartitionSpec(); 
+	            }
 	            this.state = 1314;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,83,this._ctx);
 	        }
+
 	        this.state = 1316;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PURGE) {
+	        var la_ = this._interp.adaptivePredict(this._input,84,this._ctx);
+	        if(la_===1) {
 	            this.state = 1315;
 	            this.match(HiveParser.KW_PURGE);
-	        }
 
+	        }
 	        this.state = 1319;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_FOR) {
+	        var la_ = this._interp.adaptivePredict(this._input,85,this._ctx);
+	        if(la_===1) {
 	            this.state = 1318;
 	            this.replicationClause();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -5103,12 +4961,12 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixProperties() {
 	    let localctx = new AlterStatementSuffixPropertiesContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 120, HiveParser.RULE_alterStatementSuffixProperties);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 1330;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_SET:
+	        var la_ = this._interp.adaptivePredict(this._input,87,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1321;
 	            this.match(HiveParser.KW_SET);
@@ -5117,7 +4975,8 @@ export default class HiveParser extends antlr4.Parser {
 	            this.state = 1323;
 	            this.tableProperties();
 	            break;
-	        case HiveParser.KW_UNSET:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1324;
 	            this.match(HiveParser.KW_UNSET);
@@ -5125,17 +4984,16 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_TBLPROPERTIES);
 	            this.state = 1327;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_IF) {
+	            var la_ = this._interp.adaptivePredict(this._input,86,this._ctx);
+	            if(la_===1) {
 	                this.state = 1326;
 	                this.ifExists();
-	            }
 
+	            }
 	            this.state = 1329;
 	            this.tableProperties();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -5156,12 +5014,12 @@ export default class HiveParser extends antlr4.Parser {
 	alterViewSuffixProperties() {
 	    let localctx = new AlterViewSuffixPropertiesContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 122, HiveParser.RULE_alterViewSuffixProperties);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 1341;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_SET:
+	        var la_ = this._interp.adaptivePredict(this._input,89,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1332;
 	            this.match(HiveParser.KW_SET);
@@ -5170,7 +5028,8 @@ export default class HiveParser extends antlr4.Parser {
 	            this.state = 1334;
 	            this.tableProperties();
 	            break;
-	        case HiveParser.KW_UNSET:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1335;
 	            this.match(HiveParser.KW_UNSET);
@@ -5178,17 +5037,16 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_TBLPROPERTIES);
 	            this.state = 1338;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_IF) {
+	            var la_ = this._interp.adaptivePredict(this._input,88,this._ctx);
+	            if(la_===1) {
 	                this.state = 1337;
 	                this.ifExists();
-	            }
 
+	            }
 	            this.state = 1340;
 	            this.tableProperties();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -5213,17 +5071,18 @@ export default class HiveParser extends antlr4.Parser {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1345;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ENABLE:
+	        var la_ = this._interp.adaptivePredict(this._input,90,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.state = 1343;
 	            this.rewriteEnabled();
 	            break;
-	        case HiveParser.KW_DISABLE:
+
+	        case 2:
 	            this.state = 1344;
 	            this.rewriteDisabled();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -5324,7 +5183,6 @@ export default class HiveParser extends antlr4.Parser {
 	alterIndexStatementSuffix() {
 	    let localctx = new AlterIndexStatementSuffixContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 130, HiveParser.RULE_alterIndexStatementSuffix);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1362;
@@ -5335,12 +5193,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tableName();
 	        this.state = 1366;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PARTITION) {
+	        var la_ = this._interp.adaptivePredict(this._input,93,this._ctx);
+	        if(la_===1) {
 	            this.state = 1365;
 	            this.partitionSpec();
-	        }
 
+	        }
 	        this.state = 1368;
 	        this.match(HiveParser.KW_REBUILD);
 	    } catch (re) {
@@ -5492,23 +5350,25 @@ export default class HiveParser extends antlr4.Parser {
 	skewedLocationsList() {
 	    let localctx = new SkewedLocationsListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 140, HiveParser.RULE_skewedLocationsList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1390;
 	        this.skewedLocationMap();
 	        this.state = 1395;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 1391;
-	            this.match(HiveParser.COMMA);
-	            this.state = 1392;
-	            this.skewedLocationMap();
+	        var _alt = this._interp.adaptivePredict(this._input,95,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1391;
+	                this.match(HiveParser.COMMA);
+	                this.state = 1392;
+	                this.skewedLocationMap(); 
+	            }
 	            this.state = 1397;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,95,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -5687,7 +5547,6 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixStatsPart() {
 	    let localctx = new AlterStatementSuffixStatsPartContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 152, HiveParser.RULE_alterStatementSuffixStatsPart);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1423;
@@ -5698,12 +5557,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_FOR);
 	        this.state = 1427;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COLUMN) {
+	        var la_ = this._interp.adaptivePredict(this._input,97,this._ctx);
+	        if(la_===1) {
 	            this.state = 1426;
 	            this.match(HiveParser.KW_COLUMN);
-	        }
 
+	        }
 	        this.state = 1429;
 	        this.identifier();
 	        this.state = 1430;
@@ -5712,14 +5571,14 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tableProperties();
 	        this.state = 1434;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,98,this._ctx);
+	        if(la_===1) {
 	            this.state = 1432;
 	            this.match(HiveParser.KW_COMMENT);
 	            this.state = 1433;
 	            this.match(HiveParser.StringLiteral);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -5789,7 +5648,6 @@ export default class HiveParser extends antlr4.Parser {
 	createIndexStatement() {
 	    let localctx = new CreateIndexStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 158, HiveParser.RULE_createIndexStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1442;
@@ -5824,80 +5682,80 @@ export default class HiveParser extends antlr4.Parser {
 	        }
 	        this.state = 1458;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IDXPROPERTIES) {
+	        var la_ = this._interp.adaptivePredict(this._input,100,this._ctx);
+	        if(la_===1) {
 	            this.state = 1456;
 	            this.match(HiveParser.KW_IDXPROPERTIES);
 	            this.state = 1457;
 	            this.tableProperties();
-	        }
 
+	        }
 	        this.state = 1463;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IN) {
+	        var la_ = this._interp.adaptivePredict(this._input,101,this._ctx);
+	        if(la_===1) {
 	            this.state = 1460;
 	            this.match(HiveParser.KW_IN);
 	            this.state = 1461;
 	            this.match(HiveParser.KW_TABLE);
 	            this.state = 1462;
 	            this.tableName();
-	        }
 
+	        }
 	        this.state = 1468;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PARTITIONED) {
+	        var la_ = this._interp.adaptivePredict(this._input,102,this._ctx);
+	        if(la_===1) {
 	            this.state = 1465;
 	            this.match(HiveParser.KW_PARTITIONED);
 	            this.state = 1466;
 	            this.match(HiveParser.KW_BY);
 	            this.state = 1467;
 	            this.columnParenthesesList();
-	        }
 
+	        }
 	        this.state = 1474;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ROW || _la===HiveParser.KW_STORED) {
+	        var la_ = this._interp.adaptivePredict(this._input,104,this._ctx);
+	        if(la_===1) {
 	            this.state = 1471;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ROW) {
+	            var la_ = this._interp.adaptivePredict(this._input,103,this._ctx);
+	            if(la_===1) {
 	                this.state = 1470;
 	                this.tableRowFormat();
-	            }
 
+	            }
 	            this.state = 1473;
 	            this.tableFileFormat();
-	        }
 
+	        }
 	        this.state = 1478;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_LOCATION) {
+	        var la_ = this._interp.adaptivePredict(this._input,105,this._ctx);
+	        if(la_===1) {
 	            this.state = 1476;
 	            this.match(HiveParser.KW_LOCATION);
 	            this.state = 1477;
 	            this.locationPath();
-	        }
 
+	        }
 	        this.state = 1481;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TBLPROPERTIES) {
+	        var la_ = this._interp.adaptivePredict(this._input,106,this._ctx);
+	        if(la_===1) {
 	            this.state = 1480;
 	            this.tablePropertiesPrefixed();
-	        }
 
+	        }
 	        this.state = 1484;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,107,this._ctx);
+	        if(la_===1) {
 	            this.state = 1483;
 	            this.tableComment();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -5917,23 +5775,25 @@ export default class HiveParser extends antlr4.Parser {
 	locationPath() {
 	    let localctx = new LocationPathContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 160, HiveParser.RULE_locationPath);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1486;
 	        this.identifier();
 	        this.state = 1491;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.DOT) {
-	            this.state = 1487;
-	            this.match(HiveParser.DOT);
-	            this.state = 1488;
-	            this.identifier();
+	        var _alt = this._interp.adaptivePredict(this._input,108,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1487;
+	                this.match(HiveParser.DOT);
+	                this.state = 1488;
+	                this.identifier(); 
+	            }
 	            this.state = 1493;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,108,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -5984,19 +5844,18 @@ export default class HiveParser extends antlr4.Parser {
 	tablePartitionPrefix() {
 	    let localctx = new TablePartitionPrefixContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 164, HiveParser.RULE_tablePartitionPrefix);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1500;
 	        this.tableName();
 	        this.state = 1502;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PARTITION) {
+	        var la_ = this._interp.adaptivePredict(this._input,109,this._ctx);
+	        if(la_===1) {
 	            this.state = 1501;
 	            this.partitionSpec();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -6041,7 +5900,6 @@ export default class HiveParser extends antlr4.Parser {
 	alterStatementSuffixCompact() {
 	    let localctx = new AlterStatementSuffixCompactContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 168, HiveParser.RULE_alterStatementSuffixCompact);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1507;
@@ -6050,12 +5908,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.StringLiteral);
 	        this.state = 1510;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_AND) {
+	        var la_ = this._interp.adaptivePredict(this._input,110,this._ctx);
+	        if(la_===1) {
 	            this.state = 1509;
 	            this.blocking();
-	        }
 
+	        }
 	        this.state = 1516;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,111,this._ctx);
@@ -6116,7 +5974,6 @@ export default class HiveParser extends antlr4.Parser {
 	fileFormat() {
 	    let localctx = new FileFormatContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 172, HiveParser.RULE_fileFormat);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 1535;
 	        this._errHandler.sync(this);
@@ -6138,8 +5995,8 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.StringLiteral);
 	            this.state = 1532;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_INPUTDRIVER) {
+	            var la_ = this._interp.adaptivePredict(this._input,112,this._ctx);
+	            if(la_===1) {
 	                this.state = 1528;
 	                this.match(HiveParser.KW_INPUTDRIVER);
 	                this.state = 1529;
@@ -6148,8 +6005,8 @@ export default class HiveParser extends antlr4.Parser {
 	                this.match(HiveParser.KW_OUTPUTDRIVER);
 	                this.state = 1531;
 	                this.match(HiveParser.StringLiteral);
-	            }
 
+	            }
 	            break;
 
 	        case 2:
@@ -6207,21 +6064,20 @@ export default class HiveParser extends antlr4.Parser {
 	tabTypeExpr() {
 	    let localctx = new TabTypeExprContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 176, HiveParser.RULE_tabTypeExpr);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1542;
 	        this.identifier();
 	        this.state = 1545;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.DOT) {
+	        var la_ = this._interp.adaptivePredict(this._input,114,this._ctx);
+	        if(la_===1) {
 	            this.state = 1543;
 	            this.match(HiveParser.DOT);
 	            this.state = 1544;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 1560;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,117,this._ctx);
@@ -6230,39 +6086,42 @@ export default class HiveParser extends antlr4.Parser {
 	            this.identifier();
 	            this.state = 1557;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            while(_la===HiveParser.DOT) {
-	                this.state = 1548;
-	                this.match(HiveParser.DOT);
-	                this.state = 1553;
-	                this._errHandler.sync(this);
-	                var la_ = this._interp.adaptivePredict(this._input,115,this._ctx);
-	                switch(la_) {
-	                case 1:
-	                    this.state = 1549;
-	                    this.match(HiveParser.KW_ELEM_TYPE);
-	                    break;
+	            var _alt = this._interp.adaptivePredict(this._input,116,this._ctx)
+	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                if(_alt===1) {
+	                    this.state = 1548;
+	                    this.match(HiveParser.DOT);
+	                    this.state = 1553;
+	                    this._errHandler.sync(this);
+	                    var la_ = this._interp.adaptivePredict(this._input,115,this._ctx);
+	                    switch(la_) {
+	                    case 1:
+	                        this.state = 1549;
+	                        this.match(HiveParser.KW_ELEM_TYPE);
+	                        break;
 
-	                case 2:
-	                    this.state = 1550;
-	                    this.match(HiveParser.KW_KEY_TYPE);
-	                    break;
+	                    case 2:
+	                        this.state = 1550;
+	                        this.match(HiveParser.KW_KEY_TYPE);
+	                        break;
 
-	                case 3:
-	                    this.state = 1551;
-	                    this.match(HiveParser.KW_VALUE_TYPE);
-	                    break;
+	                    case 3:
+	                        this.state = 1551;
+	                        this.match(HiveParser.KW_VALUE_TYPE);
+	                        break;
 
-	                case 4:
-	                    this.state = 1552;
-	                    this.identifier();
-	                    break;
+	                    case 4:
+	                        this.state = 1552;
+	                        this.identifier();
+	                        break;
 
+	                    } 
 	                }
 	                this.state = 1559;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
+	                _alt = this._interp.adaptivePredict(this._input,116,this._ctx);
 	            }
+
 
 	        }
 	    } catch (re) {
@@ -6284,19 +6143,18 @@ export default class HiveParser extends antlr4.Parser {
 	partTypeExpr() {
 	    let localctx = new PartTypeExprContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 178, HiveParser.RULE_partTypeExpr);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1562;
 	        this.tabTypeExpr();
 	        this.state = 1564;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PARTITION) {
+	        var la_ = this._interp.adaptivePredict(this._input,118,this._ctx);
+	        if(la_===1) {
 	            this.state = 1563;
 	            this.partitionSpec();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -6316,19 +6174,18 @@ export default class HiveParser extends antlr4.Parser {
 	tabPartColTypeExpr() {
 	    let localctx = new TabPartColTypeExprContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 180, HiveParser.RULE_tabPartColTypeExpr);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1566;
 	        this.tableName();
 	        this.state = 1568;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PARTITION) {
+	        var la_ = this._interp.adaptivePredict(this._input,119,this._ctx);
+	        if(la_===1) {
 	            this.state = 1567;
 	            this.partitionSpec();
-	        }
 
+	        }
 	        this.state = 1571;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,120,this._ctx);
@@ -6384,12 +6241,12 @@ export default class HiveParser extends antlr4.Parser {
 	            }
 	            this.state = 1576;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_EXTENDED) {
+	            var la_ = this._interp.adaptivePredict(this._input,121,this._ctx);
+	            if(la_===1) {
 	                this.state = 1575;
 	                this.match(HiveParser.KW_EXTENDED);
-	            }
 
+	            }
 	            this.state = 1578;
 	            this.identifier();
 	            break;
@@ -6399,12 +6256,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_FUNCTION);
 	            this.state = 1581;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_EXTENDED) {
+	            var la_ = this._interp.adaptivePredict(this._input,122,this._ctx);
+	            if(la_===1) {
 	                this.state = 1580;
 	                this.match(HiveParser.KW_EXTENDED);
-	            }
 
+	            }
 	            this.state = 1583;
 	            this.descFuncNames();
 	            break;
@@ -6459,84 +6316,44 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tableOrPartition();
 	        this.state = 1604;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_COMPUTE:
+	        var la_ = this._interp.adaptivePredict(this._input,126,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.state = 1592;
 	            this.match(HiveParser.KW_COMPUTE);
 	            this.state = 1593;
 	            this.match(HiveParser.KW_STATISTICS);
 	            this.state = 1600;
 	            this._errHandler.sync(this);
-	            switch (this._input.LA(1)) {
-	            case HiveParser.KW_NOSCAN:
-	            	this.state = 1594;
-	            	this.match(HiveParser.KW_NOSCAN);
-	            	break;
-	            case HiveParser.KW_FOR:
-	            	this.state = 1595;
-	            	this.match(HiveParser.KW_FOR);
-	            	this.state = 1596;
-	            	this.match(HiveParser.KW_COLUMNS);
-	            	this.state = 1598;
-	            	this._errHandler.sync(this);
-	            	var la_ = this._interp.adaptivePredict(this._input,124,this._ctx);
-	            	if(la_===1) {
-	            	    this.state = 1597;
-	            	    this.columnNameList();
+	            var la_ = this._interp.adaptivePredict(this._input,125,this._ctx);
+	            if(la_===1) {
+	                this.state = 1594;
+	                this.match(HiveParser.KW_NOSCAN);
 
-	            	}
-	            	break;
-	            case HiveParser.EOF:
-	            case HiveParser.KW_DESC:
-	            case HiveParser.KW_FROM:
-	            case HiveParser.KW_SELECT:
-	            case HiveParser.KW_INSERT:
-	            case HiveParser.KW_SHOW:
-	            case HiveParser.KW_MSCK:
-	            case HiveParser.KW_LOAD:
-	            case HiveParser.KW_EXPORT:
-	            case HiveParser.KW_IMPORT:
-	            case HiveParser.KW_CREATE:
-	            case HiveParser.KW_ALTER:
-	            case HiveParser.KW_DESCRIBE:
-	            case HiveParser.KW_DROP:
-	            case HiveParser.KW_MAP:
-	            case HiveParser.KW_REDUCE:
-	            case HiveParser.KW_KILL:
-	            case HiveParser.KW_EXPLAIN:
-	            case HiveParser.KW_WITH:
-	            case HiveParser.KW_SET:
-	            case HiveParser.KW_DELETE:
-	            case HiveParser.KW_GRANT:
-	            case HiveParser.KW_REVOKE:
-	            case HiveParser.KW_LOCK:
-	            case HiveParser.KW_UNLOCK:
-	            case HiveParser.KW_ANALYZE:
-	            case HiveParser.KW_USE:
-	            case HiveParser.KW_UPDATE:
-	            case HiveParser.KW_TRUNCATE:
-	            case HiveParser.KW_RELOAD:
-	            case HiveParser.KW_START:
-	            case HiveParser.KW_COMMIT:
-	            case HiveParser.KW_ROLLBACK:
-	            case HiveParser.KW_ABORT:
-	            case HiveParser.KW_MERGE:
-	            case HiveParser.KW_REPL:
-	            case HiveParser.SEMICOLON:
-	            case HiveParser.LPAREN:
-	            	break;
-	            default:
-	            	break;
+	            } else if(la_===2) {
+	                this.state = 1595;
+	                this.match(HiveParser.KW_FOR);
+	                this.state = 1596;
+	                this.match(HiveParser.KW_COLUMNS);
+	                this.state = 1598;
+	                this._errHandler.sync(this);
+	                var la_ = this._interp.adaptivePredict(this._input,124,this._ctx);
+	                if(la_===1) {
+	                    this.state = 1597;
+	                    this.columnNameList();
+
+	                }
+
 	            }
 	            break;
-	        case HiveParser.KW_CACHE:
+
+	        case 2:
 	            this.state = 1602;
 	            this.match(HiveParser.KW_CACHE);
 	            this.state = 1603;
 	            this.match(HiveParser.KW_METADATA);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -6578,14 +6395,14 @@ export default class HiveParser extends antlr4.Parser {
 	            }
 	            this.state = 1610;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_LIKE) {
+	            var la_ = this._interp.adaptivePredict(this._input,127,this._ctx);
+	            if(la_===1) {
 	                this.state = 1608;
 	                this.match(HiveParser.KW_LIKE);
 	                this.state = 1609;
 	                this.showStmtIdentifier();
-	            }
 
+	            }
 	            break;
 
 	        case 2:
@@ -6789,12 +6606,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.tableName();
 	            this.state = 1670;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_PARTITION) {
+	            var la_ = this._interp.adaptivePredict(this._input,137,this._ctx);
+	            if(la_===1) {
 	                this.state = 1669;
 	                this.partitionSpec();
-	            }
 
+	            }
 	            break;
 
 	        case 8:
@@ -6805,9 +6622,9 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_CREATE);
 	            this.state = 1678;
 	            this._errHandler.sync(this);
-	            switch(this._input.LA(1)) {
-	            case HiveParser.KW_DATABASE:
-	            case HiveParser.KW_SCHEMA:
+	            var la_ = this._interp.adaptivePredict(this._input,138,this._ctx);
+	            switch(la_) {
+	            case 1:
 	                this.state = 1674;
 	                _la = this._input.LA(1);
 	                if(!(_la===HiveParser.KW_DATABASE || _la===HiveParser.KW_SCHEMA)) {
@@ -6820,14 +6637,14 @@ export default class HiveParser extends antlr4.Parser {
 	                this.state = 1675;
 	                this.identifier();
 	                break;
-	            case HiveParser.KW_TABLE:
+
+	            case 2:
 	                this.state = 1676;
 	                this.match(HiveParser.KW_TABLE);
 	                this.state = 1677;
 	                this.tableName();
 	                break;
-	            default:
-	                throw new antlr4.error.NoViableAltException(this);
+
 	            }
 	            break;
 
@@ -6841,8 +6658,8 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_EXTENDED);
 	            this.state = 1685;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_FROM || _la===HiveParser.KW_IN) {
+	            var la_ = this._interp.adaptivePredict(this._input,139,this._ctx);
+	            if(la_===1) {
 	                this.state = 1683;
 	                _la = this._input.LA(1);
 	                if(!(_la===HiveParser.KW_FROM || _la===HiveParser.KW_IN)) {
@@ -6854,20 +6671,20 @@ export default class HiveParser extends antlr4.Parser {
 	                }
 	                this.state = 1684;
 	                this.identifier();
-	            }
 
+	            }
 	            this.state = 1687;
 	            this.match(HiveParser.KW_LIKE);
 	            this.state = 1688;
 	            this.showStmtIdentifier();
 	            this.state = 1690;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_PARTITION) {
+	            var la_ = this._interp.adaptivePredict(this._input,140,this._ctx);
+	            if(la_===1) {
 	                this.state = 1689;
 	                this.partitionSpec();
-	            }
 
+	            }
 	            break;
 
 	        case 10:
@@ -6916,12 +6733,12 @@ export default class HiveParser extends antlr4.Parser {
 	                this.identifier();
 	                this.state = 1705;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
-	                if(_la===HiveParser.KW_EXTENDED) {
+	                var la_ = this._interp.adaptivePredict(this._input,142,this._ctx);
+	                if(la_===1) {
 	                    this.state = 1704;
 	                    this.match(HiveParser.KW_EXTENDED);
-	                }
 
+	                }
 	                break;
 
 	            case 2:
@@ -6935,12 +6752,12 @@ export default class HiveParser extends antlr4.Parser {
 	                }
 	                this.state = 1711;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
-	                if(_la===HiveParser.KW_EXTENDED) {
+	                var la_ = this._interp.adaptivePredict(this._input,144,this._ctx);
+	                if(la_===1) {
 	                    this.state = 1710;
 	                    this.match(HiveParser.KW_EXTENDED);
-	                }
 
+	                }
 	                break;
 
 	            }
@@ -6980,19 +6797,20 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_RESOURCE);
 	            this.state = 1727;
 	            this._errHandler.sync(this);
-	            switch(this._input.LA(1)) {
-	            case HiveParser.KW_PLAN:
+	            var la_ = this._interp.adaptivePredict(this._input,146,this._ctx);
+	            switch(la_) {
+	            case 1:
 	                this.state = 1724;
 	                this.match(HiveParser.KW_PLAN);
 	                this.state = 1725;
 	                this.identifier();
 	                break;
-	            case HiveParser.KW_PLANS:
+
+	            case 2:
 	                this.state = 1726;
 	                this.match(HiveParser.KW_PLANS);
 	                break;
-	            default:
-	                throw new antlr4.error.NoViableAltException(this);
+
 	            }
 	            break;
 
@@ -7016,7 +6834,6 @@ export default class HiveParser extends antlr4.Parser {
 	lockStatement() {
 	    let localctx = new LockStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 188, HiveParser.RULE_lockStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1731;
@@ -7027,12 +6844,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tableName();
 	        this.state = 1735;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PARTITION) {
+	        var la_ = this._interp.adaptivePredict(this._input,148,this._ctx);
+	        if(la_===1) {
 	            this.state = 1734;
 	            this.partitionSpec();
-	        }
 
+	        }
 	        this.state = 1737;
 	        this.lockMode();
 	    } catch (re) {
@@ -7122,7 +6939,6 @@ export default class HiveParser extends antlr4.Parser {
 	unlockStatement() {
 	    let localctx = new UnlockStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 194, HiveParser.RULE_unlockStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1746;
@@ -7133,12 +6949,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tableName();
 	        this.state = 1750;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PARTITION) {
+	        var la_ = this._interp.adaptivePredict(this._input,149,this._ctx);
+	        if(la_===1) {
 	            this.state = 1749;
 	            this.partitionSpec();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -7247,7 +7063,6 @@ export default class HiveParser extends antlr4.Parser {
 	grantPrivileges() {
 	    let localctx = new GrantPrivilegesContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 202, HiveParser.RULE_grantPrivileges);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1764;
@@ -7256,12 +7071,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.privilegeList();
 	        this.state = 1767;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ON) {
+	        var la_ = this._interp.adaptivePredict(this._input,150,this._ctx);
+	        if(la_===1) {
 	            this.state = 1766;
 	            this.privilegeObject();
-	        }
 
+	        }
 	        this.state = 1769;
 	        this.match(HiveParser.KW_TO);
 	        this.state = 1770;
@@ -7293,29 +7108,28 @@ export default class HiveParser extends antlr4.Parser {
 	revokePrivileges() {
 	    let localctx = new RevokePrivilegesContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 204, HiveParser.RULE_revokePrivileges);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1774;
 	        this.match(HiveParser.KW_REVOKE);
 	        this.state = 1776;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_GRANT) {
+	        var la_ = this._interp.adaptivePredict(this._input,152,this._ctx);
+	        if(la_===1) {
 	            this.state = 1775;
 	            this.grantOptionFor();
-	        }
 
+	        }
 	        this.state = 1778;
 	        this.privilegeList();
 	        this.state = 1780;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ON) {
+	        var la_ = this._interp.adaptivePredict(this._input,153,this._ctx);
+	        if(la_===1) {
 	            this.state = 1779;
 	            this.privilegeObject();
-	        }
 
+	        }
 	        this.state = 1782;
 	        this.match(HiveParser.KW_FROM);
 	        this.state = 1783;
@@ -7339,7 +7153,6 @@ export default class HiveParser extends antlr4.Parser {
 	grantRole() {
 	    let localctx = new GrantRoleContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 206, HiveParser.RULE_grantRole);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1785;
@@ -7356,16 +7169,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.identifier();
 	        this.state = 1794;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 1790;
-	            this.match(HiveParser.COMMA);
-	            this.state = 1791;
-	            this.identifier();
+	        var _alt = this._interp.adaptivePredict(this._input,155,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1790;
+	                this.match(HiveParser.COMMA);
+	                this.state = 1791;
+	                this.identifier(); 
+	            }
 	            this.state = 1796;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,155,this._ctx);
 	        }
+
 	        this.state = 1797;
 	        this.match(HiveParser.KW_TO);
 	        this.state = 1798;
@@ -7397,7 +7213,6 @@ export default class HiveParser extends antlr4.Parser {
 	revokeRole() {
 	    let localctx = new RevokeRoleContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 208, HiveParser.RULE_revokeRole);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1802;
@@ -7422,16 +7237,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.identifier();
 	        this.state = 1814;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 1810;
-	            this.match(HiveParser.COMMA);
-	            this.state = 1811;
-	            this.identifier();
+	        var _alt = this._interp.adaptivePredict(this._input,159,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1810;
+	                this.match(HiveParser.COMMA);
+	                this.state = 1811;
+	                this.identifier(); 
+	            }
 	            this.state = 1816;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,159,this._ctx);
 	        }
+
 	        this.state = 1817;
 	        this.match(HiveParser.KW_FROM);
 	        this.state = 1818;
@@ -7544,214 +7362,23 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_ROLE);
 	        this.state = 1837;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ALL:
+	        var la_ = this._interp.adaptivePredict(this._input,160,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.state = 1834;
 	            this.match(HiveParser.KW_ALL);
 	            break;
-	        case HiveParser.KW_NONE:
+
+	        case 2:
 	            this.state = 1835;
 	            this.match(HiveParser.KW_NONE);
 	            break;
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.Identifier:
+
+	        case 3:
 	            this.state = 1836;
 	            this.identifier();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -7772,7 +7399,6 @@ export default class HiveParser extends antlr4.Parser {
 	showGrants() {
 	    let localctx = new ShowGrantsContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 218, HiveParser.RULE_showGrants);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1839;
@@ -7781,22 +7407,22 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_GRANT);
 	        this.state = 1842;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_GROUP || _la===HiveParser.KW_USER || _la===HiveParser.KW_ROLE) {
+	        var la_ = this._interp.adaptivePredict(this._input,161,this._ctx);
+	        if(la_===1) {
 	            this.state = 1841;
 	            this.principalName();
-	        }
 
+	        }
 	        this.state = 1846;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ON) {
+	        var la_ = this._interp.adaptivePredict(this._input,162,this._ctx);
+	        if(la_===1) {
 	            this.state = 1844;
 	            this.match(HiveParser.KW_ON);
 	            this.state = 1845;
 	            this.privilegeIncludeColObject();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -7846,214 +7472,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 1854;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ALL:
+	        var la_ = this._interp.adaptivePredict(this._input,163,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1852;
 	            this.match(HiveParser.KW_ALL);
 	            break;
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLE:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASE:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.Identifier:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1853;
 	            this.privObjectCols();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -8124,22 +7556,22 @@ export default class HiveParser extends antlr4.Parser {
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1862;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_TABLE) {
+	            var la_ = this._interp.adaptivePredict(this._input,164,this._ctx);
+	            if(la_===1) {
 	                this.state = 1861;
 	                this.match(HiveParser.KW_TABLE);
-	            }
 
+	            }
 	            this.state = 1864;
 	            this.tableName();
 	            this.state = 1866;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_PARTITION) {
+	            var la_ = this._interp.adaptivePredict(this._input,165,this._ctx);
+	            if(la_===1) {
 	                this.state = 1865;
 	                this.partitionSpec();
-	            }
 
+	            }
 	            break;
 
 	        case 3:
@@ -8203,12 +7635,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1877;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_TABLE) {
+	            var la_ = this._interp.adaptivePredict(this._input,167,this._ctx);
+	            if(la_===1) {
 	                this.state = 1876;
 	                this.match(HiveParser.KW_TABLE);
-	            }
 
+	            }
 	            this.state = 1879;
 	            this.tableName();
 	            this.state = 1884;
@@ -8225,12 +7657,12 @@ export default class HiveParser extends antlr4.Parser {
 	            }
 	            this.state = 1887;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_PARTITION) {
+	            var la_ = this._interp.adaptivePredict(this._input,169,this._ctx);
+	            if(la_===1) {
 	                this.state = 1886;
 	                this.partitionSpec();
-	            }
 
+	            }
 	            break;
 
 	        case 3:
@@ -8269,23 +7701,25 @@ export default class HiveParser extends antlr4.Parser {
 	privilegeList() {
 	    let localctx = new PrivilegeListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 230, HiveParser.RULE_privilegeList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1895;
 	        this.privlegeDef();
 	        this.state = 1900;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 1896;
-	            this.match(HiveParser.COMMA);
-	            this.state = 1897;
-	            this.privlegeDef();
+	        var _alt = this._interp.adaptivePredict(this._input,171,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1896;
+	                this.match(HiveParser.COMMA);
+	                this.state = 1897;
+	                this.privlegeDef(); 
+	            }
 	            this.state = 1902;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,171,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8305,23 +7739,22 @@ export default class HiveParser extends antlr4.Parser {
 	privlegeDef() {
 	    let localctx = new PrivlegeDefContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 232, HiveParser.RULE_privlegeDef);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1903;
 	        this.privilegeType();
 	        this.state = 1908;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.LPAREN) {
+	        var la_ = this._interp.adaptivePredict(this._input,172,this._ctx);
+	        if(la_===1) {
 	            this.state = 1904;
 	            this.match(HiveParser.LPAREN);
 	            this.state = 1905;
 	            this.columnNameList();
 	            this.state = 1906;
 	            this.match(HiveParser.RPAREN);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8372,23 +7805,25 @@ export default class HiveParser extends antlr4.Parser {
 	principalSpecification() {
 	    let localctx = new PrincipalSpecificationContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 236, HiveParser.RULE_principalSpecification);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1912;
 	        this.principalName();
 	        this.state = 1917;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 1913;
-	            this.match(HiveParser.COMMA);
-	            this.state = 1914;
-	            this.principalName();
+	        var _alt = this._interp.adaptivePredict(this._input,173,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1913;
+	                this.match(HiveParser.COMMA);
+	                this.state = 1914;
+	                this.principalName(); 
+	            }
 	            this.state = 1919;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,173,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8411,30 +7846,32 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 1926;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_USER:
+	        var la_ = this._interp.adaptivePredict(this._input,174,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1920;
 	            this.match(HiveParser.KW_USER);
 	            this.state = 1921;
 	            this.principalIdentifier();
 	            break;
-	        case HiveParser.KW_GROUP:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1922;
 	            this.match(HiveParser.KW_GROUP);
 	            this.state = 1923;
 	            this.principalIdentifier();
 	            break;
-	        case HiveParser.KW_ROLE:
+
+	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 1924;
 	            this.match(HiveParser.KW_ROLE);
 	            this.state = 1925;
 	            this.identifier();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -8570,16 +8007,17 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_MSCK);
 	        this.state = 1946;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_REPAIR) {
+	        var la_ = this._interp.adaptivePredict(this._input,175,this._ctx);
+	        if(la_===1) {
 	            this.state = 1945;
 	            this.match(HiveParser.KW_REPAIR);
-	        }
 
+	        }
 	        this.state = 1957;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_TABLE:
+	        var la_ = this._interp.adaptivePredict(this._input,178,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.state = 1948;
 	            this.match(HiveParser.KW_TABLE);
 	            this.state = 1949;
@@ -8602,56 +8040,18 @@ export default class HiveParser extends antlr4.Parser {
 
 	            }
 	            break;
-	        case HiveParser.EOF:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_FROM:
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_INSERT:
-	        case HiveParser.KW_PARTITION:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_IMPORT:
-	        case HiveParser.KW_CREATE:
-	        case HiveParser.KW_ALTER:
-	        case HiveParser.KW_DESCRIBE:
-	        case HiveParser.KW_DROP:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_WITH:
-	        case HiveParser.KW_SET:
-	        case HiveParser.KW_DELETE:
-	        case HiveParser.KW_GRANT:
-	        case HiveParser.KW_REVOKE:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_UPDATE:
-	        case HiveParser.KW_TRUNCATE:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_START:
-	        case HiveParser.KW_COMMIT:
-	        case HiveParser.KW_ROLLBACK:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MERGE:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.SEMICOLON:
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.state = 1955;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_PARTITION) {
+	            var la_ = this._interp.adaptivePredict(this._input,177,this._ctx);
+	            if(la_===1) {
 	                this.state = 1954;
 	                this.partitionSpec();
-	            }
 
+	            }
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -8672,23 +8072,25 @@ export default class HiveParser extends antlr4.Parser {
 	resourceList() {
 	    let localctx = new ResourceListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 250, HiveParser.RULE_resourceList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1959;
 	        this.resource();
 	        this.state = 1964;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 1960;
-	            this.match(HiveParser.COMMA);
-	            this.state = 1961;
-	            this.resource();
+	        var _alt = this._interp.adaptivePredict(this._input,179,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 1960;
+	                this.match(HiveParser.COMMA);
+	                this.state = 1961;
+	                this.resource(); 
+	            }
 	            this.state = 1966;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,179,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8764,19 +8166,18 @@ export default class HiveParser extends antlr4.Parser {
 	createFunctionStatement() {
 	    let localctx = new CreateFunctionStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 256, HiveParser.RULE_createFunctionStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1972;
 	        this.match(HiveParser.KW_CREATE);
 	        this.state = 1974;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TEMPORARY) {
+	        var la_ = this._interp.adaptivePredict(this._input,180,this._ctx);
+	        if(la_===1) {
 	            this.state = 1973;
 	            this.match(HiveParser.KW_TEMPORARY);
-	        }
 
+	        }
 	        this.state = 1976;
 	        this.match(HiveParser.KW_FUNCTION);
 	        this.state = 1977;
@@ -8787,14 +8188,14 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.StringLiteral);
 	        this.state = 1982;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_USING) {
+	        var la_ = this._interp.adaptivePredict(this._input,181,this._ctx);
+	        if(la_===1) {
 	            this.state = 1980;
 	            this.match(HiveParser.KW_USING);
 	            this.state = 1981;
 	            this.resourceList();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8814,29 +8215,28 @@ export default class HiveParser extends antlr4.Parser {
 	dropFunctionStatement() {
 	    let localctx = new DropFunctionStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 258, HiveParser.RULE_dropFunctionStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1984;
 	        this.match(HiveParser.KW_DROP);
 	        this.state = 1986;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TEMPORARY) {
+	        var la_ = this._interp.adaptivePredict(this._input,182,this._ctx);
+	        if(la_===1) {
 	            this.state = 1985;
 	            this.match(HiveParser.KW_TEMPORARY);
-	        }
 
+	        }
 	        this.state = 1988;
 	        this.match(HiveParser.KW_FUNCTION);
 	        this.state = 1990;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,183,this._ctx);
+	        if(la_===1) {
 	            this.state = 1989;
 	            this.ifExists();
-	        }
 
+	        }
 	        this.state = 1992;
 	        this.functionIdentifier();
 	    } catch (re) {
@@ -8883,7 +8283,6 @@ export default class HiveParser extends antlr4.Parser {
 	createMacroStatement() {
 	    let localctx = new CreateMacroStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 262, HiveParser.RULE_createMacroStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1997;
@@ -8898,12 +8297,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.LPAREN);
 	        this.state = 2003;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << HiveParser.KW_ASC) | (1 << HiveParser.KW_DESC) | (1 << HiveParser.KW_NULLS) | (1 << HiveParser.KW_LAST) | (1 << HiveParser.KW_OVERWRITE))) !== 0) || ((((_la - 36)) & ~0x1f) == 0 && ((1 << (_la - 36)) & ((1 << (HiveParser.KW_PARTITIONS - 36)) | (1 << (HiveParser.KW_TABLES - 36)) | (1 << (HiveParser.KW_COLUMNS - 36)) | (1 << (HiveParser.KW_INDEX - 36)) | (1 << (HiveParser.KW_INDEXES - 36)) | (1 << (HiveParser.KW_REBUILD - 36)) | (1 << (HiveParser.KW_FUNCTIONS - 36)) | (1 << (HiveParser.KW_SHOW - 36)) | (1 << (HiveParser.KW_MSCK - 36)) | (1 << (HiveParser.KW_REPAIR - 36)) | (1 << (HiveParser.KW_DIRECTORY - 36)) | (1 << (HiveParser.KW_CLUSTER - 36)) | (1 << (HiveParser.KW_DISTRIBUTE - 36)) | (1 << (HiveParser.KW_SORT - 36)) | (1 << (HiveParser.KW_LOAD - 36)) | (1 << (HiveParser.KW_EXPORT - 36)) | (1 << (HiveParser.KW_REPLICATION - 36)) | (1 << (HiveParser.KW_METADATA - 36)) | (1 << (HiveParser.KW_DATA - 36)) | (1 << (HiveParser.KW_INPATH - 36)))) !== 0) || ((((_la - 68)) & ~0x1f) == 0 && ((1 << (_la - 68)) & ((1 << (HiveParser.KW_CHANGE - 68)) | (1 << (HiveParser.KW_FIRST - 68)) | (1 << (HiveParser.KW_AFTER - 68)) | (1 << (HiveParser.KW_RENAME - 68)) | (1 << (HiveParser.KW_COMMENT - 68)) | (1 << (HiveParser.KW_TINYINT - 68)) | (1 << (HiveParser.KW_DATETIME - 68)) | (1 << (HiveParser.KW_ZONE - 68)) | (1 << (HiveParser.KW_STRING - 68)) | (1 << (HiveParser.KW_STRUCT - 68)) | (1 << (HiveParser.KW_UNIONTYPE - 68)))) !== 0) || ((((_la - 101)) & ~0x1f) == 0 && ((1 << (_la - 101)) & ((1 << (HiveParser.KW_PARTITIONED - 101)) | (1 << (HiveParser.KW_CLUSTERED - 101)) | (1 << (HiveParser.KW_SORTED - 101)) | (1 << (HiveParser.KW_BUCKETS - 101)) | (1 << (HiveParser.KW_FORMAT - 101)) | (1 << (HiveParser.KW_DELIMITED - 101)) | (1 << (HiveParser.KW_FIELDS - 101)) | (1 << (HiveParser.KW_TERMINATED - 101)) | (1 << (HiveParser.KW_ESCAPED - 101)) | (1 << (HiveParser.KW_COLLECTION - 101)) | (1 << (HiveParser.KW_ITEMS - 101)) | (1 << (HiveParser.KW_KEYS - 101)) | (1 << (HiveParser.KW_KEY_TYPE - 101)) | (1 << (HiveParser.KW_KILL - 101)) | (1 << (HiveParser.KW_LINES - 101)) | (1 << (HiveParser.KW_STORED - 101)) | (1 << (HiveParser.KW_FILEFORMAT - 101)) | (1 << (HiveParser.KW_INPUTFORMAT - 101)) | (1 << (HiveParser.KW_OUTPUTFORMAT - 101)) | (1 << (HiveParser.KW_INPUTDRIVER - 101)) | (1 << (HiveParser.KW_OUTPUTDRIVER - 101)) | (1 << (HiveParser.KW_ENABLE - 101)) | (1 << (HiveParser.KW_DISABLE - 101)) | (1 << (HiveParser.KW_LOCATION - 101)) | (1 << (HiveParser.KW_BUCKET - 101)))) !== 0) || ((((_la - 134)) & ~0x1f) == 0 && ((1 << (_la - 134)) & ((1 << (HiveParser.KW_ADD - 134)) | (1 << (HiveParser.KW_REPLACE - 134)) | (1 << (HiveParser.KW_TEMPORARY - 134)) | (1 << (HiveParser.KW_FILE - 134)) | (1 << (HiveParser.KW_JAR - 134)) | (1 << (HiveParser.KW_EXPLAIN - 134)) | (1 << (HiveParser.KW_FORMATTED - 134)) | (1 << (HiveParser.KW_DEPENDENCY - 134)) | (1 << (HiveParser.KW_LOGICAL - 134)) | (1 << (HiveParser.KW_SERDE - 134)) | (1 << (HiveParser.KW_DEFERRED - 134)) | (1 << (HiveParser.KW_SERDEPROPERTIES - 134)) | (1 << (HiveParser.KW_DBPROPERTIES - 134)) | (1 << (HiveParser.KW_LIMIT - 134)) | (1 << (HiveParser.KW_OFFSET - 134)) | (1 << (HiveParser.KW_UNSET - 134)) | (1 << (HiveParser.KW_TBLPROPERTIES - 134)) | (1 << (HiveParser.KW_IDXPROPERTIES - 134)) | (1 << (HiveParser.KW_VALUE_TYPE - 134)) | (1 << (HiveParser.KW_ELEM_TYPE - 134)) | (1 << (HiveParser.KW_DEFINED - 134)))) !== 0) || ((((_la - 167)) & ~0x1f) == 0 && ((1 << (_la - 167)) & ((1 << (HiveParser.KW_MAPJOIN - 167)) | (1 << (HiveParser.KW_STREAMTABLE - 167)) | (1 << (HiveParser.KW_CLUSTERSTATUS - 167)) | (1 << (HiveParser.KW_UTC - 167)) | (1 << (HiveParser.KW_UTCTIMESTAMP - 167)) | (1 << (HiveParser.KW_LONG - 167)) | (1 << (HiveParser.KW_PLUS - 167)) | (1 << (HiveParser.KW_VIEW - 167)) | (1 << (HiveParser.KW_VIEWS - 167)) | (1 << (HiveParser.KW_DATABASES - 167)) | (1 << (HiveParser.KW_MATERIALIZED - 167)) | (1 << (HiveParser.KW_SCHEMA - 167)) | (1 << (HiveParser.KW_SCHEMAS - 167)) | (1 << (HiveParser.KW_SSL - 167)) | (1 << (HiveParser.KW_UNDO - 167)) | (1 << (HiveParser.KW_LOCK - 167)) | (1 << (HiveParser.KW_LOCKS - 167)) | (1 << (HiveParser.KW_UNLOCK - 167)) | (1 << (HiveParser.KW_SHARED - 167)) | (1 << (HiveParser.KW_EXCLUSIVE - 167)) | (1 << (HiveParser.KW_UNSIGNED - 167)) | (1 << (HiveParser.KW_WHILE - 167)) | (1 << (HiveParser.KW_READ - 167)))) !== 0) || ((((_la - 200)) & ~0x1f) == 0 && ((1 << (_la - 200)) & ((1 << (HiveParser.KW_PURGE - 200)) | (1 << (HiveParser.KW_ANALYZE - 200)) | (1 << (HiveParser.KW_BEFORE - 200)) | (1 << (HiveParser.KW_CONTINUE - 200)) | (1 << (HiveParser.KW_RECORDREADER - 200)) | (1 << (HiveParser.KW_RECORDWRITER - 200)) | (1 << (HiveParser.KW_SEMI - 200)) | (1 << (HiveParser.KW_TOUCH - 200)) | (1 << (HiveParser.KW_ARCHIVE - 200)) | (1 << (HiveParser.KW_UNARCHIVE - 200)) | (1 << (HiveParser.KW_COMPUTE - 200)) | (1 << (HiveParser.KW_STATISTICS - 200)) | (1 << (HiveParser.KW_USE - 200)) | (1 << (HiveParser.KW_OPTION - 200)) | (1 << (HiveParser.KW_CONCATENATE - 200)) | (1 << (HiveParser.KW_SHOW_DATABASE - 200)) | (1 << (HiveParser.KW_RESTRICT - 200)) | (1 << (HiveParser.KW_CASCADE - 200)) | (1 << (HiveParser.KW_SKEWED - 200)) | (1 << (HiveParser.KW_DIRECTORIES - 200)))) !== 0) || ((((_la - 243)) & ~0x1f) == 0 && ((1 << (_la - 243)) & ((1 << (HiveParser.KW_SETS - 243)) | (1 << (HiveParser.KW_NOSCAN - 243)) | (1 << (HiveParser.KW_ROLE - 243)) | (1 << (HiveParser.KW_ROLES - 243)) | (1 << (HiveParser.KW_URI - 243)) | (1 << (HiveParser.KW_SERVER - 243)) | (1 << (HiveParser.KW_ADMIN - 243)) | (1 << (HiveParser.KW_OWNER - 243)) | (1 << (HiveParser.KW_PRINCIPALS - 243)) | (1 << (HiveParser.KW_COMPACT - 243)) | (1 << (HiveParser.KW_COMPACTIONS - 243)) | (1 << (HiveParser.KW_TRANSACTIONS - 243)) | (1 << (HiveParser.KW_REWRITE - 243)) | (1 << (HiveParser.KW_REOPTIMIZATION - 243)) | (1 << (HiveParser.KW_RELOAD - 243)) | (1 << (HiveParser.KW_YEAR - 243)) | (1 << (HiveParser.KW_QUERY - 243)) | (1 << (HiveParser.KW_QUARTER - 243)) | (1 << (HiveParser.KW_MONTH - 243)) | (1 << (HiveParser.KW_WEEK - 243)) | (1 << (HiveParser.KW_DAY - 243)) | (1 << (HiveParser.KW_DOW - 243)) | (1 << (HiveParser.KW_HOUR - 243)) | (1 << (HiveParser.KW_MINUTE - 243)) | (1 << (HiveParser.KW_SECOND - 243)))) !== 0) || ((((_la - 276)) & ~0x1f) == 0 && ((1 << (_la - 276)) & ((1 << (HiveParser.KW_TRANSACTION - 276)) | (1 << (HiveParser.KW_WORK - 276)) | (1 << (HiveParser.KW_WRITE - 276)) | (1 << (HiveParser.KW_ISOLATION - 276)) | (1 << (HiveParser.KW_LEVEL - 276)) | (1 << (HiveParser.KW_SNAPSHOT - 276)) | (1 << (HiveParser.KW_AUTOCOMMIT - 276)) | (1 << (HiveParser.KW_CACHE - 276)) | (1 << (HiveParser.KW_ENFORCED - 276)) | (1 << (HiveParser.KW_VALIDATE - 276)) | (1 << (HiveParser.KW_NOVALIDATE - 276)) | (1 << (HiveParser.KW_RELY - 276)) | (1 << (HiveParser.KW_NORELY - 276)) | (1 << (HiveParser.KW_KEY - 276)) | (1 << (HiveParser.KW_ABORT - 276)) | (1 << (HiveParser.KW_MATCHED - 276)) | (1 << (HiveParser.KW_REPL - 276)) | (1 << (HiveParser.KW_DUMP - 276)) | (1 << (HiveParser.KW_STATUS - 276)) | (1 << (HiveParser.KW_VECTORIZATION - 276)) | (1 << (HiveParser.KW_SUMMARY - 276)))) !== 0) || ((((_la - 308)) & ~0x1f) == 0 && ((1 << (_la - 308)) & ((1 << (HiveParser.KW_OPERATOR - 308)) | (1 << (HiveParser.KW_EXPRESSION - 308)) | (1 << (HiveParser.KW_DETAIL - 308)) | (1 << (HiveParser.KW_WAIT - 308)) | (1 << (HiveParser.KW_RESOURCE - 308)) | (1 << (HiveParser.KW_PLAN - 308)) | (1 << (HiveParser.KW_QUERY_PARALLELISM - 308)) | (1 << (HiveParser.KW_PLANS - 308)) | (1 << (HiveParser.KW_ACTIVATE - 308)) | (1 << (HiveParser.KW_DEFAULT - 308)) | (1 << (HiveParser.KW_CHECK - 308)) | (1 << (HiveParser.KW_POOL - 308)) | (1 << (HiveParser.KW_MOVE - 308)) | (1 << (HiveParser.KW_DO - 308)) | (1 << (HiveParser.KW_ALLOC_FRACTION - 308)) | (1 << (HiveParser.KW_SCHEDULING_POLICY - 308)) | (1 << (HiveParser.KW_PATH - 308)) | (1 << (HiveParser.KW_MAPPING - 308)) | (1 << (HiveParser.KW_WORKLOAD - 308)) | (1 << (HiveParser.KW_MANAGEMENT - 308)) | (1 << (HiveParser.KW_ACTIVE - 308)) | (1 << (HiveParser.KW_UNMANAGED - 308)))) !== 0) || _la===HiveParser.Identifier) {
+	        var la_ = this._interp.adaptivePredict(this._input,184,this._ctx);
+	        if(la_===1) {
 	            this.state = 2002;
 	            this.columnNameTypeList();
-	        }
 
+	        }
 	        this.state = 2005;
 	        this.match(HiveParser.RPAREN);
 	        this.state = 2006;
@@ -8927,7 +8326,6 @@ export default class HiveParser extends antlr4.Parser {
 	dropMacroStatement() {
 	    let localctx = new DropMacroStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 264, HiveParser.RULE_dropMacroStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2008;
@@ -8938,12 +8336,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_MACRO);
 	        this.state = 2012;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,185,this._ctx);
+	        if(la_===1) {
 	            this.state = 2011;
 	            this.ifExists();
-	        }
 
+	        }
 	        this.state = 2014;
 	        this.match(HiveParser.Identifier);
 	    } catch (re) {
@@ -8965,67 +8363,66 @@ export default class HiveParser extends antlr4.Parser {
 	createViewStatement() {
 	    let localctx = new CreateViewStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 266, HiveParser.RULE_createViewStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2016;
 	        this.match(HiveParser.KW_CREATE);
 	        this.state = 2018;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_OR) {
+	        var la_ = this._interp.adaptivePredict(this._input,186,this._ctx);
+	        if(la_===1) {
 	            this.state = 2017;
 	            this.orReplace();
-	        }
 
+	        }
 	        this.state = 2020;
 	        this.match(HiveParser.KW_VIEW);
 	        this.state = 2022;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,187,this._ctx);
+	        if(la_===1) {
 	            this.state = 2021;
 	            this.ifNotExists();
-	        }
 
+	        }
 	        this.state = 2024;
 	        this.tableName();
 	        this.state = 2029;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.LPAREN) {
+	        var la_ = this._interp.adaptivePredict(this._input,188,this._ctx);
+	        if(la_===1) {
 	            this.state = 2025;
 	            this.match(HiveParser.LPAREN);
 	            this.state = 2026;
 	            this.columnNameCommentList();
 	            this.state = 2027;
 	            this.match(HiveParser.RPAREN);
-	        }
 
+	        }
 	        this.state = 2032;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,189,this._ctx);
+	        if(la_===1) {
 	            this.state = 2031;
 	            this.tableComment();
-	        }
 
+	        }
 	        this.state = 2035;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PARTITIONED) {
+	        var la_ = this._interp.adaptivePredict(this._input,190,this._ctx);
+	        if(la_===1) {
 	            this.state = 2034;
 	            this.viewPartition();
-	        }
 
+	        }
 	        this.state = 2038;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TBLPROPERTIES) {
+	        var la_ = this._interp.adaptivePredict(this._input,191,this._ctx);
+	        if(la_===1) {
 	            this.state = 2037;
 	            this.tablePropertiesPrefixed();
-	        }
 
+	        }
 	        this.state = 2040;
 	        this.match(HiveParser.KW_AS);
 	        this.state = 2041;
@@ -9049,7 +8446,6 @@ export default class HiveParser extends antlr4.Parser {
 	createMaterializedViewStatement() {
 	    let localctx = new CreateMaterializedViewStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 268, HiveParser.RULE_createMaterializedViewStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2043;
@@ -9060,62 +8456,62 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_VIEW);
 	        this.state = 2047;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,192,this._ctx);
+	        if(la_===1) {
 	            this.state = 2046;
 	            this.ifNotExists();
-	        }
 
+	        }
 	        this.state = 2049;
 	        this.tableName();
 	        this.state = 2051;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_DISABLE) {
+	        var la_ = this._interp.adaptivePredict(this._input,193,this._ctx);
+	        if(la_===1) {
 	            this.state = 2050;
 	            this.rewriteDisabled();
-	        }
 
+	        }
 	        this.state = 2054;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,194,this._ctx);
+	        if(la_===1) {
 	            this.state = 2053;
 	            this.tableComment();
-	        }
 
+	        }
 	        this.state = 2057;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ROW) {
+	        var la_ = this._interp.adaptivePredict(this._input,195,this._ctx);
+	        if(la_===1) {
 	            this.state = 2056;
 	            this.tableRowFormat();
-	        }
 
+	        }
 	        this.state = 2060;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_STORED) {
+	        var la_ = this._interp.adaptivePredict(this._input,196,this._ctx);
+	        if(la_===1) {
 	            this.state = 2059;
 	            this.tableFileFormat();
-	        }
 
+	        }
 	        this.state = 2063;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_LOCATION) {
+	        var la_ = this._interp.adaptivePredict(this._input,197,this._ctx);
+	        if(la_===1) {
 	            this.state = 2062;
 	            this.tableLocation();
-	        }
 
+	        }
 	        this.state = 2066;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TBLPROPERTIES) {
+	        var la_ = this._interp.adaptivePredict(this._input,198,this._ctx);
+	        if(la_===1) {
 	            this.state = 2065;
 	            this.tablePropertiesPrefixed();
-	        }
 
+	        }
 	        this.state = 2068;
 	        this.match(HiveParser.KW_AS);
 	        this.state = 2069;
@@ -9170,7 +8566,6 @@ export default class HiveParser extends antlr4.Parser {
 	dropViewStatement() {
 	    let localctx = new DropViewStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 272, HiveParser.RULE_dropViewStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2077;
@@ -9179,12 +8574,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_VIEW);
 	        this.state = 2080;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,199,this._ctx);
+	        if(la_===1) {
 	            this.state = 2079;
 	            this.ifExists();
-	        }
 
+	        }
 	        this.state = 2082;
 	        this.viewName();
 	    } catch (re) {
@@ -9206,7 +8601,6 @@ export default class HiveParser extends antlr4.Parser {
 	dropMaterializedViewStatement() {
 	    let localctx = new DropMaterializedViewStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 274, HiveParser.RULE_dropMaterializedViewStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2084;
@@ -9217,12 +8611,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_VIEW);
 	        this.state = 2088;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_IF) {
+	        var la_ = this._interp.adaptivePredict(this._input,200,this._ctx);
+	        if(la_===1) {
 	            this.state = 2087;
 	            this.ifExists();
-	        }
 
+	        }
 	        this.state = 2090;
 	        this.viewName();
 	    } catch (re) {
@@ -9247,212 +8641,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2094;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.Identifier:
+	        var la_ = this._interp.adaptivePredict(this._input,201,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2092;
 	            this.functionIdentifier();
 	            break;
-	        case HiveParser.StringLiteral:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2093;
 	            this.match(HiveParser.StringLiteral);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -9476,212 +8678,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2098;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.Identifier:
+	        var la_ = this._interp.adaptivePredict(this._input,202,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2096;
 	            this.identifier();
 	            break;
-	        case HiveParser.StringLiteral:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2097;
 	            this.match(HiveParser.StringLiteral);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -9727,7 +8737,6 @@ export default class HiveParser extends antlr4.Parser {
 	tablePartition() {
 	    let localctx = new TablePartitionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 282, HiveParser.RULE_tablePartition);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2103;
@@ -9740,16 +8749,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.columnNameTypeConstraint();
 	        this.state = 2111;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2107;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2108;
-	            this.columnNameTypeConstraint();
+	        var _alt = this._interp.adaptivePredict(this._input,203,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2107;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2108;
+	                this.columnNameTypeConstraint(); 
+	            }
 	            this.state = 2113;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,203,this._ctx);
 	        }
+
 	        this.state = 2114;
 	        this.match(HiveParser.RPAREN);
 	    } catch (re) {
@@ -9771,7 +8783,6 @@ export default class HiveParser extends antlr4.Parser {
 	tableBuckets() {
 	    let localctx = new TableBucketsContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 284, HiveParser.RULE_tableBuckets);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2116;
@@ -9786,8 +8797,8 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.RPAREN);
 	        this.state = 2127;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_SORTED) {
+	        var la_ = this._interp.adaptivePredict(this._input,204,this._ctx);
+	        if(la_===1) {
 	            this.state = 2121;
 	            this.match(HiveParser.KW_SORTED);
 	            this.state = 2122;
@@ -9798,8 +8809,8 @@ export default class HiveParser extends antlr4.Parser {
 	            this.columnNameOrderList();
 	            this.state = 2125;
 	            this.match(HiveParser.RPAREN);
-	        }
 
+	        }
 	        this.state = 2129;
 	        this.match(HiveParser.KW_INTO);
 	        this.state = 2130;
@@ -10000,7 +9011,6 @@ export default class HiveParser extends antlr4.Parser {
 	rowFormatDelimited() {
 	    let localctx = new RowFormatDelimitedContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 296, HiveParser.RULE_rowFormatDelimited);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2164;
@@ -10011,20 +9021,20 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_DELIMITED);
 	        this.state = 2168;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_FIELDS) {
+	        var la_ = this._interp.adaptivePredict(this._input,208,this._ctx);
+	        if(la_===1) {
 	            this.state = 2167;
 	            this.tableRowFormatFieldIdentifier();
-	        }
 
+	        }
 	        this.state = 2171;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COLLECTION) {
+	        var la_ = this._interp.adaptivePredict(this._input,209,this._ctx);
+	        if(la_===1) {
 	            this.state = 2170;
 	            this.tableRowFormatCollItemsIdentifier();
-	        }
 
+	        }
 	        this.state = 2174;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,210,this._ctx);
@@ -10035,20 +9045,20 @@ export default class HiveParser extends antlr4.Parser {
 	        }
 	        this.state = 2177;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_LINES) {
+	        var la_ = this._interp.adaptivePredict(this._input,211,this._ctx);
+	        if(la_===1) {
 	            this.state = 2176;
 	            this.tableRowFormatLinesIdentifier();
-	        }
 
+	        }
 	        this.state = 2180;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NULL) {
+	        var la_ = this._interp.adaptivePredict(this._input,212,this._ctx);
+	        if(la_===1) {
 	            this.state = 2179;
 	            this.tableRowNullFormat();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -10157,7 +9167,6 @@ export default class HiveParser extends antlr4.Parser {
 	tablePropertiesList() {
 	    let localctx = new TablePropertiesListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 304, HiveParser.RULE_tablePropertiesList);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2209;
 	        this._errHandler.sync(this);
@@ -10169,16 +9178,19 @@ export default class HiveParser extends antlr4.Parser {
 	            this.keyValueProperty();
 	            this.state = 2198;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            while(_la===HiveParser.COMMA) {
-	                this.state = 2194;
-	                this.match(HiveParser.COMMA);
-	                this.state = 2195;
-	                this.keyValueProperty();
+	            var _alt = this._interp.adaptivePredict(this._input,214,this._ctx)
+	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                if(_alt===1) {
+	                    this.state = 2194;
+	                    this.match(HiveParser.COMMA);
+	                    this.state = 2195;
+	                    this.keyValueProperty(); 
+	                }
 	                this.state = 2200;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
+	                _alt = this._interp.adaptivePredict(this._input,214,this._ctx);
 	            }
+
 	            break;
 
 	        case 2:
@@ -10187,16 +9199,19 @@ export default class HiveParser extends antlr4.Parser {
 	            this.keyProperty();
 	            this.state = 2206;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            while(_la===HiveParser.COMMA) {
-	                this.state = 2202;
-	                this.match(HiveParser.COMMA);
-	                this.state = 2203;
-	                this.keyProperty();
+	            var _alt = this._interp.adaptivePredict(this._input,215,this._ctx)
+	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                if(_alt===1) {
+	                    this.state = 2202;
+	                    this.match(HiveParser.COMMA);
+	                    this.state = 2203;
+	                    this.keyProperty(); 
+	                }
 	                this.state = 2208;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
+	                _alt = this._interp.adaptivePredict(this._input,215,this._ctx);
 	            }
+
 	            break;
 
 	        }
@@ -10269,7 +9284,6 @@ export default class HiveParser extends antlr4.Parser {
 	tableRowFormatFieldIdentifier() {
 	    let localctx = new TableRowFormatFieldIdentifierContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 310, HiveParser.RULE_tableRowFormatFieldIdentifier);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2217;
@@ -10282,16 +9296,16 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.StringLiteral);
 	        this.state = 2224;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ESCAPED) {
+	        var la_ = this._interp.adaptivePredict(this._input,217,this._ctx);
+	        if(la_===1) {
 	            this.state = 2221;
 	            this.match(HiveParser.KW_ESCAPED);
 	            this.state = 2222;
 	            this.match(HiveParser.KW_BY);
 	            this.state = 2223;
 	            this.match(HiveParser.StringLiteral);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -10431,7 +9445,6 @@ export default class HiveParser extends antlr4.Parser {
 	tableFileFormat() {
 	    let localctx = new TableFileFormatContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 320, HiveParser.RULE_tableFileFormat);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2271;
 	        this._errHandler.sync(this);
@@ -10453,8 +9466,8 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.StringLiteral);
 	            this.state = 2258;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_INPUTDRIVER) {
+	            var la_ = this._interp.adaptivePredict(this._input,218,this._ctx);
+	            if(la_===1) {
 	                this.state = 2254;
 	                this.match(HiveParser.KW_INPUTDRIVER);
 	                this.state = 2255;
@@ -10463,8 +9476,8 @@ export default class HiveParser extends antlr4.Parser {
 	                this.match(HiveParser.KW_OUTPUTDRIVER);
 	                this.state = 2257;
 	                this.match(HiveParser.StringLiteral);
-	            }
 
+	            }
 	            break;
 
 	        case 2:
@@ -10582,23 +9595,25 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameTypeOrConstraintList() {
 	    let localctx = new ColumnNameTypeOrConstraintListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 326, HiveParser.RULE_columnNameTypeOrConstraintList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2284;
 	        this.columnNameTypeOrConstraint();
 	        this.state = 2289;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2285;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2286;
-	            this.columnNameTypeOrConstraint();
+	        var _alt = this._interp.adaptivePredict(this._input,222,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2285;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2286;
+	                this.columnNameTypeOrConstraint(); 
+	            }
 	            this.state = 2291;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,222,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -10618,23 +9633,25 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameColonTypeList() {
 	    let localctx = new ColumnNameColonTypeListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 328, HiveParser.RULE_columnNameColonTypeList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2292;
 	        this.columnNameColonType();
 	        this.state = 2297;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2293;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2294;
-	            this.columnNameColonType();
+	        var _alt = this._interp.adaptivePredict(this._input,223,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2293;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2294;
+	                this.columnNameColonType(); 
+	            }
 	            this.state = 2299;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,223,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -10654,23 +9671,25 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameList() {
 	    let localctx = new ColumnNameListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 330, HiveParser.RULE_columnNameList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2300;
 	        this.columnName();
 	        this.state = 2305;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2301;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2302;
-	            this.columnName();
+	        var _alt = this._interp.adaptivePredict(this._input,224,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2301;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2302;
+	                this.columnName(); 
+	            }
 	            this.state = 2307;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,224,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -10713,46 +9732,48 @@ export default class HiveParser extends antlr4.Parser {
 	extColumnName() {
 	    let localctx = new ExtColumnNameContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 334, HiveParser.RULE_extColumnName);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2310;
 	        this.identifier();
 	        this.state = 2320;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.DOT) {
-	            this.state = 2311;
-	            this.match(HiveParser.DOT);
-	            this.state = 2316;
-	            this._errHandler.sync(this);
-	            var la_ = this._interp.adaptivePredict(this._input,225,this._ctx);
-	            switch(la_) {
-	            case 1:
-	                this.state = 2312;
-	                this.match(HiveParser.KW_ELEM_TYPE);
-	                break;
+	        var _alt = this._interp.adaptivePredict(this._input,226,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2311;
+	                this.match(HiveParser.DOT);
+	                this.state = 2316;
+	                this._errHandler.sync(this);
+	                var la_ = this._interp.adaptivePredict(this._input,225,this._ctx);
+	                switch(la_) {
+	                case 1:
+	                    this.state = 2312;
+	                    this.match(HiveParser.KW_ELEM_TYPE);
+	                    break;
 
-	            case 2:
-	                this.state = 2313;
-	                this.match(HiveParser.KW_KEY_TYPE);
-	                break;
+	                case 2:
+	                    this.state = 2313;
+	                    this.match(HiveParser.KW_KEY_TYPE);
+	                    break;
 
-	            case 3:
-	                this.state = 2314;
-	                this.match(HiveParser.KW_VALUE_TYPE);
-	                break;
+	                case 3:
+	                    this.state = 2314;
+	                    this.match(HiveParser.KW_VALUE_TYPE);
+	                    break;
 
-	            case 4:
-	                this.state = 2315;
-	                this.identifier();
-	                break;
+	                case 4:
+	                    this.state = 2315;
+	                    this.identifier();
+	                    break;
 
+	                } 
 	            }
 	            this.state = 2322;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,226,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -10772,23 +9793,25 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameOrderList() {
 	    let localctx = new ColumnNameOrderListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 336, HiveParser.RULE_columnNameOrderList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2323;
 	        this.columnNameOrder();
 	        this.state = 2328;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2324;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2325;
-	            this.columnNameOrder();
+	        var _alt = this._interp.adaptivePredict(this._input,227,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2324;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2325;
+	                this.columnNameOrder(); 
+	            }
 	            this.state = 2330;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,227,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -10835,33 +9858,31 @@ export default class HiveParser extends antlr4.Parser {
 	enableValidateSpecification() {
 	    let localctx = new EnableValidateSpecificationContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 340, HiveParser.RULE_enableValidateSpecification);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2340;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
+	        var la_ = this._interp.adaptivePredict(this._input,229,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2335;
 	            this.enableSpecification();
 	            this.state = 2337;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_VALIDATE || _la===HiveParser.KW_NOVALIDATE) {
+	            var la_ = this._interp.adaptivePredict(this._input,228,this._ctx);
+	            if(la_===1) {
 	                this.state = 2336;
 	                this.validateSpecification();
-	            }
 
+	            }
 	            break;
-	        case HiveParser.KW_NOT:
-	        case HiveParser.KW_ENFORCED:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2339;
 	            this.enforcedSpecification();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -10947,21 +9968,22 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2349;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ENFORCED:
+	        var la_ = this._interp.adaptivePredict(this._input,230,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2346;
 	            this.match(HiveParser.KW_ENFORCED);
 	            break;
-	        case HiveParser.KW_NOT:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2347;
 	            this.match(HiveParser.KW_NOT);
 	            this.state = 2348;
 	            this.match(HiveParser.KW_ENFORCED);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -10982,74 +10004,29 @@ export default class HiveParser extends antlr4.Parser {
 	relySpecification() {
 	    let localctx = new RelySpecificationContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 348, HiveParser.RULE_relySpecification);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2355;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_RELY:
+	        var la_ = this._interp.adaptivePredict(this._input,232,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2351;
 	            this.match(HiveParser.KW_RELY);
 	            break;
-	        case HiveParser.EOF:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_FROM:
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_INSERT:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_IMPORT:
-	        case HiveParser.KW_CREATE:
-	        case HiveParser.KW_ALTER:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_DESCRIBE:
-	        case HiveParser.KW_DROP:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_WITH:
-	        case HiveParser.KW_SET:
-	        case HiveParser.KW_DELETE:
-	        case HiveParser.KW_GRANT:
-	        case HiveParser.KW_REVOKE:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_UPDATE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_TRUNCATE:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_START:
-	        case HiveParser.KW_COMMIT:
-	        case HiveParser.KW_ROLLBACK:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MERGE:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.COMMA:
-	        case HiveParser.SEMICOLON:
-	        case HiveParser.LPAREN:
-	        case HiveParser.RPAREN:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2353;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_NORELY) {
+	            var la_ = this._interp.adaptivePredict(this._input,231,this._ctx);
+	            if(la_===1) {
 	                this.state = 2352;
 	                this.match(HiveParser.KW_NORELY);
-	            }
 
+	            }
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -11070,29 +10047,28 @@ export default class HiveParser extends antlr4.Parser {
 	createConstraint() {
 	    let localctx = new CreateConstraintContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 350, HiveParser.RULE_createConstraint);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2359;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_CONSTRAINT) {
+	        var la_ = this._interp.adaptivePredict(this._input,233,this._ctx);
+	        if(la_===1) {
 	            this.state = 2357;
 	            this.match(HiveParser.KW_CONSTRAINT);
 	            this.state = 2358;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 2361;
 	        this.pkConstraint();
 	        this.state = 2363;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NOT || _la===HiveParser.KW_ENABLE || _la===HiveParser.KW_DISABLE || _la===HiveParser.KW_ENFORCED) {
+	        var la_ = this._interp.adaptivePredict(this._input,234,this._ctx);
+	        if(la_===1) {
 	            this.state = 2362;
 	            this.constraintOptsCreate();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11112,7 +10088,6 @@ export default class HiveParser extends antlr4.Parser {
 	alterConstraintWithName() {
 	    let localctx = new AlterConstraintWithNameContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 352, HiveParser.RULE_alterConstraintWithName);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2365;
@@ -11123,12 +10098,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.pkConstraint();
 	        this.state = 2369;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NOT || _la===HiveParser.KW_ENABLE || _la===HiveParser.KW_DISABLE || _la===HiveParser.KW_ENFORCED) {
+	        var la_ = this._interp.adaptivePredict(this._input,235,this._ctx);
+	        if(la_===1) {
 	            this.state = 2368;
 	            this.constraintOptsAlter();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11173,19 +10148,18 @@ export default class HiveParser extends antlr4.Parser {
 	createForeignKey() {
 	    let localctx = new CreateForeignKeyContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 356, HiveParser.RULE_createForeignKey);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2376;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_CONSTRAINT) {
+	        var la_ = this._interp.adaptivePredict(this._input,236,this._ctx);
+	        if(la_===1) {
 	            this.state = 2374;
 	            this.match(HiveParser.KW_CONSTRAINT);
 	            this.state = 2375;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 2378;
 	        this.match(HiveParser.KW_FOREIGN);
 	        this.state = 2379;
@@ -11200,12 +10174,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.columnParenthesesList();
 	        this.state = 2385;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NOT || _la===HiveParser.KW_ENABLE || _la===HiveParser.KW_DISABLE || _la===HiveParser.KW_ENFORCED) {
+	        var la_ = this._interp.adaptivePredict(this._input,237,this._ctx);
+	        if(la_===1) {
 	            this.state = 2384;
 	            this.constraintOptsCreate();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11225,7 +10199,6 @@ export default class HiveParser extends antlr4.Parser {
 	alterForeignKeyWithName() {
 	    let localctx = new AlterForeignKeyWithNameContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 358, HiveParser.RULE_alterForeignKeyWithName);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2387;
@@ -11246,12 +10219,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.columnParenthesesList();
 	        this.state = 2396;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NOT || _la===HiveParser.KW_ENABLE || _la===HiveParser.KW_DISABLE || _la===HiveParser.KW_ENFORCED) {
+	        var la_ = this._interp.adaptivePredict(this._input,238,this._ctx);
+	        if(la_===1) {
 	            this.state = 2395;
 	            this.constraintOptsAlter();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11274,31 +10247,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2400;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_TRUE:
-	        case HiveParser.KW_FALSE:
-	        case HiveParser.KW_NULL:
-	        case HiveParser.KW_DATE:
-	        case HiveParser.KW_TIMESTAMP:
-	        case HiveParser.KW_TIMESTAMPLOCALTZ:
-	        case HiveParser.KW_CURRENT_DATE:
-	        case HiveParser.KW_CURRENT_TIMESTAMP:
-	        case HiveParser.StringLiteral:
-	        case HiveParser.IntegralLiteral:
-	        case HiveParser.NumberLiteral:
-	        case HiveParser.Number:
-	        case HiveParser.CharSetName:
+	        var la_ = this._interp.adaptivePredict(this._input,239,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2398;
 	            this.skewedColumnValues();
 	            break;
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2399;
 	            this.skewedColumnValuePairList();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -11319,23 +10281,25 @@ export default class HiveParser extends antlr4.Parser {
 	skewedColumnValuePairList() {
 	    let localctx = new SkewedColumnValuePairListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 362, HiveParser.RULE_skewedColumnValuePairList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2402;
 	        this.skewedColumnValuePair();
 	        this.state = 2407;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2403;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2404;
-	            this.skewedColumnValuePair();
+	        var _alt = this._interp.adaptivePredict(this._input,240,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2403;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2404;
+	                this.skewedColumnValuePair(); 
+	            }
 	            this.state = 2409;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,240,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11382,23 +10346,25 @@ export default class HiveParser extends antlr4.Parser {
 	skewedColumnValues() {
 	    let localctx = new SkewedColumnValuesContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 366, HiveParser.RULE_skewedColumnValues);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2414;
 	        this.skewedColumnValue();
 	        this.state = 2419;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2415;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2416;
-	            this.skewedColumnValue();
+	        var _alt = this._interp.adaptivePredict(this._input,241,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2415;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2416;
+	                this.skewedColumnValue(); 
+	            }
 	            this.state = 2421;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,241,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11444,31 +10410,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2426;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_TRUE:
-	        case HiveParser.KW_FALSE:
-	        case HiveParser.KW_NULL:
-	        case HiveParser.KW_DATE:
-	        case HiveParser.KW_TIMESTAMP:
-	        case HiveParser.KW_TIMESTAMPLOCALTZ:
-	        case HiveParser.KW_CURRENT_DATE:
-	        case HiveParser.KW_CURRENT_TIMESTAMP:
-	        case HiveParser.StringLiteral:
-	        case HiveParser.IntegralLiteral:
-	        case HiveParser.NumberLiteral:
-	        case HiveParser.Number:
-	        case HiveParser.CharSetName:
+	        var la_ = this._interp.adaptivePredict(this._input,242,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2424;
 	            this.skewedColumnValue();
 	            break;
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2425;
 	            this.skewedColumnValuePair();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -11561,27 +10516,26 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameOrder() {
 	    let localctx = new ColumnNameOrderContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 376, HiveParser.RULE_columnNameOrder);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2436;
 	        this.identifier();
 	        this.state = 2438;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ASC || _la===HiveParser.KW_DESC) {
+	        var la_ = this._interp.adaptivePredict(this._input,244,this._ctx);
+	        if(la_===1) {
 	            this.state = 2437;
 	            this.orderSpecification();
-	        }
 
+	        }
 	        this.state = 2441;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NULLS) {
+	        var la_ = this._interp.adaptivePredict(this._input,245,this._ctx);
+	        if(la_===1) {
 	            this.state = 2440;
 	            this.nullOrdering();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11601,23 +10555,25 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameCommentList() {
 	    let localctx = new ColumnNameCommentListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 378, HiveParser.RULE_columnNameCommentList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2443;
 	        this.columnNameComment();
 	        this.state = 2448;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2444;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2445;
-	            this.columnNameComment();
+	        var _alt = this._interp.adaptivePredict(this._input,246,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2444;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2445;
+	                this.columnNameComment(); 
+	            }
 	            this.state = 2450;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,246,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11637,21 +10593,20 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameComment() {
 	    let localctx = new ColumnNameCommentContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 380, HiveParser.RULE_columnNameComment);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2451;
 	        this.identifier();
 	        this.state = 2454;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,247,this._ctx);
+	        if(la_===1) {
 	            this.state = 2452;
 	            this.match(HiveParser.KW_COMMENT);
 	            this.state = 2453;
 	            this.match(HiveParser.StringLiteral);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11671,7 +10626,6 @@ export default class HiveParser extends antlr4.Parser {
 	columnRefOrder() {
 	    let localctx = new ColumnRefOrderContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 382, HiveParser.RULE_columnRefOrder);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2456;
@@ -11686,12 +10640,12 @@ export default class HiveParser extends antlr4.Parser {
 	        }
 	        this.state = 2461;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NULLS) {
+	        var la_ = this._interp.adaptivePredict(this._input,249,this._ctx);
+	        if(la_===1) {
 	            this.state = 2460;
 	            this.nullOrdering();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11711,7 +10665,6 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameType() {
 	    let localctx = new ColumnNameTypeContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 384, HiveParser.RULE_columnNameType);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2463;
@@ -11720,14 +10673,14 @@ export default class HiveParser extends antlr4.Parser {
 	        this.colType();
 	        this.state = 2467;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,250,this._ctx);
+	        if(la_===1) {
 	            this.state = 2465;
 	            this.match(HiveParser.KW_COMMENT);
 	            this.state = 2466;
 	            this.match(HiveParser.StringLiteral);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -11750,214 +10703,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2471;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_PRIMARY:
-	        case HiveParser.KW_FOREIGN:
-	        case HiveParser.KW_CONSTRAINT:
+	        var la_ = this._interp.adaptivePredict(this._input,251,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2469;
 	            this.tableConstraint();
 	            break;
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.Identifier:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2470;
 	            this.columnNameTypeConstraint();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -12015,7 +10774,6 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameTypeConstraint() {
 	    let localctx = new ColumnNameTypeConstraintContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 390, HiveParser.RULE_columnNameTypeConstraint);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2477;
@@ -12024,22 +10782,22 @@ export default class HiveParser extends antlr4.Parser {
 	        this.colType();
 	        this.state = 2480;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(((((_la - 287)) & ~0x1f) == 0 && ((1 << (_la - 287)) & ((1 << (HiveParser.KW_PRIMARY - 287)) | (1 << (HiveParser.KW_REFERENCES - 287)) | (1 << (HiveParser.KW_CONSTRAINT - 287)))) !== 0)) {
+	        var la_ = this._interp.adaptivePredict(this._input,253,this._ctx);
+	        if(la_===1) {
 	            this.state = 2479;
 	            this.columnConstraint();
-	        }
 
+	        }
 	        this.state = 2484;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,254,this._ctx);
+	        if(la_===1) {
 	            this.state = 2482;
 	            this.match(HiveParser.KW_COMMENT);
 	            this.state = 2483;
 	            this.match(HiveParser.StringLiteral);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -12096,19 +10854,18 @@ export default class HiveParser extends antlr4.Parser {
 	foreignKeyConstraint() {
 	    let localctx = new ForeignKeyConstraintContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 394, HiveParser.RULE_foreignKeyConstraint);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2492;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_CONSTRAINT) {
+	        var la_ = this._interp.adaptivePredict(this._input,256,this._ctx);
+	        if(la_===1) {
 	            this.state = 2490;
 	            this.match(HiveParser.KW_CONSTRAINT);
 	            this.state = 2491;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 2494;
 	        this.match(HiveParser.KW_REFERENCES);
 	        this.state = 2495;
@@ -12121,12 +10878,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.RPAREN);
 	        this.state = 2500;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NOT || _la===HiveParser.KW_ENABLE || _la===HiveParser.KW_DISABLE || _la===HiveParser.KW_ENFORCED) {
+	        var la_ = this._interp.adaptivePredict(this._input,257,this._ctx);
+	        if(la_===1) {
 	            this.state = 2499;
 	            this.constraintOptsCreate();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -12146,29 +10903,28 @@ export default class HiveParser extends antlr4.Parser {
 	colConstraint() {
 	    let localctx = new ColConstraintContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 396, HiveParser.RULE_colConstraint);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2504;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_CONSTRAINT) {
+	        var la_ = this._interp.adaptivePredict(this._input,258,this._ctx);
+	        if(la_===1) {
 	            this.state = 2502;
 	            this.match(HiveParser.KW_CONSTRAINT);
 	            this.state = 2503;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 2506;
 	        this.tableConstraintPrimaryKey();
 	        this.state = 2508;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NOT || _la===HiveParser.KW_ENABLE || _la===HiveParser.KW_DISABLE || _la===HiveParser.KW_ENFORCED) {
+	        var la_ = this._interp.adaptivePredict(this._input,259,this._ctx);
+	        if(la_===1) {
 	            this.state = 2507;
 	            this.constraintOptsCreate();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -12225,19 +10981,18 @@ export default class HiveParser extends antlr4.Parser {
 	alterForeignKeyConstraint() {
 	    let localctx = new AlterForeignKeyConstraintContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 400, HiveParser.RULE_alterForeignKeyConstraint);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2516;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_CONSTRAINT) {
+	        var la_ = this._interp.adaptivePredict(this._input,261,this._ctx);
+	        if(la_===1) {
 	            this.state = 2514;
 	            this.match(HiveParser.KW_CONSTRAINT);
 	            this.state = 2515;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 2518;
 	        this.match(HiveParser.KW_REFERENCES);
 	        this.state = 2519;
@@ -12250,12 +11005,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.RPAREN);
 	        this.state = 2524;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NOT || _la===HiveParser.KW_ENABLE || _la===HiveParser.KW_DISABLE || _la===HiveParser.KW_ENFORCED) {
+	        var la_ = this._interp.adaptivePredict(this._input,262,this._ctx);
+	        if(la_===1) {
 	            this.state = 2523;
 	            this.constraintOptsAlter();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -12275,29 +11030,28 @@ export default class HiveParser extends antlr4.Parser {
 	alterColConstraint() {
 	    let localctx = new AlterColConstraintContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 402, HiveParser.RULE_alterColConstraint);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2528;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_CONSTRAINT) {
+	        var la_ = this._interp.adaptivePredict(this._input,263,this._ctx);
+	        if(la_===1) {
 	            this.state = 2526;
 	            this.match(HiveParser.KW_CONSTRAINT);
 	            this.state = 2527;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 2530;
 	        this.tableConstraintPrimaryKey();
 	        this.state = 2532;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NOT || _la===HiveParser.KW_ENABLE || _la===HiveParser.KW_DISABLE || _la===HiveParser.KW_ENFORCED) {
+	        var la_ = this._interp.adaptivePredict(this._input,264,this._ctx);
+	        if(la_===1) {
 	            this.state = 2531;
 	            this.constraintOptsAlter();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -12392,7 +11146,6 @@ export default class HiveParser extends antlr4.Parser {
 	columnNameColonType() {
 	    let localctx = new ColumnNameColonTypeContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 410, HiveParser.RULE_columnNameColonType);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2543;
@@ -12403,14 +11156,14 @@ export default class HiveParser extends antlr4.Parser {
 	        this.colType();
 	        this.state = 2548;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_COMMENT) {
+	        var la_ = this._interp.adaptivePredict(this._input,265,this._ctx);
+	        if(la_===1) {
 	            this.state = 2546;
 	            this.match(HiveParser.KW_COMMENT);
 	            this.state = 2547;
 	            this.match(HiveParser.StringLiteral);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -12453,23 +11206,25 @@ export default class HiveParser extends antlr4.Parser {
 	colTypeList() {
 	    let localctx = new ColTypeListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 414, HiveParser.RULE_colTypeList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2552;
 	        this.colType();
 	        this.state = 2557;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2553;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2554;
-	            this.colType();
+	        var _alt = this._interp.adaptivePredict(this._input,266,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2553;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2554;
+	                this.colType(); 
+	            }
 	            this.state = 2559;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,266,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -12492,49 +11247,38 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2565;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_BOOLEAN:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_SMALLINT:
-	        case HiveParser.KW_INT:
-	        case HiveParser.KW_BIGINT:
-	        case HiveParser.KW_FLOAT:
-	        case HiveParser.KW_DOUBLE:
-	        case HiveParser.KW_DATE:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_TIMESTAMP:
-	        case HiveParser.KW_TIMESTAMPLOCALTZ:
-	        case HiveParser.KW_DECIMAL:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_CHAR:
-	        case HiveParser.KW_VARCHAR:
-	        case HiveParser.KW_BINARY:
+	        var la_ = this._interp.adaptivePredict(this._input,267,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2560;
 	            this.primitiveType();
 	            break;
-	        case HiveParser.KW_ARRAY:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2561;
 	            this.listType();
 	            break;
-	        case HiveParser.KW_STRUCT:
+
+	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 2562;
 	            this.structType();
 	            break;
-	        case HiveParser.KW_MAP:
+
+	        case 4:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 2563;
 	            this.mapType();
 	            break;
-	        case HiveParser.KW_UNIONTYPE:
+
+	        case 5:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 2564;
 	            this.unionType();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -12555,7 +11299,6 @@ export default class HiveParser extends antlr4.Parser {
 	primitiveType() {
 	    let localctx = new PrimitiveTypeContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 418, HiveParser.RULE_primitiveType);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2606;
 	        this._errHandler.sync(this);
@@ -12603,12 +11346,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_DOUBLE);
 	            this.state = 2575;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_PRECISION) {
+	            var la_ = this._interp.adaptivePredict(this._input,268,this._ctx);
+	            if(la_===1) {
 	                this.state = 2574;
 	                this.match(HiveParser.KW_PRECISION);
-	            }
 
+	            }
 	            break;
 
 	        case 8:
@@ -12675,14 +11418,14 @@ export default class HiveParser extends antlr4.Parser {
 	                this.match(HiveParser.Number);
 	                this.state = 2593;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
-	                if(_la===HiveParser.COMMA) {
+	                var la_ = this._interp.adaptivePredict(this._input,269,this._ctx);
+	                if(la_===1) {
 	                    this.state = 2591;
 	                    this.match(HiveParser.COMMA);
 	                    this.state = 2592;
 	                    this.match(HiveParser.Number);
-	                }
 
+	                }
 	                this.state = 2595;
 	                this.match(HiveParser.RPAREN);
 
@@ -12853,7 +11596,6 @@ export default class HiveParser extends antlr4.Parser {
 	setOperator() {
 	    let localctx = new SetOperatorContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 428, HiveParser.RULE_setOperator);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2654;
 	        this._errHandler.sync(this);
@@ -12873,12 +11615,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_UNION);
 	            this.state = 2634;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_DISTINCT) {
+	            var la_ = this._interp.adaptivePredict(this._input,272,this._ctx);
+	            if(la_===1) {
 	                this.state = 2633;
 	                this.match(HiveParser.KW_DISTINCT);
-	            }
 
+	            }
 	            break;
 
 	        case 3:
@@ -12895,12 +11637,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_INTERSECT);
 	            this.state = 2640;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_DISTINCT) {
+	            var la_ = this._interp.adaptivePredict(this._input,273,this._ctx);
+	            if(la_===1) {
 	                this.state = 2639;
 	                this.match(HiveParser.KW_DISTINCT);
-	            }
 
+	            }
 	            break;
 
 	        case 5:
@@ -12917,12 +11659,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_EXCEPT);
 	            this.state = 2646;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_DISTINCT) {
+	            var la_ = this._interp.adaptivePredict(this._input,274,this._ctx);
+	            if(la_===1) {
 	                this.state = 2645;
 	                this.match(HiveParser.KW_DISTINCT);
-	            }
 
+	            }
 	            break;
 
 	        case 7:
@@ -12939,12 +11681,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_MINUS);
 	            this.state = 2652;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_DISTINCT) {
+	            var la_ = this._interp.adaptivePredict(this._input,275,this._ctx);
+	            if(la_===1) {
 	                this.state = 2651;
 	                this.match(HiveParser.KW_DISTINCT);
-	            }
 
+	            }
 	            break;
 
 	        }
@@ -12967,17 +11709,16 @@ export default class HiveParser extends antlr4.Parser {
 	queryStatementExpression() {
 	    let localctx = new QueryStatementExpressionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 430, HiveParser.RULE_queryStatementExpression);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2657;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_WITH) {
+	        var la_ = this._interp.adaptivePredict(this._input,277,this._ctx);
+	        if(la_===1) {
 	            this.state = 2656;
 	            this.withClause();
-	        }
 
+	        }
 	        this.state = 2659;
 	        this.queryStatementExpressionBody();
 	    } catch (re) {
@@ -13002,23 +11743,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2663;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_FROM:
+	        var la_ = this._interp.adaptivePredict(this._input,278,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2661;
 	            this.fromStatement();
 	            break;
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_INSERT:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2662;
 	            this.regularBody();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -13039,7 +11777,6 @@ export default class HiveParser extends antlr4.Parser {
 	withClause() {
 	    let localctx = new WithClauseContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 434, HiveParser.RULE_withClause);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2665;
@@ -13048,16 +11785,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.cteStatement();
 	        this.state = 2671;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2667;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2668;
-	            this.cteStatement();
+	        var _alt = this._interp.adaptivePredict(this._input,279,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2667;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2668;
+	                this.cteStatement(); 
+	            }
 	            this.state = 2673;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,279,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -13108,23 +11848,25 @@ export default class HiveParser extends antlr4.Parser {
 	fromStatement() {
 	    let localctx = new FromStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 438, HiveParser.RULE_fromStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2680;
 	        this.singleFromStatement();
 	        this.state = 2686;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.KW_UNION || _la===HiveParser.KW_EXCEPT || _la===HiveParser.KW_MINUS || _la===HiveParser.KW_INTERSECT) {
-	            this.state = 2681;
-	            this.setOperator();
-	            this.state = 2682;
-	            this.singleFromStatement();
+	        var _alt = this._interp.adaptivePredict(this._input,280,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2681;
+	                this.setOperator();
+	                this.state = 2682;
+	                this.singleFromStatement(); 
+	            }
 	            this.state = 2688;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,280,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -13186,39 +11928,35 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2701;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_INSERT:
+	        var la_ = this._interp.adaptivePredict(this._input,283,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2695;
 	            this.insertClause();
 	            this.state = 2698;
 	            this._errHandler.sync(this);
-	            switch(this._input.LA(1)) {
-	            case HiveParser.KW_SELECT:
-	            case HiveParser.KW_MAP:
-	            case HiveParser.KW_REDUCE:
-	            case HiveParser.LPAREN:
+	            var la_ = this._interp.adaptivePredict(this._input,282,this._ctx);
+	            switch(la_) {
+	            case 1:
 	                this.state = 2696;
 	                this.selectStatement();
 	                break;
-	            case HiveParser.KW_VALUES:
+
+	            case 2:
 	                this.state = 2697;
 	                this.valuesClause();
 	                break;
-	            default:
-	                throw new antlr4.error.NoViableAltException(this);
+
 	            }
 	            break;
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2700;
 	            this.selectStatement();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -13239,14 +11977,12 @@ export default class HiveParser extends antlr4.Parser {
 	atomSelectStatement() {
 	    let localctx = new AtomSelectStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 444, HiveParser.RULE_atomSelectStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2723;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
+	        var la_ = this._interp.adaptivePredict(this._input,289,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2703;
 	            this.selectClause();
@@ -13260,38 +11996,39 @@ export default class HiveParser extends antlr4.Parser {
 	            }
 	            this.state = 2708;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_WHERE) {
+	            var la_ = this._interp.adaptivePredict(this._input,285,this._ctx);
+	            if(la_===1) {
 	                this.state = 2707;
 	                this.whereClause();
-	            }
 
+	            }
 	            this.state = 2711;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_GROUP) {
+	            var la_ = this._interp.adaptivePredict(this._input,286,this._ctx);
+	            if(la_===1) {
 	                this.state = 2710;
 	                this.groupByClause();
-	            }
 
+	            }
 	            this.state = 2714;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_HAVING) {
+	            var la_ = this._interp.adaptivePredict(this._input,287,this._ctx);
+	            if(la_===1) {
 	                this.state = 2713;
 	                this.havingClause();
-	            }
 
+	            }
 	            this.state = 2717;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_WINDOW) {
+	            var la_ = this._interp.adaptivePredict(this._input,288,this._ctx);
+	            if(la_===1) {
 	                this.state = 2716;
 	                this.window_clause();
-	            }
 
+	            }
 	            break;
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2719;
 	            this.match(HiveParser.LPAREN);
@@ -13300,8 +12037,7 @@ export default class HiveParser extends antlr4.Parser {
 	            this.state = 2721;
 	            this.match(HiveParser.RPAREN);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -13322,59 +12058,58 @@ export default class HiveParser extends antlr4.Parser {
 	selectStatement() {
 	    let localctx = new SelectStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 446, HiveParser.RULE_selectStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2725;
 	        this.atomSelectStatement();
 	        this.state = 2727;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_UNION || _la===HiveParser.KW_EXCEPT || _la===HiveParser.KW_MINUS || _la===HiveParser.KW_INTERSECT) {
+	        var la_ = this._interp.adaptivePredict(this._input,290,this._ctx);
+	        if(la_===1) {
 	            this.state = 2726;
 	            this.setOpSelectStatement();
-	        }
 
+	        }
 	        this.state = 2730;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ORDER) {
+	        var la_ = this._interp.adaptivePredict(this._input,291,this._ctx);
+	        if(la_===1) {
 	            this.state = 2729;
 	            this.orderByClause();
-	        }
 
+	        }
 	        this.state = 2733;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_CLUSTER) {
+	        var la_ = this._interp.adaptivePredict(this._input,292,this._ctx);
+	        if(la_===1) {
 	            this.state = 2732;
 	            this.clusterByClause();
-	        }
 
+	        }
 	        this.state = 2736;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_DISTRIBUTE) {
+	        var la_ = this._interp.adaptivePredict(this._input,293,this._ctx);
+	        if(la_===1) {
 	            this.state = 2735;
 	            this.distributeByClause();
-	        }
 
+	        }
 	        this.state = 2739;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_SORT) {
+	        var la_ = this._interp.adaptivePredict(this._input,294,this._ctx);
+	        if(la_===1) {
 	            this.state = 2738;
 	            this.sortByClause();
-	        }
 
+	        }
 	        this.state = 2742;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_LIMIT) {
+	        var la_ = this._interp.adaptivePredict(this._input,295,this._ctx);
+	        if(la_===1) {
 	            this.state = 2741;
 	            this.limitClause();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -13394,21 +12129,26 @@ export default class HiveParser extends antlr4.Parser {
 	setOpSelectStatement() {
 	    let localctx = new SetOpSelectStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 448, HiveParser.RULE_setOpSelectStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2747; 
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
+	        var _alt = 1;
 	        do {
-	            this.state = 2744;
-	            this.setOperator();
-	            this.state = 2745;
-	            this.atomSelectStatement();
-	            this.state = 2749; 
-	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	        } while(_la===HiveParser.KW_UNION || _la===HiveParser.KW_EXCEPT || _la===HiveParser.KW_MINUS || _la===HiveParser.KW_INTERSECT);
+	        	switch (_alt) {
+	        	case 1:
+	        		this.state = 2744;
+	        		this.setOperator();
+	        		this.state = 2745;
+	        		this.atomSelectStatement();
+	        		break;
+	        	default:
+	        		throw new antlr4.error.NoViableAltException(this);
+	        	}
+	        	this.state = 2749; 
+	        	this._errHandler.sync(this);
+	        	_alt = this._interp.adaptivePredict(this._input,296, this._ctx);
+	        } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -13428,17 +12168,16 @@ export default class HiveParser extends antlr4.Parser {
 	selectStatementWithCTE() {
 	    let localctx = new SelectStatementWithCTEContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 450, HiveParser.RULE_selectStatementWithCTE);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2752;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_WITH) {
+	        var la_ = this._interp.adaptivePredict(this._input,297,this._ctx);
+	        if(la_===1) {
 	            this.state = 2751;
 	            this.withClause();
-	        }
 
+	        }
 	        this.state = 2754;
 	        this.selectStatement();
 	    } catch (re) {
@@ -13460,12 +12199,12 @@ export default class HiveParser extends antlr4.Parser {
 	body() {
 	    let localctx = new BodyContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 452, HiveParser.RULE_body);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2819;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_INSERT:
+	        var la_ = this._interp.adaptivePredict(this._input,318,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2756;
 	            this.insertClause();
@@ -13473,174 +12212,172 @@ export default class HiveParser extends antlr4.Parser {
 	            this.selectClause();
 	            this.state = 2759;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_LATERAL || _la===HiveParser.COMMA) {
+	            var la_ = this._interp.adaptivePredict(this._input,298,this._ctx);
+	            if(la_===1) {
 	                this.state = 2758;
 	                this.lateralView();
-	            }
 
+	            }
 	            this.state = 2762;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_WHERE) {
+	            var la_ = this._interp.adaptivePredict(this._input,299,this._ctx);
+	            if(la_===1) {
 	                this.state = 2761;
 	                this.whereClause();
-	            }
 
+	            }
 	            this.state = 2765;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_GROUP) {
+	            var la_ = this._interp.adaptivePredict(this._input,300,this._ctx);
+	            if(la_===1) {
 	                this.state = 2764;
 	                this.groupByClause();
-	            }
 
+	            }
 	            this.state = 2768;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_HAVING) {
+	            var la_ = this._interp.adaptivePredict(this._input,301,this._ctx);
+	            if(la_===1) {
 	                this.state = 2767;
 	                this.havingClause();
-	            }
 
+	            }
 	            this.state = 2771;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_WINDOW) {
+	            var la_ = this._interp.adaptivePredict(this._input,302,this._ctx);
+	            if(la_===1) {
 	                this.state = 2770;
 	                this.window_clause();
-	            }
 
+	            }
 	            this.state = 2774;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ORDER) {
+	            var la_ = this._interp.adaptivePredict(this._input,303,this._ctx);
+	            if(la_===1) {
 	                this.state = 2773;
 	                this.orderByClause();
-	            }
 
+	            }
 	            this.state = 2777;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_CLUSTER) {
+	            var la_ = this._interp.adaptivePredict(this._input,304,this._ctx);
+	            if(la_===1) {
 	                this.state = 2776;
 	                this.clusterByClause();
-	            }
 
+	            }
 	            this.state = 2780;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_DISTRIBUTE) {
+	            var la_ = this._interp.adaptivePredict(this._input,305,this._ctx);
+	            if(la_===1) {
 	                this.state = 2779;
 	                this.distributeByClause();
-	            }
 
+	            }
 	            this.state = 2783;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_SORT) {
+	            var la_ = this._interp.adaptivePredict(this._input,306,this._ctx);
+	            if(la_===1) {
 	                this.state = 2782;
 	                this.sortByClause();
-	            }
 
+	            }
 	            this.state = 2786;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_LIMIT) {
+	            var la_ = this._interp.adaptivePredict(this._input,307,this._ctx);
+	            if(la_===1) {
 	                this.state = 2785;
 	                this.limitClause();
-	            }
 
+	            }
 	            break;
-	        case HiveParser.KW_SELECT:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2788;
 	            this.selectClause();
 	            this.state = 2790;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_LATERAL || _la===HiveParser.COMMA) {
+	            var la_ = this._interp.adaptivePredict(this._input,308,this._ctx);
+	            if(la_===1) {
 	                this.state = 2789;
 	                this.lateralView();
-	            }
 
+	            }
 	            this.state = 2793;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_WHERE) {
+	            var la_ = this._interp.adaptivePredict(this._input,309,this._ctx);
+	            if(la_===1) {
 	                this.state = 2792;
 	                this.whereClause();
-	            }
 
+	            }
 	            this.state = 2796;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_GROUP) {
+	            var la_ = this._interp.adaptivePredict(this._input,310,this._ctx);
+	            if(la_===1) {
 	                this.state = 2795;
 	                this.groupByClause();
-	            }
 
+	            }
 	            this.state = 2799;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_HAVING) {
+	            var la_ = this._interp.adaptivePredict(this._input,311,this._ctx);
+	            if(la_===1) {
 	                this.state = 2798;
 	                this.havingClause();
-	            }
 
+	            }
 	            this.state = 2802;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_WINDOW) {
+	            var la_ = this._interp.adaptivePredict(this._input,312,this._ctx);
+	            if(la_===1) {
 	                this.state = 2801;
 	                this.window_clause();
-	            }
 
+	            }
 	            this.state = 2805;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ORDER) {
+	            var la_ = this._interp.adaptivePredict(this._input,313,this._ctx);
+	            if(la_===1) {
 	                this.state = 2804;
 	                this.orderByClause();
-	            }
 
+	            }
 	            this.state = 2808;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_CLUSTER) {
+	            var la_ = this._interp.adaptivePredict(this._input,314,this._ctx);
+	            if(la_===1) {
 	                this.state = 2807;
 	                this.clusterByClause();
-	            }
 
+	            }
 	            this.state = 2811;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_DISTRIBUTE) {
+	            var la_ = this._interp.adaptivePredict(this._input,315,this._ctx);
+	            if(la_===1) {
 	                this.state = 2810;
 	                this.distributeByClause();
-	            }
 
+	            }
 	            this.state = 2814;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_SORT) {
+	            var la_ = this._interp.adaptivePredict(this._input,316,this._ctx);
+	            if(la_===1) {
 	                this.state = 2813;
 	                this.sortByClause();
-	            }
 
+	            }
 	            this.state = 2817;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_LIMIT) {
+	            var la_ = this._interp.adaptivePredict(this._input,317,this._ctx);
+	            if(la_===1) {
 	                this.state = 2816;
 	                this.limitClause();
-	            }
 
+	            }
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -13661,7 +12398,6 @@ export default class HiveParser extends antlr4.Parser {
 	insertClause() {
 	    let localctx = new InsertClauseContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 454, HiveParser.RULE_insertClause);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2839;
 	        this._errHandler.sync(this);
@@ -13677,12 +12413,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.destination();
 	            this.state = 2825;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_IF) {
+	            var la_ = this._interp.adaptivePredict(this._input,319,this._ctx);
+	            if(la_===1) {
 	                this.state = 2824;
 	                this.ifNotExists();
-	            }
 
+	            }
 	            break;
 
 	        case 2:
@@ -13693,12 +12429,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_INTO);
 	            this.state = 2830;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_TABLE) {
+	            var la_ = this._interp.adaptivePredict(this._input,320,this._ctx);
+	            if(la_===1) {
 	                this.state = 2829;
 	                this.match(HiveParser.KW_TABLE);
-	            }
 
+	            }
 	            this.state = 2832;
 	            this.tableOrPartition();
 	            this.state = 2837;
@@ -13735,52 +12471,51 @@ export default class HiveParser extends antlr4.Parser {
 	destination() {
 	    let localctx = new DestinationContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 456, HiveParser.RULE_destination);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 2854;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_LOCAL:
+	        var la_ = this._interp.adaptivePredict(this._input,326,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2842;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_LOCAL) {
+	            var la_ = this._interp.adaptivePredict(this._input,323,this._ctx);
+	            if(la_===1) {
 	                this.state = 2841;
 	                this.match(HiveParser.KW_LOCAL);
-	            }
 
+	            }
 	            this.state = 2844;
 	            this.match(HiveParser.KW_DIRECTORY);
 	            this.state = 2845;
 	            this.match(HiveParser.StringLiteral);
 	            this.state = 2847;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ROW) {
+	            var la_ = this._interp.adaptivePredict(this._input,324,this._ctx);
+	            if(la_===1) {
 	                this.state = 2846;
 	                this.tableRowFormat();
-	            }
 
+	            }
 	            this.state = 2850;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_STORED) {
+	            var la_ = this._interp.adaptivePredict(this._input,325,this._ctx);
+	            if(la_===1) {
 	                this.state = 2849;
 	                this.tableFileFormat();
-	            }
 
+	            }
 	            break;
-	        case HiveParser.KW_TABLE:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2852;
 	            this.match(HiveParser.KW_TABLE);
 	            this.state = 2853;
 	            this.tableOrPartition();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -13857,7 +12592,6 @@ export default class HiveParser extends antlr4.Parser {
 	deleteStatement() {
 	    let localctx = new DeleteStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 460, HiveParser.RULE_deleteStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2868;
@@ -13868,12 +12602,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tableName();
 	        this.state = 2872;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_WHERE) {
+	        var la_ = this._interp.adaptivePredict(this._input,329,this._ctx);
+	        if(la_===1) {
 	            this.state = 2871;
 	            this.whereClause();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -13920,7 +12654,6 @@ export default class HiveParser extends antlr4.Parser {
 	setColumnsClause() {
 	    let localctx = new SetColumnsClauseContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 464, HiveParser.RULE_setColumnsClause);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2878;
@@ -13929,16 +12662,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.columnAssignmentClause();
 	        this.state = 2884;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 2880;
-	            this.match(HiveParser.COMMA);
-	            this.state = 2881;
-	            this.columnAssignmentClause();
+	        var _alt = this._interp.adaptivePredict(this._input,330,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 2880;
+	                this.match(HiveParser.COMMA);
+	                this.state = 2881;
+	                this.columnAssignmentClause(); 
+	            }
 	            this.state = 2886;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,330,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -13958,7 +12694,6 @@ export default class HiveParser extends antlr4.Parser {
 	updateStatement() {
 	    let localctx = new UpdateStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 466, HiveParser.RULE_updateStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2887;
@@ -13969,12 +12704,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.setColumnsClause();
 	        this.state = 2891;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_WHERE) {
+	        var la_ = this._interp.adaptivePredict(this._input,331,this._ctx);
+	        if(la_===1) {
 	            this.state = 2890;
 	            this.whereClause();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -13997,29 +12732,32 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2897;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_START:
+	        var la_ = this._interp.adaptivePredict(this._input,332,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2893;
 	            this.startTransactionStatement();
 	            break;
-	        case HiveParser.KW_COMMIT:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2894;
 	            this.commitStatement();
 	            break;
-	        case HiveParser.KW_ROLLBACK:
+
+	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 2895;
 	            this.rollbackStatement();
 	            break;
-	        case HiveParser.KW_SET:
+
+	        case 4:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 2896;
 	            this.setAutoCommitStatement();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -14040,7 +12778,6 @@ export default class HiveParser extends antlr4.Parser {
 	startTransactionStatement() {
 	    let localctx = new StartTransactionStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 470, HiveParser.RULE_startTransactionStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2899;
@@ -14049,24 +12786,27 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_TRANSACTION);
 	        this.state = 2909;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_READ || _la===HiveParser.KW_ISOLATION) {
+	        var la_ = this._interp.adaptivePredict(this._input,334,this._ctx);
+	        if(la_===1) {
 	            this.state = 2901;
 	            this.transactionMode();
 	            this.state = 2906;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            while(_la===HiveParser.COMMA) {
-	                this.state = 2902;
-	                this.match(HiveParser.COMMA);
-	                this.state = 2903;
-	                this.transactionMode();
+	            var _alt = this._interp.adaptivePredict(this._input,333,this._ctx)
+	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                if(_alt===1) {
+	                    this.state = 2902;
+	                    this.match(HiveParser.COMMA);
+	                    this.state = 2903;
+	                    this.transactionMode(); 
+	                }
 	                this.state = 2908;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
+	                _alt = this._interp.adaptivePredict(this._input,333,this._ctx);
 	            }
-	        }
 
+
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -14089,19 +12829,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2913;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ISOLATION:
+	        var la_ = this._interp.adaptivePredict(this._input,335,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2911;
 	            this.isolationLevel();
 	            break;
-	        case HiveParser.KW_READ:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2912;
 	            this.transactionAccessMode();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -14213,19 +12954,18 @@ export default class HiveParser extends antlr4.Parser {
 	commitStatement() {
 	    let localctx = new CommitStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 480, HiveParser.RULE_commitStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2927;
 	        this.match(HiveParser.KW_COMMIT);
 	        this.state = 2929;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_WORK) {
+	        var la_ = this._interp.adaptivePredict(this._input,337,this._ctx);
+	        if(la_===1) {
 	            this.state = 2928;
 	            this.match(HiveParser.KW_WORK);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -14245,19 +12985,18 @@ export default class HiveParser extends antlr4.Parser {
 	rollbackStatement() {
 	    let localctx = new RollbackStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 482, HiveParser.RULE_rollbackStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2931;
 	        this.match(HiveParser.KW_ROLLBACK);
 	        this.state = 2933;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_WORK) {
+	        var la_ = this._interp.adaptivePredict(this._input,338,this._ctx);
+	        if(la_===1) {
 	            this.state = 2932;
 	            this.match(HiveParser.KW_WORK);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -14304,7 +13043,6 @@ export default class HiveParser extends antlr4.Parser {
 	abortTransactionStatement() {
 	    let localctx = new AbortTransactionStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 486, HiveParser.RULE_abortTransactionStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2939;
@@ -14313,14 +13051,20 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_TRANSACTIONS);
 	        this.state = 2942; 
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
+	        var _alt = 1;
 	        do {
-	            this.state = 2941;
-	            this.match(HiveParser.Number);
-	            this.state = 2944; 
-	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	        } while(_la===HiveParser.Number);
+	        	switch (_alt) {
+	        	case 1:
+	        		this.state = 2941;
+	        		this.match(HiveParser.Number);
+	        		break;
+	        	default:
+	        		throw new antlr4.error.NoViableAltException(this);
+	        	}
+	        	this.state = 2944; 
+	        	this._errHandler.sync(this);
+	        	_alt = this._interp.adaptivePredict(this._input,339, this._ctx);
+	        } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -14340,7 +13084,6 @@ export default class HiveParser extends antlr4.Parser {
 	mergeStatement() {
 	    let localctx = new MergeStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 488, HiveParser.RULE_mergeStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2946;
@@ -14351,20 +13094,20 @@ export default class HiveParser extends antlr4.Parser {
 	        this.tableName();
 	        this.state = 2953;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << HiveParser.KW_ASC) | (1 << HiveParser.KW_DESC) | (1 << HiveParser.KW_NULLS) | (1 << HiveParser.KW_LAST) | (1 << HiveParser.KW_AS) | (1 << HiveParser.KW_OVERWRITE))) !== 0) || ((((_la - 36)) & ~0x1f) == 0 && ((1 << (_la - 36)) & ((1 << (HiveParser.KW_PARTITIONS - 36)) | (1 << (HiveParser.KW_TABLES - 36)) | (1 << (HiveParser.KW_COLUMNS - 36)) | (1 << (HiveParser.KW_INDEX - 36)) | (1 << (HiveParser.KW_INDEXES - 36)) | (1 << (HiveParser.KW_REBUILD - 36)) | (1 << (HiveParser.KW_FUNCTIONS - 36)) | (1 << (HiveParser.KW_SHOW - 36)) | (1 << (HiveParser.KW_MSCK - 36)) | (1 << (HiveParser.KW_REPAIR - 36)) | (1 << (HiveParser.KW_DIRECTORY - 36)) | (1 << (HiveParser.KW_CLUSTER - 36)) | (1 << (HiveParser.KW_DISTRIBUTE - 36)) | (1 << (HiveParser.KW_SORT - 36)) | (1 << (HiveParser.KW_LOAD - 36)) | (1 << (HiveParser.KW_EXPORT - 36)) | (1 << (HiveParser.KW_REPLICATION - 36)) | (1 << (HiveParser.KW_METADATA - 36)) | (1 << (HiveParser.KW_DATA - 36)) | (1 << (HiveParser.KW_INPATH - 36)))) !== 0) || ((((_la - 68)) & ~0x1f) == 0 && ((1 << (_la - 68)) & ((1 << (HiveParser.KW_CHANGE - 68)) | (1 << (HiveParser.KW_FIRST - 68)) | (1 << (HiveParser.KW_AFTER - 68)) | (1 << (HiveParser.KW_RENAME - 68)) | (1 << (HiveParser.KW_COMMENT - 68)) | (1 << (HiveParser.KW_TINYINT - 68)) | (1 << (HiveParser.KW_DATETIME - 68)) | (1 << (HiveParser.KW_ZONE - 68)) | (1 << (HiveParser.KW_STRING - 68)) | (1 << (HiveParser.KW_STRUCT - 68)) | (1 << (HiveParser.KW_UNIONTYPE - 68)))) !== 0) || ((((_la - 101)) & ~0x1f) == 0 && ((1 << (_la - 101)) & ((1 << (HiveParser.KW_PARTITIONED - 101)) | (1 << (HiveParser.KW_CLUSTERED - 101)) | (1 << (HiveParser.KW_SORTED - 101)) | (1 << (HiveParser.KW_BUCKETS - 101)) | (1 << (HiveParser.KW_FORMAT - 101)) | (1 << (HiveParser.KW_DELIMITED - 101)) | (1 << (HiveParser.KW_FIELDS - 101)) | (1 << (HiveParser.KW_TERMINATED - 101)) | (1 << (HiveParser.KW_ESCAPED - 101)) | (1 << (HiveParser.KW_COLLECTION - 101)) | (1 << (HiveParser.KW_ITEMS - 101)) | (1 << (HiveParser.KW_KEYS - 101)) | (1 << (HiveParser.KW_KEY_TYPE - 101)) | (1 << (HiveParser.KW_KILL - 101)) | (1 << (HiveParser.KW_LINES - 101)) | (1 << (HiveParser.KW_STORED - 101)) | (1 << (HiveParser.KW_FILEFORMAT - 101)) | (1 << (HiveParser.KW_INPUTFORMAT - 101)) | (1 << (HiveParser.KW_OUTPUTFORMAT - 101)) | (1 << (HiveParser.KW_INPUTDRIVER - 101)) | (1 << (HiveParser.KW_OUTPUTDRIVER - 101)) | (1 << (HiveParser.KW_ENABLE - 101)) | (1 << (HiveParser.KW_DISABLE - 101)) | (1 << (HiveParser.KW_LOCATION - 101)) | (1 << (HiveParser.KW_BUCKET - 101)))) !== 0) || ((((_la - 134)) & ~0x1f) == 0 && ((1 << (_la - 134)) & ((1 << (HiveParser.KW_ADD - 134)) | (1 << (HiveParser.KW_REPLACE - 134)) | (1 << (HiveParser.KW_TEMPORARY - 134)) | (1 << (HiveParser.KW_FILE - 134)) | (1 << (HiveParser.KW_JAR - 134)) | (1 << (HiveParser.KW_EXPLAIN - 134)) | (1 << (HiveParser.KW_FORMATTED - 134)) | (1 << (HiveParser.KW_DEPENDENCY - 134)) | (1 << (HiveParser.KW_LOGICAL - 134)) | (1 << (HiveParser.KW_SERDE - 134)) | (1 << (HiveParser.KW_DEFERRED - 134)) | (1 << (HiveParser.KW_SERDEPROPERTIES - 134)) | (1 << (HiveParser.KW_DBPROPERTIES - 134)) | (1 << (HiveParser.KW_LIMIT - 134)) | (1 << (HiveParser.KW_OFFSET - 134)) | (1 << (HiveParser.KW_UNSET - 134)) | (1 << (HiveParser.KW_TBLPROPERTIES - 134)) | (1 << (HiveParser.KW_IDXPROPERTIES - 134)) | (1 << (HiveParser.KW_VALUE_TYPE - 134)) | (1 << (HiveParser.KW_ELEM_TYPE - 134)) | (1 << (HiveParser.KW_DEFINED - 134)))) !== 0) || ((((_la - 167)) & ~0x1f) == 0 && ((1 << (_la - 167)) & ((1 << (HiveParser.KW_MAPJOIN - 167)) | (1 << (HiveParser.KW_STREAMTABLE - 167)) | (1 << (HiveParser.KW_CLUSTERSTATUS - 167)) | (1 << (HiveParser.KW_UTC - 167)) | (1 << (HiveParser.KW_UTCTIMESTAMP - 167)) | (1 << (HiveParser.KW_LONG - 167)) | (1 << (HiveParser.KW_PLUS - 167)) | (1 << (HiveParser.KW_VIEW - 167)) | (1 << (HiveParser.KW_VIEWS - 167)) | (1 << (HiveParser.KW_DATABASES - 167)) | (1 << (HiveParser.KW_MATERIALIZED - 167)) | (1 << (HiveParser.KW_SCHEMA - 167)) | (1 << (HiveParser.KW_SCHEMAS - 167)) | (1 << (HiveParser.KW_SSL - 167)) | (1 << (HiveParser.KW_UNDO - 167)) | (1 << (HiveParser.KW_LOCK - 167)) | (1 << (HiveParser.KW_LOCKS - 167)) | (1 << (HiveParser.KW_UNLOCK - 167)) | (1 << (HiveParser.KW_SHARED - 167)) | (1 << (HiveParser.KW_EXCLUSIVE - 167)) | (1 << (HiveParser.KW_UNSIGNED - 167)) | (1 << (HiveParser.KW_WHILE - 167)) | (1 << (HiveParser.KW_READ - 167)))) !== 0) || ((((_la - 200)) & ~0x1f) == 0 && ((1 << (_la - 200)) & ((1 << (HiveParser.KW_PURGE - 200)) | (1 << (HiveParser.KW_ANALYZE - 200)) | (1 << (HiveParser.KW_BEFORE - 200)) | (1 << (HiveParser.KW_CONTINUE - 200)) | (1 << (HiveParser.KW_RECORDREADER - 200)) | (1 << (HiveParser.KW_RECORDWRITER - 200)) | (1 << (HiveParser.KW_SEMI - 200)) | (1 << (HiveParser.KW_TOUCH - 200)) | (1 << (HiveParser.KW_ARCHIVE - 200)) | (1 << (HiveParser.KW_UNARCHIVE - 200)) | (1 << (HiveParser.KW_COMPUTE - 200)) | (1 << (HiveParser.KW_STATISTICS - 200)) | (1 << (HiveParser.KW_USE - 200)) | (1 << (HiveParser.KW_OPTION - 200)) | (1 << (HiveParser.KW_CONCATENATE - 200)) | (1 << (HiveParser.KW_SHOW_DATABASE - 200)) | (1 << (HiveParser.KW_RESTRICT - 200)) | (1 << (HiveParser.KW_CASCADE - 200)) | (1 << (HiveParser.KW_SKEWED - 200)) | (1 << (HiveParser.KW_DIRECTORIES - 200)))) !== 0) || ((((_la - 243)) & ~0x1f) == 0 && ((1 << (_la - 243)) & ((1 << (HiveParser.KW_SETS - 243)) | (1 << (HiveParser.KW_NOSCAN - 243)) | (1 << (HiveParser.KW_ROLE - 243)) | (1 << (HiveParser.KW_ROLES - 243)) | (1 << (HiveParser.KW_URI - 243)) | (1 << (HiveParser.KW_SERVER - 243)) | (1 << (HiveParser.KW_ADMIN - 243)) | (1 << (HiveParser.KW_OWNER - 243)) | (1 << (HiveParser.KW_PRINCIPALS - 243)) | (1 << (HiveParser.KW_COMPACT - 243)) | (1 << (HiveParser.KW_COMPACTIONS - 243)) | (1 << (HiveParser.KW_TRANSACTIONS - 243)) | (1 << (HiveParser.KW_REWRITE - 243)) | (1 << (HiveParser.KW_REOPTIMIZATION - 243)) | (1 << (HiveParser.KW_RELOAD - 243)) | (1 << (HiveParser.KW_YEAR - 243)) | (1 << (HiveParser.KW_QUERY - 243)) | (1 << (HiveParser.KW_QUARTER - 243)) | (1 << (HiveParser.KW_MONTH - 243)) | (1 << (HiveParser.KW_WEEK - 243)) | (1 << (HiveParser.KW_DAY - 243)) | (1 << (HiveParser.KW_DOW - 243)) | (1 << (HiveParser.KW_HOUR - 243)) | (1 << (HiveParser.KW_MINUTE - 243)) | (1 << (HiveParser.KW_SECOND - 243)))) !== 0) || ((((_la - 276)) & ~0x1f) == 0 && ((1 << (_la - 276)) & ((1 << (HiveParser.KW_TRANSACTION - 276)) | (1 << (HiveParser.KW_WORK - 276)) | (1 << (HiveParser.KW_WRITE - 276)) | (1 << (HiveParser.KW_ISOLATION - 276)) | (1 << (HiveParser.KW_LEVEL - 276)) | (1 << (HiveParser.KW_SNAPSHOT - 276)) | (1 << (HiveParser.KW_AUTOCOMMIT - 276)) | (1 << (HiveParser.KW_CACHE - 276)) | (1 << (HiveParser.KW_ENFORCED - 276)) | (1 << (HiveParser.KW_VALIDATE - 276)) | (1 << (HiveParser.KW_NOVALIDATE - 276)) | (1 << (HiveParser.KW_RELY - 276)) | (1 << (HiveParser.KW_NORELY - 276)) | (1 << (HiveParser.KW_KEY - 276)) | (1 << (HiveParser.KW_ABORT - 276)) | (1 << (HiveParser.KW_MATCHED - 276)) | (1 << (HiveParser.KW_REPL - 276)) | (1 << (HiveParser.KW_DUMP - 276)) | (1 << (HiveParser.KW_STATUS - 276)) | (1 << (HiveParser.KW_VECTORIZATION - 276)) | (1 << (HiveParser.KW_SUMMARY - 276)))) !== 0) || ((((_la - 308)) & ~0x1f) == 0 && ((1 << (_la - 308)) & ((1 << (HiveParser.KW_OPERATOR - 308)) | (1 << (HiveParser.KW_EXPRESSION - 308)) | (1 << (HiveParser.KW_DETAIL - 308)) | (1 << (HiveParser.KW_WAIT - 308)) | (1 << (HiveParser.KW_RESOURCE - 308)) | (1 << (HiveParser.KW_PLAN - 308)) | (1 << (HiveParser.KW_QUERY_PARALLELISM - 308)) | (1 << (HiveParser.KW_PLANS - 308)) | (1 << (HiveParser.KW_ACTIVATE - 308)) | (1 << (HiveParser.KW_DEFAULT - 308)) | (1 << (HiveParser.KW_CHECK - 308)) | (1 << (HiveParser.KW_POOL - 308)) | (1 << (HiveParser.KW_MOVE - 308)) | (1 << (HiveParser.KW_DO - 308)) | (1 << (HiveParser.KW_ALLOC_FRACTION - 308)) | (1 << (HiveParser.KW_SCHEDULING_POLICY - 308)) | (1 << (HiveParser.KW_PATH - 308)) | (1 << (HiveParser.KW_MAPPING - 308)) | (1 << (HiveParser.KW_WORKLOAD - 308)) | (1 << (HiveParser.KW_MANAGEMENT - 308)) | (1 << (HiveParser.KW_ACTIVE - 308)) | (1 << (HiveParser.KW_UNMANAGED - 308)))) !== 0) || _la===HiveParser.Identifier) {
+	        var la_ = this._interp.adaptivePredict(this._input,341,this._ctx);
+	        if(la_===1) {
 	            this.state = 2950;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_AS) {
+	            var la_ = this._interp.adaptivePredict(this._input,340,this._ctx);
+	            if(la_===1) {
 	                this.state = 2949;
 	                this.match(HiveParser.KW_AS);
-	            }
 
+	            }
 	            this.state = 2952;
 	            this.identifier();
-	        }
 
+	        }
 	        this.state = 2955;
 	        this.match(HiveParser.KW_USING);
 	        this.state = 2956;
@@ -14394,7 +13137,6 @@ export default class HiveParser extends antlr4.Parser {
 	whenClauses() {
 	    let localctx = new WhenClausesContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 490, HiveParser.RULE_whenClauses);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2965;
@@ -14425,12 +13167,12 @@ export default class HiveParser extends antlr4.Parser {
 
 	        this.state = 2969;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_WHEN) {
+	        var la_ = this._interp.adaptivePredict(this._input,344,this._ctx);
+	        if(la_===1) {
 	            this.state = 2968;
 	            this.whenNotMatchedClause();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -14450,7 +13192,6 @@ export default class HiveParser extends antlr4.Parser {
 	whenNotMatchedClause() {
 	    let localctx = new WhenNotMatchedClauseContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 492, HiveParser.RULE_whenNotMatchedClause);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 2971;
@@ -14461,14 +13202,14 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_MATCHED);
 	        this.state = 2976;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_AND) {
+	        var la_ = this._interp.adaptivePredict(this._input,345,this._ctx);
+	        if(la_===1) {
 	            this.state = 2974;
 	            this.match(HiveParser.KW_AND);
 	            this.state = 2975;
 	            this.expression(0);
-	        }
 
+	        }
 	        this.state = 2978;
 	        this.match(HiveParser.KW_THEN);
 	        this.state = 2979;
@@ -14561,21 +13302,22 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 2998;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_UPDATE:
+	        var la_ = this._interp.adaptivePredict(this._input,346,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 2995;
 	            this.match(HiveParser.KW_UPDATE);
 	            this.state = 2996;
 	            this.setColumnsClause();
 	            break;
-	        case HiveParser.KW_DELETE:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 2997;
 	            this.match(HiveParser.KW_DELETE);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -14596,7 +13338,6 @@ export default class HiveParser extends antlr4.Parser {
 	killQueryStatement() {
 	    let localctx = new KillQueryStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 500, HiveParser.RULE_killQueryStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3000;
@@ -14605,14 +13346,20 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.KW_QUERY);
 	        this.state = 3003; 
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
+	        var _alt = 1;
 	        do {
-	            this.state = 3002;
-	            this.match(HiveParser.StringLiteral);
-	            this.state = 3005; 
-	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	        } while(_la===HiveParser.StringLiteral);
+	        	switch (_alt) {
+	        	case 1:
+	        		this.state = 3002;
+	        		this.match(HiveParser.StringLiteral);
+	        		break;
+	        	default:
+	        		throw new antlr4.error.NoViableAltException(this);
+	        	}
+	        	this.state = 3005; 
+	        	this._errHandler.sync(this);
+	        	_alt = this._interp.adaptivePredict(this._input,347, this._ctx);
+	        } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -14636,258 +13383,29 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 3020;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_SELECT:
+	        var la_ = this._interp.adaptivePredict(this._input,351,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3007;
 	            this.match(HiveParser.KW_SELECT);
 	            this.state = 3009;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.QUERY_HINT) {
+	            var la_ = this._interp.adaptivePredict(this._input,348,this._ctx);
+	            if(la_===1) {
 	                this.state = 3008;
 	                this.match(HiveParser.QUERY_HINT);
-	            }
 
+	            }
 	            this.state = 3017;
 	            this._errHandler.sync(this);
-	            switch(this._input.LA(1)) {
-	            case HiveParser.KW_TRUE:
-	            case HiveParser.KW_FALSE:
-	            case HiveParser.KW_ALL:
-	            case HiveParser.KW_NOT:
-	            case HiveParser.KW_IF:
-	            case HiveParser.KW_EXISTS:
-	            case HiveParser.KW_ASC:
-	            case HiveParser.KW_DESC:
-	            case HiveParser.KW_NULLS:
-	            case HiveParser.KW_LAST:
-	            case HiveParser.KW_DISTINCT:
-	            case HiveParser.KW_OVERWRITE:
-	            case HiveParser.KW_PARTITIONS:
-	            case HiveParser.KW_TABLES:
-	            case HiveParser.KW_COLUMNS:
-	            case HiveParser.KW_INDEX:
-	            case HiveParser.KW_INDEXES:
-	            case HiveParser.KW_REBUILD:
-	            case HiveParser.KW_FUNCTIONS:
-	            case HiveParser.KW_SHOW:
-	            case HiveParser.KW_MSCK:
-	            case HiveParser.KW_REPAIR:
-	            case HiveParser.KW_DIRECTORY:
-	            case HiveParser.KW_CLUSTER:
-	            case HiveParser.KW_DISTRIBUTE:
-	            case HiveParser.KW_SORT:
-	            case HiveParser.KW_LOAD:
-	            case HiveParser.KW_EXPORT:
-	            case HiveParser.KW_REPLICATION:
-	            case HiveParser.KW_METADATA:
-	            case HiveParser.KW_DATA:
-	            case HiveParser.KW_INPATH:
-	            case HiveParser.KW_NULL:
-	            case HiveParser.KW_CHANGE:
-	            case HiveParser.KW_FIRST:
-	            case HiveParser.KW_AFTER:
-	            case HiveParser.KW_RENAME:
-	            case HiveParser.KW_COMMENT:
-	            case HiveParser.KW_BOOLEAN:
-	            case HiveParser.KW_TINYINT:
-	            case HiveParser.KW_SMALLINT:
-	            case HiveParser.KW_INT:
-	            case HiveParser.KW_BIGINT:
-	            case HiveParser.KW_FLOAT:
-	            case HiveParser.KW_DOUBLE:
-	            case HiveParser.KW_DATE:
-	            case HiveParser.KW_DATETIME:
-	            case HiveParser.KW_TIMESTAMP:
-	            case HiveParser.KW_TIMESTAMPLOCALTZ:
-	            case HiveParser.KW_ZONE:
-	            case HiveParser.KW_INTERVAL:
-	            case HiveParser.KW_STRING:
-	            case HiveParser.KW_ARRAY:
-	            case HiveParser.KW_STRUCT:
-	            case HiveParser.KW_MAP:
-	            case HiveParser.KW_UNIONTYPE:
-	            case HiveParser.KW_PARTITIONED:
-	            case HiveParser.KW_CLUSTERED:
-	            case HiveParser.KW_SORTED:
-	            case HiveParser.KW_BUCKETS:
-	            case HiveParser.KW_FORMAT:
-	            case HiveParser.KW_DELIMITED:
-	            case HiveParser.KW_FIELDS:
-	            case HiveParser.KW_TERMINATED:
-	            case HiveParser.KW_ESCAPED:
-	            case HiveParser.KW_COLLECTION:
-	            case HiveParser.KW_ITEMS:
-	            case HiveParser.KW_KEYS:
-	            case HiveParser.KW_KEY_TYPE:
-	            case HiveParser.KW_KILL:
-	            case HiveParser.KW_LINES:
-	            case HiveParser.KW_STORED:
-	            case HiveParser.KW_FILEFORMAT:
-	            case HiveParser.KW_INPUTFORMAT:
-	            case HiveParser.KW_OUTPUTFORMAT:
-	            case HiveParser.KW_INPUTDRIVER:
-	            case HiveParser.KW_OUTPUTDRIVER:
-	            case HiveParser.KW_ENABLE:
-	            case HiveParser.KW_DISABLE:
-	            case HiveParser.KW_LOCATION:
-	            case HiveParser.KW_BUCKET:
-	            case HiveParser.KW_CAST:
-	            case HiveParser.KW_ADD:
-	            case HiveParser.KW_REPLACE:
-	            case HiveParser.KW_TEMPORARY:
-	            case HiveParser.KW_FILE:
-	            case HiveParser.KW_JAR:
-	            case HiveParser.KW_EXPLAIN:
-	            case HiveParser.KW_FORMATTED:
-	            case HiveParser.KW_DEPENDENCY:
-	            case HiveParser.KW_LOGICAL:
-	            case HiveParser.KW_SERDE:
-	            case HiveParser.KW_DEFERRED:
-	            case HiveParser.KW_SERDEPROPERTIES:
-	            case HiveParser.KW_DBPROPERTIES:
-	            case HiveParser.KW_LIMIT:
-	            case HiveParser.KW_OFFSET:
-	            case HiveParser.KW_UNSET:
-	            case HiveParser.KW_TBLPROPERTIES:
-	            case HiveParser.KW_IDXPROPERTIES:
-	            case HiveParser.KW_VALUE_TYPE:
-	            case HiveParser.KW_ELEM_TYPE:
-	            case HiveParser.KW_DEFINED:
-	            case HiveParser.KW_CASE:
-	            case HiveParser.KW_MAPJOIN:
-	            case HiveParser.KW_STREAMTABLE:
-	            case HiveParser.KW_CLUSTERSTATUS:
-	            case HiveParser.KW_UTC:
-	            case HiveParser.KW_UTCTIMESTAMP:
-	            case HiveParser.KW_LONG:
-	            case HiveParser.KW_PLUS:
-	            case HiveParser.KW_VIEW:
-	            case HiveParser.KW_VIEWS:
-	            case HiveParser.KW_DATABASES:
-	            case HiveParser.KW_MATERIALIZED:
-	            case HiveParser.KW_SCHEMA:
-	            case HiveParser.KW_SCHEMAS:
-	            case HiveParser.KW_SSL:
-	            case HiveParser.KW_UNDO:
-	            case HiveParser.KW_LOCK:
-	            case HiveParser.KW_LOCKS:
-	            case HiveParser.KW_UNLOCK:
-	            case HiveParser.KW_SHARED:
-	            case HiveParser.KW_EXCLUSIVE:
-	            case HiveParser.KW_UNSIGNED:
-	            case HiveParser.KW_WHILE:
-	            case HiveParser.KW_READ:
-	            case HiveParser.KW_PURGE:
-	            case HiveParser.KW_ANALYZE:
-	            case HiveParser.KW_BEFORE:
-	            case HiveParser.KW_BINARY:
-	            case HiveParser.KW_CONTINUE:
-	            case HiveParser.KW_RECORDREADER:
-	            case HiveParser.KW_RECORDWRITER:
-	            case HiveParser.KW_SEMI:
-	            case HiveParser.KW_TOUCH:
-	            case HiveParser.KW_ARCHIVE:
-	            case HiveParser.KW_UNARCHIVE:
-	            case HiveParser.KW_COMPUTE:
-	            case HiveParser.KW_STATISTICS:
-	            case HiveParser.KW_USE:
-	            case HiveParser.KW_OPTION:
-	            case HiveParser.KW_CONCATENATE:
-	            case HiveParser.KW_SHOW_DATABASE:
-	            case HiveParser.KW_RESTRICT:
-	            case HiveParser.KW_CASCADE:
-	            case HiveParser.KW_SKEWED:
-	            case HiveParser.KW_DIRECTORIES:
-	            case HiveParser.KW_CURRENT_DATE:
-	            case HiveParser.KW_CURRENT_TIMESTAMP:
-	            case HiveParser.KW_GROUPING:
-	            case HiveParser.KW_SETS:
-	            case HiveParser.KW_NOSCAN:
-	            case HiveParser.KW_ROLE:
-	            case HiveParser.KW_ROLES:
-	            case HiveParser.KW_URI:
-	            case HiveParser.KW_SERVER:
-	            case HiveParser.KW_ADMIN:
-	            case HiveParser.KW_OWNER:
-	            case HiveParser.KW_PRINCIPALS:
-	            case HiveParser.KW_COMPACT:
-	            case HiveParser.KW_COMPACTIONS:
-	            case HiveParser.KW_TRANSACTIONS:
-	            case HiveParser.KW_REWRITE:
-	            case HiveParser.KW_REOPTIMIZATION:
-	            case HiveParser.KW_RELOAD:
-	            case HiveParser.KW_YEAR:
-	            case HiveParser.KW_QUERY:
-	            case HiveParser.KW_QUARTER:
-	            case HiveParser.KW_MONTH:
-	            case HiveParser.KW_WEEK:
-	            case HiveParser.KW_DAY:
-	            case HiveParser.KW_DOW:
-	            case HiveParser.KW_HOUR:
-	            case HiveParser.KW_MINUTE:
-	            case HiveParser.KW_SECOND:
-	            case HiveParser.KW_TRANSACTION:
-	            case HiveParser.KW_WORK:
-	            case HiveParser.KW_WRITE:
-	            case HiveParser.KW_ISOLATION:
-	            case HiveParser.KW_LEVEL:
-	            case HiveParser.KW_SNAPSHOT:
-	            case HiveParser.KW_AUTOCOMMIT:
-	            case HiveParser.KW_CACHE:
-	            case HiveParser.KW_ENFORCED:
-	            case HiveParser.KW_VALIDATE:
-	            case HiveParser.KW_NOVALIDATE:
-	            case HiveParser.KW_RELY:
-	            case HiveParser.KW_NORELY:
-	            case HiveParser.KW_KEY:
-	            case HiveParser.KW_ABORT:
-	            case HiveParser.KW_EXTRACT:
-	            case HiveParser.KW_FLOOR:
-	            case HiveParser.KW_MATCHED:
-	            case HiveParser.KW_REPL:
-	            case HiveParser.KW_DUMP:
-	            case HiveParser.KW_STATUS:
-	            case HiveParser.KW_VECTORIZATION:
-	            case HiveParser.KW_SUMMARY:
-	            case HiveParser.KW_OPERATOR:
-	            case HiveParser.KW_EXPRESSION:
-	            case HiveParser.KW_DETAIL:
-	            case HiveParser.KW_WAIT:
-	            case HiveParser.KW_RESOURCE:
-	            case HiveParser.KW_PLAN:
-	            case HiveParser.KW_QUERY_PARALLELISM:
-	            case HiveParser.KW_PLANS:
-	            case HiveParser.KW_ACTIVATE:
-	            case HiveParser.KW_DEFAULT:
-	            case HiveParser.KW_CHECK:
-	            case HiveParser.KW_POOL:
-	            case HiveParser.KW_MOVE:
-	            case HiveParser.KW_DO:
-	            case HiveParser.KW_ALLOC_FRACTION:
-	            case HiveParser.KW_SCHEDULING_POLICY:
-	            case HiveParser.KW_PATH:
-	            case HiveParser.KW_MAPPING:
-	            case HiveParser.KW_WORKLOAD:
-	            case HiveParser.KW_MANAGEMENT:
-	            case HiveParser.KW_ACTIVE:
-	            case HiveParser.KW_UNMANAGED:
-	            case HiveParser.LPAREN:
-	            case HiveParser.PLUS:
-	            case HiveParser.MINUS:
-	            case HiveParser.STAR:
-	            case HiveParser.TILDE:
-	            case HiveParser.StringLiteral:
-	            case HiveParser.IntegralLiteral:
-	            case HiveParser.NumberLiteral:
-	            case HiveParser.Number:
-	            case HiveParser.Identifier:
-	            case HiveParser.CharSetName:
+	            var la_ = this._interp.adaptivePredict(this._input,350,this._ctx);
+	            switch(la_) {
+	            case 1:
 	                this.state = 3012;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
-	                if(_la===HiveParser.KW_ALL || _la===HiveParser.KW_DISTINCT) {
+	                var la_ = this._interp.adaptivePredict(this._input,349,this._ctx);
+	                if(la_===1) {
 	                    this.state = 3011;
 	                    _la = this._input.LA(1);
 	                    if(!(_la===HiveParser.KW_ALL || _la===HiveParser.KW_DISTINCT)) {
@@ -14897,29 +13415,28 @@ export default class HiveParser extends antlr4.Parser {
 	                    	this._errHandler.reportMatch(this);
 	                        this.consume();
 	                    }
-	                }
 
+	                }
 	                this.state = 3014;
 	                this.selectList();
 	                break;
-	            case HiveParser.KW_TRANSFORM:
+
+	            case 2:
 	                this.state = 3015;
 	                this.match(HiveParser.KW_TRANSFORM);
 	                this.state = 3016;
 	                this.selectTrfmClause();
 	                break;
-	            default:
-	                throw new antlr4.error.NoViableAltException(this);
+
 	            }
 	            break;
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_REDUCE:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3019;
 	            this.trfmClause();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -14978,7 +13495,6 @@ export default class HiveParser extends antlr4.Parser {
 	selectTrfmClause() {
 	    let localctx = new SelectTrfmClauseContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 506, HiveParser.RULE_selectTrfmClause);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3030;
@@ -14989,34 +13505,35 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.RPAREN);
 	        this.state = 3034;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ROW) {
+	        var la_ = this._interp.adaptivePredict(this._input,353,this._ctx);
+	        if(la_===1) {
 	            this.state = 3033;
 	            this.rowFormat();
-	        }
 
+	        }
 	        this.state = 3037;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_RECORDWRITER) {
+	        var la_ = this._interp.adaptivePredict(this._input,354,this._ctx);
+	        if(la_===1) {
 	            this.state = 3036;
 	            this.recordWriter();
-	        }
 
+	        }
 	        this.state = 3039;
 	        this.match(HiveParser.KW_USING);
 	        this.state = 3040;
 	        this.match(HiveParser.StringLiteral);
 	        this.state = 3055;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_AS) {
+	        var la_ = this._interp.adaptivePredict(this._input,358,this._ctx);
+	        if(la_===1) {
 	            this.state = 3041;
 	            this.match(HiveParser.KW_AS);
 	            this.state = 3053;
 	            this._errHandler.sync(this);
-	            switch(this._input.LA(1)) {
-	            case HiveParser.LPAREN:
+	            var la_ = this._interp.adaptivePredict(this._input,357,this._ctx);
+	            switch(la_) {
+	            case 1:
 	                this.state = 3042;
 	                this.match(HiveParser.LPAREN);
 	                this.state = 3045;
@@ -15037,200 +13554,8 @@ export default class HiveParser extends antlr4.Parser {
 	                this.state = 3047;
 	                this.match(HiveParser.RPAREN);
 	                break;
-	            case HiveParser.KW_ASC:
-	            case HiveParser.KW_DESC:
-	            case HiveParser.KW_NULLS:
-	            case HiveParser.KW_LAST:
-	            case HiveParser.KW_OVERWRITE:
-	            case HiveParser.KW_PARTITIONS:
-	            case HiveParser.KW_TABLES:
-	            case HiveParser.KW_COLUMNS:
-	            case HiveParser.KW_INDEX:
-	            case HiveParser.KW_INDEXES:
-	            case HiveParser.KW_REBUILD:
-	            case HiveParser.KW_FUNCTIONS:
-	            case HiveParser.KW_SHOW:
-	            case HiveParser.KW_MSCK:
-	            case HiveParser.KW_REPAIR:
-	            case HiveParser.KW_DIRECTORY:
-	            case HiveParser.KW_CLUSTER:
-	            case HiveParser.KW_DISTRIBUTE:
-	            case HiveParser.KW_SORT:
-	            case HiveParser.KW_LOAD:
-	            case HiveParser.KW_EXPORT:
-	            case HiveParser.KW_REPLICATION:
-	            case HiveParser.KW_METADATA:
-	            case HiveParser.KW_DATA:
-	            case HiveParser.KW_INPATH:
-	            case HiveParser.KW_CHANGE:
-	            case HiveParser.KW_FIRST:
-	            case HiveParser.KW_AFTER:
-	            case HiveParser.KW_RENAME:
-	            case HiveParser.KW_COMMENT:
-	            case HiveParser.KW_TINYINT:
-	            case HiveParser.KW_DATETIME:
-	            case HiveParser.KW_ZONE:
-	            case HiveParser.KW_STRING:
-	            case HiveParser.KW_STRUCT:
-	            case HiveParser.KW_UNIONTYPE:
-	            case HiveParser.KW_PARTITIONED:
-	            case HiveParser.KW_CLUSTERED:
-	            case HiveParser.KW_SORTED:
-	            case HiveParser.KW_BUCKETS:
-	            case HiveParser.KW_FORMAT:
-	            case HiveParser.KW_DELIMITED:
-	            case HiveParser.KW_FIELDS:
-	            case HiveParser.KW_TERMINATED:
-	            case HiveParser.KW_ESCAPED:
-	            case HiveParser.KW_COLLECTION:
-	            case HiveParser.KW_ITEMS:
-	            case HiveParser.KW_KEYS:
-	            case HiveParser.KW_KEY_TYPE:
-	            case HiveParser.KW_KILL:
-	            case HiveParser.KW_LINES:
-	            case HiveParser.KW_STORED:
-	            case HiveParser.KW_FILEFORMAT:
-	            case HiveParser.KW_INPUTFORMAT:
-	            case HiveParser.KW_OUTPUTFORMAT:
-	            case HiveParser.KW_INPUTDRIVER:
-	            case HiveParser.KW_OUTPUTDRIVER:
-	            case HiveParser.KW_ENABLE:
-	            case HiveParser.KW_DISABLE:
-	            case HiveParser.KW_LOCATION:
-	            case HiveParser.KW_BUCKET:
-	            case HiveParser.KW_ADD:
-	            case HiveParser.KW_REPLACE:
-	            case HiveParser.KW_TEMPORARY:
-	            case HiveParser.KW_FILE:
-	            case HiveParser.KW_JAR:
-	            case HiveParser.KW_EXPLAIN:
-	            case HiveParser.KW_FORMATTED:
-	            case HiveParser.KW_DEPENDENCY:
-	            case HiveParser.KW_LOGICAL:
-	            case HiveParser.KW_SERDE:
-	            case HiveParser.KW_DEFERRED:
-	            case HiveParser.KW_SERDEPROPERTIES:
-	            case HiveParser.KW_DBPROPERTIES:
-	            case HiveParser.KW_LIMIT:
-	            case HiveParser.KW_OFFSET:
-	            case HiveParser.KW_UNSET:
-	            case HiveParser.KW_TBLPROPERTIES:
-	            case HiveParser.KW_IDXPROPERTIES:
-	            case HiveParser.KW_VALUE_TYPE:
-	            case HiveParser.KW_ELEM_TYPE:
-	            case HiveParser.KW_DEFINED:
-	            case HiveParser.KW_MAPJOIN:
-	            case HiveParser.KW_STREAMTABLE:
-	            case HiveParser.KW_CLUSTERSTATUS:
-	            case HiveParser.KW_UTC:
-	            case HiveParser.KW_UTCTIMESTAMP:
-	            case HiveParser.KW_LONG:
-	            case HiveParser.KW_PLUS:
-	            case HiveParser.KW_VIEW:
-	            case HiveParser.KW_VIEWS:
-	            case HiveParser.KW_DATABASES:
-	            case HiveParser.KW_MATERIALIZED:
-	            case HiveParser.KW_SCHEMA:
-	            case HiveParser.KW_SCHEMAS:
-	            case HiveParser.KW_SSL:
-	            case HiveParser.KW_UNDO:
-	            case HiveParser.KW_LOCK:
-	            case HiveParser.KW_LOCKS:
-	            case HiveParser.KW_UNLOCK:
-	            case HiveParser.KW_SHARED:
-	            case HiveParser.KW_EXCLUSIVE:
-	            case HiveParser.KW_UNSIGNED:
-	            case HiveParser.KW_WHILE:
-	            case HiveParser.KW_READ:
-	            case HiveParser.KW_PURGE:
-	            case HiveParser.KW_ANALYZE:
-	            case HiveParser.KW_BEFORE:
-	            case HiveParser.KW_CONTINUE:
-	            case HiveParser.KW_RECORDREADER:
-	            case HiveParser.KW_RECORDWRITER:
-	            case HiveParser.KW_SEMI:
-	            case HiveParser.KW_TOUCH:
-	            case HiveParser.KW_ARCHIVE:
-	            case HiveParser.KW_UNARCHIVE:
-	            case HiveParser.KW_COMPUTE:
-	            case HiveParser.KW_STATISTICS:
-	            case HiveParser.KW_USE:
-	            case HiveParser.KW_OPTION:
-	            case HiveParser.KW_CONCATENATE:
-	            case HiveParser.KW_SHOW_DATABASE:
-	            case HiveParser.KW_RESTRICT:
-	            case HiveParser.KW_CASCADE:
-	            case HiveParser.KW_SKEWED:
-	            case HiveParser.KW_DIRECTORIES:
-	            case HiveParser.KW_SETS:
-	            case HiveParser.KW_NOSCAN:
-	            case HiveParser.KW_ROLE:
-	            case HiveParser.KW_ROLES:
-	            case HiveParser.KW_URI:
-	            case HiveParser.KW_SERVER:
-	            case HiveParser.KW_ADMIN:
-	            case HiveParser.KW_OWNER:
-	            case HiveParser.KW_PRINCIPALS:
-	            case HiveParser.KW_COMPACT:
-	            case HiveParser.KW_COMPACTIONS:
-	            case HiveParser.KW_TRANSACTIONS:
-	            case HiveParser.KW_REWRITE:
-	            case HiveParser.KW_REOPTIMIZATION:
-	            case HiveParser.KW_RELOAD:
-	            case HiveParser.KW_YEAR:
-	            case HiveParser.KW_QUERY:
-	            case HiveParser.KW_QUARTER:
-	            case HiveParser.KW_MONTH:
-	            case HiveParser.KW_WEEK:
-	            case HiveParser.KW_DAY:
-	            case HiveParser.KW_DOW:
-	            case HiveParser.KW_HOUR:
-	            case HiveParser.KW_MINUTE:
-	            case HiveParser.KW_SECOND:
-	            case HiveParser.KW_TRANSACTION:
-	            case HiveParser.KW_WORK:
-	            case HiveParser.KW_WRITE:
-	            case HiveParser.KW_ISOLATION:
-	            case HiveParser.KW_LEVEL:
-	            case HiveParser.KW_SNAPSHOT:
-	            case HiveParser.KW_AUTOCOMMIT:
-	            case HiveParser.KW_CACHE:
-	            case HiveParser.KW_ENFORCED:
-	            case HiveParser.KW_VALIDATE:
-	            case HiveParser.KW_NOVALIDATE:
-	            case HiveParser.KW_RELY:
-	            case HiveParser.KW_NORELY:
-	            case HiveParser.KW_KEY:
-	            case HiveParser.KW_ABORT:
-	            case HiveParser.KW_MATCHED:
-	            case HiveParser.KW_REPL:
-	            case HiveParser.KW_DUMP:
-	            case HiveParser.KW_STATUS:
-	            case HiveParser.KW_VECTORIZATION:
-	            case HiveParser.KW_SUMMARY:
-	            case HiveParser.KW_OPERATOR:
-	            case HiveParser.KW_EXPRESSION:
-	            case HiveParser.KW_DETAIL:
-	            case HiveParser.KW_WAIT:
-	            case HiveParser.KW_RESOURCE:
-	            case HiveParser.KW_PLAN:
-	            case HiveParser.KW_QUERY_PARALLELISM:
-	            case HiveParser.KW_PLANS:
-	            case HiveParser.KW_ACTIVATE:
-	            case HiveParser.KW_DEFAULT:
-	            case HiveParser.KW_CHECK:
-	            case HiveParser.KW_POOL:
-	            case HiveParser.KW_MOVE:
-	            case HiveParser.KW_DO:
-	            case HiveParser.KW_ALLOC_FRACTION:
-	            case HiveParser.KW_SCHEDULING_POLICY:
-	            case HiveParser.KW_PATH:
-	            case HiveParser.KW_MAPPING:
-	            case HiveParser.KW_WORKLOAD:
-	            case HiveParser.KW_MANAGEMENT:
-	            case HiveParser.KW_ACTIVE:
-	            case HiveParser.KW_UNMANAGED:
-	            case HiveParser.Identifier:
+
+	            case 2:
 	                this.state = 3051;
 	                this._errHandler.sync(this);
 	                var la_ = this._interp.adaptivePredict(this._input,356,this._ctx);
@@ -15247,27 +13572,26 @@ export default class HiveParser extends antlr4.Parser {
 
 	                }
 	                break;
-	            default:
-	                throw new antlr4.error.NoViableAltException(this);
-	            }
-	        }
 
+	            }
+
+	        }
 	        this.state = 3058;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ROW) {
+	        var la_ = this._interp.adaptivePredict(this._input,359,this._ctx);
+	        if(la_===1) {
 	            this.state = 3057;
 	            this.rowFormat();
-	        }
 
+	        }
 	        this.state = 3061;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_RECORDREADER) {
+	        var la_ = this._interp.adaptivePredict(this._input,360,this._ctx);
+	        if(la_===1) {
 	            this.state = 3060;
 	            this.recordReader();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -15287,7 +13611,6 @@ export default class HiveParser extends antlr4.Parser {
 	selectItem() {
 	    let localctx = new SelectItemContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 508, HiveParser.RULE_selectItem);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 3083;
 	        this._errHandler.sync(this);
@@ -15309,12 +13632,12 @@ export default class HiveParser extends antlr4.Parser {
 	            if(la_===1) {
 	                this.state = 3066;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
-	                if(_la===HiveParser.KW_AS) {
+	                var la_ = this._interp.adaptivePredict(this._input,361,this._ctx);
+	                if(la_===1) {
 	                    this.state = 3065;
 	                    this.match(HiveParser.KW_AS);
-	                }
 
+	                }
 	                this.state = 3068;
 	                this.identifier();
 
@@ -15327,16 +13650,19 @@ export default class HiveParser extends antlr4.Parser {
 	                this.identifier();
 	                this.state = 3076;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
-	                while(_la===HiveParser.COMMA) {
-	                    this.state = 3072;
-	                    this.match(HiveParser.COMMA);
-	                    this.state = 3073;
-	                    this.identifier();
+	                var _alt = this._interp.adaptivePredict(this._input,362,this._ctx)
+	                while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                    if(_alt===1) {
+	                        this.state = 3072;
+	                        this.match(HiveParser.COMMA);
+	                        this.state = 3073;
+	                        this.identifier(); 
+	                    }
 	                    this.state = 3078;
 	                    this._errHandler.sync(this);
-	                    _la = this._input.LA(1);
+	                    _alt = this._interp.adaptivePredict(this._input,362,this._ctx);
 	                }
+
 	                this.state = 3079;
 	                this.match(HiveParser.RPAREN);
 
@@ -15363,57 +13689,58 @@ export default class HiveParser extends antlr4.Parser {
 	trfmClause() {
 	    let localctx = new TrfmClauseContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 510, HiveParser.RULE_trfmClause);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3089;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_MAP:
+	        var la_ = this._interp.adaptivePredict(this._input,365,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.state = 3085;
 	            this.match(HiveParser.KW_MAP);
 	            this.state = 3086;
 	            this.selectExpressionList();
 	            break;
-	        case HiveParser.KW_REDUCE:
+
+	        case 2:
 	            this.state = 3087;
 	            this.match(HiveParser.KW_REDUCE);
 	            this.state = 3088;
 	            this.selectExpressionList();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	        this.state = 3092;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ROW) {
+	        var la_ = this._interp.adaptivePredict(this._input,366,this._ctx);
+	        if(la_===1) {
 	            this.state = 3091;
 	            this.rowFormat();
-	        }
 
+	        }
 	        this.state = 3095;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_RECORDWRITER) {
+	        var la_ = this._interp.adaptivePredict(this._input,367,this._ctx);
+	        if(la_===1) {
 	            this.state = 3094;
 	            this.recordWriter();
-	        }
 
+	        }
 	        this.state = 3097;
 	        this.match(HiveParser.KW_USING);
 	        this.state = 3098;
 	        this.match(HiveParser.StringLiteral);
 	        this.state = 3113;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_AS) {
+	        var la_ = this._interp.adaptivePredict(this._input,371,this._ctx);
+	        if(la_===1) {
 	            this.state = 3099;
 	            this.match(HiveParser.KW_AS);
 	            this.state = 3111;
 	            this._errHandler.sync(this);
-	            switch(this._input.LA(1)) {
-	            case HiveParser.LPAREN:
+	            var la_ = this._interp.adaptivePredict(this._input,370,this._ctx);
+	            switch(la_) {
+	            case 1:
 	                this.state = 3100;
 	                this.match(HiveParser.LPAREN);
 	                this.state = 3103;
@@ -15434,200 +13761,8 @@ export default class HiveParser extends antlr4.Parser {
 	                this.state = 3105;
 	                this.match(HiveParser.RPAREN);
 	                break;
-	            case HiveParser.KW_ASC:
-	            case HiveParser.KW_DESC:
-	            case HiveParser.KW_NULLS:
-	            case HiveParser.KW_LAST:
-	            case HiveParser.KW_OVERWRITE:
-	            case HiveParser.KW_PARTITIONS:
-	            case HiveParser.KW_TABLES:
-	            case HiveParser.KW_COLUMNS:
-	            case HiveParser.KW_INDEX:
-	            case HiveParser.KW_INDEXES:
-	            case HiveParser.KW_REBUILD:
-	            case HiveParser.KW_FUNCTIONS:
-	            case HiveParser.KW_SHOW:
-	            case HiveParser.KW_MSCK:
-	            case HiveParser.KW_REPAIR:
-	            case HiveParser.KW_DIRECTORY:
-	            case HiveParser.KW_CLUSTER:
-	            case HiveParser.KW_DISTRIBUTE:
-	            case HiveParser.KW_SORT:
-	            case HiveParser.KW_LOAD:
-	            case HiveParser.KW_EXPORT:
-	            case HiveParser.KW_REPLICATION:
-	            case HiveParser.KW_METADATA:
-	            case HiveParser.KW_DATA:
-	            case HiveParser.KW_INPATH:
-	            case HiveParser.KW_CHANGE:
-	            case HiveParser.KW_FIRST:
-	            case HiveParser.KW_AFTER:
-	            case HiveParser.KW_RENAME:
-	            case HiveParser.KW_COMMENT:
-	            case HiveParser.KW_TINYINT:
-	            case HiveParser.KW_DATETIME:
-	            case HiveParser.KW_ZONE:
-	            case HiveParser.KW_STRING:
-	            case HiveParser.KW_STRUCT:
-	            case HiveParser.KW_UNIONTYPE:
-	            case HiveParser.KW_PARTITIONED:
-	            case HiveParser.KW_CLUSTERED:
-	            case HiveParser.KW_SORTED:
-	            case HiveParser.KW_BUCKETS:
-	            case HiveParser.KW_FORMAT:
-	            case HiveParser.KW_DELIMITED:
-	            case HiveParser.KW_FIELDS:
-	            case HiveParser.KW_TERMINATED:
-	            case HiveParser.KW_ESCAPED:
-	            case HiveParser.KW_COLLECTION:
-	            case HiveParser.KW_ITEMS:
-	            case HiveParser.KW_KEYS:
-	            case HiveParser.KW_KEY_TYPE:
-	            case HiveParser.KW_KILL:
-	            case HiveParser.KW_LINES:
-	            case HiveParser.KW_STORED:
-	            case HiveParser.KW_FILEFORMAT:
-	            case HiveParser.KW_INPUTFORMAT:
-	            case HiveParser.KW_OUTPUTFORMAT:
-	            case HiveParser.KW_INPUTDRIVER:
-	            case HiveParser.KW_OUTPUTDRIVER:
-	            case HiveParser.KW_ENABLE:
-	            case HiveParser.KW_DISABLE:
-	            case HiveParser.KW_LOCATION:
-	            case HiveParser.KW_BUCKET:
-	            case HiveParser.KW_ADD:
-	            case HiveParser.KW_REPLACE:
-	            case HiveParser.KW_TEMPORARY:
-	            case HiveParser.KW_FILE:
-	            case HiveParser.KW_JAR:
-	            case HiveParser.KW_EXPLAIN:
-	            case HiveParser.KW_FORMATTED:
-	            case HiveParser.KW_DEPENDENCY:
-	            case HiveParser.KW_LOGICAL:
-	            case HiveParser.KW_SERDE:
-	            case HiveParser.KW_DEFERRED:
-	            case HiveParser.KW_SERDEPROPERTIES:
-	            case HiveParser.KW_DBPROPERTIES:
-	            case HiveParser.KW_LIMIT:
-	            case HiveParser.KW_OFFSET:
-	            case HiveParser.KW_UNSET:
-	            case HiveParser.KW_TBLPROPERTIES:
-	            case HiveParser.KW_IDXPROPERTIES:
-	            case HiveParser.KW_VALUE_TYPE:
-	            case HiveParser.KW_ELEM_TYPE:
-	            case HiveParser.KW_DEFINED:
-	            case HiveParser.KW_MAPJOIN:
-	            case HiveParser.KW_STREAMTABLE:
-	            case HiveParser.KW_CLUSTERSTATUS:
-	            case HiveParser.KW_UTC:
-	            case HiveParser.KW_UTCTIMESTAMP:
-	            case HiveParser.KW_LONG:
-	            case HiveParser.KW_PLUS:
-	            case HiveParser.KW_VIEW:
-	            case HiveParser.KW_VIEWS:
-	            case HiveParser.KW_DATABASES:
-	            case HiveParser.KW_MATERIALIZED:
-	            case HiveParser.KW_SCHEMA:
-	            case HiveParser.KW_SCHEMAS:
-	            case HiveParser.KW_SSL:
-	            case HiveParser.KW_UNDO:
-	            case HiveParser.KW_LOCK:
-	            case HiveParser.KW_LOCKS:
-	            case HiveParser.KW_UNLOCK:
-	            case HiveParser.KW_SHARED:
-	            case HiveParser.KW_EXCLUSIVE:
-	            case HiveParser.KW_UNSIGNED:
-	            case HiveParser.KW_WHILE:
-	            case HiveParser.KW_READ:
-	            case HiveParser.KW_PURGE:
-	            case HiveParser.KW_ANALYZE:
-	            case HiveParser.KW_BEFORE:
-	            case HiveParser.KW_CONTINUE:
-	            case HiveParser.KW_RECORDREADER:
-	            case HiveParser.KW_RECORDWRITER:
-	            case HiveParser.KW_SEMI:
-	            case HiveParser.KW_TOUCH:
-	            case HiveParser.KW_ARCHIVE:
-	            case HiveParser.KW_UNARCHIVE:
-	            case HiveParser.KW_COMPUTE:
-	            case HiveParser.KW_STATISTICS:
-	            case HiveParser.KW_USE:
-	            case HiveParser.KW_OPTION:
-	            case HiveParser.KW_CONCATENATE:
-	            case HiveParser.KW_SHOW_DATABASE:
-	            case HiveParser.KW_RESTRICT:
-	            case HiveParser.KW_CASCADE:
-	            case HiveParser.KW_SKEWED:
-	            case HiveParser.KW_DIRECTORIES:
-	            case HiveParser.KW_SETS:
-	            case HiveParser.KW_NOSCAN:
-	            case HiveParser.KW_ROLE:
-	            case HiveParser.KW_ROLES:
-	            case HiveParser.KW_URI:
-	            case HiveParser.KW_SERVER:
-	            case HiveParser.KW_ADMIN:
-	            case HiveParser.KW_OWNER:
-	            case HiveParser.KW_PRINCIPALS:
-	            case HiveParser.KW_COMPACT:
-	            case HiveParser.KW_COMPACTIONS:
-	            case HiveParser.KW_TRANSACTIONS:
-	            case HiveParser.KW_REWRITE:
-	            case HiveParser.KW_REOPTIMIZATION:
-	            case HiveParser.KW_RELOAD:
-	            case HiveParser.KW_YEAR:
-	            case HiveParser.KW_QUERY:
-	            case HiveParser.KW_QUARTER:
-	            case HiveParser.KW_MONTH:
-	            case HiveParser.KW_WEEK:
-	            case HiveParser.KW_DAY:
-	            case HiveParser.KW_DOW:
-	            case HiveParser.KW_HOUR:
-	            case HiveParser.KW_MINUTE:
-	            case HiveParser.KW_SECOND:
-	            case HiveParser.KW_TRANSACTION:
-	            case HiveParser.KW_WORK:
-	            case HiveParser.KW_WRITE:
-	            case HiveParser.KW_ISOLATION:
-	            case HiveParser.KW_LEVEL:
-	            case HiveParser.KW_SNAPSHOT:
-	            case HiveParser.KW_AUTOCOMMIT:
-	            case HiveParser.KW_CACHE:
-	            case HiveParser.KW_ENFORCED:
-	            case HiveParser.KW_VALIDATE:
-	            case HiveParser.KW_NOVALIDATE:
-	            case HiveParser.KW_RELY:
-	            case HiveParser.KW_NORELY:
-	            case HiveParser.KW_KEY:
-	            case HiveParser.KW_ABORT:
-	            case HiveParser.KW_MATCHED:
-	            case HiveParser.KW_REPL:
-	            case HiveParser.KW_DUMP:
-	            case HiveParser.KW_STATUS:
-	            case HiveParser.KW_VECTORIZATION:
-	            case HiveParser.KW_SUMMARY:
-	            case HiveParser.KW_OPERATOR:
-	            case HiveParser.KW_EXPRESSION:
-	            case HiveParser.KW_DETAIL:
-	            case HiveParser.KW_WAIT:
-	            case HiveParser.KW_RESOURCE:
-	            case HiveParser.KW_PLAN:
-	            case HiveParser.KW_QUERY_PARALLELISM:
-	            case HiveParser.KW_PLANS:
-	            case HiveParser.KW_ACTIVATE:
-	            case HiveParser.KW_DEFAULT:
-	            case HiveParser.KW_CHECK:
-	            case HiveParser.KW_POOL:
-	            case HiveParser.KW_MOVE:
-	            case HiveParser.KW_DO:
-	            case HiveParser.KW_ALLOC_FRACTION:
-	            case HiveParser.KW_SCHEDULING_POLICY:
-	            case HiveParser.KW_PATH:
-	            case HiveParser.KW_MAPPING:
-	            case HiveParser.KW_WORKLOAD:
-	            case HiveParser.KW_MANAGEMENT:
-	            case HiveParser.KW_ACTIVE:
-	            case HiveParser.KW_UNMANAGED:
-	            case HiveParser.Identifier:
+
+	            case 2:
 	                this.state = 3109;
 	                this._errHandler.sync(this);
 	                var la_ = this._interp.adaptivePredict(this._input,369,this._ctx);
@@ -15644,27 +13779,26 @@ export default class HiveParser extends antlr4.Parser {
 
 	                }
 	                break;
-	            default:
-	                throw new antlr4.error.NoViableAltException(this);
-	            }
-	        }
 
+	            }
+
+	        }
 	        this.state = 3116;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ROW) {
+	        var la_ = this._interp.adaptivePredict(this._input,372,this._ctx);
+	        if(la_===1) {
 	            this.state = 3115;
 	            this.rowFormat();
-	        }
 
+	        }
 	        this.state = 3119;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_RECORDREADER) {
+	        var la_ = this._interp.adaptivePredict(this._input,373,this._ctx);
+	        if(la_===1) {
 	            this.state = 3118;
 	            this.recordReader();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -15721,23 +13855,25 @@ export default class HiveParser extends antlr4.Parser {
 	selectExpressionList() {
 	    let localctx = new SelectExpressionListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 514, HiveParser.RULE_selectExpressionList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3125;
 	        this.selectExpression();
 	        this.state = 3130;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 3126;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3127;
-	            this.selectExpression();
+	        var _alt = this._interp.adaptivePredict(this._input,375,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3126;
+	                this.match(HiveParser.COMMA);
+	                this.state = 3127;
+	                this.selectExpression(); 
+	            }
 	            this.state = 3132;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,375,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -15757,7 +13893,6 @@ export default class HiveParser extends antlr4.Parser {
 	window_clause() {
 	    let localctx = new Window_clauseContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 516, HiveParser.RULE_window_clause);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3133;
@@ -15766,16 +13901,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.window_defn();
 	        this.state = 3139;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 3135;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3136;
-	            this.window_defn();
+	        var _alt = this._interp.adaptivePredict(this._input,376,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3135;
+	                this.match(HiveParser.COMMA);
+	                this.state = 3136;
+	                this.window_defn(); 
+	            }
 	            this.state = 3141;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,376,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -15822,210 +13960,18 @@ export default class HiveParser extends antlr4.Parser {
 	window_specification() {
 	    let localctx = new Window_specificationContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 520, HiveParser.RULE_window_specification);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3158;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.Identifier:
+	        var la_ = this._interp.adaptivePredict(this._input,380,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.state = 3146;
 	            this.identifier();
 	            break;
-	        case HiveParser.LPAREN:
+
+	        case 2:
 	            this.state = 3147;
 	            this.match(HiveParser.LPAREN);
 	            this.state = 3149;
@@ -16038,25 +13984,24 @@ export default class HiveParser extends antlr4.Parser {
 	            }
 	            this.state = 3152;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ORDER || ((((_la - 35)) & ~0x1f) == 0 && ((1 << (_la - 35)) & ((1 << (HiveParser.KW_PARTITION - 35)) | (1 << (HiveParser.KW_CLUSTER - 35)) | (1 << (HiveParser.KW_DISTRIBUTE - 35)) | (1 << (HiveParser.KW_SORT - 35)))) !== 0)) {
+	            var la_ = this._interp.adaptivePredict(this._input,378,this._ctx);
+	            if(la_===1) {
 	                this.state = 3151;
 	                this.partitioningSpec();
-	            }
 
+	            }
 	            this.state = 3155;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ROWS || _la===HiveParser.KW_RANGE) {
+	            var la_ = this._interp.adaptivePredict(this._input,379,this._ctx);
+	            if(la_===1) {
 	                this.state = 3154;
 	                this.window_frame();
-	            }
 
+	            }
 	            this.state = 3157;
 	            this.match(HiveParser.RPAREN);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -16080,19 +14025,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 3162;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ROWS:
+	        var la_ = this._interp.adaptivePredict(this._input,381,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3160;
 	            this.window_range_expression();
 	            break;
-	        case HiveParser.KW_RANGE:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3161;
 	            this.window_value_expression();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -16210,30 +14156,32 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 3190;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_UNBOUNDED:
+	        var la_ = this._interp.adaptivePredict(this._input,384,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3184;
 	            this.match(HiveParser.KW_UNBOUNDED);
 	            this.state = 3185;
 	            this.match(HiveParser.KW_PRECEDING);
 	            break;
-	        case HiveParser.KW_CURRENT:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3186;
 	            this.match(HiveParser.KW_CURRENT);
 	            this.state = 3187;
 	            this.match(HiveParser.KW_ROW);
 	            break;
-	        case HiveParser.Number:
+
+	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 3188;
 	            this.match(HiveParser.Number);
 	            this.state = 3189;
 	            this.match(HiveParser.KW_PRECEDING);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -16258,8 +14206,9 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 3198;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_UNBOUNDED:
+	        var la_ = this._interp.adaptivePredict(this._input,385,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3192;
 	            this.match(HiveParser.KW_UNBOUNDED);
@@ -16273,14 +14222,16 @@ export default class HiveParser extends antlr4.Parser {
 	                this.consume();
 	            }
 	            break;
-	        case HiveParser.KW_CURRENT:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3194;
 	            this.match(HiveParser.KW_CURRENT);
 	            this.state = 3195;
 	            this.match(HiveParser.KW_ROW);
 	            break;
-	        case HiveParser.Number:
+
+	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 3196;
 	            this.match(HiveParser.Number);
@@ -16294,8 +14245,7 @@ export default class HiveParser extends antlr4.Parser {
 	                this.consume();
 	            }
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -16319,206 +14269,15 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 3205;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.STAR:
+	        var la_ = this._interp.adaptivePredict(this._input,386,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3200;
 	            this.match(HiveParser.STAR);
 	            break;
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.Identifier:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3201;
 	            this.tableName();
@@ -16527,8 +14286,7 @@ export default class HiveParser extends antlr4.Parser {
 	            this.state = 3203;
 	            this.match(HiveParser.STAR);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -16572,23 +14330,25 @@ export default class HiveParser extends antlr4.Parser {
 	expressionList() {
 	    let localctx = new ExpressionListContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 536, HiveParser.RULE_expressionList);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3209;
 	        this.expression(0);
 	        this.state = 3214;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 3210;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3211;
-	            this.expression(0);
+	        var _alt = this._interp.adaptivePredict(this._input,387,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3210;
+	                this.match(HiveParser.COMMA);
+	                this.state = 3211;
+	                this.expression(0); 
+	            }
 	            this.state = 3216;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,387,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -16671,12 +14431,12 @@ export default class HiveParser extends antlr4.Parser {
 	fromSource() {
 	    let localctx = new FromSourceContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 542, HiveParser.RULE_fromSource);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 3237;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_UNIQUEJOIN:
+	        var la_ = this._interp.adaptivePredict(this._input,390,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3228;
 	            this.uniqueJoinToken();
@@ -16684,219 +14444,30 @@ export default class HiveParser extends antlr4.Parser {
 	            this.uniqueJoinSource();
 	            this.state = 3232; 
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            var _alt = 1;
 	            do {
-	                this.state = 3230;
-	                this.match(HiveParser.COMMA);
-	                this.state = 3231;
-	                this.uniqueJoinSource();
-	                this.state = 3234; 
-	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
-	            } while(_la===HiveParser.COMMA);
+	            	switch (_alt) {
+	            	case 1:
+	            		this.state = 3230;
+	            		this.match(HiveParser.COMMA);
+	            		this.state = 3231;
+	            		this.uniqueJoinSource();
+	            		break;
+	            	default:
+	            		throw new antlr4.error.NoViableAltException(this);
+	            	}
+	            	this.state = 3234; 
+	            	this._errHandler.sync(this);
+	            	_alt = this._interp.adaptivePredict(this._input,389, this._ctx);
+	            } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
 	            break;
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLE:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.LPAREN:
-	        case HiveParser.Identifier:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3236;
 	            this.joinSource();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -17028,101 +14599,41 @@ export default class HiveParser extends antlr4.Parser {
 	joinSource() {
 	    let localctx = new JoinSourceContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 546, HiveParser.RULE_joinSource);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3273;
 	        this.atomjoinSource();
 	        this.state = 3284;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(((((_la - 30)) & ~0x1f) == 0 && ((1 << (_la - 30)) & ((1 << (HiveParser.KW_JOIN - 30)) | (1 << (HiveParser.KW_LEFT - 30)) | (1 << (HiveParser.KW_RIGHT - 30)) | (1 << (HiveParser.KW_FULL - 30)))) !== 0) || _la===HiveParser.KW_CROSS || _la===HiveParser.KW_INNER || _la===HiveParser.COMMA) {
-	            this.state = 3274;
-	            this.joinToken();
-	            this.state = 3275;
-	            this.joinSourcePart();
-	            this.state = 3280;
-	            this._errHandler.sync(this);
-	            switch (this._input.LA(1)) {
-	            case HiveParser.KW_ON:
-	            	this.state = 3276;
-	            	this.match(HiveParser.KW_ON);
-	            	this.state = 3277;
-	            	this.expression(0);
-	            	break;
-	            case HiveParser.KW_USING:
-	            	this.state = 3278;
-	            	this.match(HiveParser.KW_USING);
-	            	this.state = 3279;
-	            	this.columnParenthesesList();
-	            	break;
-	            case HiveParser.EOF:
-	            case HiveParser.KW_DESC:
-	            case HiveParser.KW_ORDER:
-	            case HiveParser.KW_GROUP:
-	            case HiveParser.KW_HAVING:
-	            case HiveParser.KW_WHERE:
-	            case HiveParser.KW_FROM:
-	            case HiveParser.KW_SELECT:
-	            case HiveParser.KW_INSERT:
-	            case HiveParser.KW_JOIN:
-	            case HiveParser.KW_LEFT:
-	            case HiveParser.KW_RIGHT:
-	            case HiveParser.KW_FULL:
-	            case HiveParser.KW_SHOW:
-	            case HiveParser.KW_MSCK:
-	            case HiveParser.KW_CLUSTER:
-	            case HiveParser.KW_DISTRIBUTE:
-	            case HiveParser.KW_SORT:
-	            case HiveParser.KW_UNION:
-	            case HiveParser.KW_EXCEPT:
-	            case HiveParser.KW_LOAD:
-	            case HiveParser.KW_EXPORT:
-	            case HiveParser.KW_IMPORT:
-	            case HiveParser.KW_CREATE:
-	            case HiveParser.KW_ALTER:
-	            case HiveParser.KW_DESCRIBE:
-	            case HiveParser.KW_DROP:
-	            case HiveParser.KW_MAP:
-	            case HiveParser.KW_REDUCE:
-	            case HiveParser.KW_KILL:
-	            case HiveParser.KW_EXPLAIN:
-	            case HiveParser.KW_WITH:
-	            case HiveParser.KW_LIMIT:
-	            case HiveParser.KW_SET:
-	            case HiveParser.KW_DELETE:
-	            case HiveParser.KW_MINUS:
-	            case HiveParser.KW_INTERSECT:
-	            case HiveParser.KW_GRANT:
-	            case HiveParser.KW_REVOKE:
-	            case HiveParser.KW_LOCK:
-	            case HiveParser.KW_UNLOCK:
-	            case HiveParser.KW_ANALYZE:
-	            case HiveParser.KW_CROSS:
-	            case HiveParser.KW_USE:
-	            case HiveParser.KW_UPDATE:
-	            case HiveParser.KW_WINDOW:
-	            case HiveParser.KW_TRUNCATE:
-	            case HiveParser.KW_INNER:
-	            case HiveParser.KW_RELOAD:
-	            case HiveParser.KW_START:
-	            case HiveParser.KW_COMMIT:
-	            case HiveParser.KW_ROLLBACK:
-	            case HiveParser.KW_ABORT:
-	            case HiveParser.KW_MERGE:
-	            case HiveParser.KW_REPL:
-	            case HiveParser.COMMA:
-	            case HiveParser.SEMICOLON:
-	            case HiveParser.LPAREN:
-	            case HiveParser.RPAREN:
-	            	break;
-	            default:
-	            	break;
+	        var _alt = this._interp.adaptivePredict(this._input,397,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3274;
+	                this.joinToken();
+	                this.state = 3275;
+	                this.joinSourcePart();
+	                this.state = 3280;
+	                this._errHandler.sync(this);
+	                var la_ = this._interp.adaptivePredict(this._input,396,this._ctx);
+	                if(la_===1) {
+	                    this.state = 3276;
+	                    this.match(HiveParser.KW_ON);
+	                    this.state = 3277;
+	                    this.expression(0);
+
+	                } else if(la_===2) {
+	                    this.state = 3278;
+	                    this.match(HiveParser.KW_USING);
+	                    this.state = 3279;
+	                    this.columnParenthesesList();
+
+	                } 
 	            }
 	            this.state = 3286;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,397,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -17201,17 +14712,16 @@ export default class HiveParser extends antlr4.Parser {
 	uniqueJoinSource() {
 	    let localctx = new UniqueJoinSourceContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 550, HiveParser.RULE_uniqueJoinSource);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3300;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PRESERVE) {
+	        var la_ = this._interp.adaptivePredict(this._input,400,this._ctx);
+	        if(la_===1) {
 	            this.state = 3299;
 	            this.match(HiveParser.KW_PRESERVE);
-	        }
 
+	        }
 	        this.state = 3302;
 	        this.uniqueJoinTableSource();
 	        this.state = 3303;
@@ -17285,7 +14795,6 @@ export default class HiveParser extends antlr4.Parser {
 	joinToken() {
 	    let localctx = new JoinTokenContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 556, HiveParser.RULE_joinToken);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 3335;
 	        this._errHandler.sync(this);
@@ -17325,12 +14834,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_LEFT);
 	            this.state = 3319;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_OUTER) {
+	            var la_ = this._interp.adaptivePredict(this._input,401,this._ctx);
+	            if(la_===1) {
 	                this.state = 3318;
 	                this.match(HiveParser.KW_OUTER);
-	            }
 
+	            }
 	            this.state = 3321;
 	            this.match(HiveParser.KW_JOIN);
 	            break;
@@ -17341,12 +14850,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_RIGHT);
 	            this.state = 3324;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_OUTER) {
+	            var la_ = this._interp.adaptivePredict(this._input,402,this._ctx);
+	            if(la_===1) {
 	                this.state = 3323;
 	                this.match(HiveParser.KW_OUTER);
-	            }
 
+	            }
 	            this.state = 3326;
 	            this.match(HiveParser.KW_JOIN);
 	            break;
@@ -17357,12 +14866,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.KW_FULL);
 	            this.state = 3329;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_OUTER) {
+	            var la_ = this._interp.adaptivePredict(this._input,403,this._ctx);
+	            if(la_===1) {
 	                this.state = 3328;
 	                this.match(HiveParser.KW_OUTER);
-	            }
 
+	            }
 	            this.state = 3331;
 	            this.match(HiveParser.KW_JOIN);
 	            break;
@@ -17397,7 +14906,6 @@ export default class HiveParser extends antlr4.Parser {
 	lateralView() {
 	    let localctx = new LateralViewContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 558, HiveParser.RULE_lateralView);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 3396;
 	        this._errHandler.sync(this);
@@ -17417,8 +14925,8 @@ export default class HiveParser extends antlr4.Parser {
 	            this.tableAlias();
 	            this.state = 3351;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_AS) {
+	            var la_ = this._interp.adaptivePredict(this._input,406,this._ctx);
+	            if(la_===1) {
 	                this.state = 3342;
 	                this.match(HiveParser.KW_AS);
 	                this.state = 3343;
@@ -17438,20 +14946,20 @@ export default class HiveParser extends antlr4.Parser {
 	                    _alt = this._interp.adaptivePredict(this._input,405,this._ctx);
 	                }
 
-	            }
 
+	            }
 	            break;
 
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3354;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.COMMA) {
+	            var la_ = this._interp.adaptivePredict(this._input,407,this._ctx);
+	            if(la_===1) {
 	                this.state = 3353;
 	                this.match(HiveParser.COMMA);
-	            }
 
+	            }
 	            this.state = 3356;
 	            this.match(HiveParser.KW_LATERAL);
 	            this.state = 3357;
@@ -17462,8 +14970,8 @@ export default class HiveParser extends antlr4.Parser {
 	            this.tableAlias();
 	            this.state = 3369;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_AS) {
+	            var la_ = this._interp.adaptivePredict(this._input,409,this._ctx);
+	            if(la_===1) {
 	                this.state = 3360;
 	                this.match(HiveParser.KW_AS);
 	                this.state = 3361;
@@ -17483,20 +14991,20 @@ export default class HiveParser extends antlr4.Parser {
 	                    _alt = this._interp.adaptivePredict(this._input,408,this._ctx);
 	                }
 
-	            }
 
+	            }
 	            break;
 
 	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 3372;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.COMMA) {
+	            var la_ = this._interp.adaptivePredict(this._input,410,this._ctx);
+	            if(la_===1) {
 	                this.state = 3371;
 	                this.match(HiveParser.COMMA);
-	            }
 
+	            }
 	            this.state = 3374;
 	            this.match(HiveParser.KW_LATERAL);
 	            this.state = 3375;
@@ -17509,12 +15017,12 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.RPAREN);
 	            this.state = 3380;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_AS) {
+	            var la_ = this._interp.adaptivePredict(this._input,411,this._ctx);
+	            if(la_===1) {
 	                this.state = 3379;
 	                this.match(HiveParser.KW_AS);
-	            }
 
+	            }
 	            this.state = 3382;
 	            this.tableAlias();
 	            this.state = 3394;
@@ -17527,16 +15035,19 @@ export default class HiveParser extends antlr4.Parser {
 	                this.identifier();
 	                this.state = 3389;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
-	                while(_la===HiveParser.COMMA) {
-	                    this.state = 3385;
-	                    this.match(HiveParser.COMMA);
-	                    this.state = 3386;
-	                    this.identifier();
+	                var _alt = this._interp.adaptivePredict(this._input,412,this._ctx)
+	                while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                    if(_alt===1) {
+	                        this.state = 3385;
+	                        this.match(HiveParser.COMMA);
+	                        this.state = 3386;
+	                        this.identifier(); 
+	                    }
 	                    this.state = 3391;
 	                    this._errHandler.sync(this);
-	                    _la = this._input.LA(1);
+	                    _alt = this._interp.adaptivePredict(this._input,412,this._ctx);
 	                }
+
 	                this.state = 3392;
 	                this.match(HiveParser.RPAREN);
 
@@ -17586,7 +15097,6 @@ export default class HiveParser extends antlr4.Parser {
 	tableBucketSample() {
 	    let localctx = new TableBucketSampleContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 562, HiveParser.RULE_tableBucketSample);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3400;
@@ -17605,26 +15115,29 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.Number);
 	        this.state = 3416;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ON) {
+	        var la_ = this._interp.adaptivePredict(this._input,416,this._ctx);
+	        if(la_===1) {
 	            this.state = 3407;
 	            this.match(HiveParser.KW_ON);
 	            this.state = 3408;
 	            this.expression(0);
 	            this.state = 3413;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            while(_la===HiveParser.COMMA) {
-	                this.state = 3409;
-	                this.match(HiveParser.COMMA);
-	                this.state = 3410;
-	                this.expression(0);
+	            var _alt = this._interp.adaptivePredict(this._input,415,this._ctx)
+	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                if(_alt===1) {
+	                    this.state = 3409;
+	                    this.match(HiveParser.COMMA);
+	                    this.state = 3410;
+	                    this.expression(0); 
+	                }
 	                this.state = 3415;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
+	                _alt = this._interp.adaptivePredict(this._input,415,this._ctx);
 	            }
-	        }
 
+
+	        }
 	        this.state = 3418;
 	        this.match(HiveParser.RPAREN);
 	    } catch (re) {
@@ -17742,7 +15255,6 @@ export default class HiveParser extends antlr4.Parser {
 	tableSource() {
 	    let localctx = new TableSourceContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 568, HiveParser.RULE_tableSource);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3435;
@@ -17757,24 +15269,24 @@ export default class HiveParser extends antlr4.Parser {
 	        }
 	        this.state = 3440;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TABLESAMPLE) {
+	        var la_ = this._interp.adaptivePredict(this._input,420,this._ctx);
+	        if(la_===1) {
 	            this.state = 3439;
 	            this.tableSample();
-	        }
 
+	        }
 	        this.state = 3446;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,422,this._ctx);
 	        if(la_===1) {
 	            this.state = 3443;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_AS) {
+	            var la_ = this._interp.adaptivePredict(this._input,421,this._ctx);
+	            if(la_===1) {
 	                this.state = 3442;
 	                this.match(HiveParser.KW_AS);
-	            }
 
+	            }
 	            this.state = 3445;
 	            this.identifier();
 
@@ -17798,35 +15310,34 @@ export default class HiveParser extends antlr4.Parser {
 	uniqueJoinTableSource() {
 	    let localctx = new UniqueJoinTableSourceContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 570, HiveParser.RULE_uniqueJoinTableSource);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3448;
 	        this.tableName();
 	        this.state = 3450;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TABLESAMPLE) {
+	        var la_ = this._interp.adaptivePredict(this._input,423,this._ctx);
+	        if(la_===1) {
 	            this.state = 3449;
 	            this.tableSample();
-	        }
 
+	        }
 	        this.state = 3456;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << HiveParser.KW_ASC) | (1 << HiveParser.KW_DESC) | (1 << HiveParser.KW_NULLS) | (1 << HiveParser.KW_LAST) | (1 << HiveParser.KW_AS) | (1 << HiveParser.KW_OVERWRITE))) !== 0) || ((((_la - 36)) & ~0x1f) == 0 && ((1 << (_la - 36)) & ((1 << (HiveParser.KW_PARTITIONS - 36)) | (1 << (HiveParser.KW_TABLES - 36)) | (1 << (HiveParser.KW_COLUMNS - 36)) | (1 << (HiveParser.KW_INDEX - 36)) | (1 << (HiveParser.KW_INDEXES - 36)) | (1 << (HiveParser.KW_REBUILD - 36)) | (1 << (HiveParser.KW_FUNCTIONS - 36)) | (1 << (HiveParser.KW_SHOW - 36)) | (1 << (HiveParser.KW_MSCK - 36)) | (1 << (HiveParser.KW_REPAIR - 36)) | (1 << (HiveParser.KW_DIRECTORY - 36)) | (1 << (HiveParser.KW_CLUSTER - 36)) | (1 << (HiveParser.KW_DISTRIBUTE - 36)) | (1 << (HiveParser.KW_SORT - 36)) | (1 << (HiveParser.KW_LOAD - 36)) | (1 << (HiveParser.KW_EXPORT - 36)) | (1 << (HiveParser.KW_REPLICATION - 36)) | (1 << (HiveParser.KW_METADATA - 36)) | (1 << (HiveParser.KW_DATA - 36)) | (1 << (HiveParser.KW_INPATH - 36)))) !== 0) || ((((_la - 68)) & ~0x1f) == 0 && ((1 << (_la - 68)) & ((1 << (HiveParser.KW_CHANGE - 68)) | (1 << (HiveParser.KW_FIRST - 68)) | (1 << (HiveParser.KW_AFTER - 68)) | (1 << (HiveParser.KW_RENAME - 68)) | (1 << (HiveParser.KW_COMMENT - 68)) | (1 << (HiveParser.KW_TINYINT - 68)) | (1 << (HiveParser.KW_DATETIME - 68)) | (1 << (HiveParser.KW_ZONE - 68)) | (1 << (HiveParser.KW_STRING - 68)) | (1 << (HiveParser.KW_STRUCT - 68)) | (1 << (HiveParser.KW_UNIONTYPE - 68)))) !== 0) || ((((_la - 101)) & ~0x1f) == 0 && ((1 << (_la - 101)) & ((1 << (HiveParser.KW_PARTITIONED - 101)) | (1 << (HiveParser.KW_CLUSTERED - 101)) | (1 << (HiveParser.KW_SORTED - 101)) | (1 << (HiveParser.KW_BUCKETS - 101)) | (1 << (HiveParser.KW_FORMAT - 101)) | (1 << (HiveParser.KW_DELIMITED - 101)) | (1 << (HiveParser.KW_FIELDS - 101)) | (1 << (HiveParser.KW_TERMINATED - 101)) | (1 << (HiveParser.KW_ESCAPED - 101)) | (1 << (HiveParser.KW_COLLECTION - 101)) | (1 << (HiveParser.KW_ITEMS - 101)) | (1 << (HiveParser.KW_KEYS - 101)) | (1 << (HiveParser.KW_KEY_TYPE - 101)) | (1 << (HiveParser.KW_KILL - 101)) | (1 << (HiveParser.KW_LINES - 101)) | (1 << (HiveParser.KW_STORED - 101)) | (1 << (HiveParser.KW_FILEFORMAT - 101)) | (1 << (HiveParser.KW_INPUTFORMAT - 101)) | (1 << (HiveParser.KW_OUTPUTFORMAT - 101)) | (1 << (HiveParser.KW_INPUTDRIVER - 101)) | (1 << (HiveParser.KW_OUTPUTDRIVER - 101)) | (1 << (HiveParser.KW_ENABLE - 101)) | (1 << (HiveParser.KW_DISABLE - 101)) | (1 << (HiveParser.KW_LOCATION - 101)) | (1 << (HiveParser.KW_BUCKET - 101)))) !== 0) || ((((_la - 134)) & ~0x1f) == 0 && ((1 << (_la - 134)) & ((1 << (HiveParser.KW_ADD - 134)) | (1 << (HiveParser.KW_REPLACE - 134)) | (1 << (HiveParser.KW_TEMPORARY - 134)) | (1 << (HiveParser.KW_FILE - 134)) | (1 << (HiveParser.KW_JAR - 134)) | (1 << (HiveParser.KW_EXPLAIN - 134)) | (1 << (HiveParser.KW_FORMATTED - 134)) | (1 << (HiveParser.KW_DEPENDENCY - 134)) | (1 << (HiveParser.KW_LOGICAL - 134)) | (1 << (HiveParser.KW_SERDE - 134)) | (1 << (HiveParser.KW_DEFERRED - 134)) | (1 << (HiveParser.KW_SERDEPROPERTIES - 134)) | (1 << (HiveParser.KW_DBPROPERTIES - 134)) | (1 << (HiveParser.KW_LIMIT - 134)) | (1 << (HiveParser.KW_OFFSET - 134)) | (1 << (HiveParser.KW_UNSET - 134)) | (1 << (HiveParser.KW_TBLPROPERTIES - 134)) | (1 << (HiveParser.KW_IDXPROPERTIES - 134)) | (1 << (HiveParser.KW_VALUE_TYPE - 134)) | (1 << (HiveParser.KW_ELEM_TYPE - 134)) | (1 << (HiveParser.KW_DEFINED - 134)))) !== 0) || ((((_la - 167)) & ~0x1f) == 0 && ((1 << (_la - 167)) & ((1 << (HiveParser.KW_MAPJOIN - 167)) | (1 << (HiveParser.KW_STREAMTABLE - 167)) | (1 << (HiveParser.KW_CLUSTERSTATUS - 167)) | (1 << (HiveParser.KW_UTC - 167)) | (1 << (HiveParser.KW_UTCTIMESTAMP - 167)) | (1 << (HiveParser.KW_LONG - 167)) | (1 << (HiveParser.KW_PLUS - 167)) | (1 << (HiveParser.KW_VIEW - 167)) | (1 << (HiveParser.KW_VIEWS - 167)) | (1 << (HiveParser.KW_DATABASES - 167)) | (1 << (HiveParser.KW_MATERIALIZED - 167)) | (1 << (HiveParser.KW_SCHEMA - 167)) | (1 << (HiveParser.KW_SCHEMAS - 167)) | (1 << (HiveParser.KW_SSL - 167)) | (1 << (HiveParser.KW_UNDO - 167)) | (1 << (HiveParser.KW_LOCK - 167)) | (1 << (HiveParser.KW_LOCKS - 167)) | (1 << (HiveParser.KW_UNLOCK - 167)) | (1 << (HiveParser.KW_SHARED - 167)) | (1 << (HiveParser.KW_EXCLUSIVE - 167)) | (1 << (HiveParser.KW_UNSIGNED - 167)) | (1 << (HiveParser.KW_WHILE - 167)) | (1 << (HiveParser.KW_READ - 167)))) !== 0) || ((((_la - 200)) & ~0x1f) == 0 && ((1 << (_la - 200)) & ((1 << (HiveParser.KW_PURGE - 200)) | (1 << (HiveParser.KW_ANALYZE - 200)) | (1 << (HiveParser.KW_BEFORE - 200)) | (1 << (HiveParser.KW_CONTINUE - 200)) | (1 << (HiveParser.KW_RECORDREADER - 200)) | (1 << (HiveParser.KW_RECORDWRITER - 200)) | (1 << (HiveParser.KW_SEMI - 200)) | (1 << (HiveParser.KW_TOUCH - 200)) | (1 << (HiveParser.KW_ARCHIVE - 200)) | (1 << (HiveParser.KW_UNARCHIVE - 200)) | (1 << (HiveParser.KW_COMPUTE - 200)) | (1 << (HiveParser.KW_STATISTICS - 200)) | (1 << (HiveParser.KW_USE - 200)) | (1 << (HiveParser.KW_OPTION - 200)) | (1 << (HiveParser.KW_CONCATENATE - 200)) | (1 << (HiveParser.KW_SHOW_DATABASE - 200)) | (1 << (HiveParser.KW_RESTRICT - 200)) | (1 << (HiveParser.KW_CASCADE - 200)) | (1 << (HiveParser.KW_SKEWED - 200)) | (1 << (HiveParser.KW_DIRECTORIES - 200)))) !== 0) || ((((_la - 243)) & ~0x1f) == 0 && ((1 << (_la - 243)) & ((1 << (HiveParser.KW_SETS - 243)) | (1 << (HiveParser.KW_NOSCAN - 243)) | (1 << (HiveParser.KW_ROLE - 243)) | (1 << (HiveParser.KW_ROLES - 243)) | (1 << (HiveParser.KW_URI - 243)) | (1 << (HiveParser.KW_SERVER - 243)) | (1 << (HiveParser.KW_ADMIN - 243)) | (1 << (HiveParser.KW_OWNER - 243)) | (1 << (HiveParser.KW_PRINCIPALS - 243)) | (1 << (HiveParser.KW_COMPACT - 243)) | (1 << (HiveParser.KW_COMPACTIONS - 243)) | (1 << (HiveParser.KW_TRANSACTIONS - 243)) | (1 << (HiveParser.KW_REWRITE - 243)) | (1 << (HiveParser.KW_REOPTIMIZATION - 243)) | (1 << (HiveParser.KW_RELOAD - 243)) | (1 << (HiveParser.KW_YEAR - 243)) | (1 << (HiveParser.KW_QUERY - 243)) | (1 << (HiveParser.KW_QUARTER - 243)) | (1 << (HiveParser.KW_MONTH - 243)) | (1 << (HiveParser.KW_WEEK - 243)) | (1 << (HiveParser.KW_DAY - 243)) | (1 << (HiveParser.KW_DOW - 243)) | (1 << (HiveParser.KW_HOUR - 243)) | (1 << (HiveParser.KW_MINUTE - 243)) | (1 << (HiveParser.KW_SECOND - 243)))) !== 0) || ((((_la - 276)) & ~0x1f) == 0 && ((1 << (_la - 276)) & ((1 << (HiveParser.KW_TRANSACTION - 276)) | (1 << (HiveParser.KW_WORK - 276)) | (1 << (HiveParser.KW_WRITE - 276)) | (1 << (HiveParser.KW_ISOLATION - 276)) | (1 << (HiveParser.KW_LEVEL - 276)) | (1 << (HiveParser.KW_SNAPSHOT - 276)) | (1 << (HiveParser.KW_AUTOCOMMIT - 276)) | (1 << (HiveParser.KW_CACHE - 276)) | (1 << (HiveParser.KW_ENFORCED - 276)) | (1 << (HiveParser.KW_VALIDATE - 276)) | (1 << (HiveParser.KW_NOVALIDATE - 276)) | (1 << (HiveParser.KW_RELY - 276)) | (1 << (HiveParser.KW_NORELY - 276)) | (1 << (HiveParser.KW_KEY - 276)) | (1 << (HiveParser.KW_ABORT - 276)) | (1 << (HiveParser.KW_MATCHED - 276)) | (1 << (HiveParser.KW_REPL - 276)) | (1 << (HiveParser.KW_DUMP - 276)) | (1 << (HiveParser.KW_STATUS - 276)) | (1 << (HiveParser.KW_VECTORIZATION - 276)) | (1 << (HiveParser.KW_SUMMARY - 276)))) !== 0) || ((((_la - 308)) & ~0x1f) == 0 && ((1 << (_la - 308)) & ((1 << (HiveParser.KW_OPERATOR - 308)) | (1 << (HiveParser.KW_EXPRESSION - 308)) | (1 << (HiveParser.KW_DETAIL - 308)) | (1 << (HiveParser.KW_WAIT - 308)) | (1 << (HiveParser.KW_RESOURCE - 308)) | (1 << (HiveParser.KW_PLAN - 308)) | (1 << (HiveParser.KW_QUERY_PARALLELISM - 308)) | (1 << (HiveParser.KW_PLANS - 308)) | (1 << (HiveParser.KW_ACTIVATE - 308)) | (1 << (HiveParser.KW_DEFAULT - 308)) | (1 << (HiveParser.KW_CHECK - 308)) | (1 << (HiveParser.KW_POOL - 308)) | (1 << (HiveParser.KW_MOVE - 308)) | (1 << (HiveParser.KW_DO - 308)) | (1 << (HiveParser.KW_ALLOC_FRACTION - 308)) | (1 << (HiveParser.KW_SCHEDULING_POLICY - 308)) | (1 << (HiveParser.KW_PATH - 308)) | (1 << (HiveParser.KW_MAPPING - 308)) | (1 << (HiveParser.KW_WORKLOAD - 308)) | (1 << (HiveParser.KW_MANAGEMENT - 308)) | (1 << (HiveParser.KW_ACTIVE - 308)) | (1 << (HiveParser.KW_UNMANAGED - 308)))) !== 0) || _la===HiveParser.Identifier) {
+	        var la_ = this._interp.adaptivePredict(this._input,425,this._ctx);
+	        if(la_===1) {
 	            this.state = 3453;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_AS) {
+	            var la_ = this._interp.adaptivePredict(this._input,424,this._ctx);
+	            if(la_===1) {
 	                this.state = 3452;
 	                this.match(HiveParser.KW_AS);
-	            }
 
+	            }
 	            this.state = 3455;
 	            this.identifier();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -17920,7 +15431,6 @@ export default class HiveParser extends antlr4.Parser {
 	subQuerySource() {
 	    let localctx = new SubQuerySourceContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 576, HiveParser.RULE_subQuerySource);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3472;
@@ -17931,12 +15441,12 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.RPAREN);
 	        this.state = 3476;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_AS) {
+	        var la_ = this._interp.adaptivePredict(this._input,428,this._ctx);
+	        if(la_===1) {
 	            this.state = 3475;
 	            this.match(HiveParser.KW_AS);
-	        }
 
+	        }
 	        this.state = 3478;
 	        this.identifier();
 	    } catch (re) {
@@ -17958,54 +15468,57 @@ export default class HiveParser extends antlr4.Parser {
 	partitioningSpec() {
 	    let localctx = new PartitioningSpecContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 578, HiveParser.RULE_partitioningSpec);
-	    var _la = 0; // Token type
 	    try {
 	        this.state = 3491;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_PARTITION:
+	        var la_ = this._interp.adaptivePredict(this._input,431,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3480;
 	            this.partitionByClause();
 	            this.state = 3482;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ORDER) {
+	            var la_ = this._interp.adaptivePredict(this._input,429,this._ctx);
+	            if(la_===1) {
 	                this.state = 3481;
 	                this.orderByClause();
-	            }
 
+	            }
 	            break;
-	        case HiveParser.KW_ORDER:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3484;
 	            this.orderByClause();
 	            break;
-	        case HiveParser.KW_DISTRIBUTE:
+
+	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 3485;
 	            this.distributeByClause();
 	            this.state = 3487;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_SORT) {
+	            var la_ = this._interp.adaptivePredict(this._input,430,this._ctx);
+	            if(la_===1) {
 	                this.state = 3486;
 	                this.sortByClause();
-	            }
 
+	            }
 	            break;
-	        case HiveParser.KW_SORT:
+
+	        case 4:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 3489;
 	            this.sortByClause();
 	            break;
-	        case HiveParser.KW_CLUSTER:
+
+	        case 5:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 3490;
 	            this.clusterByClause();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -18069,7 +15582,6 @@ export default class HiveParser extends antlr4.Parser {
 	partitionedTableFunction() {
 	    let localctx = new PartitionedTableFunctionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 582, HiveParser.RULE_partitionedTableFunction);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3498;
@@ -18082,16 +15594,16 @@ export default class HiveParser extends antlr4.Parser {
 	        this.partitionTableFunctionSource();
 	        this.state = 3503;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ORDER || ((((_la - 35)) & ~0x1f) == 0 && ((1 << (_la - 35)) & ((1 << (HiveParser.KW_PARTITION - 35)) | (1 << (HiveParser.KW_CLUSTER - 35)) | (1 << (HiveParser.KW_DISTRIBUTE - 35)) | (1 << (HiveParser.KW_SORT - 35)))) !== 0)) {
+	        var la_ = this._interp.adaptivePredict(this._input,433,this._ctx);
+	        if(la_===1) {
 	            this.state = 3502;
 	            this.partitioningSpec();
-	        }
 
+	        }
 	        this.state = 3520;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.Identifier) {
+	        var la_ = this._interp.adaptivePredict(this._input,435,this._ctx);
+	        if(la_===1) {
 	            this.state = 3505;
 	            this.match(HiveParser.Identifier);
 	            this.state = 3506;
@@ -18102,24 +15614,27 @@ export default class HiveParser extends antlr4.Parser {
 	            this.match(HiveParser.RPAREN);
 	            this.state = 3517;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            while(_la===HiveParser.COMMA) {
-	                this.state = 3509;
-	                this.match(HiveParser.COMMA);
-	                this.state = 3510;
-	                this.match(HiveParser.Identifier);
-	                this.state = 3511;
-	                this.match(HiveParser.LPAREN);
-	                this.state = 3512;
-	                this.expression(0);
-	                this.state = 3513;
-	                this.match(HiveParser.RPAREN);
+	            var _alt = this._interp.adaptivePredict(this._input,434,this._ctx)
+	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                if(_alt===1) {
+	                    this.state = 3509;
+	                    this.match(HiveParser.COMMA);
+	                    this.state = 3510;
+	                    this.match(HiveParser.Identifier);
+	                    this.state = 3511;
+	                    this.match(HiveParser.LPAREN);
+	                    this.state = 3512;
+	                    this.expression(0);
+	                    this.state = 3513;
+	                    this.match(HiveParser.RPAREN); 
+	                }
 	                this.state = 3519;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
+	                _alt = this._interp.adaptivePredict(this._input,434,this._ctx);
 	            }
-	        }
 
+
+	        }
 	        this.state = 3522;
 	        this.match(HiveParser.RPAREN);
 	        this.state = 3524;
@@ -18222,23 +15737,25 @@ export default class HiveParser extends antlr4.Parser {
 	valuesTableConstructor() {
 	    let localctx = new ValuesTableConstructorContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 590, HiveParser.RULE_valuesTableConstructor);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3534;
 	        this.valueRowConstructor();
 	        this.state = 3539;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 3535;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3536;
-	            this.valueRowConstructor();
+	        var _alt = this._interp.adaptivePredict(this._input,437,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3535;
+	                this.match(HiveParser.COMMA);
+	                this.state = 3536;
+	                this.valueRowConstructor(); 
+	            }
 	            this.state = 3541;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,437,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -18281,7 +15798,6 @@ export default class HiveParser extends antlr4.Parser {
 	virtualTableSource() {
 	    let localctx = new VirtualTableSourceContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 594, HiveParser.RULE_virtualTableSource);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3544;
@@ -18294,36 +15810,39 @@ export default class HiveParser extends antlr4.Parser {
 	        this.match(HiveParser.RPAREN);
 	        this.state = 3549;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_AS) {
+	        var la_ = this._interp.adaptivePredict(this._input,438,this._ctx);
+	        if(la_===1) {
 	            this.state = 3548;
 	            this.match(HiveParser.KW_AS);
-	        }
 
+	        }
 	        this.state = 3551;
 	        this.tableAlias();
 	        this.state = 3561;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.LPAREN) {
+	        var la_ = this._interp.adaptivePredict(this._input,440,this._ctx);
+	        if(la_===1) {
 	            this.state = 3552;
 	            this.match(HiveParser.LPAREN);
 	            this.state = 3553;
 	            this.identifier();
 	            this.state = 3558;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            while(_la===HiveParser.COMMA) {
-	                this.state = 3554;
-	                this.match(HiveParser.COMMA);
-	                this.state = 3555;
-	                this.identifier();
+	            var _alt = this._interp.adaptivePredict(this._input,439,this._ctx)
+	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                if(_alt===1) {
+	                    this.state = 3554;
+	                    this.match(HiveParser.COMMA);
+	                    this.state = 3555;
+	                    this.identifier(); 
+	                }
 	                this.state = 3560;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
+	                _alt = this._interp.adaptivePredict(this._input,439,this._ctx);
 	            }
-	        }
 
+
+	        }
 	        this.state = 3563;
 	        this.match(HiveParser.RPAREN);
 	    } catch (re) {
@@ -18458,16 +15977,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.expression(0);
 	        this.state = 3584;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 3580;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3581;
-	            this.expression(0);
+	        var _alt = this._interp.adaptivePredict(this._input,442,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3580;
+	                this.match(HiveParser.COMMA);
+	                this.state = 3581;
+	                this.expression(0); 
+	            }
 	            this.state = 3586;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,442,this._ctx);
 	        }
+
 	        this.state = 3587;
 	        this.match(HiveParser.RPAREN);
 	    } catch (re) {
@@ -18489,7 +16011,6 @@ export default class HiveParser extends antlr4.Parser {
 	rollupOldSyntax() {
 	    let localctx = new RollupOldSyntaxContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 604, HiveParser.RULE_rollupOldSyntax);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3589;
@@ -18512,8 +16033,8 @@ export default class HiveParser extends antlr4.Parser {
 	        }
 	        this.state = 3609;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_GROUPING) {
+	        var la_ = this._interp.adaptivePredict(this._input,445,this._ctx);
+	        if(la_===1) {
 	            this.state = 3596;
 	            this.match(HiveParser.KW_GROUPING);
 	            this.state = 3597;
@@ -18524,20 +16045,23 @@ export default class HiveParser extends antlr4.Parser {
 	            this.groupingSetExpression();
 	            this.state = 3604;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            while(_la===HiveParser.COMMA) {
-	                this.state = 3600;
-	                this.match(HiveParser.COMMA);
-	                this.state = 3601;
-	                this.groupingSetExpression();
+	            var _alt = this._interp.adaptivePredict(this._input,444,this._ctx)
+	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                if(_alt===1) {
+	                    this.state = 3600;
+	                    this.match(HiveParser.COMMA);
+	                    this.state = 3601;
+	                    this.groupingSetExpression(); 
+	                }
 	                this.state = 3606;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
+	                _alt = this._interp.adaptivePredict(this._input,444,this._ctx);
 	            }
+
 	            this.state = 3607;
 	            this.match(HiveParser.RPAREN);
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -18594,31 +16118,33 @@ export default class HiveParser extends antlr4.Parser {
 	groupingSetExpressionMultiple() {
 	    let localctx = new GroupingSetExpressionMultipleContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 608, HiveParser.RULE_groupingSetExpressionMultiple);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3615;
 	        this.match(HiveParser.LPAREN);
 	        this.state = 3617;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << HiveParser.KW_TRUE) | (1 << HiveParser.KW_FALSE) | (1 << HiveParser.KW_NOT) | (1 << HiveParser.KW_IF) | (1 << HiveParser.KW_EXISTS) | (1 << HiveParser.KW_ASC) | (1 << HiveParser.KW_DESC) | (1 << HiveParser.KW_NULLS) | (1 << HiveParser.KW_LAST) | (1 << HiveParser.KW_OVERWRITE))) !== 0) || ((((_la - 36)) & ~0x1f) == 0 && ((1 << (_la - 36)) & ((1 << (HiveParser.KW_PARTITIONS - 36)) | (1 << (HiveParser.KW_TABLES - 36)) | (1 << (HiveParser.KW_COLUMNS - 36)) | (1 << (HiveParser.KW_INDEX - 36)) | (1 << (HiveParser.KW_INDEXES - 36)) | (1 << (HiveParser.KW_REBUILD - 36)) | (1 << (HiveParser.KW_FUNCTIONS - 36)) | (1 << (HiveParser.KW_SHOW - 36)) | (1 << (HiveParser.KW_MSCK - 36)) | (1 << (HiveParser.KW_REPAIR - 36)) | (1 << (HiveParser.KW_DIRECTORY - 36)) | (1 << (HiveParser.KW_CLUSTER - 36)) | (1 << (HiveParser.KW_DISTRIBUTE - 36)) | (1 << (HiveParser.KW_SORT - 36)) | (1 << (HiveParser.KW_LOAD - 36)) | (1 << (HiveParser.KW_EXPORT - 36)) | (1 << (HiveParser.KW_REPLICATION - 36)) | (1 << (HiveParser.KW_METADATA - 36)) | (1 << (HiveParser.KW_DATA - 36)) | (1 << (HiveParser.KW_INPATH - 36)) | (1 << (HiveParser.KW_NULL - 36)))) !== 0) || ((((_la - 68)) & ~0x1f) == 0 && ((1 << (_la - 68)) & ((1 << (HiveParser.KW_CHANGE - 68)) | (1 << (HiveParser.KW_FIRST - 68)) | (1 << (HiveParser.KW_AFTER - 68)) | (1 << (HiveParser.KW_RENAME - 68)) | (1 << (HiveParser.KW_COMMENT - 68)) | (1 << (HiveParser.KW_BOOLEAN - 68)) | (1 << (HiveParser.KW_TINYINT - 68)) | (1 << (HiveParser.KW_SMALLINT - 68)) | (1 << (HiveParser.KW_INT - 68)) | (1 << (HiveParser.KW_BIGINT - 68)) | (1 << (HiveParser.KW_FLOAT - 68)) | (1 << (HiveParser.KW_DOUBLE - 68)) | (1 << (HiveParser.KW_DATE - 68)) | (1 << (HiveParser.KW_DATETIME - 68)) | (1 << (HiveParser.KW_TIMESTAMP - 68)) | (1 << (HiveParser.KW_TIMESTAMPLOCALTZ - 68)) | (1 << (HiveParser.KW_ZONE - 68)) | (1 << (HiveParser.KW_INTERVAL - 68)) | (1 << (HiveParser.KW_STRING - 68)) | (1 << (HiveParser.KW_ARRAY - 68)) | (1 << (HiveParser.KW_STRUCT - 68)) | (1 << (HiveParser.KW_MAP - 68)) | (1 << (HiveParser.KW_UNIONTYPE - 68)))) !== 0) || ((((_la - 101)) & ~0x1f) == 0 && ((1 << (_la - 101)) & ((1 << (HiveParser.KW_PARTITIONED - 101)) | (1 << (HiveParser.KW_CLUSTERED - 101)) | (1 << (HiveParser.KW_SORTED - 101)) | (1 << (HiveParser.KW_BUCKETS - 101)) | (1 << (HiveParser.KW_FORMAT - 101)) | (1 << (HiveParser.KW_DELIMITED - 101)) | (1 << (HiveParser.KW_FIELDS - 101)) | (1 << (HiveParser.KW_TERMINATED - 101)) | (1 << (HiveParser.KW_ESCAPED - 101)) | (1 << (HiveParser.KW_COLLECTION - 101)) | (1 << (HiveParser.KW_ITEMS - 101)) | (1 << (HiveParser.KW_KEYS - 101)) | (1 << (HiveParser.KW_KEY_TYPE - 101)) | (1 << (HiveParser.KW_KILL - 101)) | (1 << (HiveParser.KW_LINES - 101)) | (1 << (HiveParser.KW_STORED - 101)) | (1 << (HiveParser.KW_FILEFORMAT - 101)) | (1 << (HiveParser.KW_INPUTFORMAT - 101)) | (1 << (HiveParser.KW_OUTPUTFORMAT - 101)) | (1 << (HiveParser.KW_INPUTDRIVER - 101)) | (1 << (HiveParser.KW_OUTPUTDRIVER - 101)) | (1 << (HiveParser.KW_ENABLE - 101)) | (1 << (HiveParser.KW_DISABLE - 101)) | (1 << (HiveParser.KW_LOCATION - 101)) | (1 << (HiveParser.KW_BUCKET - 101)))) !== 0) || ((((_la - 133)) & ~0x1f) == 0 && ((1 << (_la - 133)) & ((1 << (HiveParser.KW_CAST - 133)) | (1 << (HiveParser.KW_ADD - 133)) | (1 << (HiveParser.KW_REPLACE - 133)) | (1 << (HiveParser.KW_TEMPORARY - 133)) | (1 << (HiveParser.KW_FILE - 133)) | (1 << (HiveParser.KW_JAR - 133)) | (1 << (HiveParser.KW_EXPLAIN - 133)) | (1 << (HiveParser.KW_FORMATTED - 133)) | (1 << (HiveParser.KW_DEPENDENCY - 133)) | (1 << (HiveParser.KW_LOGICAL - 133)) | (1 << (HiveParser.KW_SERDE - 133)) | (1 << (HiveParser.KW_DEFERRED - 133)) | (1 << (HiveParser.KW_SERDEPROPERTIES - 133)) | (1 << (HiveParser.KW_DBPROPERTIES - 133)) | (1 << (HiveParser.KW_LIMIT - 133)) | (1 << (HiveParser.KW_OFFSET - 133)) | (1 << (HiveParser.KW_UNSET - 133)) | (1 << (HiveParser.KW_TBLPROPERTIES - 133)) | (1 << (HiveParser.KW_IDXPROPERTIES - 133)) | (1 << (HiveParser.KW_VALUE_TYPE - 133)) | (1 << (HiveParser.KW_ELEM_TYPE - 133)) | (1 << (HiveParser.KW_DEFINED - 133)) | (1 << (HiveParser.KW_CASE - 133)))) !== 0) || ((((_la - 167)) & ~0x1f) == 0 && ((1 << (_la - 167)) & ((1 << (HiveParser.KW_MAPJOIN - 167)) | (1 << (HiveParser.KW_STREAMTABLE - 167)) | (1 << (HiveParser.KW_CLUSTERSTATUS - 167)) | (1 << (HiveParser.KW_UTC - 167)) | (1 << (HiveParser.KW_UTCTIMESTAMP - 167)) | (1 << (HiveParser.KW_LONG - 167)) | (1 << (HiveParser.KW_PLUS - 167)) | (1 << (HiveParser.KW_VIEW - 167)) | (1 << (HiveParser.KW_VIEWS - 167)) | (1 << (HiveParser.KW_DATABASES - 167)) | (1 << (HiveParser.KW_MATERIALIZED - 167)) | (1 << (HiveParser.KW_SCHEMA - 167)) | (1 << (HiveParser.KW_SCHEMAS - 167)) | (1 << (HiveParser.KW_SSL - 167)) | (1 << (HiveParser.KW_UNDO - 167)) | (1 << (HiveParser.KW_LOCK - 167)) | (1 << (HiveParser.KW_LOCKS - 167)) | (1 << (HiveParser.KW_UNLOCK - 167)) | (1 << (HiveParser.KW_SHARED - 167)) | (1 << (HiveParser.KW_EXCLUSIVE - 167)) | (1 << (HiveParser.KW_UNSIGNED - 167)) | (1 << (HiveParser.KW_WHILE - 167)) | (1 << (HiveParser.KW_READ - 167)))) !== 0) || ((((_la - 200)) & ~0x1f) == 0 && ((1 << (_la - 200)) & ((1 << (HiveParser.KW_PURGE - 200)) | (1 << (HiveParser.KW_ANALYZE - 200)) | (1 << (HiveParser.KW_BEFORE - 200)) | (1 << (HiveParser.KW_BINARY - 200)) | (1 << (HiveParser.KW_CONTINUE - 200)) | (1 << (HiveParser.KW_RECORDREADER - 200)) | (1 << (HiveParser.KW_RECORDWRITER - 200)) | (1 << (HiveParser.KW_SEMI - 200)) | (1 << (HiveParser.KW_TOUCH - 200)) | (1 << (HiveParser.KW_ARCHIVE - 200)) | (1 << (HiveParser.KW_UNARCHIVE - 200)) | (1 << (HiveParser.KW_COMPUTE - 200)) | (1 << (HiveParser.KW_STATISTICS - 200)) | (1 << (HiveParser.KW_USE - 200)) | (1 << (HiveParser.KW_OPTION - 200)) | (1 << (HiveParser.KW_CONCATENATE - 200)) | (1 << (HiveParser.KW_SHOW_DATABASE - 200)) | (1 << (HiveParser.KW_RESTRICT - 200)) | (1 << (HiveParser.KW_CASCADE - 200)) | (1 << (HiveParser.KW_SKEWED - 200)) | (1 << (HiveParser.KW_DIRECTORIES - 200)))) !== 0) || ((((_la - 237)) & ~0x1f) == 0 && ((1 << (_la - 237)) & ((1 << (HiveParser.KW_CURRENT_DATE - 237)) | (1 << (HiveParser.KW_CURRENT_TIMESTAMP - 237)) | (1 << (HiveParser.KW_GROUPING - 237)) | (1 << (HiveParser.KW_SETS - 237)) | (1 << (HiveParser.KW_NOSCAN - 237)) | (1 << (HiveParser.KW_ROLE - 237)) | (1 << (HiveParser.KW_ROLES - 237)) | (1 << (HiveParser.KW_URI - 237)) | (1 << (HiveParser.KW_SERVER - 237)) | (1 << (HiveParser.KW_ADMIN - 237)) | (1 << (HiveParser.KW_OWNER - 237)) | (1 << (HiveParser.KW_PRINCIPALS - 237)) | (1 << (HiveParser.KW_COMPACT - 237)) | (1 << (HiveParser.KW_COMPACTIONS - 237)) | (1 << (HiveParser.KW_TRANSACTIONS - 237)) | (1 << (HiveParser.KW_REWRITE - 237)) | (1 << (HiveParser.KW_REOPTIMIZATION - 237)) | (1 << (HiveParser.KW_RELOAD - 237)) | (1 << (HiveParser.KW_YEAR - 237)) | (1 << (HiveParser.KW_QUERY - 237)) | (1 << (HiveParser.KW_QUARTER - 237)) | (1 << (HiveParser.KW_MONTH - 237)))) !== 0) || ((((_la - 269)) & ~0x1f) == 0 && ((1 << (_la - 269)) & ((1 << (HiveParser.KW_WEEK - 269)) | (1 << (HiveParser.KW_DAY - 269)) | (1 << (HiveParser.KW_DOW - 269)) | (1 << (HiveParser.KW_HOUR - 269)) | (1 << (HiveParser.KW_MINUTE - 269)) | (1 << (HiveParser.KW_SECOND - 269)) | (1 << (HiveParser.KW_TRANSACTION - 269)) | (1 << (HiveParser.KW_WORK - 269)) | (1 << (HiveParser.KW_WRITE - 269)) | (1 << (HiveParser.KW_ISOLATION - 269)) | (1 << (HiveParser.KW_LEVEL - 269)) | (1 << (HiveParser.KW_SNAPSHOT - 269)) | (1 << (HiveParser.KW_AUTOCOMMIT - 269)) | (1 << (HiveParser.KW_CACHE - 269)) | (1 << (HiveParser.KW_ENFORCED - 269)) | (1 << (HiveParser.KW_VALIDATE - 269)) | (1 << (HiveParser.KW_NOVALIDATE - 269)) | (1 << (HiveParser.KW_RELY - 269)) | (1 << (HiveParser.KW_NORELY - 269)) | (1 << (HiveParser.KW_KEY - 269)) | (1 << (HiveParser.KW_ABORT - 269)) | (1 << (HiveParser.KW_EXTRACT - 269)) | (1 << (HiveParser.KW_FLOOR - 269)))) !== 0) || ((((_la - 302)) & ~0x1f) == 0 && ((1 << (_la - 302)) & ((1 << (HiveParser.KW_MATCHED - 302)) | (1 << (HiveParser.KW_REPL - 302)) | (1 << (HiveParser.KW_DUMP - 302)) | (1 << (HiveParser.KW_STATUS - 302)) | (1 << (HiveParser.KW_VECTORIZATION - 302)) | (1 << (HiveParser.KW_SUMMARY - 302)) | (1 << (HiveParser.KW_OPERATOR - 302)) | (1 << (HiveParser.KW_EXPRESSION - 302)) | (1 << (HiveParser.KW_DETAIL - 302)) | (1 << (HiveParser.KW_WAIT - 302)) | (1 << (HiveParser.KW_RESOURCE - 302)) | (1 << (HiveParser.KW_PLAN - 302)) | (1 << (HiveParser.KW_QUERY_PARALLELISM - 302)) | (1 << (HiveParser.KW_PLANS - 302)) | (1 << (HiveParser.KW_ACTIVATE - 302)) | (1 << (HiveParser.KW_DEFAULT - 302)) | (1 << (HiveParser.KW_CHECK - 302)) | (1 << (HiveParser.KW_POOL - 302)) | (1 << (HiveParser.KW_MOVE - 302)) | (1 << (HiveParser.KW_DO - 302)) | (1 << (HiveParser.KW_ALLOC_FRACTION - 302)) | (1 << (HiveParser.KW_SCHEDULING_POLICY - 302)) | (1 << (HiveParser.KW_PATH - 302)) | (1 << (HiveParser.KW_MAPPING - 302)) | (1 << (HiveParser.KW_WORKLOAD - 302)) | (1 << (HiveParser.KW_MANAGEMENT - 302)) | (1 << (HiveParser.KW_ACTIVE - 302)) | (1 << (HiveParser.KW_UNMANAGED - 302)))) !== 0) || ((((_la - 336)) & ~0x1f) == 0 && ((1 << (_la - 336)) & ((1 << (HiveParser.LPAREN - 336)) | (1 << (HiveParser.PLUS - 336)) | (1 << (HiveParser.MINUS - 336)) | (1 << (HiveParser.TILDE - 336)) | (1 << (HiveParser.StringLiteral - 336)) | (1 << (HiveParser.IntegralLiteral - 336)) | (1 << (HiveParser.NumberLiteral - 336)) | (1 << (HiveParser.Number - 336)))) !== 0) || _la===HiveParser.Identifier || _la===HiveParser.CharSetName) {
+	        var la_ = this._interp.adaptivePredict(this._input,447,this._ctx);
+	        if(la_===1) {
 	            this.state = 3616;
 	            this.expression(0);
-	        }
 
+	        }
 	        this.state = 3623;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 3619;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3620;
-	            this.expression(0);
+	        var _alt = this._interp.adaptivePredict(this._input,448,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3619;
+	                this.match(HiveParser.COMMA);
+	                this.state = 3620;
+	                this.expression(0); 
+	            }
 	            this.state = 3625;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,448,this._ctx);
 	        }
+
 	        this.state = 3626;
 	        this.match(HiveParser.RPAREN);
 	    } catch (re) {
@@ -18738,19 +16264,18 @@ export default class HiveParser extends antlr4.Parser {
 	expressionsNotInParenthesis() {
 	    let localctx = new ExpressionsNotInParenthesisContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 618, HiveParser.RULE_expressionsNotInParenthesis);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3639;
 	        this.expression(0);
 	        this.state = 3641;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.COMMA) {
+	        var la_ = this._interp.adaptivePredict(this._input,449,this._ctx);
+	        if(la_===1) {
 	            this.state = 3640;
 	            this.expressionPart();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -18770,21 +16295,26 @@ export default class HiveParser extends antlr4.Parser {
 	expressionPart() {
 	    let localctx = new ExpressionPartContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 620, HiveParser.RULE_expressionPart);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3645; 
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
+	        var _alt = 1;
 	        do {
-	            this.state = 3643;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3644;
-	            this.expression(0);
-	            this.state = 3647; 
-	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	        } while(_la===HiveParser.COMMA);
+	        	switch (_alt) {
+	        	case 1:
+	        		this.state = 3643;
+	        		this.match(HiveParser.COMMA);
+	        		this.state = 3644;
+	        		this.expression(0);
+	        		break;
+	        	default:
+	        		throw new antlr4.error.NoViableAltException(this);
+	        	}
+	        	this.state = 3647; 
+	        	this._errHandler.sync(this);
+	        	_alt = this._interp.adaptivePredict(this._input,450, this._ctx);
+	        } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -18841,7 +16371,6 @@ export default class HiveParser extends antlr4.Parser {
 	columnRefOrderInParenthesis() {
 	    let localctx = new ColumnRefOrderInParenthesisContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 624, HiveParser.RULE_columnRefOrderInParenthesis);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3653;
@@ -18850,16 +16379,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.columnRefOrder();
 	        this.state = 3659;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 3655;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3656;
-	            this.columnRefOrder();
+	        var _alt = this._interp.adaptivePredict(this._input,452,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3655;
+	                this.match(HiveParser.COMMA);
+	                this.state = 3656;
+	                this.columnRefOrder(); 
+	            }
 	            this.state = 3661;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,452,this._ctx);
 	        }
+
 	        this.state = 3662;
 	        this.match(HiveParser.RPAREN);
 	    } catch (re) {
@@ -18881,23 +16413,25 @@ export default class HiveParser extends antlr4.Parser {
 	columnRefOrderNotInParenthesis() {
 	    let localctx = new ColumnRefOrderNotInParenthesisContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 626, HiveParser.RULE_columnRefOrderNotInParenthesis);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3664;
 	        this.columnRefOrder();
 	        this.state = 3669;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 3665;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3666;
-	            this.columnRefOrder();
+	        var _alt = this._interp.adaptivePredict(this._input,453,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3665;
+	                this.match(HiveParser.COMMA);
+	                this.state = 3666;
+	                this.columnRefOrder(); 
+	            }
 	            this.state = 3671;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,453,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -18917,7 +16451,6 @@ export default class HiveParser extends antlr4.Parser {
 	orderByClause() {
 	    let localctx = new OrderByClauseContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 628, HiveParser.RULE_orderByClause);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3672;
@@ -18928,16 +16461,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.columnRefOrder();
 	        this.state = 3679;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 3675;
-	            this.match(HiveParser.COMMA);
-	            this.state = 3676;
-	            this.columnRefOrder();
+	        var _alt = this._interp.adaptivePredict(this._input,454,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 3675;
+	                this.match(HiveParser.COMMA);
+	                this.state = 3676;
+	                this.columnRefOrder(); 
+	            }
 	            this.state = 3681;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,454,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -19097,8 +16633,8 @@ export default class HiveParser extends antlr4.Parser {
 	        case 2:
 	            this.state = 3704;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if(_la===HiveParser.KW_ALL || _la===HiveParser.KW_DISTINCT) {
+	            var la_ = this._interp.adaptivePredict(this._input,456,this._ctx);
+	            if(la_===1) {
 	                this.state = 3703;
 	                _la = this._input.LA(1);
 	                if(!(_la===HiveParser.KW_ALL || _la===HiveParser.KW_DISTINCT)) {
@@ -19108,28 +16644,31 @@ export default class HiveParser extends antlr4.Parser {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	            }
 
+	            }
 	            this.state = 3714;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	            if((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << HiveParser.KW_TRUE) | (1 << HiveParser.KW_FALSE) | (1 << HiveParser.KW_NOT) | (1 << HiveParser.KW_IF) | (1 << HiveParser.KW_EXISTS) | (1 << HiveParser.KW_ASC) | (1 << HiveParser.KW_DESC) | (1 << HiveParser.KW_NULLS) | (1 << HiveParser.KW_LAST) | (1 << HiveParser.KW_OVERWRITE))) !== 0) || ((((_la - 36)) & ~0x1f) == 0 && ((1 << (_la - 36)) & ((1 << (HiveParser.KW_PARTITIONS - 36)) | (1 << (HiveParser.KW_TABLES - 36)) | (1 << (HiveParser.KW_COLUMNS - 36)) | (1 << (HiveParser.KW_INDEX - 36)) | (1 << (HiveParser.KW_INDEXES - 36)) | (1 << (HiveParser.KW_REBUILD - 36)) | (1 << (HiveParser.KW_FUNCTIONS - 36)) | (1 << (HiveParser.KW_SHOW - 36)) | (1 << (HiveParser.KW_MSCK - 36)) | (1 << (HiveParser.KW_REPAIR - 36)) | (1 << (HiveParser.KW_DIRECTORY - 36)) | (1 << (HiveParser.KW_CLUSTER - 36)) | (1 << (HiveParser.KW_DISTRIBUTE - 36)) | (1 << (HiveParser.KW_SORT - 36)) | (1 << (HiveParser.KW_LOAD - 36)) | (1 << (HiveParser.KW_EXPORT - 36)) | (1 << (HiveParser.KW_REPLICATION - 36)) | (1 << (HiveParser.KW_METADATA - 36)) | (1 << (HiveParser.KW_DATA - 36)) | (1 << (HiveParser.KW_INPATH - 36)) | (1 << (HiveParser.KW_NULL - 36)))) !== 0) || ((((_la - 68)) & ~0x1f) == 0 && ((1 << (_la - 68)) & ((1 << (HiveParser.KW_CHANGE - 68)) | (1 << (HiveParser.KW_FIRST - 68)) | (1 << (HiveParser.KW_AFTER - 68)) | (1 << (HiveParser.KW_RENAME - 68)) | (1 << (HiveParser.KW_COMMENT - 68)) | (1 << (HiveParser.KW_BOOLEAN - 68)) | (1 << (HiveParser.KW_TINYINT - 68)) | (1 << (HiveParser.KW_SMALLINT - 68)) | (1 << (HiveParser.KW_INT - 68)) | (1 << (HiveParser.KW_BIGINT - 68)) | (1 << (HiveParser.KW_FLOAT - 68)) | (1 << (HiveParser.KW_DOUBLE - 68)) | (1 << (HiveParser.KW_DATE - 68)) | (1 << (HiveParser.KW_DATETIME - 68)) | (1 << (HiveParser.KW_TIMESTAMP - 68)) | (1 << (HiveParser.KW_TIMESTAMPLOCALTZ - 68)) | (1 << (HiveParser.KW_ZONE - 68)) | (1 << (HiveParser.KW_INTERVAL - 68)) | (1 << (HiveParser.KW_STRING - 68)) | (1 << (HiveParser.KW_ARRAY - 68)) | (1 << (HiveParser.KW_STRUCT - 68)) | (1 << (HiveParser.KW_MAP - 68)) | (1 << (HiveParser.KW_UNIONTYPE - 68)))) !== 0) || ((((_la - 101)) & ~0x1f) == 0 && ((1 << (_la - 101)) & ((1 << (HiveParser.KW_PARTITIONED - 101)) | (1 << (HiveParser.KW_CLUSTERED - 101)) | (1 << (HiveParser.KW_SORTED - 101)) | (1 << (HiveParser.KW_BUCKETS - 101)) | (1 << (HiveParser.KW_FORMAT - 101)) | (1 << (HiveParser.KW_DELIMITED - 101)) | (1 << (HiveParser.KW_FIELDS - 101)) | (1 << (HiveParser.KW_TERMINATED - 101)) | (1 << (HiveParser.KW_ESCAPED - 101)) | (1 << (HiveParser.KW_COLLECTION - 101)) | (1 << (HiveParser.KW_ITEMS - 101)) | (1 << (HiveParser.KW_KEYS - 101)) | (1 << (HiveParser.KW_KEY_TYPE - 101)) | (1 << (HiveParser.KW_KILL - 101)) | (1 << (HiveParser.KW_LINES - 101)) | (1 << (HiveParser.KW_STORED - 101)) | (1 << (HiveParser.KW_FILEFORMAT - 101)) | (1 << (HiveParser.KW_INPUTFORMAT - 101)) | (1 << (HiveParser.KW_OUTPUTFORMAT - 101)) | (1 << (HiveParser.KW_INPUTDRIVER - 101)) | (1 << (HiveParser.KW_OUTPUTDRIVER - 101)) | (1 << (HiveParser.KW_ENABLE - 101)) | (1 << (HiveParser.KW_DISABLE - 101)) | (1 << (HiveParser.KW_LOCATION - 101)) | (1 << (HiveParser.KW_BUCKET - 101)))) !== 0) || ((((_la - 133)) & ~0x1f) == 0 && ((1 << (_la - 133)) & ((1 << (HiveParser.KW_CAST - 133)) | (1 << (HiveParser.KW_ADD - 133)) | (1 << (HiveParser.KW_REPLACE - 133)) | (1 << (HiveParser.KW_TEMPORARY - 133)) | (1 << (HiveParser.KW_FILE - 133)) | (1 << (HiveParser.KW_JAR - 133)) | (1 << (HiveParser.KW_EXPLAIN - 133)) | (1 << (HiveParser.KW_FORMATTED - 133)) | (1 << (HiveParser.KW_DEPENDENCY - 133)) | (1 << (HiveParser.KW_LOGICAL - 133)) | (1 << (HiveParser.KW_SERDE - 133)) | (1 << (HiveParser.KW_DEFERRED - 133)) | (1 << (HiveParser.KW_SERDEPROPERTIES - 133)) | (1 << (HiveParser.KW_DBPROPERTIES - 133)) | (1 << (HiveParser.KW_LIMIT - 133)) | (1 << (HiveParser.KW_OFFSET - 133)) | (1 << (HiveParser.KW_UNSET - 133)) | (1 << (HiveParser.KW_TBLPROPERTIES - 133)) | (1 << (HiveParser.KW_IDXPROPERTIES - 133)) | (1 << (HiveParser.KW_VALUE_TYPE - 133)) | (1 << (HiveParser.KW_ELEM_TYPE - 133)) | (1 << (HiveParser.KW_DEFINED - 133)) | (1 << (HiveParser.KW_CASE - 133)))) !== 0) || ((((_la - 167)) & ~0x1f) == 0 && ((1 << (_la - 167)) & ((1 << (HiveParser.KW_MAPJOIN - 167)) | (1 << (HiveParser.KW_STREAMTABLE - 167)) | (1 << (HiveParser.KW_CLUSTERSTATUS - 167)) | (1 << (HiveParser.KW_UTC - 167)) | (1 << (HiveParser.KW_UTCTIMESTAMP - 167)) | (1 << (HiveParser.KW_LONG - 167)) | (1 << (HiveParser.KW_PLUS - 167)) | (1 << (HiveParser.KW_VIEW - 167)) | (1 << (HiveParser.KW_VIEWS - 167)) | (1 << (HiveParser.KW_DATABASES - 167)) | (1 << (HiveParser.KW_MATERIALIZED - 167)) | (1 << (HiveParser.KW_SCHEMA - 167)) | (1 << (HiveParser.KW_SCHEMAS - 167)) | (1 << (HiveParser.KW_SSL - 167)) | (1 << (HiveParser.KW_UNDO - 167)) | (1 << (HiveParser.KW_LOCK - 167)) | (1 << (HiveParser.KW_LOCKS - 167)) | (1 << (HiveParser.KW_UNLOCK - 167)) | (1 << (HiveParser.KW_SHARED - 167)) | (1 << (HiveParser.KW_EXCLUSIVE - 167)) | (1 << (HiveParser.KW_UNSIGNED - 167)) | (1 << (HiveParser.KW_WHILE - 167)) | (1 << (HiveParser.KW_READ - 167)))) !== 0) || ((((_la - 200)) & ~0x1f) == 0 && ((1 << (_la - 200)) & ((1 << (HiveParser.KW_PURGE - 200)) | (1 << (HiveParser.KW_ANALYZE - 200)) | (1 << (HiveParser.KW_BEFORE - 200)) | (1 << (HiveParser.KW_BINARY - 200)) | (1 << (HiveParser.KW_CONTINUE - 200)) | (1 << (HiveParser.KW_RECORDREADER - 200)) | (1 << (HiveParser.KW_RECORDWRITER - 200)) | (1 << (HiveParser.KW_SEMI - 200)) | (1 << (HiveParser.KW_TOUCH - 200)) | (1 << (HiveParser.KW_ARCHIVE - 200)) | (1 << (HiveParser.KW_UNARCHIVE - 200)) | (1 << (HiveParser.KW_COMPUTE - 200)) | (1 << (HiveParser.KW_STATISTICS - 200)) | (1 << (HiveParser.KW_USE - 200)) | (1 << (HiveParser.KW_OPTION - 200)) | (1 << (HiveParser.KW_CONCATENATE - 200)) | (1 << (HiveParser.KW_SHOW_DATABASE - 200)) | (1 << (HiveParser.KW_RESTRICT - 200)) | (1 << (HiveParser.KW_CASCADE - 200)) | (1 << (HiveParser.KW_SKEWED - 200)) | (1 << (HiveParser.KW_DIRECTORIES - 200)))) !== 0) || ((((_la - 237)) & ~0x1f) == 0 && ((1 << (_la - 237)) & ((1 << (HiveParser.KW_CURRENT_DATE - 237)) | (1 << (HiveParser.KW_CURRENT_TIMESTAMP - 237)) | (1 << (HiveParser.KW_GROUPING - 237)) | (1 << (HiveParser.KW_SETS - 237)) | (1 << (HiveParser.KW_NOSCAN - 237)) | (1 << (HiveParser.KW_ROLE - 237)) | (1 << (HiveParser.KW_ROLES - 237)) | (1 << (HiveParser.KW_URI - 237)) | (1 << (HiveParser.KW_SERVER - 237)) | (1 << (HiveParser.KW_ADMIN - 237)) | (1 << (HiveParser.KW_OWNER - 237)) | (1 << (HiveParser.KW_PRINCIPALS - 237)) | (1 << (HiveParser.KW_COMPACT - 237)) | (1 << (HiveParser.KW_COMPACTIONS - 237)) | (1 << (HiveParser.KW_TRANSACTIONS - 237)) | (1 << (HiveParser.KW_REWRITE - 237)) | (1 << (HiveParser.KW_REOPTIMIZATION - 237)) | (1 << (HiveParser.KW_RELOAD - 237)) | (1 << (HiveParser.KW_YEAR - 237)) | (1 << (HiveParser.KW_QUERY - 237)) | (1 << (HiveParser.KW_QUARTER - 237)) | (1 << (HiveParser.KW_MONTH - 237)))) !== 0) || ((((_la - 269)) & ~0x1f) == 0 && ((1 << (_la - 269)) & ((1 << (HiveParser.KW_WEEK - 269)) | (1 << (HiveParser.KW_DAY - 269)) | (1 << (HiveParser.KW_DOW - 269)) | (1 << (HiveParser.KW_HOUR - 269)) | (1 << (HiveParser.KW_MINUTE - 269)) | (1 << (HiveParser.KW_SECOND - 269)) | (1 << (HiveParser.KW_TRANSACTION - 269)) | (1 << (HiveParser.KW_WORK - 269)) | (1 << (HiveParser.KW_WRITE - 269)) | (1 << (HiveParser.KW_ISOLATION - 269)) | (1 << (HiveParser.KW_LEVEL - 269)) | (1 << (HiveParser.KW_SNAPSHOT - 269)) | (1 << (HiveParser.KW_AUTOCOMMIT - 269)) | (1 << (HiveParser.KW_CACHE - 269)) | (1 << (HiveParser.KW_ENFORCED - 269)) | (1 << (HiveParser.KW_VALIDATE - 269)) | (1 << (HiveParser.KW_NOVALIDATE - 269)) | (1 << (HiveParser.KW_RELY - 269)) | (1 << (HiveParser.KW_NORELY - 269)) | (1 << (HiveParser.KW_KEY - 269)) | (1 << (HiveParser.KW_ABORT - 269)) | (1 << (HiveParser.KW_EXTRACT - 269)) | (1 << (HiveParser.KW_FLOOR - 269)))) !== 0) || ((((_la - 302)) & ~0x1f) == 0 && ((1 << (_la - 302)) & ((1 << (HiveParser.KW_MATCHED - 302)) | (1 << (HiveParser.KW_REPL - 302)) | (1 << (HiveParser.KW_DUMP - 302)) | (1 << (HiveParser.KW_STATUS - 302)) | (1 << (HiveParser.KW_VECTORIZATION - 302)) | (1 << (HiveParser.KW_SUMMARY - 302)) | (1 << (HiveParser.KW_OPERATOR - 302)) | (1 << (HiveParser.KW_EXPRESSION - 302)) | (1 << (HiveParser.KW_DETAIL - 302)) | (1 << (HiveParser.KW_WAIT - 302)) | (1 << (HiveParser.KW_RESOURCE - 302)) | (1 << (HiveParser.KW_PLAN - 302)) | (1 << (HiveParser.KW_QUERY_PARALLELISM - 302)) | (1 << (HiveParser.KW_PLANS - 302)) | (1 << (HiveParser.KW_ACTIVATE - 302)) | (1 << (HiveParser.KW_DEFAULT - 302)) | (1 << (HiveParser.KW_CHECK - 302)) | (1 << (HiveParser.KW_POOL - 302)) | (1 << (HiveParser.KW_MOVE - 302)) | (1 << (HiveParser.KW_DO - 302)) | (1 << (HiveParser.KW_ALLOC_FRACTION - 302)) | (1 << (HiveParser.KW_SCHEDULING_POLICY - 302)) | (1 << (HiveParser.KW_PATH - 302)) | (1 << (HiveParser.KW_MAPPING - 302)) | (1 << (HiveParser.KW_WORKLOAD - 302)) | (1 << (HiveParser.KW_MANAGEMENT - 302)) | (1 << (HiveParser.KW_ACTIVE - 302)) | (1 << (HiveParser.KW_UNMANAGED - 302)))) !== 0) || ((((_la - 336)) & ~0x1f) == 0 && ((1 << (_la - 336)) & ((1 << (HiveParser.LPAREN - 336)) | (1 << (HiveParser.PLUS - 336)) | (1 << (HiveParser.MINUS - 336)) | (1 << (HiveParser.STAR - 336)) | (1 << (HiveParser.TILDE - 336)) | (1 << (HiveParser.StringLiteral - 336)) | (1 << (HiveParser.IntegralLiteral - 336)) | (1 << (HiveParser.NumberLiteral - 336)) | (1 << (HiveParser.Number - 336)))) !== 0) || _la===HiveParser.Identifier || _la===HiveParser.CharSetName) {
+	            var la_ = this._interp.adaptivePredict(this._input,458,this._ctx);
+	            if(la_===1) {
 	                this.state = 3706;
 	                this.selectExpression();
 	                this.state = 3711;
 	                this._errHandler.sync(this);
-	                _la = this._input.LA(1);
-	                while(_la===HiveParser.COMMA) {
-	                    this.state = 3707;
-	                    this.match(HiveParser.COMMA);
-	                    this.state = 3708;
-	                    this.selectExpression();
+	                var _alt = this._interp.adaptivePredict(this._input,457,this._ctx)
+	                while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	                    if(_alt===1) {
+	                        this.state = 3707;
+	                        this.match(HiveParser.COMMA);
+	                        this.state = 3708;
+	                        this.selectExpression(); 
+	                    }
 	                    this.state = 3713;
 	                    this._errHandler.sync(this);
-	                    _la = this._input.LA(1);
+	                    _alt = this._interp.adaptivePredict(this._input,457,this._ctx);
 	                }
-	            }
 
+
+	            }
 	            break;
 
 	        }
@@ -19167,226 +16706,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 3725;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.Identifier:
+	        var la_ = this._interp.adaptivePredict(this._input,461,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3723;
 	            this.functionIdentifier();
 	            break;
-	        case HiveParser.KW_IF:
-	        case HiveParser.KW_BOOLEAN:
-	        case HiveParser.KW_SMALLINT:
-	        case HiveParser.KW_INT:
-	        case HiveParser.KW_BIGINT:
-	        case HiveParser.KW_FLOAT:
-	        case HiveParser.KW_DOUBLE:
-	        case HiveParser.KW_DATE:
-	        case HiveParser.KW_TIMESTAMP:
-	        case HiveParser.KW_ARRAY:
-	        case HiveParser.KW_MAP:
-	        case HiveParser.KW_BINARY:
-	        case HiveParser.KW_CURRENT_DATE:
-	        case HiveParser.KW_CURRENT_TIMESTAMP:
-	        case HiveParser.KW_GROUPING:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3724;
 	            this.sql11ReservedKeywordsUsedAsFunctionName();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -19440,7 +16773,6 @@ export default class HiveParser extends antlr4.Parser {
 	caseExpression() {
 	    let localctx = new CaseExpressionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 644, HiveParser.RULE_caseExpression);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3734;
@@ -19449,30 +16781,36 @@ export default class HiveParser extends antlr4.Parser {
 	        this.expression(0);
 	        this.state = 3741; 
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
+	        var _alt = 1;
 	        do {
-	            this.state = 3736;
-	            this.match(HiveParser.KW_WHEN);
-	            this.state = 3737;
-	            this.expression(0);
-	            this.state = 3738;
-	            this.match(HiveParser.KW_THEN);
-	            this.state = 3739;
-	            this.expression(0);
-	            this.state = 3743; 
-	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	        } while(_la===HiveParser.KW_WHEN);
+	        	switch (_alt) {
+	        	case 1:
+	        		this.state = 3736;
+	        		this.match(HiveParser.KW_WHEN);
+	        		this.state = 3737;
+	        		this.expression(0);
+	        		this.state = 3738;
+	        		this.match(HiveParser.KW_THEN);
+	        		this.state = 3739;
+	        		this.expression(0);
+	        		break;
+	        	default:
+	        		throw new antlr4.error.NoViableAltException(this);
+	        	}
+	        	this.state = 3743; 
+	        	this._errHandler.sync(this);
+	        	_alt = this._interp.adaptivePredict(this._input,462, this._ctx);
+	        } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
 	        this.state = 3747;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ELSE) {
+	        var la_ = this._interp.adaptivePredict(this._input,463,this._ctx);
+	        if(la_===1) {
 	            this.state = 3745;
 	            this.match(HiveParser.KW_ELSE);
 	            this.state = 3746;
 	            this.expression(0);
-	        }
 
+	        }
 	        this.state = 3749;
 	        this.match(HiveParser.KW_END);
 	    } catch (re) {
@@ -19494,37 +16832,42 @@ export default class HiveParser extends antlr4.Parser {
 	whenExpression() {
 	    let localctx = new WhenExpressionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 646, HiveParser.RULE_whenExpression);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3751;
 	        this.match(HiveParser.KW_CASE);
 	        this.state = 3757; 
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
+	        var _alt = 1;
 	        do {
-	            this.state = 3752;
-	            this.match(HiveParser.KW_WHEN);
-	            this.state = 3753;
-	            this.expression(0);
-	            this.state = 3754;
-	            this.match(HiveParser.KW_THEN);
-	            this.state = 3755;
-	            this.expression(0);
-	            this.state = 3759; 
-	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	        } while(_la===HiveParser.KW_WHEN);
+	        	switch (_alt) {
+	        	case 1:
+	        		this.state = 3752;
+	        		this.match(HiveParser.KW_WHEN);
+	        		this.state = 3753;
+	        		this.expression(0);
+	        		this.state = 3754;
+	        		this.match(HiveParser.KW_THEN);
+	        		this.state = 3755;
+	        		this.expression(0);
+	        		break;
+	        	default:
+	        		throw new antlr4.error.NoViableAltException(this);
+	        	}
+	        	this.state = 3759; 
+	        	this._errHandler.sync(this);
+	        	_alt = this._interp.adaptivePredict(this._input,464, this._ctx);
+	        } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
 	        this.state = 3763;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_ELSE) {
+	        var la_ = this._interp.adaptivePredict(this._input,465,this._ctx);
+	        if(la_===1) {
 	            this.state = 3761;
 	            this.match(HiveParser.KW_ELSE);
 	            this.state = 3762;
 	            this.expression(0);
-	        }
 
+	        }
 	        this.state = 3765;
 	        this.match(HiveParser.KW_END);
 	    } catch (re) {
@@ -19546,7 +16889,6 @@ export default class HiveParser extends antlr4.Parser {
 	floorExpression() {
 	    let localctx = new FloorExpressionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 648, HiveParser.RULE_floorExpression);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3767;
@@ -19557,14 +16899,14 @@ export default class HiveParser extends antlr4.Parser {
 	        this.expression(0);
 	        this.state = 3772;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_TO) {
+	        var la_ = this._interp.adaptivePredict(this._input,466,this._ctx);
+	        if(la_===1) {
 	            this.state = 3770;
 	            this.match(HiveParser.KW_TO);
 	            this.state = 3771;
 	            this.floorDateQualifiers();
-	        }
 
+	        }
 	        this.state = 3774;
 	        this.match(HiveParser.RPAREN);
 	    } catch (re) {
@@ -19845,21 +17187,22 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 3813;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_DATE:
+	        var la_ = this._interp.adaptivePredict(this._input,469,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3810;
 	            this.match(HiveParser.KW_DATE);
 	            this.state = 3811;
 	            this.match(HiveParser.StringLiteral);
 	            break;
-	        case HiveParser.KW_CURRENT_DATE:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3812;
 	            this.match(HiveParser.KW_CURRENT_DATE);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -19883,21 +17226,22 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 3818;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_TIMESTAMP:
+	        var la_ = this._interp.adaptivePredict(this._input,470,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 3815;
 	            this.match(HiveParser.KW_TIMESTAMP);
 	            this.state = 3816;
 	            this.match(HiveParser.StringLiteral);
 	            break;
-	        case HiveParser.KW_CURRENT_TIMESTAMP:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 3817;
 	            this.match(HiveParser.KW_CURRENT_TIMESTAMP);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -20263,40 +17607,42 @@ export default class HiveParser extends antlr4.Parser {
 	isCondition() {
 	    let localctx = new IsConditionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 680, HiveParser.RULE_isCondition);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 3875;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_NOT) {
+	        var la_ = this._interp.adaptivePredict(this._input,474,this._ctx);
+	        if(la_===1) {
 	            this.state = 3874;
 	            this.match(HiveParser.KW_NOT);
-	        }
 
+	        }
 	        this.state = 3882;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_NULL:
+	        var la_ = this._interp.adaptivePredict(this._input,475,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.state = 3877;
 	            this.match(HiveParser.KW_NULL);
 	            break;
-	        case HiveParser.KW_TRUE:
+
+	        case 2:
 	            this.state = 3878;
 	            this.match(HiveParser.KW_TRUE);
 	            break;
-	        case HiveParser.KW_FALSE:
+
+	        case 3:
 	            this.state = 3879;
 	            this.match(HiveParser.KW_FALSE);
 	            break;
-	        case HiveParser.KW_DISTINCT:
+
+	        case 4:
 	            this.state = 3880;
 	            this.match(HiveParser.KW_DISTINCT);
 	            this.state = 3881;
 	            this.match(HiveParser.KW_FROM);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -20610,8 +17956,9 @@ export default class HiveParser extends antlr4.Parser {
 	                if(_alt===1) {
 	                    this.state = 3912;
 	                    this._errHandler.sync(this);
-	                    switch(this._input.LA(1)) {
-	                    case HiveParser.LSQUARE:
+	                    var la_ = this._interp.adaptivePredict(this._input,476,this._ctx);
+	                    switch(la_) {
+	                    case 1:
 	                        this.state = 3906;
 	                        this.match(HiveParser.LSQUARE);
 	                        this.state = 3907;
@@ -20619,14 +17966,14 @@ export default class HiveParser extends antlr4.Parser {
 	                        this.state = 3908;
 	                        this.match(HiveParser.RSQUARE);
 	                        break;
-	                    case HiveParser.DOT:
+
+	                    case 2:
 	                        this.state = 3910;
 	                        this.match(HiveParser.DOT);
 	                        this.state = 3911;
 	                        this.identifier();
 	                        break;
-	                    default:
-	                        throw new antlr4.error.NoViableAltException(this);
+
 	                    } 
 	                }
 	                this.state = 3916;
@@ -20781,12 +18128,12 @@ export default class HiveParser extends antlr4.Parser {
 	                    }
 	                    this.state = 3961;
 	                    this._errHandler.sync(this);
-	                    _la = this._input.LA(1);
-	                    if(_la===HiveParser.KW_NOT) {
+	                    var la_ = this._interp.adaptivePredict(this._input,479,this._ctx);
+	                    if(la_===1) {
 	                        this.state = 3960;
 	                        this.match(HiveParser.KW_NOT);
-	                    }
 
+	                    }
 	                    this.state = 3963;
 	                    this.precedenceRegexpOperator();
 	                    this.state = 3964;
@@ -20802,12 +18149,12 @@ export default class HiveParser extends antlr4.Parser {
 	                    }
 	                    this.state = 3968;
 	                    this._errHandler.sync(this);
-	                    _la = this._input.LA(1);
-	                    if(_la===HiveParser.KW_NOT) {
+	                    var la_ = this._interp.adaptivePredict(this._input,480,this._ctx);
+	                    if(la_===1) {
 	                        this.state = 3967;
 	                        this.match(HiveParser.KW_NOT);
-	                    }
 
+	                    }
 	                    this.state = 3970;
 	                    this.match(HiveParser.KW_BETWEEN);
 	                    this.state = 3971;
@@ -20853,12 +18200,12 @@ export default class HiveParser extends antlr4.Parser {
 	                    }
 	                    this.state = 3984;
 	                    this._errHandler.sync(this);
-	                    _la = this._input.LA(1);
-	                    if(_la===HiveParser.KW_NOT) {
+	                    var la_ = this._interp.adaptivePredict(this._input,481,this._ctx);
+	                    if(la_===1) {
 	                        this.state = 3983;
 	                        this.match(HiveParser.KW_NOT);
-	                    }
 
+	                    }
 	                    this.state = 3986;
 	                    this.match(HiveParser.KW_LIKE);
 	                    this.state = 3987;
@@ -20883,12 +18230,12 @@ export default class HiveParser extends antlr4.Parser {
 	                    }
 	                    this.state = 3991;
 	                    this._errHandler.sync(this);
-	                    _la = this._input.LA(1);
-	                    if(_la===HiveParser.KW_NOT) {
+	                    var la_ = this._interp.adaptivePredict(this._input,482,this._ctx);
+	                    if(la_===1) {
 	                        this.state = 3990;
 	                        this.match(HiveParser.KW_NOT);
-	                    }
 
+	                    }
 	                    this.state = 3993;
 	                    this.match(HiveParser.KW_IN);
 	                    this.state = 3994;
@@ -21047,19 +18394,18 @@ export default class HiveParser extends antlr4.Parser {
 	tableOrPartition() {
 	    let localctx = new TableOrPartitionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 712, HiveParser.RULE_tableOrPartition);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 4012;
 	        this.tableName();
 	        this.state = 4014;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.KW_PARTITION) {
+	        var la_ = this._interp.adaptivePredict(this._input,486,this._ctx);
+	        if(la_===1) {
 	            this.state = 4013;
 	            this.partitionSpec();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -21079,7 +18425,6 @@ export default class HiveParser extends antlr4.Parser {
 	partitionSpec() {
 	    let localctx = new PartitionSpecContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 714, HiveParser.RULE_partitionSpec);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 4016;
@@ -21090,16 +18435,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.partitionVal();
 	        this.state = 4023;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 4019;
-	            this.match(HiveParser.COMMA);
-	            this.state = 4020;
-	            this.partitionVal();
+	        var _alt = this._interp.adaptivePredict(this._input,487,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 4019;
+	                this.match(HiveParser.COMMA);
+	                this.state = 4020;
+	                this.partitionVal(); 
+	            }
 	            this.state = 4025;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,487,this._ctx);
 	        }
+
 	        this.state = 4026;
 	        this.match(HiveParser.RPAREN);
 	    } catch (re) {
@@ -21121,21 +18469,20 @@ export default class HiveParser extends antlr4.Parser {
 	partitionVal() {
 	    let localctx = new PartitionValContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 716, HiveParser.RULE_partitionVal);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 4028;
 	        this.identifier();
 	        this.state = 4031;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===HiveParser.EQUAL) {
+	        var la_ = this._interp.adaptivePredict(this._input,488,this._ctx);
+	        if(la_===1) {
 	            this.state = 4029;
 	            this.match(HiveParser.EQUAL);
 	            this.state = 4030;
 	            this.constant();
-	        }
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -21155,7 +18502,6 @@ export default class HiveParser extends antlr4.Parser {
 	dropPartitionSpec() {
 	    let localctx = new DropPartitionSpecContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 718, HiveParser.RULE_dropPartitionSpec);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 4033;
@@ -21166,16 +18512,19 @@ export default class HiveParser extends antlr4.Parser {
 	        this.dropPartitionVal();
 	        this.state = 4040;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while(_la===HiveParser.COMMA) {
-	            this.state = 4036;
-	            this.match(HiveParser.COMMA);
-	            this.state = 4037;
-	            this.dropPartitionVal();
+	        var _alt = this._interp.adaptivePredict(this._input,489,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 4036;
+	                this.match(HiveParser.COMMA);
+	                this.state = 4037;
+	                this.dropPartitionVal(); 
+	            }
 	            this.state = 4042;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,489,this._ctx);
 	        }
+
 	        this.state = 4043;
 	        this.match(HiveParser.RPAREN);
 	    } catch (re) {
@@ -21332,211 +18681,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 4060;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.Identifier:
+	        var la_ = this._interp.adaptivePredict(this._input,491,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 4058;
 	            this.match(HiveParser.Identifier);
 	            break;
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 4059;
 	            this.nonReserved();
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -21601,212 +18759,20 @@ export default class HiveParser extends antlr4.Parser {
 	    try {
 	        this.state = 4071;
 	        this._errHandler.sync(this);
-	        switch(this._input.LA(1)) {
-	        case HiveParser.KW_ASC:
-	        case HiveParser.KW_DESC:
-	        case HiveParser.KW_NULLS:
-	        case HiveParser.KW_LAST:
-	        case HiveParser.KW_OVERWRITE:
-	        case HiveParser.KW_PARTITIONS:
-	        case HiveParser.KW_TABLES:
-	        case HiveParser.KW_COLUMNS:
-	        case HiveParser.KW_INDEX:
-	        case HiveParser.KW_INDEXES:
-	        case HiveParser.KW_REBUILD:
-	        case HiveParser.KW_FUNCTIONS:
-	        case HiveParser.KW_SHOW:
-	        case HiveParser.KW_MSCK:
-	        case HiveParser.KW_REPAIR:
-	        case HiveParser.KW_DIRECTORY:
-	        case HiveParser.KW_CLUSTER:
-	        case HiveParser.KW_DISTRIBUTE:
-	        case HiveParser.KW_SORT:
-	        case HiveParser.KW_LOAD:
-	        case HiveParser.KW_EXPORT:
-	        case HiveParser.KW_REPLICATION:
-	        case HiveParser.KW_METADATA:
-	        case HiveParser.KW_DATA:
-	        case HiveParser.KW_INPATH:
-	        case HiveParser.KW_CHANGE:
-	        case HiveParser.KW_FIRST:
-	        case HiveParser.KW_AFTER:
-	        case HiveParser.KW_RENAME:
-	        case HiveParser.KW_COMMENT:
-	        case HiveParser.KW_TINYINT:
-	        case HiveParser.KW_DATETIME:
-	        case HiveParser.KW_ZONE:
-	        case HiveParser.KW_STRING:
-	        case HiveParser.KW_STRUCT:
-	        case HiveParser.KW_UNIONTYPE:
-	        case HiveParser.KW_PARTITIONED:
-	        case HiveParser.KW_CLUSTERED:
-	        case HiveParser.KW_SORTED:
-	        case HiveParser.KW_BUCKETS:
-	        case HiveParser.KW_FORMAT:
-	        case HiveParser.KW_DELIMITED:
-	        case HiveParser.KW_FIELDS:
-	        case HiveParser.KW_TERMINATED:
-	        case HiveParser.KW_ESCAPED:
-	        case HiveParser.KW_COLLECTION:
-	        case HiveParser.KW_ITEMS:
-	        case HiveParser.KW_KEYS:
-	        case HiveParser.KW_KEY_TYPE:
-	        case HiveParser.KW_KILL:
-	        case HiveParser.KW_LINES:
-	        case HiveParser.KW_STORED:
-	        case HiveParser.KW_FILEFORMAT:
-	        case HiveParser.KW_INPUTFORMAT:
-	        case HiveParser.KW_OUTPUTFORMAT:
-	        case HiveParser.KW_INPUTDRIVER:
-	        case HiveParser.KW_OUTPUTDRIVER:
-	        case HiveParser.KW_ENABLE:
-	        case HiveParser.KW_DISABLE:
-	        case HiveParser.KW_LOCATION:
-	        case HiveParser.KW_BUCKET:
-	        case HiveParser.KW_ADD:
-	        case HiveParser.KW_REPLACE:
-	        case HiveParser.KW_TEMPORARY:
-	        case HiveParser.KW_FILE:
-	        case HiveParser.KW_JAR:
-	        case HiveParser.KW_EXPLAIN:
-	        case HiveParser.KW_FORMATTED:
-	        case HiveParser.KW_DEPENDENCY:
-	        case HiveParser.KW_LOGICAL:
-	        case HiveParser.KW_SERDE:
-	        case HiveParser.KW_DEFERRED:
-	        case HiveParser.KW_SERDEPROPERTIES:
-	        case HiveParser.KW_DBPROPERTIES:
-	        case HiveParser.KW_LIMIT:
-	        case HiveParser.KW_OFFSET:
-	        case HiveParser.KW_UNSET:
-	        case HiveParser.KW_TBLPROPERTIES:
-	        case HiveParser.KW_IDXPROPERTIES:
-	        case HiveParser.KW_VALUE_TYPE:
-	        case HiveParser.KW_ELEM_TYPE:
-	        case HiveParser.KW_DEFINED:
-	        case HiveParser.KW_MAPJOIN:
-	        case HiveParser.KW_STREAMTABLE:
-	        case HiveParser.KW_CLUSTERSTATUS:
-	        case HiveParser.KW_UTC:
-	        case HiveParser.KW_UTCTIMESTAMP:
-	        case HiveParser.KW_LONG:
-	        case HiveParser.KW_PLUS:
-	        case HiveParser.KW_VIEW:
-	        case HiveParser.KW_VIEWS:
-	        case HiveParser.KW_DATABASES:
-	        case HiveParser.KW_MATERIALIZED:
-	        case HiveParser.KW_SCHEMA:
-	        case HiveParser.KW_SCHEMAS:
-	        case HiveParser.KW_SSL:
-	        case HiveParser.KW_UNDO:
-	        case HiveParser.KW_LOCK:
-	        case HiveParser.KW_LOCKS:
-	        case HiveParser.KW_UNLOCK:
-	        case HiveParser.KW_SHARED:
-	        case HiveParser.KW_EXCLUSIVE:
-	        case HiveParser.KW_UNSIGNED:
-	        case HiveParser.KW_WHILE:
-	        case HiveParser.KW_READ:
-	        case HiveParser.KW_PURGE:
-	        case HiveParser.KW_ANALYZE:
-	        case HiveParser.KW_BEFORE:
-	        case HiveParser.KW_CONTINUE:
-	        case HiveParser.KW_RECORDREADER:
-	        case HiveParser.KW_RECORDWRITER:
-	        case HiveParser.KW_SEMI:
-	        case HiveParser.KW_TOUCH:
-	        case HiveParser.KW_ARCHIVE:
-	        case HiveParser.KW_UNARCHIVE:
-	        case HiveParser.KW_COMPUTE:
-	        case HiveParser.KW_STATISTICS:
-	        case HiveParser.KW_USE:
-	        case HiveParser.KW_OPTION:
-	        case HiveParser.KW_CONCATENATE:
-	        case HiveParser.KW_SHOW_DATABASE:
-	        case HiveParser.KW_RESTRICT:
-	        case HiveParser.KW_CASCADE:
-	        case HiveParser.KW_SKEWED:
-	        case HiveParser.KW_DIRECTORIES:
-	        case HiveParser.KW_SETS:
-	        case HiveParser.KW_NOSCAN:
-	        case HiveParser.KW_ROLE:
-	        case HiveParser.KW_ROLES:
-	        case HiveParser.KW_URI:
-	        case HiveParser.KW_SERVER:
-	        case HiveParser.KW_ADMIN:
-	        case HiveParser.KW_OWNER:
-	        case HiveParser.KW_PRINCIPALS:
-	        case HiveParser.KW_COMPACT:
-	        case HiveParser.KW_COMPACTIONS:
-	        case HiveParser.KW_TRANSACTIONS:
-	        case HiveParser.KW_REWRITE:
-	        case HiveParser.KW_REOPTIMIZATION:
-	        case HiveParser.KW_RELOAD:
-	        case HiveParser.KW_YEAR:
-	        case HiveParser.KW_QUERY:
-	        case HiveParser.KW_QUARTER:
-	        case HiveParser.KW_MONTH:
-	        case HiveParser.KW_WEEK:
-	        case HiveParser.KW_DAY:
-	        case HiveParser.KW_DOW:
-	        case HiveParser.KW_HOUR:
-	        case HiveParser.KW_MINUTE:
-	        case HiveParser.KW_SECOND:
-	        case HiveParser.KW_TRANSACTION:
-	        case HiveParser.KW_WORK:
-	        case HiveParser.KW_WRITE:
-	        case HiveParser.KW_ISOLATION:
-	        case HiveParser.KW_LEVEL:
-	        case HiveParser.KW_SNAPSHOT:
-	        case HiveParser.KW_AUTOCOMMIT:
-	        case HiveParser.KW_CACHE:
-	        case HiveParser.KW_ENFORCED:
-	        case HiveParser.KW_VALIDATE:
-	        case HiveParser.KW_NOVALIDATE:
-	        case HiveParser.KW_RELY:
-	        case HiveParser.KW_NORELY:
-	        case HiveParser.KW_KEY:
-	        case HiveParser.KW_ABORT:
-	        case HiveParser.KW_MATCHED:
-	        case HiveParser.KW_REPL:
-	        case HiveParser.KW_DUMP:
-	        case HiveParser.KW_STATUS:
-	        case HiveParser.KW_VECTORIZATION:
-	        case HiveParser.KW_SUMMARY:
-	        case HiveParser.KW_OPERATOR:
-	        case HiveParser.KW_EXPRESSION:
-	        case HiveParser.KW_DETAIL:
-	        case HiveParser.KW_WAIT:
-	        case HiveParser.KW_RESOURCE:
-	        case HiveParser.KW_PLAN:
-	        case HiveParser.KW_QUERY_PARALLELISM:
-	        case HiveParser.KW_PLANS:
-	        case HiveParser.KW_ACTIVATE:
-	        case HiveParser.KW_DEFAULT:
-	        case HiveParser.KW_CHECK:
-	        case HiveParser.KW_POOL:
-	        case HiveParser.KW_MOVE:
-	        case HiveParser.KW_DO:
-	        case HiveParser.KW_ALLOC_FRACTION:
-	        case HiveParser.KW_SCHEDULING_POLICY:
-	        case HiveParser.KW_PATH:
-	        case HiveParser.KW_MAPPING:
-	        case HiveParser.KW_WORKLOAD:
-	        case HiveParser.KW_MANAGEMENT:
-	        case HiveParser.KW_ACTIVE:
-	        case HiveParser.KW_UNMANAGED:
-	        case HiveParser.Identifier:
+	        var la_ = this._interp.adaptivePredict(this._input,493,this._ctx);
+	        switch(la_) {
+	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 4069;
 	            this.identifier();
 	            break;
-	        case HiveParser.QuotedIdentifier:
+
+	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 4070;
 	            this.match(HiveParser.QuotedIdentifier);
 	            break;
-	        default:
-	            throw new antlr4.error.NoViableAltException(this);
+
 	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {

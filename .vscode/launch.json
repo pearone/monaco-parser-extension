@@ -1,0 +1,15 @@
+{
+    "version": "1.0.0",
+    "configurations": [
+        {
+            "name": "Debug ANTLR4 grammar",
+            "type": "antlr-debug",
+            "request": "launch",
+            "input": "/Users/xupengyi/58/antlr/monaco/.vscode/test.txt",
+            "grammar": "/Users/xupengyi/58/antlr/monaco/src/worker/hivesql/grammar/HintParser.g4",
+            "startRule": "hint",
+            "printParseTree": true,
+            "visualParseTree": true
+        }
+    ]
+}

@@ -86,8 +86,14 @@ export const injectMonacoEditor = () => {
         // 自动补全
         _disposables.push(
             monaco.languages.registerCompletionItemProvider(LanguageName, {
-                provideCompletionItems: (model, position) => {
-                    return provideCompletionItems(model, position, worker);
+                triggerCharacters: [" "],
+                provideCompletionItems: (model, position, context) => {
+                    return provideCompletionItems(
+                        model,
+                        position,
+                        worker,
+                        context.triggerCharacter
+                    );
                 },
             })
         );

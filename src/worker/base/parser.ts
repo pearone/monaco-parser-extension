@@ -3,9 +3,10 @@ import { Token, Lexer, Parser } from "antlr4";
 import ParserErrorListener, {
     ErrorHandler,
     ParserErrorCollector,
+    ParserErrorStrategy,
 } from "./error";
 
-export default abstract class BasicParser<C = any> {
+export default abstract class BasicParser {
     public abstract createLexer(input: string): Lexer;
 
     public abstract createParserFromLexer(lexer: Lexer): Parser;
@@ -17,6 +18,7 @@ export default abstract class BasicParser<C = any> {
         if (errorListener) {
             parser.addErrorListener(new ParserErrorListener(errorListener));
         }
+        // parser.errorHandler = new ParserErrorStrategy();
 
         const parserTree = parser.statements();
 
