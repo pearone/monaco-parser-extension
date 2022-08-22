@@ -1,9 +1,13 @@
-import { Token, Recognizer, Parser } from "antlr4";
-import antlr from "antlr4";
+import {
+    Token,
+    DefaultErrorStrategy,
+    DiagnosticErrorListener,
+    Parser,
+} from "antlr4ts";
+import antlr from "antlr4ts";
 import { ParserError } from "@/editor/interface";
 
-// @ts-ignore
-export class ParserErrorCollector extends antlr.error.ErrorListener {
+export class ParserErrorCollector extends DiagnosticErrorListener {
     private _errors: ParserError[];
 
     constructor() {
@@ -11,15 +15,14 @@ export class ParserErrorCollector extends antlr.error.ErrorListener {
         this._errors = [];
     }
 
-    syntaxError(
-        recognizer: Recognizer,
-        offendingSymbol: Token,
+    syntaxError<T extends Token>(
+        recognizer: any,
+        offendingSymbol: any,
         line: number,
         charPositionInLine: number,
         msg: string,
         e: any
     ) {
-        // @ts-ignore
         const parser = recognizer._ctx.parser,
             tokens = parser.getTokenStream().tokens;
 
@@ -28,7 +31,7 @@ export class ParserErrorCollector extends antlr.error.ErrorListener {
         const startColumn = charPositionInLine + 1;
         const textLength =
             offendingSymbol && offendingSymbol.text !== null
-                ? offendingSymbol.text.length
+                ? offendingSymbol.text?.length ?? 0
                 : 0;
 
         // @ts-ignore
@@ -60,8 +63,7 @@ export class ParserErrorCollector extends antlr.error.ErrorListener {
     reportContextSensitivity() {}
 }
 
-// @ts-ignore
-export default class ParserErrorListener extends antlr.error.ErrorListener {
+export default class ParserErrorListener extends DiagnosticErrorListener {
     private _errorHandler;
 
     constructor(errorListener: ErrorHandler) {
@@ -69,9 +71,9 @@ export default class ParserErrorListener extends antlr.error.ErrorListener {
         this._errorHandler = errorListener;
     }
 
-    syntaxError(
-        recognizer: Recognizer,
-        offendingSymbol: Token,
+    syntaxError<T extends Token>(
+        recognizer: any,
+        offendingSymbol: any,
         line: number,
         charPositionInLine: number,
         msg: string,
@@ -80,7 +82,7 @@ export default class ParserErrorListener extends antlr.error.ErrorListener {
         const startColumn = charPositionInLine + 1;
         const textLength =
             offendingSymbol && offendingSymbol.text !== null
-                ? offendingSymbol.text.length
+                ? offendingSymbol.text?.length ?? 0
                 : 0;
 
         if (this._errorHandler) {
@@ -107,7 +109,7 @@ export default class ParserErrorListener extends antlr.error.ErrorListener {
 
 // @ts-ignore
 // 错误规则：出错不阻止listener
-export class ParserErrorStrategy extends antlr.error.DefaultErrorStrategy {
+export class ParserErrorStrategy extends DefaultErrorStrategy {
     protected beginErrorCondition(recognizer: Parser) {
         console.log("beginErrorCondition");
     }
@@ -119,7 +121,7 @@ export class ParserErrorStrategy extends antlr.error.DefaultErrorStrategy {
 }
 
 export interface SyntaxError {
-    recognizer: Recognizer;
+    recognizer: any;
     offendingSymbol: Token;
     line: number;
     charPositionInLine: number;

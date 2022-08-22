@@ -1,4 +1,4 @@
-// Generated from ./src/worker/hivesql/grammar/HiveParser.g4 by ANTLR 4.9.0-SNAPSHOT
+// Generated from HiveParser.g4 by ANTLR 4.9.0-SNAPSHOT
 
 
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";

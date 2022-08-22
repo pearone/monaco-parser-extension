@@ -1,4 +1,4 @@
-// Generated from ./src/worker/hivesql/grammar/HiveParser.g4 by ANTLR 4.9.0-SNAPSHOT
+// Generated from HiveParser.g4 by ANTLR 4.9.0-SNAPSHOT
 
 
 import { ATN } from "antlr4ts/atn/ATN";
@@ -24,6 +24,8 @@ import { VocabularyImpl } from "antlr4ts/VocabularyImpl";
 import * as Utils from "antlr4ts/misc/Utils";
 
 import { HiveParserListener } from "./HiveParserListener";
+import { HiveParserVisitor } from "./HiveParserVisitor";
+
 
 export class HiveParser extends Parser {
 	public static readonly KW_TRUE = 1;
@@ -25834,6 +25836,14 @@ export class StatementsContext extends ParserRuleContext {
 			listener.exitStatements(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitStatements) {
+			return visitor.visitStatements(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -25854,6 +25864,14 @@ export class StatementSeparatorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitStatementSeparator) {
 			listener.exitStatementSeparator(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitStatementSeparator) {
+			return visitor.visitStatementSeparator(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -25881,6 +25899,14 @@ export class StatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitStatement) {
 			listener.exitStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitStatement) {
+			return visitor.visitStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -25921,6 +25947,14 @@ export class ExplainStatementContext extends ParserRuleContext {
 			listener.exitExplainStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExplainStatement) {
+			return visitor.visitExplainStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -25956,6 +25990,14 @@ export class ExplainOptionContext extends ParserRuleContext {
 			listener.exitExplainOption(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExplainOption) {
+			return visitor.visitExplainOption(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -25976,6 +26018,14 @@ export class VectorizationOnlyContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitVectorizationOnly) {
 			listener.exitVectorizationOnly(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitVectorizationOnly) {
+			return visitor.visitVectorizationOnly(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26001,6 +26051,14 @@ export class VectorizatonDetailContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitVectorizatonDetail) {
 			listener.exitVectorizatonDetail(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitVectorizatonDetail) {
+			return visitor.visitVectorizatonDetail(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26060,6 +26118,14 @@ export class ExecStatementContext extends ParserRuleContext {
 			listener.exitExecStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExecStatement) {
+			return visitor.visitExecStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26095,6 +26161,14 @@ export class LoadStatementContext extends ParserRuleContext {
 			listener.exitLoadStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitLoadStatement) {
+			return visitor.visitLoadStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26120,6 +26194,14 @@ export class ReplicationClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitReplicationClause) {
 			listener.exitReplicationClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitReplicationClause) {
+			return visitor.visitReplicationClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26153,6 +26235,14 @@ export class ExportStatementContext extends ParserRuleContext {
 			listener.exitExportStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExportStatement) {
+			return visitor.visitExportStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26184,6 +26274,14 @@ export class ImportStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitImportStatement) {
 			listener.exitImportStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitImportStatement) {
+			return visitor.visitImportStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26235,6 +26333,14 @@ export class ReplDumpStatementContext extends ParserRuleContext {
 			listener.exitReplDumpStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitReplDumpStatement) {
+			return visitor.visitReplDumpStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26274,6 +26380,14 @@ export class ReplLoadStatementContext extends ParserRuleContext {
 			listener.exitReplLoadStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitReplLoadStatement) {
+			return visitor.visitReplLoadStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26298,6 +26412,14 @@ export class ReplConfigsContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitReplConfigs) {
 			listener.exitReplConfigs(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitReplConfigs) {
+			return visitor.visitReplConfigs(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26339,6 +26461,14 @@ export class ReplConfigsListContext extends ParserRuleContext {
 			listener.exitReplConfigsList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitReplConfigsList) {
+			return visitor.visitReplConfigsList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26374,6 +26504,14 @@ export class ReplStatusStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitReplStatusStatement) {
 			listener.exitReplStatusStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitReplStatusStatement) {
+			return visitor.visitReplStatusStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26517,6 +26655,14 @@ export class DdlStatementContext extends ParserRuleContext {
 			listener.exitDdlStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDdlStatement) {
+			return visitor.visitDdlStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26540,6 +26686,14 @@ export class IfExistsContext extends ParserRuleContext {
 			listener.exitIfExists(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitIfExists) {
+			return visitor.visitIfExists(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26561,6 +26715,14 @@ export class RestrictOrCascadeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitRestrictOrCascade) {
 			listener.exitRestrictOrCascade(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRestrictOrCascade) {
+			return visitor.visitRestrictOrCascade(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26587,6 +26749,14 @@ export class IfNotExistsContext extends ParserRuleContext {
 			listener.exitIfNotExists(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitIfNotExists) {
+			return visitor.visitIfNotExists(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26610,6 +26780,14 @@ export class RewriteEnabledContext extends ParserRuleContext {
 			listener.exitRewriteEnabled(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRewriteEnabled) {
+			return visitor.visitRewriteEnabled(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26631,6 +26809,14 @@ export class RewriteDisabledContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitRewriteDisabled) {
 			listener.exitRewriteDisabled(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRewriteDisabled) {
+			return visitor.visitRewriteDisabled(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26657,6 +26843,14 @@ export class StoredAsDirsContext extends ParserRuleContext {
 			listener.exitStoredAsDirs(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitStoredAsDirs) {
+			return visitor.visitStoredAsDirs(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26678,6 +26872,14 @@ export class OrReplaceContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitOrReplace) {
 			listener.exitOrReplace(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitOrReplace) {
+			return visitor.visitOrReplace(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26721,6 +26923,14 @@ export class CreateDatabaseStatementContext extends ParserRuleContext {
 			listener.exitCreateDatabaseStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateDatabaseStatement) {
+			return visitor.visitCreateDatabaseStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26742,6 +26952,14 @@ export class DbLocationContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDbLocation) {
 			listener.exitDbLocation(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDbLocation) {
+			return visitor.visitDbLocation(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26768,6 +26986,14 @@ export class DbPropertiesContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDbProperties) {
 			listener.exitDbProperties(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDbProperties) {
+			return visitor.visitDbProperties(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26809,6 +27035,14 @@ export class DbPropertiesListContext extends ParserRuleContext {
 			listener.exitDbPropertiesList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDbPropertiesList) {
+			return visitor.visitDbPropertiesList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26832,6 +27066,14 @@ export class SwitchDatabaseStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSwitchDatabaseStatement) {
 			listener.exitSwitchDatabaseStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSwitchDatabaseStatement) {
+			return visitor.visitSwitchDatabaseStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26867,6 +27109,14 @@ export class DropDatabaseStatementContext extends ParserRuleContext {
 			listener.exitDropDatabaseStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropDatabaseStatement) {
+			return visitor.visitDropDatabaseStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26888,6 +27138,14 @@ export class DatabaseCommentContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDatabaseComment) {
 			listener.exitDatabaseComment(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDatabaseComment) {
+			return visitor.visitDatabaseComment(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -26961,6 +27219,14 @@ export class CreateTableStatementContext extends ParserRuleContext {
 			listener.exitCreateTableStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateTableStatement) {
+			return visitor.visitCreateTableStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -26991,6 +27257,14 @@ export class TruncateTableStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTruncateTableStatement) {
 			listener.exitTruncateTableStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTruncateTableStatement) {
+			return visitor.visitTruncateTableStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27024,6 +27298,14 @@ export class DropTableStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDropTableStatement) {
 			listener.exitDropTableStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropTableStatement) {
+			return visitor.visitDropTableStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27071,6 +27353,14 @@ export class AlterStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatement) {
 			listener.exitAlterStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatement) {
+			return visitor.visitAlterStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27139,6 +27429,14 @@ export class AlterTableStatementSuffixContext extends ParserRuleContext {
 			listener.exitAlterTableStatementSuffix(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterTableStatementSuffix) {
+			return visitor.visitAlterTableStatementSuffix(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27199,6 +27497,14 @@ export class AlterTblPartitionStatementSuffixContext extends ParserRuleContext {
 			listener.exitAlterTblPartitionStatementSuffix(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterTblPartitionStatementSuffix) {
+			return visitor.visitAlterTblPartitionStatementSuffix(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27225,6 +27531,14 @@ export class AlterStatementPartitionKeyTypeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementPartitionKeyType) {
 			listener.exitAlterStatementPartitionKeyType(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementPartitionKeyType) {
+			return visitor.visitAlterStatementPartitionKeyType(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27263,6 +27577,14 @@ export class AlterViewStatementSuffixContext extends ParserRuleContext {
 			listener.exitAlterViewStatementSuffix(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterViewStatementSuffix) {
+			return visitor.visitAlterViewStatementSuffix(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27288,6 +27610,14 @@ export class AlterMaterializedViewStatementSuffixContext extends ParserRuleConte
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterMaterializedViewStatementSuffix) {
 			listener.exitAlterMaterializedViewStatementSuffix(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterMaterializedViewStatementSuffix) {
+			return visitor.visitAlterMaterializedViewStatementSuffix(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27320,6 +27650,14 @@ export class AlterDatabaseStatementSuffixContext extends ParserRuleContext {
 			listener.exitAlterDatabaseStatementSuffix(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterDatabaseStatementSuffix) {
+			return visitor.visitAlterDatabaseStatementSuffix(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27347,6 +27685,14 @@ export class AlterDatabaseSuffixPropertiesContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterDatabaseSuffixProperties) {
 			listener.exitAlterDatabaseSuffixProperties(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterDatabaseSuffixProperties) {
+			return visitor.visitAlterDatabaseSuffixProperties(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27378,6 +27724,14 @@ export class AlterDatabaseSuffixSetOwnerContext extends ParserRuleContext {
 			listener.exitAlterDatabaseSuffixSetOwner(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterDatabaseSuffixSetOwner) {
+			return visitor.visitAlterDatabaseSuffixSetOwner(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27405,6 +27759,14 @@ export class AlterDatabaseSuffixSetLocationContext extends ParserRuleContext {
 			listener.exitAlterDatabaseSuffixSetLocation(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterDatabaseSuffixSetLocation) {
+			return visitor.visitAlterDatabaseSuffixSetLocation(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27429,6 +27791,14 @@ export class AlterStatementSuffixRenameContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixRename) {
 			listener.exitAlterStatementSuffixRename(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixRename) {
+			return visitor.visitAlterStatementSuffixRename(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27463,6 +27833,14 @@ export class AlterStatementSuffixAddColContext extends ParserRuleContext {
 			listener.exitAlterStatementSuffixAddCol(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixAddCol) {
+			return visitor.visitAlterStatementSuffixAddCol(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27491,6 +27869,14 @@ export class AlterStatementSuffixAddConstraintContext extends ParserRuleContext 
 			listener.exitAlterStatementSuffixAddConstraint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixAddConstraint) {
+			return visitor.visitAlterStatementSuffixAddConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27515,6 +27901,14 @@ export class AlterStatementSuffixDropConstraintContext extends ParserRuleContext
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixDropConstraint) {
 			listener.exitAlterStatementSuffixDropConstraint(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixDropConstraint) {
+			return visitor.visitAlterStatementSuffixDropConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27563,6 +27957,14 @@ export class AlterStatementSuffixRenameColContext extends ParserRuleContext {
 			listener.exitAlterStatementSuffixRenameCol(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixRenameCol) {
+			return visitor.visitAlterStatementSuffixRenameCol(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27597,6 +27999,14 @@ export class AlterStatementSuffixUpdateStatsColContext extends ParserRuleContext
 			listener.exitAlterStatementSuffixUpdateStatsCol(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixUpdateStatsCol) {
+			return visitor.visitAlterStatementSuffixUpdateStatsCol(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27624,6 +28034,14 @@ export class AlterStatementSuffixUpdateStatsContext extends ParserRuleContext {
 			listener.exitAlterStatementSuffixUpdateStats(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixUpdateStats) {
+			return visitor.visitAlterStatementSuffixUpdateStats(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27649,6 +28067,14 @@ export class AlterStatementChangeColPositionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementChangeColPosition) {
 			listener.exitAlterStatementChangeColPosition(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementChangeColPosition) {
+			return visitor.visitAlterStatementChangeColPosition(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27685,6 +28111,14 @@ export class AlterStatementSuffixAddPartitionsContext extends ParserRuleContext 
 			listener.exitAlterStatementSuffixAddPartitions(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixAddPartitions) {
+			return visitor.visitAlterStatementSuffixAddPartitions(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27710,6 +28144,14 @@ export class AlterStatementSuffixAddPartitionsElementContext extends ParserRuleC
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixAddPartitionsElement) {
 			listener.exitAlterStatementSuffixAddPartitionsElement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixAddPartitionsElement) {
+			return visitor.visitAlterStatementSuffixAddPartitionsElement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27743,6 +28185,14 @@ export class AlterStatementSuffixTouchContext extends ParserRuleContext {
 			listener.exitAlterStatementSuffixTouch(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixTouch) {
+			return visitor.visitAlterStatementSuffixTouch(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27772,6 +28222,14 @@ export class AlterStatementSuffixArchiveContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixArchive) {
 			listener.exitAlterStatementSuffixArchive(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixArchive) {
+			return visitor.visitAlterStatementSuffixArchive(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27805,6 +28263,14 @@ export class AlterStatementSuffixUnArchiveContext extends ParserRuleContext {
 			listener.exitAlterStatementSuffixUnArchive(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixUnArchive) {
+			return visitor.visitAlterStatementSuffixUnArchive(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27826,6 +28292,14 @@ export class PartitionLocationContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPartitionLocation) {
 			listener.exitPartitionLocation(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPartitionLocation) {
+			return visitor.visitPartitionLocation(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27875,6 +28349,14 @@ export class AlterStatementSuffixDropPartitionsContext extends ParserRuleContext
 			listener.exitAlterStatementSuffixDropPartitions(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixDropPartitions) {
+			return visitor.visitAlterStatementSuffixDropPartitions(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27903,6 +28385,14 @@ export class AlterStatementSuffixPropertiesContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixProperties) {
 			listener.exitAlterStatementSuffixProperties(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixProperties) {
+			return visitor.visitAlterStatementSuffixProperties(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -27935,6 +28425,14 @@ export class AlterViewSuffixPropertiesContext extends ParserRuleContext {
 			listener.exitAlterViewSuffixProperties(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterViewSuffixProperties) {
+			return visitor.visitAlterViewSuffixProperties(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27962,6 +28460,14 @@ export class AlterMaterializedViewSuffixRewriteContext extends ParserRuleContext
 			listener.exitAlterMaterializedViewSuffixRewrite(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterMaterializedViewSuffixRewrite) {
+			return visitor.visitAlterMaterializedViewSuffixRewrite(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -27982,6 +28488,14 @@ export class AlterMaterializedViewSuffixRebuildContext extends ParserRuleContext
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterMaterializedViewSuffixRebuild) {
 			listener.exitAlterMaterializedViewSuffixRebuild(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterMaterializedViewSuffixRebuild) {
+			return visitor.visitAlterMaterializedViewSuffixRebuild(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28011,6 +28525,14 @@ export class AlterStatementSuffixSerdePropertiesContext extends ParserRuleContex
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixSerdeProperties) {
 			listener.exitAlterStatementSuffixSerdeProperties(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixSerdeProperties) {
+			return visitor.visitAlterStatementSuffixSerdeProperties(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28045,6 +28567,14 @@ export class AlterIndexStatementSuffixContext extends ParserRuleContext {
 			listener.exitAlterIndexStatementSuffix(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterIndexStatementSuffix) {
+			return visitor.visitAlterIndexStatementSuffix(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28069,6 +28599,14 @@ export class AlterStatementSuffixFileFormatContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixFileFormat) {
 			listener.exitAlterStatementSuffixFileFormat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixFileFormat) {
+			return visitor.visitAlterStatementSuffixFileFormat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28098,6 +28636,14 @@ export class AlterStatementSuffixClusterbySortbyContext extends ParserRuleContex
 			listener.exitAlterStatementSuffixClusterbySortby(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixClusterbySortby) {
+			return visitor.visitAlterStatementSuffixClusterbySortby(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28125,6 +28671,14 @@ export class AlterTblPartitionStatementSuffixSkewedLocationContext extends Parse
 			listener.exitAlterTblPartitionStatementSuffixSkewedLocation(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterTblPartitionStatementSuffixSkewedLocation) {
+			return visitor.visitAlterTblPartitionStatementSuffixSkewedLocation(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28149,6 +28703,14 @@ export class SkewedLocationsContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSkewedLocations) {
 			listener.exitSkewedLocations(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSkewedLocations) {
+			return visitor.visitSkewedLocations(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28190,6 +28752,14 @@ export class SkewedLocationsListContext extends ParserRuleContext {
 			listener.exitSkewedLocationsList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSkewedLocationsList) {
+			return visitor.visitSkewedLocationsList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28216,6 +28786,14 @@ export class SkewedLocationMapContext extends ParserRuleContext {
 			listener.exitSkewedLocationMap(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSkewedLocationMap) {
+			return visitor.visitSkewedLocationMap(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28238,6 +28816,14 @@ export class AlterStatementSuffixLocationContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixLocation) {
 			listener.exitAlterStatementSuffixLocation(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixLocation) {
+			return visitor.visitAlterStatementSuffixLocation(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28267,6 +28853,14 @@ export class AlterStatementSuffixSkewedbyContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixSkewedby) {
 			listener.exitAlterStatementSuffixSkewedby(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixSkewedby) {
+			return visitor.visitAlterStatementSuffixSkewedby(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28299,6 +28893,14 @@ export class AlterStatementSuffixExchangePartitionContext extends ParserRuleCont
 			listener.exitAlterStatementSuffixExchangePartition(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixExchangePartition) {
+			return visitor.visitAlterStatementSuffixExchangePartition(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28323,6 +28925,14 @@ export class AlterStatementSuffixRenamePartContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixRenamePart) {
 			listener.exitAlterStatementSuffixRenamePart(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixRenamePart) {
+			return visitor.visitAlterStatementSuffixRenamePart(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28359,6 +28969,14 @@ export class AlterStatementSuffixStatsPartContext extends ParserRuleContext {
 			listener.exitAlterStatementSuffixStatsPart(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixStatsPart) {
+			return visitor.visitAlterStatementSuffixStatsPart(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28379,6 +28997,14 @@ export class AlterStatementSuffixMergeFilesContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixMergeFiles) {
 			listener.exitAlterStatementSuffixMergeFiles(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixMergeFiles) {
+			return visitor.visitAlterStatementSuffixMergeFiles(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28403,6 +29029,14 @@ export class AlterStatementSuffixBucketNumContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixBucketNum) {
 			listener.exitAlterStatementSuffixBucketNum(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixBucketNum) {
+			return visitor.visitAlterStatementSuffixBucketNum(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28487,6 +29121,14 @@ export class CreateIndexStatementContext extends ParserRuleContext {
 			listener.exitCreateIndexStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateIndexStatement) {
+			return visitor.visitCreateIndexStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28526,6 +29168,14 @@ export class LocationPathContext extends ParserRuleContext {
 			listener.exitLocationPath(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitLocationPath) {
+			return visitor.visitLocationPath(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28556,6 +29206,14 @@ export class DropIndexStatementContext extends ParserRuleContext {
 			listener.exitDropIndexStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropIndexStatement) {
+			return visitor.visitDropIndexStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28583,6 +29241,14 @@ export class TablePartitionPrefixContext extends ParserRuleContext {
 			listener.exitTablePartitionPrefix(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTablePartitionPrefix) {
+			return visitor.visitTablePartitionPrefix(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28604,6 +29270,14 @@ export class BlockingContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitBlocking) {
 			listener.exitBlocking(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitBlocking) {
+			return visitor.visitBlocking(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28638,6 +29312,14 @@ export class AlterStatementSuffixCompactContext extends ParserRuleContext {
 			listener.exitAlterStatementSuffixCompact(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixCompact) {
+			return visitor.visitAlterStatementSuffixCompact(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28662,6 +29344,14 @@ export class AlterStatementSuffixSetOwnerContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterStatementSuffixSetOwner) {
 			listener.exitAlterStatementSuffixSetOwner(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterStatementSuffixSetOwner) {
+			return visitor.visitAlterStatementSuffixSetOwner(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28702,6 +29392,14 @@ export class FileFormatContext extends ParserRuleContext {
 			listener.exitFileFormat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitFileFormat) {
+			return visitor.visitFileFormat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28732,6 +29430,14 @@ export class InputFileFormatContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitInputFileFormat) {
 			listener.exitInputFileFormat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitInputFileFormat) {
+			return visitor.visitInputFileFormat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28800,6 +29506,14 @@ export class TabTypeExprContext extends ParserRuleContext {
 			listener.exitTabTypeExpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTabTypeExpr) {
+			return visitor.visitTabTypeExpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28825,6 +29539,14 @@ export class PartTypeExprContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPartTypeExpr) {
 			listener.exitPartTypeExpr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPartTypeExpr) {
+			return visitor.visitPartTypeExpr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28855,6 +29577,14 @@ export class TabPartColTypeExprContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTabPartColTypeExpr) {
 			listener.exitTabPartColTypeExpr(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTabPartColTypeExpr) {
+			return visitor.visitTabPartColTypeExpr(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -28894,6 +29624,14 @@ export class DescStatementContext extends ParserRuleContext {
 			listener.exitDescStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDescStatement) {
+			return visitor.visitDescStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -28928,6 +29666,14 @@ export class AnalyzeStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAnalyzeStatement) {
 			listener.exitAnalyzeStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAnalyzeStatement) {
+			return visitor.visitAnalyzeStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29013,6 +29759,14 @@ export class ShowStatementContext extends ParserRuleContext {
 			listener.exitShowStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitShowStatement) {
+			return visitor.visitShowStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29045,6 +29799,14 @@ export class LockStatementContext extends ParserRuleContext {
 			listener.exitLockStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitLockStatement) {
+			return visitor.visitLockStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29075,6 +29837,14 @@ export class LockDatabaseContext extends ParserRuleContext {
 			listener.exitLockDatabase(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitLockDatabase) {
+			return visitor.visitLockDatabase(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29096,6 +29866,14 @@ export class LockModeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitLockMode) {
 			listener.exitLockMode(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitLockMode) {
+			return visitor.visitLockMode(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29127,6 +29905,14 @@ export class UnlockStatementContext extends ParserRuleContext {
 			listener.exitUnlockStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitUnlockStatement) {
+			return visitor.visitUnlockStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29152,6 +29938,14 @@ export class UnlockDatabaseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitUnlockDatabase) {
 			listener.exitUnlockDatabase(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitUnlockDatabase) {
+			return visitor.visitUnlockDatabase(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29180,6 +29974,14 @@ export class CreateRoleStatementContext extends ParserRuleContext {
 			listener.exitCreateRoleStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateRoleStatement) {
+			return visitor.visitCreateRoleStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29204,6 +30006,14 @@ export class DropRoleStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDropRoleStatement) {
 			listener.exitDropRoleStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropRoleStatement) {
+			return visitor.visitDropRoleStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29241,6 +30051,14 @@ export class GrantPrivilegesContext extends ParserRuleContext {
 			listener.exitGrantPrivileges(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitGrantPrivileges) {
+			return visitor.visitGrantPrivileges(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29274,6 +30092,14 @@ export class RevokePrivilegesContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitRevokePrivileges) {
 			listener.exitRevokePrivileges(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRevokePrivileges) {
+			return visitor.visitRevokePrivileges(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29324,6 +30150,14 @@ export class GrantRoleContext extends ParserRuleContext {
 			listener.exitGrantRole(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitGrantRole) {
+			return visitor.visitGrantRole(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29372,6 +30206,14 @@ export class RevokeRoleContext extends ParserRuleContext {
 			listener.exitRevokeRole(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRevokeRole) {
+			return visitor.visitRevokeRole(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29399,6 +30241,14 @@ export class ShowRoleGrantsContext extends ParserRuleContext {
 			listener.exitShowRoleGrants(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitShowRoleGrants) {
+			return visitor.visitShowRoleGrants(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29420,6 +30270,14 @@ export class ShowRolesContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitShowRoles) {
 			listener.exitShowRoles(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitShowRoles) {
+			return visitor.visitShowRoles(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29444,6 +30302,14 @@ export class ShowCurrentRoleContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitShowCurrentRole) {
 			listener.exitShowCurrentRole(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitShowCurrentRole) {
+			return visitor.visitShowCurrentRole(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29472,6 +30338,14 @@ export class SetRoleContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSetRole) {
 			listener.exitSetRole(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSetRole) {
+			return visitor.visitSetRole(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29504,6 +30378,14 @@ export class ShowGrantsContext extends ParserRuleContext {
 			listener.exitShowGrants(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitShowGrants) {
+			return visitor.visitShowGrants(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29528,6 +30410,14 @@ export class ShowRolePrincipalsContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitShowRolePrincipals) {
 			listener.exitShowRolePrincipals(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitShowRolePrincipals) {
+			return visitor.visitShowRolePrincipals(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29555,6 +30445,14 @@ export class PrivilegeIncludeColObjectContext extends ParserRuleContext {
 			listener.exitPrivilegeIncludeColObject(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrivilegeIncludeColObject) {
+			return visitor.visitPrivilegeIncludeColObject(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29578,6 +30476,14 @@ export class PrivilegeObjectContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrivilegeObject) {
 			listener.exitPrivilegeObject(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrivilegeObject) {
+			return visitor.visitPrivilegeObject(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29614,6 +30520,14 @@ export class PrivObjectContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrivObject) {
 			listener.exitPrivObject(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrivObject) {
+			return visitor.visitPrivObject(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29657,6 +30571,14 @@ export class PrivObjectColsContext extends ParserRuleContext {
 			listener.exitPrivObjectCols(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrivObjectCols) {
+			return visitor.visitPrivObjectCols(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29696,6 +30618,14 @@ export class PrivilegeListContext extends ParserRuleContext {
 			listener.exitPrivilegeList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrivilegeList) {
+			return visitor.visitPrivilegeList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29723,6 +30653,14 @@ export class PrivlegeDefContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrivlegeDef) {
 			listener.exitPrivlegeDef(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrivlegeDef) {
+			return visitor.visitPrivlegeDef(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29754,6 +30692,14 @@ export class PrivilegeTypeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrivilegeType) {
 			listener.exitPrivilegeType(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrivilegeType) {
+			return visitor.visitPrivilegeType(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29795,6 +30741,14 @@ export class PrincipalSpecificationContext extends ParserRuleContext {
 			listener.exitPrincipalSpecification(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrincipalSpecification) {
+			return visitor.visitPrincipalSpecification(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29825,6 +30779,14 @@ export class PrincipalNameContext extends ParserRuleContext {
 			listener.exitPrincipalName(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrincipalName) {
+			return visitor.visitPrincipalName(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29847,6 +30809,14 @@ export class WithGrantOptionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitWithGrantOption) {
 			listener.exitWithGrantOption(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWithGrantOption) {
+			return visitor.visitWithGrantOption(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29873,6 +30843,14 @@ export class GrantOptionForContext extends ParserRuleContext {
 			listener.exitGrantOptionFor(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitGrantOptionFor) {
+			return visitor.visitGrantOptionFor(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29897,6 +30875,14 @@ export class AdminOptionForContext extends ParserRuleContext {
 			listener.exitAdminOptionFor(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAdminOptionFor) {
+			return visitor.visitAdminOptionFor(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -29919,6 +30905,14 @@ export class WithAdminOptionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitWithAdminOption) {
 			listener.exitWithAdminOption(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWithAdminOption) {
+			return visitor.visitWithAdminOption(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29953,6 +30947,14 @@ export class MetastoreCheckContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitMetastoreCheck) {
 			listener.exitMetastoreCheck(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitMetastoreCheck) {
+			return visitor.visitMetastoreCheck(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -29994,6 +30996,14 @@ export class ResourceListContext extends ParserRuleContext {
 			listener.exitResourceList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitResourceList) {
+			return visitor.visitResourceList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30019,6 +31029,14 @@ export class ResourceContext extends ParserRuleContext {
 			listener.exitResource(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitResource) {
+			return visitor.visitResource(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30041,6 +31059,14 @@ export class ResourceTypeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitResourceType) {
 			listener.exitResourceType(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitResourceType) {
+			return visitor.visitResourceType(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30076,6 +31102,14 @@ export class CreateFunctionStatementContext extends ParserRuleContext {
 			listener.exitCreateFunctionStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateFunctionStatement) {
+			return visitor.visitCreateFunctionStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30106,6 +31140,14 @@ export class DropFunctionStatementContext extends ParserRuleContext {
 			listener.exitDropFunctionStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropFunctionStatement) {
+			return visitor.visitDropFunctionStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30127,6 +31169,14 @@ export class ReloadFunctionStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitReloadFunctionStatement) {
 			listener.exitReloadFunctionStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitReloadFunctionStatement) {
+			return visitor.visitReloadFunctionStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30162,6 +31212,14 @@ export class CreateMacroStatementContext extends ParserRuleContext {
 			listener.exitCreateMacroStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateMacroStatement) {
+			return visitor.visitCreateMacroStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30188,6 +31246,14 @@ export class DropMacroStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDropMacroStatement) {
 			listener.exitDropMacroStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropMacroStatement) {
+			return visitor.visitDropMacroStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30238,6 +31304,14 @@ export class CreateViewStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitCreateViewStatement) {
 			listener.exitCreateViewStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateViewStatement) {
+			return visitor.visitCreateViewStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30292,6 +31366,14 @@ export class CreateMaterializedViewStatementContext extends ParserRuleContext {
 			listener.exitCreateMaterializedViewStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateMaterializedViewStatement) {
+			return visitor.visitCreateMaterializedViewStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30318,6 +31400,14 @@ export class ViewPartitionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitViewPartition) {
 			listener.exitViewPartition(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitViewPartition) {
+			return visitor.visitViewPartition(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30347,6 +31437,14 @@ export class DropViewStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDropViewStatement) {
 			listener.exitDropViewStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropViewStatement) {
+			return visitor.visitDropViewStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30379,6 +31477,14 @@ export class DropMaterializedViewStatementContext extends ParserRuleContext {
 			listener.exitDropMaterializedViewStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropMaterializedViewStatement) {
+			return visitor.visitDropMaterializedViewStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30402,6 +31508,14 @@ export class ShowFunctionIdentifierContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitShowFunctionIdentifier) {
 			listener.exitShowFunctionIdentifier(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitShowFunctionIdentifier) {
+			return visitor.visitShowFunctionIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30429,6 +31543,14 @@ export class ShowStmtIdentifierContext extends ParserRuleContext {
 			listener.exitShowStmtIdentifier(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitShowStmtIdentifier) {
+			return visitor.visitShowStmtIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30450,6 +31572,14 @@ export class TableCommentContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableComment) {
 			listener.exitTableComment(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableComment) {
+			return visitor.visitTableComment(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30493,6 +31623,14 @@ export class TablePartitionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTablePartition) {
 			listener.exitTablePartition(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTablePartition) {
+			return visitor.visitTablePartition(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30554,6 +31692,14 @@ export class TableBucketsContext extends ParserRuleContext {
 			listener.exitTableBuckets(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableBuckets) {
+			return visitor.visitTableBuckets(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30605,6 +31751,14 @@ export class TableSkewedContext extends ParserRuleContext {
 			listener.exitTableSkewed(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableSkewed) {
+			return visitor.visitTableSkewed(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30632,6 +31786,14 @@ export class RowFormatContext extends ParserRuleContext {
 			listener.exitRowFormat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRowFormat) {
+			return visitor.visitRowFormat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30655,6 +31817,14 @@ export class RecordReaderContext extends ParserRuleContext {
 			listener.exitRecordReader(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRecordReader) {
+			return visitor.visitRecordReader(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30676,6 +31846,14 @@ export class RecordWriterContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitRecordWriter) {
 			listener.exitRecordWriter(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRecordWriter) {
+			return visitor.visitRecordWriter(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30706,6 +31884,14 @@ export class RowFormatSerdeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitRowFormatSerde) {
 			listener.exitRowFormatSerde(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRowFormatSerde) {
+			return visitor.visitRowFormatSerde(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30747,6 +31933,14 @@ export class RowFormatDelimitedContext extends ParserRuleContext {
 			listener.exitRowFormatDelimited(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRowFormatDelimited) {
+			return visitor.visitRowFormatDelimited(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30774,6 +31968,14 @@ export class TableRowFormatContext extends ParserRuleContext {
 			listener.exitTableRowFormat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableRowFormat) {
+			return visitor.visitTableRowFormat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30797,6 +31999,14 @@ export class TablePropertiesPrefixedContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTablePropertiesPrefixed) {
 			listener.exitTablePropertiesPrefixed(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTablePropertiesPrefixed) {
+			return visitor.visitTablePropertiesPrefixed(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30823,6 +32033,14 @@ export class TablePropertiesContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableProperties) {
 			listener.exitTableProperties(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableProperties) {
+			return visitor.visitTableProperties(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30873,6 +32091,14 @@ export class TablePropertiesListContext extends ParserRuleContext {
 			listener.exitTablePropertiesList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTablePropertiesList) {
+			return visitor.visitTablePropertiesList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30904,6 +32130,14 @@ export class KeyValuePropertyContext extends ParserRuleContext {
 			listener.exitKeyValueProperty(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitKeyValueProperty) {
+			return visitor.visitKeyValueProperty(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30924,6 +32158,14 @@ export class KeyPropertyContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitKeyProperty) {
 			listener.exitKeyProperty(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitKeyProperty) {
+			return visitor.visitKeyProperty(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -30968,6 +32210,14 @@ export class TableRowFormatFieldIdentifierContext extends ParserRuleContext {
 			listener.exitTableRowFormatFieldIdentifier(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableRowFormatFieldIdentifier) {
+			return visitor.visitTableRowFormatFieldIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -30992,6 +32242,14 @@ export class TableRowFormatCollItemsIdentifierContext extends ParserRuleContext 
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableRowFormatCollItemsIdentifier) {
 			listener.exitTableRowFormatCollItemsIdentifier(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableRowFormatCollItemsIdentifier) {
+			return visitor.visitTableRowFormatCollItemsIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31020,6 +32278,14 @@ export class TableRowFormatMapKeysIdentifierContext extends ParserRuleContext {
 			listener.exitTableRowFormatMapKeysIdentifier(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableRowFormatMapKeysIdentifier) {
+			return visitor.visitTableRowFormatMapKeysIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31045,6 +32311,14 @@ export class TableRowFormatLinesIdentifierContext extends ParserRuleContext {
 			listener.exitTableRowFormatLinesIdentifier(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableRowFormatLinesIdentifier) {
+			return visitor.visitTableRowFormatLinesIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31068,6 +32342,14 @@ export class TableRowNullFormatContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableRowNullFormat) {
 			listener.exitTableRowNullFormat(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableRowNullFormat) {
+			return visitor.visitTableRowNullFormat(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31115,6 +32397,14 @@ export class TableFileFormatContext extends ParserRuleContext {
 			listener.exitTableFileFormat(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableFileFormat) {
+			return visitor.visitTableFileFormat(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31136,6 +32426,14 @@ export class TableLocationContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableLocation) {
 			listener.exitTableLocation(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableLocation) {
+			return visitor.visitTableLocation(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31177,6 +32475,14 @@ export class ColumnNameTypeListContext extends ParserRuleContext {
 			listener.exitColumnNameTypeList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameTypeList) {
+			return visitor.visitColumnNameTypeList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31214,6 +32520,14 @@ export class ColumnNameTypeOrConstraintListContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitColumnNameTypeOrConstraintList) {
 			listener.exitColumnNameTypeOrConstraintList(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameTypeOrConstraintList) {
+			return visitor.visitColumnNameTypeOrConstraintList(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31255,6 +32569,14 @@ export class ColumnNameColonTypeListContext extends ParserRuleContext {
 			listener.exitColumnNameColonTypeList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameColonTypeList) {
+			return visitor.visitColumnNameColonTypeList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31294,6 +32616,14 @@ export class ColumnNameListContext extends ParserRuleContext {
 			listener.exitColumnNameList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameList) {
+			return visitor.visitColumnNameList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31316,6 +32646,14 @@ export class ColumnNameContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitColumnName) {
 			listener.exitColumnName(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnName) {
+			return visitor.visitColumnName(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31384,6 +32722,14 @@ export class ExtColumnNameContext extends ParserRuleContext {
 			listener.exitExtColumnName(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExtColumnName) {
+			return visitor.visitExtColumnName(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31423,6 +32769,14 @@ export class ColumnNameOrderListContext extends ParserRuleContext {
 			listener.exitColumnNameOrderList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameOrderList) {
+			return visitor.visitColumnNameOrderList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31447,6 +32801,14 @@ export class ColumnParenthesesListContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitColumnParenthesesList) {
 			listener.exitColumnParenthesesList(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnParenthesesList) {
+			return visitor.visitColumnParenthesesList(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31479,6 +32841,14 @@ export class EnableValidateSpecificationContext extends ParserRuleContext {
 			listener.exitEnableValidateSpecification(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitEnableValidateSpecification) {
+			return visitor.visitEnableValidateSpecification(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31500,6 +32870,14 @@ export class EnableSpecificationContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitEnableSpecification) {
 			listener.exitEnableSpecification(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitEnableSpecification) {
+			return visitor.visitEnableSpecification(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31525,6 +32903,14 @@ export class ValidateSpecificationContext extends ParserRuleContext {
 			listener.exitValidateSpecification(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitValidateSpecification) {
+			return visitor.visitValidateSpecification(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31548,6 +32934,14 @@ export class EnforcedSpecificationContext extends ParserRuleContext {
 			listener.exitEnforcedSpecification(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitEnforcedSpecification) {
+			return visitor.visitEnforcedSpecification(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31569,6 +32963,14 @@ export class RelySpecificationContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitRelySpecification) {
 			listener.exitRelySpecification(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRelySpecification) {
+			return visitor.visitRelySpecification(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31602,6 +33004,14 @@ export class CreateConstraintContext extends ParserRuleContext {
 			listener.exitCreateConstraint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateConstraint) {
+			return visitor.visitCreateConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31633,6 +33043,14 @@ export class AlterConstraintWithNameContext extends ParserRuleContext {
 			listener.exitAlterConstraintWithName(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterConstraintWithName) {
+			return visitor.visitAlterConstraintWithName(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31659,6 +33077,14 @@ export class PkConstraintContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPkConstraint) {
 			listener.exitPkConstraint(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPkConstraint) {
+			return visitor.visitPkConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31704,6 +33130,14 @@ export class CreateForeignKeyContext extends ParserRuleContext {
 			listener.exitCreateForeignKey(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCreateForeignKey) {
+			return visitor.visitCreateForeignKey(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31747,6 +33181,14 @@ export class AlterForeignKeyWithNameContext extends ParserRuleContext {
 			listener.exitAlterForeignKeyWithName(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterForeignKeyWithName) {
+			return visitor.visitAlterForeignKeyWithName(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31772,6 +33214,14 @@ export class SkewedValueElementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSkewedValueElement) {
 			listener.exitSkewedValueElement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSkewedValueElement) {
+			return visitor.visitSkewedValueElement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31813,6 +33263,14 @@ export class SkewedColumnValuePairListContext extends ParserRuleContext {
 			listener.exitSkewedColumnValuePairList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSkewedColumnValuePairList) {
+			return visitor.visitSkewedColumnValuePairList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31837,6 +33295,14 @@ export class SkewedColumnValuePairContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSkewedColumnValuePair) {
 			listener.exitSkewedColumnValuePair(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSkewedColumnValuePair) {
+			return visitor.visitSkewedColumnValuePair(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31878,6 +33344,14 @@ export class SkewedColumnValuesContext extends ParserRuleContext {
 			listener.exitSkewedColumnValues(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSkewedColumnValues) {
+			return visitor.visitSkewedColumnValues(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31900,6 +33374,14 @@ export class SkewedColumnValueContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSkewedColumnValue) {
 			listener.exitSkewedColumnValue(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSkewedColumnValue) {
+			return visitor.visitSkewedColumnValue(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31929,6 +33411,14 @@ export class SkewedValueLocationElementContext extends ParserRuleContext {
 			listener.exitSkewedValueLocationElement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSkewedValueLocationElement) {
+			return visitor.visitSkewedValueLocationElement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -31950,6 +33440,14 @@ export class OrderSpecificationContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitOrderSpecification) {
 			listener.exitOrderSpecification(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitOrderSpecification) {
+			return visitor.visitOrderSpecification(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -31974,6 +33472,14 @@ export class NullOrderingContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitNullOrdering) {
 			listener.exitNullOrdering(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitNullOrdering) {
+			return visitor.visitNullOrdering(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32004,6 +33510,14 @@ export class ColumnNameOrderContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitColumnNameOrder) {
 			listener.exitColumnNameOrder(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameOrder) {
+			return visitor.visitColumnNameOrder(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32045,6 +33559,14 @@ export class ColumnNameCommentListContext extends ParserRuleContext {
 			listener.exitColumnNameCommentList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameCommentList) {
+			return visitor.visitColumnNameCommentList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32069,6 +33591,14 @@ export class ColumnNameCommentContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitColumnNameComment) {
 			listener.exitColumnNameComment(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameComment) {
+			return visitor.visitColumnNameComment(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32101,6 +33631,14 @@ export class ColumnRefOrderContext extends ParserRuleContext {
 			listener.exitColumnRefOrder(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnRefOrder) {
+			return visitor.visitColumnRefOrder(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32130,6 +33668,14 @@ export class ColumnNameTypeContext extends ParserRuleContext {
 			listener.exitColumnNameType(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameType) {
+			return visitor.visitColumnNameType(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32157,6 +33703,14 @@ export class ColumnNameTypeOrConstraintContext extends ParserRuleContext {
 			listener.exitColumnNameTypeOrConstraint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameTypeOrConstraint) {
+			return visitor.visitColumnNameTypeOrConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32182,6 +33736,14 @@ export class TableConstraintContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableConstraint) {
 			listener.exitTableConstraint(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableConstraint) {
+			return visitor.visitTableConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32216,6 +33778,14 @@ export class ColumnNameTypeConstraintContext extends ParserRuleContext {
 			listener.exitColumnNameTypeConstraint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameTypeConstraint) {
+			return visitor.visitColumnNameTypeConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32241,6 +33811,14 @@ export class ColumnConstraintContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitColumnConstraint) {
 			listener.exitColumnConstraint(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnConstraint) {
+			return visitor.visitColumnConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32280,6 +33858,14 @@ export class ForeignKeyConstraintContext extends ParserRuleContext {
 			listener.exitForeignKeyConstraint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitForeignKeyConstraint) {
+			return visitor.visitForeignKeyConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32311,6 +33897,14 @@ export class ColConstraintContext extends ParserRuleContext {
 			listener.exitColConstraint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColConstraint) {
+			return visitor.visitColConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32336,6 +33930,14 @@ export class AlterColumnConstraintContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAlterColumnConstraint) {
 			listener.exitAlterColumnConstraint(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterColumnConstraint) {
+			return visitor.visitAlterColumnConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32375,6 +33977,14 @@ export class AlterForeignKeyConstraintContext extends ParserRuleContext {
 			listener.exitAlterForeignKeyConstraint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterForeignKeyConstraint) {
+			return visitor.visitAlterForeignKeyConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32406,6 +34016,14 @@ export class AlterColConstraintContext extends ParserRuleContext {
 			listener.exitAlterColConstraint(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAlterColConstraint) {
+			return visitor.visitAlterColConstraint(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32427,6 +34045,14 @@ export class TableConstraintPrimaryKeyContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableConstraintPrimaryKey) {
 			listener.exitTableConstraintPrimaryKey(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableConstraintPrimaryKey) {
+			return visitor.visitTableConstraintPrimaryKey(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32456,6 +34082,14 @@ export class ConstraintOptsCreateContext extends ParserRuleContext {
 			listener.exitConstraintOptsCreate(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitConstraintOptsCreate) {
+			return visitor.visitConstraintOptsCreate(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32481,6 +34115,14 @@ export class ConstraintOptsAlterContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitConstraintOptsAlter) {
 			listener.exitConstraintOptsAlter(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitConstraintOptsAlter) {
+			return visitor.visitConstraintOptsAlter(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32513,6 +34155,14 @@ export class ColumnNameColonTypeContext extends ParserRuleContext {
 			listener.exitColumnNameColonType(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnNameColonType) {
+			return visitor.visitColumnNameColonType(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32535,6 +34185,14 @@ export class ColTypeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitColType) {
 			listener.exitColType(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColType) {
+			return visitor.visitColType(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32576,6 +34234,14 @@ export class ColTypeListContext extends ParserRuleContext {
 			listener.exitColTypeList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColTypeList) {
+			return visitor.visitColTypeList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32610,6 +34276,14 @@ export class Type_db_colContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitType_db_col) {
 			listener.exitType_db_col(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitType_db_col) {
+			return visitor.visitType_db_col(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32666,6 +34340,14 @@ export class PrimitiveTypeContext extends ParserRuleContext {
 			listener.exitPrimitiveType(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrimitiveType) {
+			return visitor.visitPrimitiveType(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32693,6 +34375,14 @@ export class ListTypeContext extends ParserRuleContext {
 			listener.exitListType(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitListType) {
+			return visitor.visitListType(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32718,6 +34408,14 @@ export class StructTypeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitStructType) {
 			listener.exitStructType(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitStructType) {
+			return visitor.visitStructType(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32751,6 +34449,14 @@ export class MapTypeContext extends ParserRuleContext {
 			listener.exitMapType(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitMapType) {
+			return visitor.visitMapType(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32776,6 +34482,14 @@ export class UnionTypeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitUnionType) {
 			listener.exitUnionType(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitUnionType) {
+			return visitor.visitUnionType(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32805,6 +34519,14 @@ export class SetOperatorContext extends ParserRuleContext {
 			listener.exitSetOperator(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSetOperator) {
+			return visitor.visitSetOperator(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32832,6 +34554,14 @@ export class QueryStatementExpressionContext extends ParserRuleContext {
 			listener.exitQueryStatementExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitQueryStatementExpression) {
+			return visitor.visitQueryStatementExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32857,6 +34587,14 @@ export class QueryStatementExpressionBodyContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitQueryStatementExpressionBody) {
 			listener.exitQueryStatementExpressionBody(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitQueryStatementExpressionBody) {
+			return visitor.visitQueryStatementExpressionBody(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32899,6 +34637,14 @@ export class WithClauseContext extends ParserRuleContext {
 			listener.exitWithClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWithClause) {
+			return visitor.visitWithClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -32927,6 +34673,14 @@ export class CteStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitCteStatement) {
 			listener.exitCteStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCteStatement) {
+			return visitor.visitCteStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -32968,6 +34722,14 @@ export class FromStatementContext extends ParserRuleContext {
 			listener.exitFromStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitFromStatement) {
+			return visitor.visitFromStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33001,6 +34763,14 @@ export class SingleFromStatementContext extends ParserRuleContext {
 			listener.exitSingleFromStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSingleFromStatement) {
+			return visitor.visitSingleFromStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33029,6 +34799,14 @@ export class RegularBodyContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitRegularBody) {
 			listener.exitRegularBody(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRegularBody) {
+			return visitor.visitRegularBody(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33075,6 +34853,14 @@ export class AtomSelectStatementContext extends ParserRuleContext {
 			listener.exitAtomSelectStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAtomSelectStatement) {
+			return visitor.visitAtomSelectStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33117,6 +34903,14 @@ export class SelectStatementContext extends ParserRuleContext {
 			listener.exitSelectStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSelectStatement) {
+			return visitor.visitSelectStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33156,6 +34950,14 @@ export class SetOpSelectStatementContext extends ParserRuleContext {
 			listener.exitSetOpSelectStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSetOpSelectStatement) {
+			return visitor.visitSetOpSelectStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33181,6 +34983,14 @@ export class SelectStatementWithCTEContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSelectStatementWithCTE) {
 			listener.exitSelectStatementWithCTE(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSelectStatementWithCTE) {
+			return visitor.visitSelectStatementWithCTE(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33240,6 +35050,14 @@ export class BodyContext extends ParserRuleContext {
 			listener.exitBody(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitBody) {
+			return visitor.visitBody(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33279,6 +35097,14 @@ export class InsertClauseContext extends ParserRuleContext {
 			listener.exitInsertClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitInsertClause) {
+			return visitor.visitInsertClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33311,6 +35137,14 @@ export class DestinationContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDestination) {
 			listener.exitDestination(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDestination) {
+			return visitor.visitDestination(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33346,6 +35180,14 @@ export class LimitClauseContext extends ParserRuleContext {
 			listener.exitLimitClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitLimitClause) {
+			return visitor.visitLimitClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33375,6 +35217,14 @@ export class DeleteStatementContext extends ParserRuleContext {
 			listener.exitDeleteStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDeleteStatement) {
+			return visitor.visitDeleteStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33401,6 +35251,14 @@ export class ColumnAssignmentClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitColumnAssignmentClause) {
 			listener.exitColumnAssignmentClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnAssignmentClause) {
+			return visitor.visitColumnAssignmentClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33443,6 +35301,14 @@ export class SetColumnsClauseContext extends ParserRuleContext {
 			listener.exitSetColumnsClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSetColumnsClause) {
+			return visitor.visitSetColumnsClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33472,6 +35338,14 @@ export class UpdateStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitUpdateStatement) {
 			listener.exitUpdateStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitUpdateStatement) {
+			return visitor.visitUpdateStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33505,6 +35379,14 @@ export class SqlTransactionStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSqlTransactionStatement) {
 			listener.exitSqlTransactionStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSqlTransactionStatement) {
+			return visitor.visitSqlTransactionStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33548,6 +35430,14 @@ export class StartTransactionStatementContext extends ParserRuleContext {
 			listener.exitStartTransactionStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitStartTransactionStatement) {
+			return visitor.visitStartTransactionStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33575,6 +35465,14 @@ export class TransactionModeContext extends ParserRuleContext {
 			listener.exitTransactionMode(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTransactionMode) {
+			return visitor.visitTransactionMode(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33597,6 +35495,14 @@ export class TransactionAccessModeContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTransactionAccessMode) {
 			listener.exitTransactionAccessMode(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTransactionAccessMode) {
+			return visitor.visitTransactionAccessMode(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33625,6 +35531,14 @@ export class IsolationLevelContext extends ParserRuleContext {
 			listener.exitIsolationLevel(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitIsolationLevel) {
+			return visitor.visitIsolationLevel(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33645,6 +35559,14 @@ export class LevelOfIsolationContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitLevelOfIsolation) {
 			listener.exitLevelOfIsolation(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitLevelOfIsolation) {
+			return visitor.visitLevelOfIsolation(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33670,6 +35592,14 @@ export class CommitStatementContext extends ParserRuleContext {
 			listener.exitCommitStatement(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCommitStatement) {
+			return visitor.visitCommitStatement(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33691,6 +35621,14 @@ export class RollbackStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitRollbackStatement) {
 			listener.exitRollbackStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRollbackStatement) {
+			return visitor.visitRollbackStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33717,6 +35655,14 @@ export class SetAutoCommitStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSetAutoCommitStatement) {
 			listener.exitSetAutoCommitStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSetAutoCommitStatement) {
+			return visitor.visitSetAutoCommitStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33749,6 +35695,14 @@ export class AbortTransactionStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAbortTransactionStatement) {
 			listener.exitAbortTransactionStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAbortTransactionStatement) {
+			return visitor.visitAbortTransactionStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33790,6 +35744,14 @@ export class MergeStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitMergeStatement) {
 			listener.exitMergeStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitMergeStatement) {
+			return visitor.visitMergeStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33834,6 +35796,14 @@ export class WhenClausesContext extends ParserRuleContext {
 			listener.exitWhenClauses(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWhenClauses) {
+			return visitor.visitWhenClauses(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33868,6 +35838,14 @@ export class WhenNotMatchedClauseContext extends ParserRuleContext {
 			listener.exitWhenNotMatchedClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWhenNotMatchedClause) {
+			return visitor.visitWhenNotMatchedClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33899,6 +35877,14 @@ export class WhenMatchedAndClauseContext extends ParserRuleContext {
 			listener.exitWhenMatchedAndClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWhenMatchedAndClause) {
+			return visitor.visitWhenMatchedAndClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33926,6 +35912,14 @@ export class WhenMatchedThenClauseContext extends ParserRuleContext {
 			listener.exitWhenMatchedThenClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWhenMatchedThenClause) {
+			return visitor.visitWhenMatchedThenClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -33950,6 +35944,14 @@ export class UpdateOrDeleteContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitUpdateOrDelete) {
 			listener.exitUpdateOrDelete(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitUpdateOrDelete) {
+			return visitor.visitUpdateOrDelete(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -33982,6 +35984,14 @@ export class KillQueryStatementContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitKillQueryStatement) {
 			listener.exitKillQueryStatement(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitKillQueryStatement) {
+			return visitor.visitKillQueryStatement(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34017,6 +36027,14 @@ export class SelectClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSelectClause) {
 			listener.exitSelectClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSelectClause) {
+			return visitor.visitSelectClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34056,6 +36074,14 @@ export class SelectListContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSelectList) {
 			listener.exitSelectList(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSelectList) {
+			return visitor.visitSelectList(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34124,6 +36150,14 @@ export class SelectTrfmClauseContext extends ParserRuleContext {
 			listener.exitSelectTrfmClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSelectTrfmClause) {
+			return visitor.visitSelectTrfmClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34170,6 +36204,14 @@ export class SelectItemContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSelectItem) {
 			listener.exitSelectItem(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSelectItem) {
+			return visitor.visitSelectItem(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34224,6 +36266,14 @@ export class TrfmClauseContext extends ParserRuleContext {
 			listener.exitTrfmClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTrfmClause) {
+			return visitor.visitTrfmClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34249,6 +36299,14 @@ export class SelectExpressionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSelectExpression) {
 			listener.exitSelectExpression(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSelectExpression) {
+			return visitor.visitSelectExpression(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34288,6 +36346,14 @@ export class SelectExpressionListContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSelectExpressionList) {
 			listener.exitSelectExpressionList(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSelectExpressionList) {
+			return visitor.visitSelectExpressionList(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34330,6 +36396,14 @@ export class Window_clauseContext extends ParserRuleContext {
 			listener.exitWindow_clause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWindow_clause) {
+			return visitor.visitWindow_clause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34356,6 +36430,14 @@ export class Window_defnContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitWindow_defn) {
 			listener.exitWindow_defn(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWindow_defn) {
+			return visitor.visitWindow_defn(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34390,6 +36472,14 @@ export class Window_specificationContext extends ParserRuleContext {
 			listener.exitWindow_specification(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWindow_specification) {
+			return visitor.visitWindow_specification(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34415,6 +36505,14 @@ export class Window_frameContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitWindow_frame) {
 			listener.exitWindow_frame(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWindow_frame) {
+			return visitor.visitWindow_frame(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34453,6 +36551,14 @@ export class Window_range_expressionContext extends ParserRuleContext {
 			listener.exitWindow_range_expression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWindow_range_expression) {
+			return visitor.visitWindow_range_expression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34489,6 +36595,14 @@ export class Window_value_expressionContext extends ParserRuleContext {
 			listener.exitWindow_value_expression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWindow_value_expression) {
+			return visitor.visitWindow_value_expression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34513,6 +36627,14 @@ export class Window_frame_start_boundaryContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitWindow_frame_start_boundary) {
 			listener.exitWindow_frame_start_boundary(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWindow_frame_start_boundary) {
+			return visitor.visitWindow_frame_start_boundary(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34542,6 +36664,14 @@ export class Window_frame_boundaryContext extends ParserRuleContext {
 			listener.exitWindow_frame_boundary(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWindow_frame_boundary) {
+			return visitor.visitWindow_frame_boundary(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34568,6 +36698,14 @@ export class TableAllColumnsContext extends ParserRuleContext {
 			listener.exitTableAllColumns(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableAllColumns) {
+			return visitor.visitTableAllColumns(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34590,6 +36728,14 @@ export class TableOrColumnContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableOrColumn) {
 			listener.exitTableOrColumn(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableOrColumn) {
+			return visitor.visitTableOrColumn(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34631,6 +36777,14 @@ export class ExpressionListContext extends ParserRuleContext {
 			listener.exitExpressionList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExpressionList) {
+			return visitor.visitExpressionList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34670,6 +36824,14 @@ export class AliasListContext extends ParserRuleContext {
 			listener.exitAliasList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAliasList) {
+			return visitor.visitAliasList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34693,6 +36855,14 @@ export class FromClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitFromClause) {
 			listener.exitFromClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitFromClause) {
+			return visitor.visitFromClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34740,6 +36910,14 @@ export class FromSourceContext extends ParserRuleContext {
 			listener.exitFromSource(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitFromSource) {
+			return visitor.visitFromSource(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34785,6 +36963,14 @@ export class AtomjoinSourceContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitAtomjoinSource) {
 			listener.exitAtomjoinSource(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAtomjoinSource) {
+			return visitor.visitAtomjoinSource(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -34865,6 +37051,14 @@ export class JoinSourceContext extends ParserRuleContext {
 			listener.exitJoinSource(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitJoinSource) {
+			return visitor.visitJoinSource(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34907,6 +37101,14 @@ export class JoinSourcePartContext extends ParserRuleContext {
 			listener.exitJoinSourcePart(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitJoinSourcePart) {
+			return visitor.visitJoinSourcePart(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34935,6 +37137,14 @@ export class UniqueJoinSourceContext extends ParserRuleContext {
 			listener.exitUniqueJoinSource(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitUniqueJoinSource) {
+			return visitor.visitUniqueJoinSource(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34961,6 +37171,14 @@ export class UniqueJoinExprContext extends ParserRuleContext {
 			listener.exitUniqueJoinExpr(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitUniqueJoinExpr) {
+			return visitor.visitUniqueJoinExpr(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -34981,6 +37199,14 @@ export class UniqueJoinTokenContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitUniqueJoinToken) {
 			listener.exitUniqueJoinToken(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitUniqueJoinToken) {
+			return visitor.visitUniqueJoinToken(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35011,6 +37237,14 @@ export class JoinTokenContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitJoinToken) {
 			listener.exitJoinToken(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitJoinToken) {
+			return visitor.visitJoinToken(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35084,6 +37318,14 @@ export class LateralViewContext extends ParserRuleContext {
 			listener.exitLateralView(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitLateralView) {
+			return visitor.visitLateralView(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35106,6 +37348,14 @@ export class TableAliasContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableAlias) {
 			listener.exitTableAlias(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableAlias) {
+			return visitor.visitTableAlias(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35163,6 +37413,14 @@ export class TableBucketSampleContext extends ParserRuleContext {
 			listener.exitTableBucketSample(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableBucketSample) {
+			return visitor.visitTableBucketSample(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35191,6 +37449,14 @@ export class SplitSampleContext extends ParserRuleContext {
 			listener.exitSplitSample(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSplitSample) {
+			return visitor.visitSplitSample(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35216,6 +37482,14 @@ export class TableSampleContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableSample) {
 			listener.exitTableSample(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableSample) {
+			return visitor.visitTableSample(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35252,6 +37526,14 @@ export class TableSourceContext extends ParserRuleContext {
 			listener.exitTableSource(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableSource) {
+			return visitor.visitTableSource(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35281,6 +37563,14 @@ export class UniqueJoinTableSourceContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitUniqueJoinTableSource) {
 			listener.exitUniqueJoinTableSource(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitUniqueJoinTableSource) {
+			return visitor.visitUniqueJoinTableSource(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35314,6 +37604,14 @@ export class TableNameContext extends ParserRuleContext {
 			listener.exitTableName(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableName) {
+			return visitor.visitTableName(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35345,6 +37643,14 @@ export class ViewNameContext extends ParserRuleContext {
 			listener.exitViewName(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitViewName) {
+			return visitor.visitViewName(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35373,6 +37679,14 @@ export class SubQuerySourceContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSubQuerySource) {
 			listener.exitSubQuerySource(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSubQuerySource) {
+			return visitor.visitSubQuerySource(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35411,6 +37725,14 @@ export class PartitioningSpecContext extends ParserRuleContext {
 			listener.exitPartitioningSpec(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPartitioningSpec) {
+			return visitor.visitPartitioningSpec(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35439,6 +37761,14 @@ export class PartitionTableFunctionSourceContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPartitionTableFunctionSource) {
 			listener.exitPartitionTableFunctionSource(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPartitionTableFunctionSource) {
+			return visitor.visitPartitionTableFunctionSource(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35523,6 +37853,14 @@ export class PartitionedTableFunctionContext extends ParserRuleContext {
 			listener.exitPartitionedTableFunction(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPartitionedTableFunction) {
+			return visitor.visitPartitionedTableFunction(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35546,6 +37884,14 @@ export class WhereClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitWhereClause) {
 			listener.exitWhereClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWhereClause) {
+			return visitor.visitWhereClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35572,6 +37918,14 @@ export class SearchConditionContext extends ParserRuleContext {
 			listener.exitSearchCondition(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSearchCondition) {
+			return visitor.visitSearchCondition(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35595,6 +37949,14 @@ export class ValuesClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitValuesClause) {
 			listener.exitValuesClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitValuesClause) {
+			return visitor.visitValuesClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35636,6 +37998,14 @@ export class ValuesTableConstructorContext extends ParserRuleContext {
 			listener.exitValuesTableConstructor(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitValuesTableConstructor) {
+			return visitor.visitValuesTableConstructor(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35658,6 +38028,14 @@ export class ValueRowConstructorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitValueRowConstructor) {
 			listener.exitValueRowConstructor(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitValueRowConstructor) {
+			return visitor.visitValueRowConstructor(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35725,6 +38103,14 @@ export class VirtualTableSourceContext extends ParserRuleContext {
 			listener.exitVirtualTableSource(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitVirtualTableSource) {
+			return visitor.visitVirtualTableSource(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35749,6 +38135,14 @@ export class GroupByClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitGroupByClause) {
 			listener.exitGroupByClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitGroupByClause) {
+			return visitor.visitGroupByClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35781,6 +38175,14 @@ export class Groupby_expressionContext extends ParserRuleContext {
 			listener.exitGroupby_expression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitGroupby_expression) {
+			return visitor.visitGroupby_expression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35802,6 +38204,14 @@ export class GroupByEmptyContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitGroupByEmpty) {
 			listener.exitGroupByEmpty(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitGroupByEmpty) {
+			return visitor.visitGroupByEmpty(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35845,6 +38255,14 @@ export class RollupStandardContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitRollupStandard) {
 			listener.exitRollupStandard(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRollupStandard) {
+			return visitor.visitRollupStandard(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35896,6 +38314,14 @@ export class RollupOldSyntaxContext extends ParserRuleContext {
 			listener.exitRollupOldSyntax(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitRollupOldSyntax) {
+			return visitor.visitRollupOldSyntax(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35921,6 +38347,14 @@ export class GroupingSetExpressionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitGroupingSetExpression) {
 			listener.exitGroupingSetExpression(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitGroupingSetExpression) {
+			return visitor.visitGroupingSetExpression(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -35964,6 +38398,14 @@ export class GroupingSetExpressionMultipleContext extends ParserRuleContext {
 			listener.exitGroupingSetExpressionMultiple(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitGroupingSetExpressionMultiple) {
+			return visitor.visitGroupingSetExpressionMultiple(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -35986,6 +38428,14 @@ export class GroupingExpressionSingleContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitGroupingExpressionSingle) {
 			listener.exitGroupingExpressionSingle(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitGroupingExpressionSingle) {
+			return visitor.visitGroupingExpressionSingle(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36013,6 +38463,14 @@ export class HavingClauseContext extends ParserRuleContext {
 			listener.exitHavingClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitHavingClause) {
+			return visitor.visitHavingClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36035,6 +38493,14 @@ export class HavingConditionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitHavingCondition) {
 			listener.exitHavingCondition(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitHavingCondition) {
+			return visitor.visitHavingCondition(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36063,6 +38529,14 @@ export class ExpressionsInParenthesisContext extends ParserRuleContext {
 			listener.exitExpressionsInParenthesis(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExpressionsInParenthesis) {
+			return visitor.visitExpressionsInParenthesis(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36088,6 +38562,14 @@ export class ExpressionsNotInParenthesisContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitExpressionsNotInParenthesis) {
 			listener.exitExpressionsNotInParenthesis(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExpressionsNotInParenthesis) {
+			return visitor.visitExpressionsNotInParenthesis(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36129,6 +38611,14 @@ export class ExpressionPartContext extends ParserRuleContext {
 			listener.exitExpressionPart(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExpressionPart) {
+			return visitor.visitExpressionPart(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36154,6 +38644,14 @@ export class ExpressionsContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitExpressions) {
 			listener.exitExpressions(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExpressions) {
+			return visitor.visitExpressions(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36197,6 +38695,14 @@ export class ColumnRefOrderInParenthesisContext extends ParserRuleContext {
 			listener.exitColumnRefOrderInParenthesis(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnRefOrderInParenthesis) {
+			return visitor.visitColumnRefOrderInParenthesis(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36234,6 +38740,14 @@ export class ColumnRefOrderNotInParenthesisContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitColumnRefOrderNotInParenthesis) {
 			listener.exitColumnRefOrderNotInParenthesis(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitColumnRefOrderNotInParenthesis) {
+			return visitor.visitColumnRefOrderNotInParenthesis(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36277,6 +38791,14 @@ export class OrderByClauseContext extends ParserRuleContext {
 			listener.exitOrderByClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitOrderByClause) {
+			return visitor.visitOrderByClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36301,6 +38823,14 @@ export class ClusterByClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitClusterByClause) {
 			listener.exitClusterByClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitClusterByClause) {
+			return visitor.visitClusterByClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36329,6 +38859,14 @@ export class PartitionByClauseContext extends ParserRuleContext {
 			listener.exitPartitionByClause(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPartitionByClause) {
+			return visitor.visitPartitionByClause(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36353,6 +38891,14 @@ export class DistributeByClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDistributeByClause) {
 			listener.exitDistributeByClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDistributeByClause) {
+			return visitor.visitDistributeByClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36382,6 +38928,14 @@ export class SortByClauseContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSortByClause) {
 			listener.exitSortByClause(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSortByClause) {
+			return visitor.visitSortByClause(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36435,6 +38989,14 @@ export class Function_Context extends ParserRuleContext {
 			listener.exitFunction_(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitFunction_) {
+			return visitor.visitFunction_(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36460,6 +39022,14 @@ export class FunctionNameContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitFunctionName) {
 			listener.exitFunctionName(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitFunctionName) {
+			return visitor.visitFunctionName(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36491,6 +39061,14 @@ export class CastExpressionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitCastExpression) {
 			listener.exitCastExpression(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCastExpression) {
+			return visitor.visitCastExpression(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36544,6 +39122,14 @@ export class CaseExpressionContext extends ParserRuleContext {
 			listener.exitCaseExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCaseExpression) {
+			return visitor.visitCaseExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36595,6 +39181,14 @@ export class WhenExpressionContext extends ParserRuleContext {
 			listener.exitWhenExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitWhenExpression) {
+			return visitor.visitWhenExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36626,6 +39220,14 @@ export class FloorExpressionContext extends ParserRuleContext {
 			listener.exitFloorExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitFloorExpression) {
+			return visitor.visitFloorExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36653,6 +39255,14 @@ export class FloorDateQualifiersContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitFloorDateQualifiers) {
 			listener.exitFloorDateQualifiers(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitFloorDateQualifiers) {
+			return visitor.visitFloorDateQualifiers(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36686,6 +39296,14 @@ export class ExtractExpressionContext extends ParserRuleContext {
 			listener.exitExtractExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExtractExpression) {
+			return visitor.visitExtractExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36714,6 +39332,14 @@ export class TimeQualifiersContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTimeQualifiers) {
 			listener.exitTimeQualifiers(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTimeQualifiers) {
+			return visitor.visitTimeQualifiers(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36763,6 +39389,14 @@ export class ConstantContext extends ParserRuleContext {
 			listener.exitConstant(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitConstant) {
+			return visitor.visitConstant(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36793,6 +39427,14 @@ export class StringLiteralSequenceContext extends ParserRuleContext {
 			listener.exitStringLiteralSequence(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitStringLiteralSequence) {
+			return visitor.visitStringLiteralSequence(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36814,6 +39456,14 @@ export class CharSetStringLiteralContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitCharSetStringLiteral) {
 			listener.exitCharSetStringLiteral(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitCharSetStringLiteral) {
+			return visitor.visitCharSetStringLiteral(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36840,6 +39490,14 @@ export class DateLiteralContext extends ParserRuleContext {
 			listener.exitDateLiteral(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDateLiteral) {
+			return visitor.visitDateLiteral(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36862,6 +39520,14 @@ export class TimestampLiteralContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTimestampLiteral) {
 			listener.exitTimestampLiteral(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTimestampLiteral) {
+			return visitor.visitTimestampLiteral(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36887,6 +39553,14 @@ export class TimestampLocalTZLiteralContext extends ParserRuleContext {
 			listener.exitTimestampLocalTZLiteral(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTimestampLocalTZLiteral) {
+			return visitor.visitTimestampLocalTZLiteral(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36908,6 +39582,14 @@ export class IntervalValueContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitIntervalValue) {
 			listener.exitIntervalValue(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitIntervalValue) {
+			return visitor.visitIntervalValue(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36935,6 +39617,14 @@ export class IntervalLiteralContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitIntervalLiteral) {
 			listener.exitIntervalLiteral(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitIntervalLiteral) {
+			return visitor.visitIntervalLiteral(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -36970,6 +39660,14 @@ export class IntervalExpressionContext extends ParserRuleContext {
 			listener.exitIntervalExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitIntervalExpression) {
+			return visitor.visitIntervalExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -36996,6 +39694,14 @@ export class IntervalQualifiersContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitIntervalQualifiers) {
 			listener.exitIntervalQualifiers(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitIntervalQualifiers) {
+			return visitor.visitIntervalQualifiers(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37052,6 +39758,14 @@ export class AtomExpressionContext extends ParserRuleContext {
 			listener.exitAtomExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitAtomExpression) {
+			return visitor.visitAtomExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37074,6 +39788,14 @@ export class PrecedenceUnaryOperatorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrecedenceUnaryOperator) {
 			listener.exitPrecedenceUnaryOperator(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceUnaryOperator) {
+			return visitor.visitPrecedenceUnaryOperator(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37103,6 +39825,14 @@ export class IsConditionContext extends ParserRuleContext {
 			listener.exitIsCondition(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitIsCondition) {
+			return visitor.visitIsCondition(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37123,6 +39853,14 @@ export class PrecedenceBitwiseXorOperatorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrecedenceBitwiseXorOperator) {
 			listener.exitPrecedenceBitwiseXorOperator(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceBitwiseXorOperator) {
+			return visitor.visitPrecedenceBitwiseXorOperator(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37150,6 +39888,14 @@ export class PrecedenceStarOperatorContext extends ParserRuleContext {
 			listener.exitPrecedenceStarOperator(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceStarOperator) {
+			return visitor.visitPrecedenceStarOperator(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37171,6 +39917,14 @@ export class PrecedencePlusOperatorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrecedencePlusOperator) {
 			listener.exitPrecedencePlusOperator(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedencePlusOperator) {
+			return visitor.visitPrecedencePlusOperator(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37195,6 +39949,14 @@ export class PrecedenceConcatenateOperatorContext extends ParserRuleContext {
 			listener.exitPrecedenceConcatenateOperator(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceConcatenateOperator) {
+			return visitor.visitPrecedenceConcatenateOperator(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37215,6 +39977,14 @@ export class PrecedenceAmpersandOperatorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrecedenceAmpersandOperator) {
 			listener.exitPrecedenceAmpersandOperator(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceAmpersandOperator) {
+			return visitor.visitPrecedenceAmpersandOperator(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37239,6 +40009,14 @@ export class PrecedenceBitwiseOrOperatorContext extends ParserRuleContext {
 			listener.exitPrecedenceBitwiseOrOperator(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceBitwiseOrOperator) {
+			return visitor.visitPrecedenceBitwiseOrOperator(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37261,6 +40039,14 @@ export class PrecedenceRegexpOperatorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrecedenceRegexpOperator) {
 			listener.exitPrecedenceRegexpOperator(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceRegexpOperator) {
+			return visitor.visitPrecedenceRegexpOperator(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37291,6 +40077,14 @@ export class PrecedenceComparisonOperatorContext extends ParserRuleContext {
 			listener.exitPrecedenceComparisonOperator(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceComparisonOperator) {
+			return visitor.visitPrecedenceComparisonOperator(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37311,6 +40105,14 @@ export class PrecedenceNotOperatorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrecedenceNotOperator) {
 			listener.exitPrecedenceNotOperator(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceNotOperator) {
+			return visitor.visitPrecedenceNotOperator(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37334,6 +40136,14 @@ export class PrecedenceLogicOperatorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrecedenceLogicOperator) {
 			listener.exitPrecedenceLogicOperator(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceLogicOperator) {
+			return visitor.visitPrecedenceLogicOperator(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37461,6 +40271,14 @@ export class ExpressionContext extends ParserRuleContext {
 			listener.exitExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitExpression) {
+			return visitor.visitExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37486,6 +40304,14 @@ export class PrecedenceSimilarExpressionInContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrecedenceSimilarExpressionIn) {
 			listener.exitPrecedenceSimilarExpressionIn(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrecedenceSimilarExpressionIn) {
+			return visitor.visitPrecedenceSimilarExpressionIn(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37514,6 +40340,14 @@ export class SubQueryExpressionContext extends ParserRuleContext {
 			listener.exitSubQueryExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSubQueryExpression) {
+			return visitor.visitSubQueryExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37537,6 +40371,14 @@ export class BooleanValueContext extends ParserRuleContext {
 			listener.exitBooleanValue(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitBooleanValue) {
+			return visitor.visitBooleanValue(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37558,6 +40400,14 @@ export class BooleanValueTokContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitBooleanValueTok) {
 			listener.exitBooleanValueTok(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitBooleanValueTok) {
+			return visitor.visitBooleanValueTok(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37585,6 +40435,14 @@ export class TableOrPartitionContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitTableOrPartition) {
 			listener.exitTableOrPartition(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitTableOrPartition) {
+			return visitor.visitTableOrPartition(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37629,6 +40487,14 @@ export class PartitionSpecContext extends ParserRuleContext {
 			listener.exitPartitionSpec(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPartitionSpec) {
+			return visitor.visitPartitionSpec(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37655,6 +40521,14 @@ export class PartitionValContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPartitionVal) {
 			listener.exitPartitionVal(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPartitionVal) {
+			return visitor.visitPartitionVal(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37699,6 +40573,14 @@ export class DropPartitionSpecContext extends ParserRuleContext {
 			listener.exitDropPartitionSpec(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropPartitionSpec) {
+			return visitor.visitDropPartitionSpec(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37729,6 +40611,14 @@ export class DropPartitionValContext extends ParserRuleContext {
 			listener.exitDropPartitionVal(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropPartitionVal) {
+			return visitor.visitDropPartitionVal(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37754,6 +40644,14 @@ export class DropPartitionOperatorContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitDropPartitionOperator) {
 			listener.exitDropPartitionOperator(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDropPartitionOperator) {
+			return visitor.visitDropPartitionOperator(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37819,6 +40717,14 @@ export class SysFuncNamesContext extends ParserRuleContext {
 			listener.exitSysFuncNames(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSysFuncNames) {
+			return visitor.visitSysFuncNames(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37847,6 +40753,14 @@ export class DescFuncNamesContext extends ParserRuleContext {
 			listener.exitDescFuncNames(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitDescFuncNames) {
+			return visitor.visitDescFuncNames(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37870,6 +40784,14 @@ export class IdentifierContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitIdentifier) {
 			listener.exitIdentifier(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitIdentifier) {
+			return visitor.visitIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -37903,6 +40825,14 @@ export class FunctionIdentifierContext extends ParserRuleContext {
 			listener.exitFunctionIdentifier(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitFunctionIdentifier) {
+			return visitor.visitFunctionIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -37926,6 +40856,14 @@ export class PrincipalIdentifierContext extends ParserRuleContext {
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitPrincipalIdentifier) {
 			listener.exitPrincipalIdentifier(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitPrincipalIdentifier) {
+			return visitor.visitPrincipalIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -38142,6 +41080,14 @@ export class NonReservedContext extends ParserRuleContext {
 			listener.exitNonReserved(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitNonReserved) {
+			return visitor.visitNonReserved(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -38176,6 +41122,14 @@ export class Sql11ReservedKeywordsUsedAsFunctionNameContext extends ParserRuleCo
 	public exitRule(listener: HiveParserListener): void {
 		if (listener.exitSql11ReservedKeywordsUsedAsFunctionName) {
 			listener.exitSql11ReservedKeywordsUsedAsFunctionName(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: HiveParserVisitor<Result>): Result {
+		if (visitor.visitSql11ReservedKeywordsUsedAsFunctionName) {
+			return visitor.visitSql11ReservedKeywordsUsedAsFunctionName(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }

@@ -6,17 +6,19 @@
         "antlr4ts": "antlr4ts ./src/worker/hivesql/grammar/HiveParser.g4"
     },
     "dependencies": {
-        "@types/antlr4": "^4.7.2",
-        "antlr4": "^4.10.1",
         "antlr4-c3": "^2.2.1",
         "antlr4ts": "^0.5.0-alpha.4",
         "monaco-editor-core": "^0.34.0",
         "sql-formatter": "^9.2.0"
     },
     "devDependencies": {
+        "@types/dotenv-webpack": "^7.0.3",
         "@types/react-dom": "^17.0.0",
         "antlr4ts-cli": "^0.5.0-alpha.4",
+        "assert": "^2.0.0",
+        "buffer": "^6.0.3",
         "css-loader": "^6.7.1",
+        "dotenv-webpack": "^8.0.1",
         "html-webpack-plugin": "^5.5.0",
         "less": "^4.1.1",
         "react": "^17.0.0",

@@ -1,13 +1,11 @@
-// @ts-ignore
-import HiveParserListener from "./grammar/HiveParserListener.js";
+import { HiveParserListener } from "./grammar/HiveParserListener";
 
-export default class HiveListener extends HiveParserListener {
+export default class HiveListener implements HiveParserListener {
     result: any[];
     from_table: any[];
     sql: any[];
 
     constructor() {
-        super();
         this.result = [];
         this.from_table = [];
         this.sql = [];

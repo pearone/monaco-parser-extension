@@ -1,5 +1,5 @@
 import { ParserError } from "@/editor/interface";
-import { Token, Lexer, Parser } from "antlr4";
+import { Token, Lexer, Parser } from "antlr4ts";
 import ParserErrorListener, {
     ErrorHandler,
     ParserErrorCollector,
@@ -30,7 +30,7 @@ export default abstract class BasicParser {
 
         const lexer = this.createLexer(input);
         lexer.removeErrorListeners();
-        lexer.addErrorListener(errorHandler);
+        // lexer.addErrorListener(errorHandler);
 
         const parser: any = this.createParserFromLexer(lexer);
 
