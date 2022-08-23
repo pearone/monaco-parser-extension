@@ -1,4 +1,4 @@
-import { CommonTokenStream } from "antlr4ts";
+import { CommonTokenStream, TokenStream } from "antlr4ts";
 import { worker } from "monaco-editor-core";
 import HiveSQL from "./parser";
 import { CodeCompletionCore } from "antlr4-c3";
@@ -24,16 +24,30 @@ export class HiveSQLWorker extends BaseSQLWorker {
      * @returns
      */
     completionsFor(code: string, cursor: any, triggerCharacter?: string) {
+        const lexer = this.parser.createLexer(code);
+        const tokenStream = new CommonTokenStream(lexer);
         const parser = this.parser.createParser(code);
-
-        console.log(parser);
+        this.findCursorTokenIndex(tokenStream, cursor);
         const core = new CodeCompletionCore(parser);
         const candidates = core.collectCandidates(0);
 
         console.log(candidates);
     }
 
-    findCursorTokenIndex(code: string, position: any) {}
+    findCursorTokenIndex(
+        tokenStream: TokenStream,
+        cursor: { lineNumber: number; column: number }
+    ) {
+        console.log(tokenStream, cursor);
+        const cursorCol = cursor.column - 1;
+        for (let i = 0; i < tokenStream.size; i++) {
+            const t = tokenStream.get(i);
+
+            const tokenStartCol = t.charPositionInLine;
+            const tokenEndCol = tokenStartCol + (t.text as string).length;
+        }
+        return undefined;
+    }
 }
 
 export function create(ctx: worker.IWorkerContext): HiveSQLWorker {
