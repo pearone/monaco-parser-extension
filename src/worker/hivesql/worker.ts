@@ -52,7 +52,7 @@ export class HiveSQLWorker extends BaseSQLWorker {
 
         const parsedQuery = parser.statements();
         const core = new CodeCompletionCore(parser);
-        core.preferredRules = new Set([HiveParser.RULE_fromStatement]);
+        // core.preferredRules = new Set([HiveParser.RULE_fromStatement]);
 
         if (cursorIndex === undefined) {
             return Promise.resolve([]);
@@ -60,8 +60,9 @@ export class HiveSQLWorker extends BaseSQLWorker {
 
         const queryAnalyzer = new QueryAnalyzer(parsedQuery);
 
-        console.log("cursorIndex", cursorIndex, tokenStream);
         const candidates = core.collectCandidates(cursorIndex);
+
+        console.log("cursorIndex", cursorIndex, candidates);
         const itemsFromTokens = this.generateCandidatesFromTokens(
             candidates.tokens,
             queryAnalyzer,
