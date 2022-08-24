@@ -23,8 +23,8 @@ export class ParserErrorCollector extends DiagnosticErrorListener {
         msg: string,
         e: any
     ) {
-        const parser = recognizer._ctx.parser,
-            tokens = parser.getTokenStream().tokens;
+        // const parser = recognizer._ctx.parser,
+        //     tokens = parser.getTokenStream().tokens;
 
         // console.log(parser, tokens);
 

@@ -14,11 +14,11 @@ export default abstract class BasicParser {
     public parse(input: string, errorListener?: ErrorHandler) {
         const parser = this.createParser(input);
 
-        // parser.removeErrorListeners();
-        // if (errorListener) {
-        //     parser.addErrorListener(new ParserErrorListener(errorListener));
-        // }
-        // parser.errorHandler = new ParserErrorStrategy();
+        parser.removeErrorListeners();
+        if (errorListener) {
+            parser.addErrorListener(new ParserErrorListener(errorListener));
+        }
+        parser.errorHandler = new ParserErrorStrategy();
 
         const parserTree = parser.statements();
 

@@ -9,7 +9,8 @@
         "antlr4-c3": "^2.2.1",
         "antlr4ts": "^0.5.0-alpha.4",
         "monaco-editor-core": "^0.34.0",
-        "sql-formatter": "^9.2.0"
+        "sql-formatter": "^9.2.0",
+        "vscode-languageserver": "^8.0.2"
     },
     "devDependencies": {
         "@types/dotenv-webpack": "^7.0.3",

@@ -83,7 +83,7 @@ export const injectMonacoEditor = () => {
             )
         );
 
-        // 自动补全
+        // 自动补全;
         _disposables.push(
             monaco.languages.registerCompletionItemProvider(LanguageName, {
                 triggerCharacters: [" "],

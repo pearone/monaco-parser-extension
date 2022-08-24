@@ -6,6 +6,7 @@ import {
     TokenStream,
 } from "antlr4ts";
 import { worker } from "monaco-editor-core";
+import { CompletionItemKind, InsertTextFormat } from "vscode-languageserver";
 import HiveSQL from "./parser";
 import { CodeCompletionCore, TokenList } from "antlr4-c3";
 import { BaseSQLWorker } from "../base/worker";
@@ -13,7 +14,6 @@ import { HiveParser } from "./grammar/HiveParser";
 import { ParserErrorStrategy } from "../base/error";
 import { QueryAnalyzer } from "./analysis";
 import { HiveLexer } from "./grammar/HiveLexer";
-import * as monaco from "monaco-editor-core";
 
 export class HiveSQLWorker extends BaseSQLWorker {
     protected _ctx: worker.IWorkerContext;
@@ -88,23 +88,24 @@ export class HiveSQLWorker extends BaseSQLWorker {
                 followingKeywords.length > 0
                     ? baseKeyword + " " + followingKeywords
                     : baseKeyword;
+
+            console.log(itemText);
         }
     }
 
     newKeywordItem(text: string) {
         return {
             label: text,
-            kind: monaco.languages.CompletionItemKind.Keyword,
+            kind: CompletionItemKind.Keyword,
         };
     }
 
     newFunctionItem(text: string) {
         return {
             label: text + "(...)",
-            kind: monaco.languages.CompletionItemKind.Function,
+            kind: CompletionItemKind.Function,
             insertText: text + "($1)",
-            insertTextFormat:
-                monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+            insertTextFormat: InsertTextFormat.Snippet,
         };
     }
 

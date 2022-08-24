@@ -38,9 +38,9 @@ module.exports = {
         ],
     },
     plugins: [
+        new dotenv(),
         new htmlWebpackPlugin({
             template: "./index.html",
         }),
-        new dotenv(),
     ],
 };
