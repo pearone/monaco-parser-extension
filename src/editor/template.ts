@@ -1,4 +1,5 @@
 import * as monaco from "monaco-editor-core";
+import { CompletionItem } from "vscode-languageserver";
 
 export async function provideCompletionItems(
     model: monaco.editor.ITextModel,
@@ -8,7 +9,7 @@ export async function provideCompletionItems(
 ) {
     const code = model.getValue();
     const workerProxy = await worker(model.uri);
-    const keywords = await (workerProxy as any).completionsFor(
+    const items = await (workerProxy as any).completionsFor(
         code,
         position,
         triggerCharacter
@@ -23,11 +24,9 @@ export async function provideCompletionItems(
     };
 
     return {
-        suggestions: Array.from(new Set([...keywords])).map((item: string) => {
+        suggestions: items.map((item: CompletionItem) => {
             return {
-                label: item,
-                kind: monaco.languages.CompletionItemKind.Text,
-                insertText: item,
+                ...item,
                 range: range,
             };
         }),

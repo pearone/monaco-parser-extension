@@ -13,7 +13,7 @@ function Editor() {
     useEffect(() => {
         if (editor_ref.current) {
             monaco.editor.create(editor_ref.current, {
-                value: "select * from aaa where bbb;",
+                value: "",
                 theme: "vs-dark",
                 language: "hivesql",
                 minimap: { enabled: false },

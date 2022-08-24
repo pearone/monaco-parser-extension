@@ -6,9 +6,13 @@ import {
     TokenStream,
 } from "antlr4ts";
 import { worker } from "monaco-editor-core";
-import { CompletionItemKind, InsertTextFormat } from "vscode-languageserver";
+import {
+    CompletionItemKind,
+    InsertTextFormat,
+    CompletionItem,
+} from "vscode-languageserver";
 import HiveSQL from "./parser";
-import { CodeCompletionCore, TokenList } from "antlr4-c3";
+import { CodeCompletionCore, TokenList, CandidateRule } from "antlr4-c3";
 import { BaseSQLWorker } from "../base/worker";
 import { HiveParser } from "./grammar/HiveParser";
 import { ParserErrorStrategy } from "../base/error";
@@ -40,6 +44,7 @@ export class HiveSQLWorker extends BaseSQLWorker {
         const tokenStream = new CommonTokenStream(lexer);
         tokenStream.fill();
         const cursorIndex = this.findCursorTokenIndex(tokenStream, cursor);
+        console.log(cursorIndex);
         const parser = new HiveParser(tokenStream);
 
         parser.removeErrorListeners();
@@ -47,6 +52,7 @@ export class HiveSQLWorker extends BaseSQLWorker {
 
         const parsedQuery = parser.statements();
         const core = new CodeCompletionCore(parser);
+        core.preferredRules = new Set([HiveParser.RULE_fromStatement]);
 
         if (cursorIndex === undefined) {
             return Promise.resolve([]);
@@ -54,17 +60,49 @@ export class HiveSQLWorker extends BaseSQLWorker {
 
         const queryAnalyzer = new QueryAnalyzer(parsedQuery);
 
+        console.log("cursorIndex", cursorIndex, tokenStream);
         const candidates = core.collectCandidates(cursorIndex);
-        this.generateCandidatesFromTokens(
+        const itemsFromTokens = this.generateCandidatesFromTokens(
             candidates.tokens,
             queryAnalyzer,
             lexer
             // tokenStream,
-            // completionTokenIndex
+            // cursorIndex
         );
 
-        console.log(candidates);
-        return Promise.resolve([]);
+        const itemsFromRules = this.generateCandidatesFromRules(
+            candidates.rules,
+            queryAnalyzer,
+            tokenStream,
+            cursorIndex
+        );
+
+        console.log(candidates.tokens, itemsFromTokens);
+
+        return Promise.resolve(itemsFromTokens.concat(itemsFromRules));
+    }
+
+    generateCandidatesFromRules(
+        rules: Map<number, CandidateRule>,
+        queryAnalyzer: QueryAnalyzer,
+        tokenStream: TokenStream,
+        tokenIndex: number
+    ) {
+        console.log("rules", rules);
+        const items: CompletionItem[] = [];
+        for (const [ruleId, ruleData] of rules) {
+            const lastRuleId = ruleData.ruleList[ruleData.ruleList.length - 1];
+
+            switch (ruleId) {
+                case HiveParser.RULE_fromStatement:
+                    if (tokenIndex === ruleData.startTokenIndex) {
+                        console.log("RULE_fromStatement");
+                        items.push(this.newKeywordItem("SELECT FROM"));
+                    }
+                    break;
+            }
+        }
+        return items;
     }
 
     generateCandidatesFromTokens(
@@ -72,6 +110,7 @@ export class HiveSQLWorker extends BaseSQLWorker {
         queryAnalyzer: QueryAnalyzer,
         lexer: HiveLexer
     ) {
+        const items: CompletionItem[] = [];
         for (const [tokenType, followingTokens] of tokens) {
             const baseKeyword = this.tokenTypeToCandidateString(
                 lexer,
@@ -89,14 +128,16 @@ export class HiveSQLWorker extends BaseSQLWorker {
                     ? baseKeyword + " " + followingKeywords
                     : baseKeyword;
 
-            console.log(itemText);
+            items.push(this.newKeywordItem(itemText));
         }
+        return items;
     }
 
     newKeywordItem(text: string) {
         return {
             label: text,
             kind: CompletionItemKind.Keyword,
+            insertText: text,
         };
     }
 
@@ -121,26 +162,39 @@ export class HiveSQLWorker extends BaseSQLWorker {
         cursor: { lineNumber: number; column: number }
     ) {
         const cursorCol = cursor.column - 1;
-        // console.log("size", tokenStream.size);
+        const lineSeparator = /\n|\r|\r\n/g;
+        const possibleIdentifierPrefix = /[\w]$/;
+
         for (let i = 0; i < tokenStream.size; i++) {
-            const t = tokenStream.get(i) as CommonToken;
+            const t = tokenStream.get(i);
 
-            const tokenStartCol = t.startIndex;
-            const tokenEndCol = t.stopIndex;
-            const tokenLine = t.line;
+            const tokenStartCol = t.charPositionInLine;
+            const tokenEndCol = tokenStartCol + (t.text as string).length;
+            const tokenStartLine = t.line;
+            const tokenEndLine =
+                t.type !== HiveParser.EOF || !t.text
+                    ? tokenStartLine
+                    : tokenStartLine +
+                      (t.text.match(lineSeparator)?.length || 0);
 
-            // console.log("tokenStartCol", tokenStartCol, tokenEndCol, tokenLine);
-            // console.log("cursorCol", cursorCol, cursor.lineNumber);
             if (
-                t.type != HiveParser.EOF &&
-                tokenLine === cursor.lineNumber &&
-                tokenEndCol >= cursorCol
+                tokenEndLine > cursor.lineNumber ||
+                (tokenStartLine === cursor.lineNumber &&
+                    tokenEndCol > cursorCol)
             ) {
-                if (tokenStartCol <= cursorCol) {
+                if (
+                    i > 0 &&
+                    tokenStartLine === cursor.lineNumber &&
+                    tokenStartCol === cursorCol
+                    // &&
+                    // possibleIdentifierPrefix.test(
+                    //     tokenStream.get(i - 1).text as string
+                    // )
+                ) {
                     return i - 1;
-                }
-            } else if (t.type === HiveParser.EOF) {
-                return i;
+                } else if (t.type === HiveParser.EOF) {
+                    return i + 1;
+                } else return i;
             }
         }
         return undefined;
