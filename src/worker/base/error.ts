@@ -107,15 +107,13 @@ export default class ParserErrorListener extends DiagnosticErrorListener {
     }
 }
 
-// @ts-ignore
 // 错误规则：出错不阻止listener
 export class ParserErrorStrategy extends DefaultErrorStrategy {
-    protected beginErrorCondition(recognizer: Parser) {
-        console.log("beginErrorCondition");
-    }
+    // protected beginErrorCondition(recognizer: Parser) {
+    //     return undefined;
+    // }
 
     protected singleTokenDeletion(recognizer: Parser): Token | undefined {
-        console.log("singleTokenDeletion");
         return undefined;
     }
 }

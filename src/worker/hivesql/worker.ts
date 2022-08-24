@@ -1,8 +1,19 @@
-import { CommonTokenStream, TokenStream } from "antlr4ts";
+import {
+    CharStreams,
+    CommonToken,
+    CommonTokenStream,
+    Lexer,
+    TokenStream,
+} from "antlr4ts";
 import { worker } from "monaco-editor-core";
 import HiveSQL from "./parser";
-import { CodeCompletionCore } from "antlr4-c3";
+import { CodeCompletionCore, TokenList } from "antlr4-c3";
 import { BaseSQLWorker } from "../base/worker";
+import { HiveParser } from "./grammar/HiveParser";
+import { ParserErrorStrategy } from "../base/error";
+import { QueryAnalyzer } from "./analysis";
+import { HiveLexer } from "./grammar/HiveLexer";
+import * as monaco from "monaco-editor-core";
 
 export class HiveSQLWorker extends BaseSQLWorker {
     protected _ctx: worker.IWorkerContext;
@@ -24,27 +35,112 @@ export class HiveSQLWorker extends BaseSQLWorker {
      * @returns
      */
     completionsFor(code: string, cursor: any, triggerCharacter?: string) {
-        const lexer = this.parser.createLexer(code);
+        const chars = CharStreams.fromString(code.toUpperCase());
+        const lexer = new HiveLexer(chars);
         const tokenStream = new CommonTokenStream(lexer);
-        const parser = this.parser.createParser(code);
-        this.findCursorTokenIndex(tokenStream, cursor);
+        tokenStream.fill();
+        const cursorIndex = this.findCursorTokenIndex(tokenStream, cursor);
+        const parser = new HiveParser(tokenStream);
+
+        parser.removeErrorListeners();
+        parser.errorHandler = new ParserErrorStrategy();
+
+        const parsedQuery = parser.statements();
         const core = new CodeCompletionCore(parser);
-        const candidates = core.collectCandidates(0);
+
+        if (cursorIndex === undefined) {
+            return Promise.resolve([]);
+        }
+
+        const queryAnalyzer = new QueryAnalyzer(parsedQuery);
+
+        const candidates = core.collectCandidates(cursorIndex);
+        this.generateCandidatesFromTokens(
+            candidates.tokens,
+            queryAnalyzer,
+            lexer
+            // tokenStream,
+            // completionTokenIndex
+        );
 
         console.log(candidates);
+        return Promise.resolve([]);
+    }
+
+    generateCandidatesFromTokens(
+        tokens: Map<number, TokenList>,
+        queryAnalyzer: QueryAnalyzer,
+        lexer: HiveLexer
+    ) {
+        for (const [tokenType, followingTokens] of tokens) {
+            const baseKeyword = this.tokenTypeToCandidateString(
+                lexer,
+                tokenType
+            );
+            if (!baseKeyword) {
+                continue;
+            }
+            const followingKeywords = followingTokens
+                .map((t) => this.tokenTypeToCandidateString(lexer, t))
+                .join(" ");
+
+            const itemText =
+                followingKeywords.length > 0
+                    ? baseKeyword + " " + followingKeywords
+                    : baseKeyword;
+        }
+    }
+
+    newKeywordItem(text: string) {
+        return {
+            label: text,
+            kind: monaco.languages.CompletionItemKind.Keyword,
+        };
+    }
+
+    newFunctionItem(text: string) {
+        return {
+            label: text + "(...)",
+            kind: monaco.languages.CompletionItemKind.Function,
+            insertText: text + "($1)",
+            insertTextFormat:
+                monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+        };
+    }
+
+    tokenTypeToCandidateString(lexer: Lexer, tokenType: number): string {
+        return lexer.vocabulary
+            .getLiteralName(tokenType)
+            ?.toUpperCase()
+            .replace(/^'|'$/g, "") as string;
     }
 
     findCursorTokenIndex(
         tokenStream: TokenStream,
         cursor: { lineNumber: number; column: number }
     ) {
-        console.log(tokenStream, cursor);
         const cursorCol = cursor.column - 1;
+        // console.log("size", tokenStream.size);
         for (let i = 0; i < tokenStream.size; i++) {
-            const t = tokenStream.get(i);
+            const t = tokenStream.get(i) as CommonToken;
 
-            const tokenStartCol = t.charPositionInLine;
-            const tokenEndCol = tokenStartCol + (t.text as string).length;
+            const tokenStartCol = t.startIndex;
+            const tokenEndCol = t.stopIndex;
+            const tokenLine = t.line;
+
+            // console.log("tokenStartCol", tokenStartCol, tokenEndCol, tokenLine);
+            // console.log("cursorCol", cursorCol, cursor.lineNumber);
+            if (
+                t.type != HiveParser.EOF &&
+                tokenLine === cursor.lineNumber &&
+                tokenEndCol >= cursorCol
+            ) {
+                if (tokenStartCol <= cursorCol) {
+                    return i - 1;
+                }
+            } else if (t.type === HiveParser.EOF) {
+                return i;
+            }
         }
         return undefined;
     }

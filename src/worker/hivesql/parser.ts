@@ -1,4 +1,4 @@
-import { ANTLRInputStream, CommonTokenStream, Lexer } from "antlr4ts";
+import { CharStreams, CommonTokenStream, Lexer } from "antlr4ts";
 import { format } from "sql-formatter";
 import { HiveLexer } from "./grammar/HiveLexer";
 import { HiveParser } from "./grammar/HiveParser";
@@ -7,7 +7,8 @@ import BasicParser from "../base/parser";
 export default class HiveSQL extends BasicParser {
     // 词法分析
     public createLexer(input: string) {
-        const chars = new ANTLRInputStream(input.toUpperCase());
+        const chars = CharStreams.fromString(input.toUpperCase());
+        console.log("chars", chars);
         const lexer = new HiveLexer(chars);
         return lexer;
     }
@@ -17,6 +18,15 @@ export default class HiveSQL extends BasicParser {
         const tokenStream = new CommonTokenStream(lexer);
         const parser = new HiveParser(tokenStream);
         return parser;
+    }
+
+    // 获取tokens
+    public createParserTokens(input: string) {
+        const chars = CharStreams.fromString(input.toUpperCase());
+        const lexer = new HiveLexer(chars);
+        const tokenStream = new CommonTokenStream(lexer);
+        tokenStream.fill();
+        return tokenStream;
     }
 
     // 获取词汇

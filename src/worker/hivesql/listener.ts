@@ -16,23 +16,21 @@ export default class HiveListener implements HiveParserListener {
     // }
 
     enterSelectClause(ctx: any) {
-        console.log(ctx, ctx.parser, ctx.getText());
-        // ctx.parser.exitRule();
-        ctx.parser.state = ctx.invokingState;
-        const intervalSet = ctx.parser.getExpectedTokens().intervals;
-        const intervalSet2 =
-            ctx.parser.getExpectedTokensWithinCurrentRule().intervals;
-        console.log("enterSelectClause", ctx, intervalSet);
-
-        intervalSet.map((interval: any) => {
-            const text = ctx.parser.getTokenStream().getText(interval);
-            console.log(ctx.parser.getTokenStream(), interval, text);
-        });
-
-        intervalSet2.map((interval: any) => {
-            const text = ctx.parser.getTokenStream().getText(interval);
-            console.log(interval, text);
-        });
+        // console.log(ctx, ctx.parser);
+        // // ctx.parser.exitRule();
+        // ctx.parser.state = ctx.invokingState;
+        // const intervalSet = ctx.parser.getExpectedTokens().intervals;
+        // const intervalSet2 =
+        //     ctx.parser.getExpectedTokensWithinCurrentRule().intervals;
+        // console.log("enterSelectClause", ctx, intervalSet);
+        // intervalSet.map((interval: any) => {
+        //     const text = ctx.parser.getTokenStream().getText(interval);
+        //     console.log(ctx.parser.getTokenStream(), interval, text);
+        // });
+        // intervalSet2.map((interval: any) => {
+        //     const text = ctx.parser.getTokenStream().getText(interval);
+        //     console.log(interval, text);
+        // });
     }
 
     // 子查询
